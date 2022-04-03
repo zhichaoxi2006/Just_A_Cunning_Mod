@@ -1,72 +1,9 @@
 namespace = s_andrew_swann_entity
 @Residual_hull_value = 1
 event = {
-	id = s_andrew_swann_entity.3
-	hide_window = yes
-	trigger = {
-	}
-	is_triggered_only = yes
-	immediate = {
-		if = {
-			limit = {
-				FromFrom = {
-					is_ship_class = shipclass_starbase
-					is_mobile = no
-				}
-			}
-			if = {
-				limit = {
-					FromFrom = {
-						has_starbase_building = transport_aura
-					}
-				}
-				random_system = {
-					limit = {
-						NOT = {
-							is_owned_by = This
-						}
-					}
-					FromFromFrom = {
-						set_location = Prev
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				FromFromFrom = {
-					is_ship_class = shipclass_starbase
-					is_mobile = no
-				}
-			}
-			if = {
-				limit = {
-					FromFromFrom = {
-						has_starbase_building = transport_aura
-					}
-				}
-				random_system = {
-					limit = {
-						NOT = {
-							is_owned_by = From
-						}
-					}
-					FromFrom = {
-						set_location = Prev
-					}
-				}
-			}
-		}
-	}
-}
-
-event = {
 	id = s_andrew_swann_entity.4
 	hide_window = yes
 	trigger = {
-		This = {
-			has_component = NARRATIVE_LEVEL_RESUSCITATION_DEVICE
-		}
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -76,130 +13,153 @@ event = {
 		From = {
 			save_event_target_as = Disabler_Ship
 		}
-		This = {
-			while = {
-				count = 5
-				repair_ship = yes
+		if = {
+			limit = {
+				This = {
+					has_component = NARRATIVE_LEVEL_RESUSCITATION_DEVICE
+				}
 			}
-			set_disabled = no
+			This = {
+				while = {
+					count = 5
+					repair_ship = yes
+				}
+				set_disabled = no
+			}
 		}
-		This.solar_system = {
-			every_ship_in_system = {
-				limit = {
-					is_owned_by = event_target:Disabler_Ship.owner
-					is_in_combat = yes
-				}
-				set_ship_flag = target_to_kill
-				if = {
+		if = {
+			limit = {
+				has_component = MALICIOUS_PROJECTION_SYSTEM
+			}
+			This.solar_system = {
+				every_ship_in_system = {
 					limit = {
-						event_target:Ship.owner = {
-							has_country_flag = ship_hp_amount_reduce_system
-						}
+						is_owned_by = event_target:Disabler_Ship.owner
+						is_in_combat = yes
 					}
-					export_trigger_value_to_variable = {
-						trigger = has_hp
-						variable = ship_hp_amount
-					}
-					subtract_variable = {
-						which = ship_hp_amount
-						value = @Residual_hull_value
-					}
-					remove_modifier = ship_hull_regen_add_perc
-					remove_modifier = ship_hull_regen_add_static
-					reduce_hp = ship_hp_amount
-				}
-				if = {
-					limit = {
-						event_target:Ship.owner = {
-							has_country_flag = armor_erasing_system
-						}
-					}
-					remove_modifier = ship_armor_mult
-					add_modifier = {
-						modifier = ship_armor_mult
-						days = -1
-						multiplier = -1
-					}
-				}
-				if = {
-					limit = {
-						event_target:Ship.owner = {
-							has_country_flag = shield_erasing_system
-						}
-					}
-					remove_modifier = ship_shield_mult
-					add_modifier = {
-						modifier = ship_shield_mult
-						days = -1
-						multiplier = -1
-					}
-				}
-				if = {
-					limit = {
-						event_target:Ship.owner = {
-							has_country_flag = narrative_editing_warship_narrative_strike
-						}
-					}
-					destroy_ship = This
 					if = {
 						limit = {
-							This.fleet = {
-								num_ships < 1
+							event_target:Ship.owner = {
+								has_country_flag = ship_hp_amount_reduce_system
 							}
 						}
-						fire_on_action = {
-							on_action = on_fleet_destroyed_victim
-							scopes = {
-								This = event_target:Disabler_Ship.owner
-								From = event_target:Ship.owner
-								FromFrom = This.fleet
-								FromFromFrom = event_target:Ship.fleet
-							}
+						export_trigger_value_to_variable = {
+							trigger = has_hp
+							variable = ship_hp_amount
 						}
-						fire_on_action = {
-							on_action = on_fleet_destroyed_perp
-							scopes = {
-								This = event_target:Ship.owner
-								From = This.fleet.owner
-								FromFrom = event_target:Ship.fleet
-								FromFromFrom = This.fleet
-							}
+						subtract_variable = {
+							which = ship_hp_amount
+							value = @Residual_hull_value
 						}
-						fire_on_action = {
-							on_action = on_space_battle_won
-							scopes = {
-								This = event_target:Ship.owner
-								From = This.fleet.owner
-								FromFrom = event_target:Ship.fleet
-								FromFromFrom = This.fleet
-							}
+						set_variable = {
+							which = ship_hp_add_amount
+							value = ship_hp_amount
 						}
-						fire_on_action = {
-							on_action = on_space_battle_lost
-							scopes = {
-								This = This.fleet.owner
-								From = event_target:Ship.owner
-								FromFrom = This.fleet
-								FromFromFrom = event_target:Ship.fleet
-							}
+						multiply_variable = {
+							which = ship_hp_add_amount
+							value = -1
+						}
+						reduce_hp = ship_hp_amount
+						remove_modifier = "ship_hull_add"
+						add_modifier = {
+							modifier = "ship_hull_add"
+							days = -1
+							multiplier = ship_hp_add_amount
 						}
 					}
-					fire_on_action = {
-						on_action = on_ship_destroyed_victim
-						scopes = {
-							This = This.owner
-							From = event_target:Ship.owner
-							FromFrom = This
-							FromFromFrom = event_target:Ship
+					if = {
+						limit = {
+							event_target:Ship.owner = {
+								has_country_flag = armor_erasing_system
+							}
+						}
+						remove_modifier = "ship_armor_reduction"
+						add_modifier = {
+							modifier = "ship_armor_reduction"
+							days = -1
+							multiplier = 1
 						}
 					}
-					fire_on_action = {
-						on_action = on_ship_destroyed_victim
-						scopes = {
-							This = event_target:Ship.owner
-							From = This.owner
-							FromFrom = event_target:Ship
-							FromFromFrom = This
+					if = {
+						limit = {
+							event_target:Ship.owner = {
+								has_country_flag = shield_erasing_system
+							}
+						}
+						remove_modifier = "ship_shield_reduction"
+						add_modifier = {
+							modifier = "ship_shield_reduction"
+							days = -1
+							multiplier = 1
+						}
+					}
+					if = {
+						limit = {
+							event_target:Ship.owner = {
+								has_country_flag = narrative_editing_warship_narrative_strike
+							}
+						}
+						destroy_ship = This
+						if = {
+							limit = {
+								This.fleet = {
+									num_ships < 1
+								}
+							}
+							fire_on_action = {
+								on_action = "on_fleet_destroyed_victim"
+								scopes = {
+									This = event_target:Disabler_Ship.owner
+									From = event_target:Ship.owner
+									FromFrom = This.fleet
+									FromFromFrom = event_target:Ship.fleet
+								}
+							}
+							fire_on_action = {
+								on_action = "on_fleet_destroyed_perp"
+								scopes = {
+									This = event_target:Ship.owner
+									From = This.fleet.owner
+									FromFrom = event_target:Ship.fleet
+									FromFromFrom = This.fleet
+								}
+							}
+							fire_on_action = {
+								on_action = "on_space_battle_won"
+								scopes = {
+									This = event_target:Ship.owner
+									From = This.fleet.owner
+									FromFrom = event_target:Ship.fleet
+									FromFromFrom = This.fleet
+								}
+							}
+							fire_on_action = {
+								on_action = "on_space_battle_lost"
+								scopes = {
+									This = This.fleet.owner
+									From = event_target:Ship.owner
+									FromFrom = This.fleet
+									FromFromFrom = event_target:Ship.fleet
+								}
+							}
+						}
+						fire_on_action = {
+							on_action = "on_ship_destroyed_victim"
+							scopes = {
+								This = This.owner
+								From = event_target:Ship.owner
+								FromFrom = This
+								FromFromFrom = event_target:Ship
+							}
+						}
+						fire_on_action = {
+							on_action = "on_ship_destroyed_victim"
+							scopes = {
+								This = event_target:Ship.owner
+								From = This.owner
+								FromFrom = event_target:Ship
+								FromFromFrom = This
+							}
 						}
 					}
 				}
@@ -267,8 +227,8 @@ event = {
 	title = s_andrew_swann_entity.15.name
 	desc = s_andrew_swann_entity.15.desc
 	picture = GFX_evt_exploding_planet
-	location = from	
-	is_triggered_only = yes	
+	location = from
+	is_triggered_only = yes
 	trigger = {
 		This = {
 			is_ship_size = narrative_editing_warship
@@ -351,87 +311,9 @@ event = {
 			}
 			From = {
 				create_army = {
-					name = "Warship_Army"
+					name = Warship_Army
 					owner = event_target:Tranport_ship.owner
 					type = narrative_editing_army
-				}
-			}
-		}
-	}
-	option = {
-		name = s_andrew_swann_entity.15.d
-		trigger = {
-			From = {
-				NOT = {
-					is_star = yes
-				}
-			}
-		}
-		allow = {
-			From = {
-				can_destroy_planet_with_PLANET_KILLER_CRACKER = yes
-			}
-		}
-		hidden_effect = {
-			fire_on_action = {
-				fire_on_action = {
-					on_action = on_destroy_planet_with_PLANET_KILLER_CRACKER
-					scopes = {
-						this = From
-						from = This
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = s_andrew_swann_entity.15.e
-		trigger = {
-			From = {
-				NOT = {
-					is_star = yes
-				}
-			}
-		}
-		allow = {
-			From = {
-				can_destroy_planet_with_PLANET_KILLER_SHIELDER = yes
-			}
-		}
-		hidden_effect = {
-			fire_on_action = {
-				fire_on_action = {
-					on_action = on_destroy_planet_with_PLANET_KILLER_SHIELDER
-					scopes = {
-						this = From
-						from = This
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = s_andrew_swann_entity.15.f
-		trigger = {
-			From = {
-				NOT = {
-					is_star = yes
-				}
-			}
-		}
-		allow = {
-			From = {
-				can_destroy_planet_with_PLANET_KILLER_NEUTRON = yes
-			}
-		}
-		hidden_effect = {
-			fire_on_action = {
-				fire_on_action = {
-					on_action = on_destroy_planet_with_PLANET_KILLER_NEUTRON
-					scopes = {
-						this = From
-						from = This
-					}
 				}
 			}
 		}
@@ -444,240 +326,6 @@ event = {
 		}
 		custom_tooltip = s_andrew_swann_entity.15.z.tooltip
 		hidden_effect = {
-		}
-	}
-}
-
-event = {
-	id = s_andrew_swann_entity.16
-	hide_window = yes
-	trigger = {
-	}
-	is_triggered_only = yes
-	immediate = {
-		FromFrom = {
-			save_event_target_as = Fleet_One
-		}
-		FromFromFrom = {
-			save_event_target_as = Fleet_Two
-		}
-		if = {
-			limit = {
-				event_target:Fleet_One = {
-					is_ship_size = narrative_editing_warship
-				}
-			}
-			event_target:Fleet_One.solar_system = {
-				every_ship_in_system = {
-					limit = {
-						This = {
-							is_owned_by = event_target:Fleet_Two.owner
-							is_in_combat = yes
-						}
-					}
-					if = {
-						limit = {
-							event_target:Fleet_One.owner = {
-								has_country_flag = ship_hp_amount_reduce_system
-							}
-						}
-						export_trigger_value_to_variable = {
-							trigger = has_hp
-							variable = ship_hp_amount
-						}
-						subtract_variable = {
-							which = ship_hp_amount
-							value = @Residual_hull_value
-						}
-						set_variable = {
-							which = ship_hp_add_amount
-							value = ship_hp_amount
-						}
-						multiply_variable = {
-							which = ship_hp_add_amount
-							value = -1
-						}
-						reduce_hp = ship_hp_amount
-						This = {
-							remove_modifier = ship_hull_add
-							add_modifier = {
-								modifier = ship_hull_add
-								days = -1
-								multiplier = ship_hp_add_amount
-							}
-						}
-					}
-					if = {
-						limit = {
-							event_target:Fleet_One.owner = {
-								has_country_flag = armor_erasing_system
-							}
-						}
-						This = {
-							remove_modifier = ship_armor_reduction
-							add_modifier = {
-								modifier = ship_armor_reduction
-								days = -1
-								multiplier = 1
-							}
-						}
-					}
-					if = {
-						limit = {
-							event_target:Fleet_One.owner = {
-								has_country_flag = shield_erasing_system
-							}
-						}
-						This = {
-							remove_modifier = ship_shield_reduction
-							add_modifier = {
-								modifier = ship_shield_reduction
-								days = -1
-								multiplier = 1
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					event_target:Fleet_One = {
-						is_in_combat = yes
-					}
-				}
-				country_event = {
-					id = s_andrew_swann_entity.16
-					days = 1
-					scopes = {
-						FromFrom = event_target:Fleet_One
-						FromFromFrom = event_target:Fleet_Two
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				event_target:Fleet_Two = {
-					is_ship_size = narrative_editing_warship
-				}
-			}
-			event_target:Fleet_Two.solar_system = {
-				every_ship_in_system = {
-					limit = {
-						is_owned_by = event_target:Fleet_One.owner
-						is_in_combat = yes
-					}
-					if = {
-						limit = {
-							event_target:Fleet_Two.owner = {
-								has_country_flag = ship_hp_amount_reduce_system
-							}
-						}
-						export_trigger_value_to_variable = {
-							trigger = has_hp
-							variable = ship_hp_amount
-						}
-						subtract_variable = {
-							which = ship_hp_amount
-							value = @Residual_hull_value
-						}
-						remove_modifier = ship_hull_regen_add_perc
-						remove_modifier = ship_hull_regen_add_static
-						reduce_hp = ship_hp_amount
-					}
-					if = {
-						limit = {
-							event_target:Fleet_Two.owner = {
-								has_country_flag = armor_erasing_system
-							}
-						}
-						fleet = {
-							remove_modifier = ship_armor_reduction
-							add_modifier = {
-								modifier = ship_armor_reduction
-								days = -1
-								multiplier = 1
-							}
-						}
-					}
-					if = {
-						limit = {
-							event_target:Fleet_Two.owner = {
-								has_country_flag = shield_erasing_system
-							}
-						}
-						This = {
-							remove_modifier = ship_shield_reduction
-							add_modifier = {
-								modifier = ship_shield_reduction
-								days = -1
-								multiplier = 1
-							}
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					event_target:Fleet_Two = {
-						is_in_combat = yes
-					}
-				}
-				country_event = {
-					id = s_andrew_swann_entity.16
-					days = 1
-					scopes = {
-						FromFrom = event_target:Fleet_One
-						FromFromFrom = event_target:Fleet_Two
-					}
-				}
-			}
-		}
-	}
-}
-
-event = {
-	id = s_andrew_swann_entity.17
-	hide_window = yes
-	trigger = {
-		This = {
-			has_ship_flag = target_to_kill
-			NOT = {
-				has_component = NARRATIVE_LEVEL_RESUSCITATION_DEVICE
-			}
-		}
-	}
-	is_triggered_only = yes
-	immediate = {
-		if = {
-			limit = {
-				is_in_combat = yes
-			}
-			This = {
-				export_trigger_value_to_variable = {
-					trigger = has_hp
-					variable = ship_hp_amount
-				}
-				subtract_variable = {
-					which = ship_hp_amount
-					value = @Residual_hull_value
-				}
-				remove_modifier = ship_hull_regen_add_perc
-				remove_modifier = ship_hull_regen_add_static
-				reduce_hp = ship_hp_amount
-				remove_modifier = ship_armor_mult
-				add_modifier = {
-					modifier = ship_armor_mult
-					days = -1
-					multiplier = -1
-				}
-				remove_modifier = ship_shield_mult
-				add_modifier = {
-					modifier = ship_shield_mult
-					days = -1
-					multiplier = -1
-				}
-			}
 		}
 	}
 }

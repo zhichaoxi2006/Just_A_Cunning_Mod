@@ -1,4 +1,5 @@
 namespace = sas_gui
+@Residual_hull_value = 1
 country_event = {
 	id = sas_gui.1
 	title = sas_gui.1.name
@@ -197,6 +198,53 @@ country_event = {
 		}
 		custom_tooltip = sas_gui.1.z.tooltip
 		hidden_effect = {
+		}
+	}
+}
+
+event = {
+	id = sas_gui.2
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		FromFrom = {
+			save_event_target_as = malicious_projection_system_ship
+		}
+		FromFrom.solar_system = {
+			random_ship_in_system = {
+				limit = {
+					This = {
+						has_component = MALICIOUS_PROJECTION_SYSTEM
+					}
+				}
+				This.solar_system = {
+					every_ship_in_system = {
+						limit = {
+							This.owner = {
+								is_hostile = event_target:malicious_projection_system_ship.owner
+							}
+						}
+						if = {
+							limit = {
+								event_target:malicious_projection_system_ship.owner = {
+									has_country_flag = ship_hp_amount_reduce_system
+								}
+							}
+							export_trigger_value_to_variable = {
+								trigger = has_hp
+								variable = ship_hp_amount
+							}
+							subtract_variable = {
+								which = ship_hp_amount
+								value = @Residual_hull_value
+							}
+							reduce_hp = ship_hp_amount
+						}
+					}
+				}
+			}
 		}
 	}
 }

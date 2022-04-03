@@ -24,7 +24,7 @@ on_ship_disabled = {
 # FromFromFrom = fleet 2
 on_entering_battle = {
 	events = {
-		s_andrew_swann_entity.16
+		sas_gui.2
 	}
 }
 
@@ -41,12 +41,5 @@ on_fleet_enter_orbit = {
 	events = {
 		s_andrew_swann_entity.14
 		s_andrew_swann_entity.15
-	}
-}
-
-# This = Ship
-on_ship_enabled = {
-	events = {
-		s_andrew_swann_entity.17
 	}
 }

@@ -20,9 +20,9 @@ component_set = {
 }
 
 component_set = {
-	key = "NARRATIVE_LEVEL_PRESENCE_ERASING_DEVICE"
+	key = "MALICIOUS_PROJECTION_SYSTEM"
 
-	icon = "GFX_narrative_level_presence_erasing_device"
+	icon = "GFX_malicious_projection_system"
 	icon_frame = 1
 }
 

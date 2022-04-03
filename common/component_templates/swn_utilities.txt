@@ -1,53 +1,5 @@
 
 utility_component_template = {
-	key = "NARRATIVE_EDITING_OFFENSIVE_AURA"
-	size = medium
-	icon = "GFX_ship_part_aura_pd_penetration"
-	icon_frame = 1
-	power = 0
-	component_set = "ship_aura_components"
-	prerequisites = {
-		tech_narrative_editing_utilities
-	}
-	hostile_aura = {
-		name = "narrative_editing_offensive_aura"
-		system_wide = no
-		stack_info = {
-			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-			id = aura_narrative_editing_offensive
-			priority = 1235
-		}
-		modifier = {
-			ship_armor_mult = -364364.42
-			ship_shield_mult = -364364.42
-		}
-		damage_per_day = {
-			damage = {
-				min = 1
-				max = 1
-			}
-			accuracy = 1
-			range = 900
-			shield_penetration = 1
-			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
-	ai_weight = {
-		weight = 0
-	}
-}
-
-utility_component_template = {
 	key = "SHIP_COORDINATE_EDITING_MODULE"
 	size = small
 	icon = "GFX_ship_coordinate_editing_module"
@@ -98,7 +50,7 @@ utility_component_template = {
 		}
 	}
 	modifier = {
-		ship_base_speed_mult = 1145.14
+		ship_speed_mult = 42.14
 		ship_evasion_add = 400
 	}
 	prerequisites = {
@@ -162,10 +114,52 @@ utility_component_template = {
 	icon_frame = 1
 	component_set = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
 	modifier = {
-		ships_upkeep_mult = -1145.14
-		ships_orbital_bombardment_mult = 114.514
+		ship_hull_regen_add_perc = 1432
 	}
 	ai_weight = {
 		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "MALICIOUS_PROJECTION_SYSTEM"
+	size = aux
+	icon = "GFX_malicious_projection_system"
+	icon_frame = 1
+	prerequisites = {
+		"tech_narrative_editing_weapon"
+	}
+	component_set = "MALICIOUS_PROJECTION_SYSTEM"
+	hostile_aura = {
+		name = "narrative_editing_offensive_aura"
+		system_wide = no
+		stack_info = {
+			id = aura_narrative_editing_offensive
+			priority = 1235
+		}
+		modifier = {
+			ship_armor_reduction = 10
+			ship_shield_reduction = 10
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t1_cost
+		}
+		upkeep = {
+			energy = @s_t1_upkeep_energy
+			alloys = @s_t1_upkeep_alloys
+		}
 	}
 }

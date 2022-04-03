@@ -188,35 +188,3 @@ weapon_component_template = {
 	tracking = 6.82
 }
 
-weapon_component_template = {
-	key = "NARRATIVE_LEVEL_PRESENCE_ERASING_DEVICE"
-	size = extra_large
-	type = instant
-	icon = "GFX_narrative_level_presence_erasing_device"
-	icon_frame = 1
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	component_set = "NARRATIVE_LEVEL_PRESENCE_ERASING_DEVICE"
-	projectile_gfx = "tachyon_lance"
-	tags = {
-	}
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = @s_t1_cost
-		}
-		upkeep = {
-			energy = @s_t1_upkeep_energy
-			alloys = @s_t1_upkeep_alloys
-		}
-	}
-
-	total_fire_time = 1
-	damage = { min = 8454270 max = 8454270 }
-	shield_penetration = 4.2
-	armor_penetration = 4.2
-	range = 3814
-	accuracy = 3.43
-	tracking = 6.82
-}

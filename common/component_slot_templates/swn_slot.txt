@@ -1,4 +1,11 @@
 invisible_planet_killer_swn = {
 	size = planet_killer
 	component = weapon
+	is_fixed = yes
+}
+
+invisible_titanic_swn = {
+	size = titanic
+	component = weapon
+	is_fixed = yes
 }

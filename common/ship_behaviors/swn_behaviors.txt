@@ -10,4 +10,5 @@ ship_behavior = {
 	passive_move_pattern = none
 
 	desc = "NARRATIVE_EDITING_WARSHIP_BEHAVIOR_DESC"
+	ignore_combat_movement = yes
 }
