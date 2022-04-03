@@ -1,0 +1,95 @@
+sas_technology_get = {
+	length = 0
+	resources = {
+	}
+	effect = {
+		give_technology = {
+			tech = narrative_editing_technology
+			message = yes
+		}
+		give_technology = {
+			tech = tech_narrative_editing_utilities
+			message = yes
+		}
+		give_technology = {
+			tech = tech_narrative_editing_armies
+			message = yes
+		}
+		give_technology = {
+			tech = tech_narrative_editing_warship
+			message = yes
+		}
+		give_technology = {
+			tech = tech_narrative_editing_weapon
+			message = yes
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+sas_ap_add = {
+	length = -1
+	resources = {
+	}
+	modifier = {
+		ascension_perks_add = 128
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+sas_research_speed_add = {
+	length = -1
+	resources = {
+	}
+	modifier = {
+		all_technology_research_speed = 8894.64
+		ship_anomaly_research_speed_mult = 42.64
+		ship_archaeological_site_excavation_speed_mult = 56.24
+		ship_archeaological_site_clues_add = 10
+	}
+}
+
+sas_time_acceleration_on = {
+	length = 0
+	resources = {
+	}
+	potential = {
+		NOT = {
+			has_country_flag = sas_time_acceleration
+		}
+	}
+	effect = {
+		set_country_flag = sas_time_acceleration
+		country_event = {
+			id = s_andrew_swann_entity.12
+		}
+	}
+}
+
+sas_time_acceleration_off = {
+	length = 0
+	resources = {
+	}
+	potential = {
+		has_country_flag = sas_time_acceleration
+	}
+	effect = {
+		remove_country_flag = sas_time_acceleration
+	}
+}
+
+sas_warship_console = {
+	length = 0 
+	resources = {
+	}
+	effect = {
+		country_event = {
+			id = sas_gui.1
+		}
+	}
+}
+

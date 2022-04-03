@@ -1,0 +1,52 @@
+# Triggers event when ship enters a system. It's usually better to use on_entering_system_first_time or on_entering_system_fleet
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system = {
+	events = {
+		s_andrew_swann_entity.1
+	}
+	random_events = {
+	}
+}
+
+# This = Ship
+# From = Disabler Ship
+on_ship_disabled = {
+	events = {
+		s_andrew_swann_entity.4
+	}
+}
+
+# This = owner of fleet 1
+# From = owner of fleet 2
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_entering_battle = {
+	events = {
+		s_andrew_swann_entity.16
+	}
+}
+
+# This = owner of fleet
+# From = disbanded fleet
+on_fleet_disbanded = {
+	events = {
+	}
+}
+
+#From = Planet/Starbase/Megastructure scope
+#This = Fleet scope
+on_fleet_enter_orbit = {
+	events = {
+		s_andrew_swann_entity.14
+		s_andrew_swann_entity.15
+	}
+}
+
+# This = Ship
+on_ship_enabled = {
+	events = {
+		s_andrew_swann_entity.17
+	}
+}

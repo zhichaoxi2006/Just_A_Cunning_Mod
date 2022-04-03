@@ -1,0 +1,639 @@
+@hivetime = 1800
+@hivecost = 6000
+
+district_swn_city = {
+	base_buildtime = @hivetime
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		uses_district_set = swn_gateway
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_swn_nexus
+		district_swn_hive
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @hivecost
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_lithoid_empire = no
+					is_robot_empire = no
+					is_hive_empire = no
+				}
+			}
+			alloys = 200
+			food = 200
+			consumer_goods = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_lithoid_empire = yes
+					is_robot_empire = no
+					is_hive_empire = no
+				}
+			}
+			alloys = 200
+			minerals = 200
+			consumer_goods = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_robot_empire = yes
+				}
+			}
+			alloys = 400
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = no
+					NOT = { has_origin = origin_tree_of_life }
+				}
+			}
+			alloys = 200
+			food = 500
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = no
+					has_origin = origin_tree_of_life
+				}
+			}
+			alloys = 50
+			food = 1000
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = yes
+					has_origin = origin_tree_of_life
+				}
+			}
+			alloys = 50
+			food = 500
+			minerals = 500
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = yes
+					NOT = { has_origin = origin_tree_of_life }
+				}
+			}
+			alloys = 200
+			minerals = 500
+		}
+		upkeep = {
+			energy = 125
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 50
+		planet_housing_mult = 2
+		planet_max_buildings_add = 1
+	}
+}
+
+district_swn_hive = {
+	base_buildtime = @hivetime
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_hive_empire = yes }
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		uses_district_set = swn_gateway
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_swn_nexus
+		district_swn_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @hivecost
+		}
+		upkeep = {
+			energy = 125
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 50
+		planet_housing_mult = 2
+		planet_max_buildings_add = 1
+	}
+}
+
+district_swn_nexus = {
+	base_buildtime = @hivetime
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_machine_empire = yes }
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		uses_district_set = swn_gateway
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_swn_city
+		district_swn_hive
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @hivecost
+		}
+		upkeep = {
+			energy = 125
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 50
+		planet_housing_mult = 2
+		planet_max_buildings_add = 1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { country_uses_consumer_goods = yes }
+		}
+		modifier = {
+			job_artisan_drone_add = 10
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_servitor }
+		}
+		modifier = {
+			job_bio_trophy_add = 100
+			planet_carry_cap_add = 100
+		}
+	}
+}
+
+district_swn_industrial = {
+	base_buildtime = 17000
+	is_capped_by_modifier = yes
+	
+	show_on_uncolonized = {
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		uses_district_set = swn_gateway
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 129500
+			influence = 225
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					country_uses_consumer_goods = yes
+				}
+			}
+				alloys = 30000
+				influence = 75
+		}
+		produces = {
+			alloys = 275000
+			engineering_research = 2500
+			volatile_motes = 2500
+			exotic_gases = 2500
+			rare_crystals = 2500
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					country_uses_consumer_goods = yes
+				}
+			}
+			consumer_goods = 600
+		}
+		upkeep = {
+			energy = 1250
+			minerals = 5000
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					country_uses_consumer_goods = yes
+				}
+			}
+				energy = 125
+				alloys = 25
+		}
+	}
+	
+	country_modifier = {
+		country_alloys_produces_mult = 0.05
+		army_damage_mult = 0.5
+		ship_weapon_damage = 0.10
+		ship_armor_mult = 0.1
+	}
+
+	planet_modifier = {
+	}
+	
+	on_built = {
+		add_deposit = d_ie_ng
+		add_deposit = d_ie_n
+	}
+
+	ai_resource_production = {
+		alloys = 25
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		consumer_goods = 25
+		trigger = {
+			owner = {
+				country_uses_consumer_goods = yes
+			}
+		}
+	}
+}
+
+district_swn_generator = {
+	base_buildtime = 14400
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		uses_district_set = swn_gateway
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 10000
+			influence = 750
+		}
+		produces = {
+			energy = 114514
+		}
+	}
+
+	planet_modifier = {
+	}
+	
+	ai_resource_production = {
+		energy = 25
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_swn_mining = {
+	base_buildtime = 10800
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		uses_district_set = swn_gateway
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 63000
+			influence = 900
+			energy = 5000
+		}
+		produces = {
+			minerals = 114514
+		}
+		upkeep = {
+			energy = 500
+		}
+	}
+
+	planet_modifier = {
+	}
+
+	ai_resource_production = {
+		minerals = 25
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_swn_farming = {
+	base_buildtime = 11700
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = { uses_district_set = swn_gateway }
+
+	potential = { uses_district_set = swn_gateway }
+
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 35000
+			influence = 150
+			energy = 5000
+			food = 1000
+		}
+		produces = {
+			food = 13000
+			physics_research = 6000
+			society_research = 10000
+		}
+	}
+
+	planet_modifier = {
+	}
+	
+	ai_resource_production = {
+		food = 25
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+district_ie_leisure = {
+	base_buildtime = 10800
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = swn_gateway
+		from = {
+			is_regular_empire = yes
+		}
+	}
+
+	potential = {
+		uses_district_set = swn_gateway
+		owner = {
+			exists = owner
+			is_regular_empire = yes
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_swn_nexus
+		district_swn_hive
+	}
+
+	resources = {
+		category = planet_districts
+		produces = {
+			unity = 800
+		}
+		cost = {
+			alloys = 100000
+			influence = 400
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_lithoid_empire = no
+					is_robot_empire = no
+					is_hive_empire = no
+				}
+			}
+			alloys = 200
+			food = 200
+			consumer_goods = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_lithoid_empire = yes
+					is_robot_empire = no
+					is_hive_empire = no
+				}
+			}
+			alloys = 200
+			minerals = 200
+			consumer_goods = 200
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_robot_empire = yes
+				}
+			}
+			alloys = 400
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = no
+					NOT = { has_origin = origin_tree_of_life }
+				}
+			}
+			alloys = 200
+			food = 500
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = no
+					has_origin = origin_tree_of_life
+				}
+			}
+			alloys = 50
+			food = 1000
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = yes
+					has_origin = origin_tree_of_life
+				}
+			}
+			alloys = 50
+			food = 500
+			minerals = 500
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = yes
+					NOT = { has_origin = origin_tree_of_life }
+				}
+			}
+			alloys = 200
+			minerals = 500
+		}
+		upkeep = {
+			energy = 125
+			exotic_gases = 25
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_amenities_mult = 0.15
+		planet_immigration_pull_mult = 0.15
+	}
+	
+	on_built = {
+	}
+}
+
+district_ie_science = {
+	base_buildtime = 20000
+	icon = district_rw_science
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		uses_district_set = swn_gateway
+	}
+
+	resources = {
+		category = planet_districts
+		produces = {
+			engineering_research = 6380
+			physics_research = 6380
+			society_research = 6380
+		}
+		cost = {
+			alloys = 25000
+			influence = 525
+		}
+		upkeep = {
+			energy = 175
+			alloys = 215
+		}
+	}
+	
+	planet_modifier = {
+	}
+	
+	country_modifier = {
+		all_technology_research_speed = 0.50
+		terraform_speed_mult = 0.15
+		ship_armor_mult = 0.05
+		ship_shield_mult = 0.05
+	}
+	
+	on_built = {
+	}
+}
+
+district_ie_fortress = {
+	base_buildtime = 15000
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = swn_gateway
+	}
+
+	potential = {
+		uses_district_set = swn_gateway
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 150000
+			influence = 600
+		}
+		produces = {
+		}
+		upkeep = {
+			energy = 3075
+			engineering_research = 1000
+		}
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 100000
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_soldier_add = 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_warrior_drone_add = 20
+		}
+	}
+	
+	on_built = {
+	}
+}

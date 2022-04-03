@@ -1,0 +1,4 @@
+invisible_planet_killer_swn = {
+	size = planet_killer
+	component = weapon
+}

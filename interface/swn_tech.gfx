@@ -1,0 +1,38 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_narrative_level_presence_erasing_device"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_level_presence_erasing_device.dds"
+	}
+	spriteType = {
+		name = "GFX_narrative_editing_missile"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_editing_missile.dds"
+	}
+	spriteType = {
+		name = "GFX_strike_craft_sardine"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_sardine.dds"
+	}
+	spriteType = {
+		name = "GFX_narrative_destruction_singularity_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/narrative_destruction_singularity_accelerator.dds"
+	}
+	spriteType = {
+		name = "wg_end_threat_narrative_editing_warship"
+		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
+	}
+	spriteType = {
+		name = "wg_narrative_editing_warship"
+		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_narrative_editing_reactor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_editing_reactor.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_coordinate_editing_module"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ship_coordinate_editing_module.dds"
+	}
+	spriteType = {
+		name = "GFX_narrative_level_resuscitation_device"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_level_resuscitation_device.dds"
+	}
+}

@@ -1,0 +1,26 @@
+narrative_editing_army = {
+	damage = 666.00
+	health = 1000.00
+	has_morale = no
+	morale_damage = 40.00
+	collateral_damage = 1.00
+	war_exhaustion = 1.00
+	time = 10
+	has_species = no
+	pop_limit = no
+	icon_frame = 2
+	prerequisites = { "tech_narrative_editing_armies" }
+	resources = {
+		category = armies
+		cost = {
+			minerals = 20
+		}
+
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	potential = {
+	}
+}

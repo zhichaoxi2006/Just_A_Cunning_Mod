@@ -1,0 +1,202 @@
+namespace = sas_gui
+country_event = {
+	id = sas_gui.1
+	title = sas_gui.1.name
+	desc = sas_gui.1.desc
+	picture = GFX_evt_mining_station	#a name of a picture to display
+	is_triggered_only = yes	#The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = sas_gui.1.a.on
+		trigger = {
+			ROOT = {
+				NOT = {
+					has_country_flag = ship_hp_amount_reduce_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.a.on.tooltip
+		hidden_effect = {
+			set_country_flag = ship_hp_amount_reduce_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.a.off
+		trigger = {
+			ROOT = {
+				has_country_flag = ship_hp_amount_reduce_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.a.off.tooltip
+		hidden_effect = {
+			remove_country_flag = ship_hp_amount_reduce_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.b.on
+		trigger = {
+			ROOT = {
+				NOT = {
+					has_country_flag = armor_erasing_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.b.off.tooltip
+		hidden_effect = {
+			set_country_flag = armor_erasing_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.b.off
+		trigger = {
+			ROOT = {
+				has_country_flag = armor_erasing_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.b.off.tooltip
+		hidden_effect = {
+			remove_country_flag = armor_erasing_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.c.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = shield_erasing_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.c.off.tooltip
+		hidden_effect = {
+			set_country_flag = shield_erasing_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.c.off
+		trigger = {
+			ROOT = {
+				has_country_flag = shield_erasing_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.c.off.tooltip
+		hidden_effect = {
+			remove_country_flag = shield_erasing_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.d.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = star_erasing_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.d.off.tooltip
+		hidden_effect = {
+			set_country_flag = star_erasing_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.d.off
+		trigger = {
+			ROOT = {
+				has_country_flag = star_erasing_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.d.off.tooltip
+		hidden_effect = {
+			remove_country_flag = star_erasing_system
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.e.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = narrative_editing_warship_narrative_strike
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.e.on.tooltip
+		hidden_effect = {
+			set_country_flag = narrative_editing_warship_narrative_strike
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.e.off
+		trigger = {
+			ROOT = {
+				has_country_flag = narrative_editing_warship_narrative_strike
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.e.off.tooltip
+		hidden_effect = {
+			remove_country_flag = narrative_editing_warship_narrative_strike
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.z
+		trigger = {
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.z.tooltip
+		hidden_effect = {
+		}
+	}
+}

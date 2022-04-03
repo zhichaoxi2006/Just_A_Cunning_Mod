@@ -1,0 +1,125 @@
+﻿l_simp_chinese:
+ #Behaviours
+ NARRATIVE_EDITING_WARSHIP_BEHAVIOR_DESC: "手操AI"
+ #Components
+ STRIKE_CRAFT_SARDINE: "沙丁鱼攻击机"
+ STRIKE_CRAFT_SARDINE_DESC: "基于叙事编辑科技的舰载机，强度十分的超模。"
+ NARRATIVE_EDITING_MISSILE: "叙事编辑导弹"
+ NARRATIVE_EDITING_MISSILE_DESC: "能够修改叙事的导弹。"
+ NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "叙事删除奇点加速器"
+ NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR_DESC: "将叙事编辑场压缩成奇点并用于攻击的武器"
+ SMALL_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "小型叙事删除奇点加速器"
+ MEDIUM_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "中型叙事删除奇点加速器"
+ LARGE_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "大型叙事删除奇点加速器"
+ NARRATIVE_LEVEL_PRESENCE_ERASING_DEVICE: "叙事级存在抹除装置"
+ NARRATIVE_LEVEL_PRESENCE_ERASING_DEVICE_DESC: "在叙事层中删除对方的武器"
+ NARRATIVE_LEVEL_RESUSCITATION_DEVICE: "叙事级复苏装置"
+ NARRATIVE_LEVEL_RESUSCITATION_DEVICE_DESC: "能在已死的情况下使舰船复活的装置。"
+ narrative_editing_warship: "叙事编辑军舰"
+ CORE_NARRATIVE_EDITING_WARSHIP_SECTION: "叙事编辑军舰核心"
+ NARRATIVE_EDITING_OFFENSIVE_AURA: "叙事进攻光环"
+ narrative_editing_offensive_aura: "叙事进攻光环"
+ SHIP_COORDINATE_EDITING_MODULE: "舰船坐标编辑模块"
+ NARRATIVE_EDITING_THRUSTER: "叙事编辑推进器"
+ NARRATIVE_EDITING_REACTOR: "叙事编辑反应堆"
+ COMBAT_COMPUTER_NARRATIVE_EDITING_WARSHIP: "叙事编辑军舰作战电脑"
+ narrative_editing_science: "叙事编辑科研船"
+ DEFAULT_NARRATIVE_EDITING_SCIENCESHIP_SECTION: "默认区段"
+ narrative_editing_constructor: "叙事编辑工程船"
+ DEFAULT_NARRATIVE_EDITING_CONSTRUCTOR_SECTION: "默认区段"
+
+ #Technology
+ narrative_editing_technology: "叙事编辑科技"
+ narrative_editing_technology_desc: ""
+ tech_narrative_editing_utilities: "叙事编辑舰船部件"
+ tech_narrative_editing_utilities_desc: ""
+ tech_narrative_editing_armies: "叙事编辑军队"
+ tech_narrative_editing_armies_desc: ""
+ tech_narrative_editing_warship: "叙事编辑军舰理念"
+ tech_narrative_editing_warship_desc: ""
+ tech_narrative_editing_weapon: "叙事编辑武器"
+ tech_narrative_editing_weapon_desc: ""
+
+ #Edicts
+ edict_sas_ap_add: "叙事编辑——飞升"
+ edict_sas_ap_add_desc: "利用叙事编辑科技增加飞升槽位"
+ edict_sas_research_speed_add: "叙事编辑——研究速度"
+ edict_sas_research_speed_add: "利用叙事编辑科技增加研究速度"
+ edict_narrative_editing_warship_narrative_strike_on: "开启叙事打击系统"
+ edict_narrative_editing_warship_narrative_strike_on_desc: "开启叙事编辑军舰的叙事打击系统"
+ edict_narrative_editing_warship_narrative_strike_off: "关闭叙事打击系统"
+ edict_narrative_editing_warship_narrative_strike_off_desc: "关闭叙事编辑军舰的叙事打击系统"
+ edict_sas_technology_get: "获取Mod科技"
+ edict_sas_technology_get_desc: "获取Mod科技"
+ edict_sas_time_acceleration_on: "时间加速开启"
+ edict_sas_time_acceleration_on_desc: "就是开启那个能让你的领袖的年龄飞快增长的玩意"
+ edict_sas_time_acceleration_off: "时间加速关闭"
+ edict_sas_time_acceleration_off_desc: "关闭时间加速"
+ edict_sas_immortal_execution: "不朽处决"
+ edict_sas_immortal_execution_desc: "能破坏某些领袖的不死性的玩意"
+ edict_sas_warship_console: "叙事编辑军舰控制台"
+ edict_sas_warship_console_desc: "打开控制叙事编辑军舰的控制台"
+
+ #Armies
+ narrative_editing_army: "叙事打击军"
+ narrative_editing_army_desc: "叙事打击军"
+
+ #CB
+ casus_belli_cb_narrative_editing_warship: "叙事编辑舰——终焉程序"
+ casus_belli_cb_stop_narrative_editing_warship: "停止叙事编辑舰威胁"
+
+ #WG
+ war_goal_wg_narrative_editing_warship: "终焉程序"
+ war_goal_wg_narrative_editing_warship_desc: "为了解放叙事层的灭国宣言。"
+ war_goal_wg_end_threat_narrative_editing_warship: "停止叙事编辑舰威胁"
+ war_goal_wg_end_threat_narrative_editing_warship_desc: "很显然，叙事编辑舰不可能让我们的叙事层获得自由。只会给我们的国家带来终焉，所以，我们必须毁灭叙事编辑舰。"
+
+ #Traits
+ trait_narrative_entity: "叙事实体"
+ trait_narrative_entity: "这种生物已经不能算是生物了，他们能像神一般创造一切"
+
+ #Event
+ s_andrew_swann_entity.15.name: "对星叙事打击系统"
+ s_andrew_swann_entity.15.desc: "叙事编辑军舰配置的叙事打击系统控制面板"
+ s_andrew_swann_entity.15.a: "星系抹除"
+ s_andrew_swann_entity.15.a.tooltip: "这将会使目标恒星附近的时间加速到极快的速度，从而使目标恒星放出极大的能量，毁灭整个星系。"
+ s_andrew_swann_entity.15.b: "生态回归"
+ s_andrew_swann_entity.15.b.tooltip: "使星球回归到未殖民的状态。"
+ s_andrew_swann_entity.15.c: "投放军队"
+ s_andrew_swann_entity.15.c.tooltip: "向星球投放军队。"
+ s_andrew_swann_entity.15.d: "地爆天星"
+ s_andrew_swann_entity.15.e: "安乐天使"
+ s_andrew_swann_entity.15.f: "中子灭杀"
+ s_andrew_swann_entity.15.z: "取消启动"
+ s_andrew_swann_entity.15.z.tooltip: "不启动系统"
+ sas_gui.1.name: "控制面板"
+ sas_gui.1.desc: "恶意投射系统控制面板"
+ sas_gui.1.a.on: "船体削除——开启"
+ sas_gui.1.a.on.tooltip: "这将会启动恶意投射系统的船体削除功能。"
+ sas_gui.1.a.off: "船体削除——关闭"
+ sas_gui.1.a.off.tooltip: "这将关闭恶意投射系统的船体削除功能。"
+ sas_gui.1.b.on: "装甲抹除——开启"
+ sas_gui.1.b.on.tooltip: "这将会启动恶意投射系统的装甲抹除功能。"
+ sas_gui.1.b.off: "装甲抹除——关闭"
+ sas_gui.1.b.off.tooltip: "这将关闭恶意投射系统的装甲抹除功能。"
+ sas_gui.1.c.on: "护盾抹除——开启"
+ sas_gui.1.c.on.tooltip: "这将会启动恶意投射系统的护盾抹除功能。"
+ sas_gui.1.c.off: "护盾抹除——关闭"
+ sas_gui.1.c.off.tooltip: "这将关闭恶意投射系统的护盾抹除功能。"
+ sas_gui.1.d.on: "对星机关——开启"
+ sas_gui.1.d.on.tooltip: "这将会启动恶意投射系统的对星机关。"
+ sas_gui.1.d.off: "对星机关——关闭"
+ sas_gui.1.d.off.tooltip: "这将关闭恶意投射系统的对星机关。"
+ sas_gui.1.e.on: "反击机关——开启"
+ sas_gui.1.e.on.tooltip: "这将启动恶意投射系统的反击机关。"
+ sas_gui.1.e.off.tooltip: "反击机关——关闭"
+ sas_gui.1.e.off: "这将关闭恶意投射系统的反击机关。"
+ sas_gui.1.z: "关闭控制台"
+ sas_gui.1.z.tooltip: "关闭控制台"
+
+ 
+ 
+
+ 
+ 
+
