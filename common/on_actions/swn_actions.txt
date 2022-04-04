@@ -4,7 +4,6 @@
 # FromFrom = Country
 on_entering_system = {
 	events = {
-		s_andrew_swann_entity.1
 	}
 	random_events = {
 	}
@@ -14,7 +13,7 @@ on_entering_system = {
 # From = Disabler Ship
 on_ship_disabled = {
 	events = {
-		s_andrew_swann_entity.4
+		sas_gui.3
 	}
 }
 
@@ -24,7 +23,6 @@ on_ship_disabled = {
 # FromFromFrom = fleet 2
 on_entering_battle = {
 	events = {
-		sas_gui.2
 	}
 }
 

@@ -99,7 +99,7 @@ weapon_component_template = {
 		"tech_narrative_editing_weapon"
 	}
 	component_set = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-	projectile_gfx = "infrared_laser_s"
+	projectile_gfx = "adv_kinetic_artillery"
 	tags = {
 	}
 	resources = {
@@ -132,7 +132,7 @@ weapon_component_template = {
 		"tech_narrative_editing_weapon"
 	}
 	component_set = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-	projectile_gfx = "infrared_laser_s"
+	projectile_gfx = "adv_kinetic_artillery"
 	tags = {
 	}
 	resources = {
@@ -165,7 +165,7 @@ weapon_component_template = {
 		"tech_narrative_editing_weapon"
 	}
 	component_set = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-	projectile_gfx = "infrared_laser_s"
+	projectile_gfx = "adv_kinetic_artillery"
 	tags = {
 	}
 	resources = {

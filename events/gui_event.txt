@@ -222,6 +222,7 @@ event = {
 				This.solar_system = {
 					every_ship_in_system = {
 						limit = {
+							is_in_combat = yes
 							This.owner = {
 								is_hostile = event_target:malicious_projection_system_ship.owner
 							}
@@ -241,6 +242,232 @@ event = {
 								value = @Residual_hull_value
 							}
 							reduce_hp = ship_hp_amount
+						}
+						if = {
+							limit = {
+								event_target:malicious_projection_system_ship.owner = {
+									has_country_flag = shield_erasing_system
+								}
+							}
+							export_modifier_to_variable = {
+								modifier = ship_shield_reduction
+								variable = ship_shield_reduction_number
+							}
+							multiply_variable = {
+								which = ship_shield_reduction_number
+								value = -1
+							}
+							change_variable = {
+								which = ship_shield_reduction_number
+								value = 1
+							}
+							add_modifier = {
+								modifier = swn_mod_ship_shield_reduction
+								months = 1
+								multiplier = ship_shield_reduction_number
+							}
+						}
+						if = {
+							limit = {
+								event_target:malicious_projection_system_ship.owner = {
+									has_country_flag = shield_erasing_system
+								}
+							}
+							export_modifier_to_variable = {
+								modifier = ship_armor_reduction
+								variable = ship_armor_reduction_number
+							}
+							multiply_variable = {
+								which = ship_armor_reduction_number
+								value = -1
+							}
+							change_variable = {
+								which = ship_armor_reduction_number
+								value = 1
+							}
+							add_modifier = {
+								modifier = swn_mod_ship_armor_reduction
+								months = 1
+								multiplier = ship_armor_reduction_number
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+event = {
+	id = sas_gui.3
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		This = {
+			save_event_target_as = Ship
+		}
+		From = {
+			save_event_target_as = Disabler_Ship
+		}
+		if = {
+			limit = {
+				This = {
+					has_component = NARRATIVE_LEVEL_RESUSCITATION_DEVICE
+				}
+			}
+			This = {
+				while = {
+					count = 5
+					repair_ship = yes
+				}
+				set_disabled = no
+			}
+		}
+		if = {
+			limit = {
+				has_component = MALICIOUS_PROJECTION_SYSTEM
+			}
+			This.solar_system = {
+				every_ship_in_system = {
+					limit = {
+						is_in_combat = yes
+						event_target:Disabler_Ship.owner.owner = {
+							is_hostile = event_target:Ship.owner
+						}
+					}
+					if = {
+						limit = {
+							event_target:Ship.owner = {
+								has_country_flag = ship_hp_amount_reduce_system
+							}
+						}
+						export_trigger_value_to_variable = {
+							trigger = has_hp
+							variable = ship_hp_amount
+						}
+						subtract_variable = {
+							which = ship_hp_amount
+							value = @Residual_hull_value
+						}
+						reduce_hp = ship_hp_amount
+					}
+					if = {
+						limit = {
+							event_target:malicious_projection_system_ship.owner = {
+								has_country_flag = shield_erasing_system
+							}
+						}
+						export_modifier_to_variable = {
+							modifier = ship_shield_reduction
+							variable = ship_shield_reduction_number
+						}
+						multiply_variable = {
+							which = ship_shield_reduction_number
+							value = -1
+						}
+						change_variable = {
+							which = ship_shield_reduction_number
+							value = 1
+						}
+						add_modifier = {
+							modifier = swn_mod_ship_shield_reduction
+							months = 1
+							multiplier = ship_shield_reduction_number
+						}
+					}
+					if = {
+						limit = {
+							event_target:malicious_projection_system_ship.owner = {
+								has_country_flag = shield_erasing_system
+							}
+						}
+						export_modifier_to_variable = {
+							modifier = ship_armor_reduction
+							variable = ship_armor_reduction_number
+						}
+						multiply_variable = {
+							which = ship_armor_reduction_number
+							value = -1
+						}
+						change_variable = {
+							which = ship_armor_reduction_number
+							value = 1
+						}
+						add_modifier = {
+							modifier = swn_mod_ship_armor_reduction
+							months = 1
+							multiplier = ship_armor_reduction_number
+						}
+					}
+					if = {
+						limit = {
+							event_target:Ship.owner = {
+								has_country_flag = narrative_editing_warship_narrative_strike
+							}
+						}
+						destroy_ship = This
+						if = {
+							limit = {
+								This.fleet = {
+									num_ships < 1
+								}
+							}
+							fire_on_action = {
+								on_action = "on_fleet_destroyed_victim"
+								scopes = {
+									This = event_target:Disabler_Ship.owner
+									From = event_target:Ship.owner
+									FromFrom = This.fleet
+									FromFromFrom = event_target:Ship.fleet
+								}
+							}
+							fire_on_action = {
+								on_action = "on_fleet_destroyed_perp"
+								scopes = {
+									This = event_target:Ship.owner
+									From = This.fleet.owner
+									FromFrom = event_target:Ship.fleet
+									FromFromFrom = This.fleet
+								}
+							}
+							fire_on_action = {
+								on_action = "on_space_battle_won"
+								scopes = {
+									This = event_target:Ship.owner
+									From = This.fleet.owner
+									FromFrom = event_target:Ship.fleet
+									FromFromFrom = This.fleet
+								}
+							}
+							fire_on_action = {
+								on_action = "on_space_battle_lost"
+								scopes = {
+									This = This.fleet.owner
+									From = event_target:Ship.owner
+									FromFrom = This.fleet
+									FromFromFrom = event_target:Ship.fleet
+								}
+							}
+						}
+						fire_on_action = {
+							on_action = "on_ship_destroyed_victim"
+							scopes = {
+								This = This.owner
+								From = event_target:Ship.owner
+								FromFrom = This
+								FromFromFrom = event_target:Ship
+							}
+						}
+						fire_on_action = {
+							on_action = "on_ship_destroyed_victim"
+							scopes = {
+								This = event_target:Ship.owner
+								From = This.owner
+								FromFrom = event_target:Ship
+								FromFromFrom = This
+							}
 						}
 					}
 				}

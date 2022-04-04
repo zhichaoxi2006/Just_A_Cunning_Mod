@@ -7,5 +7,5 @@ tags={
 	"Events"
 	"Buildings"
 }
-name="Database Technology"
+name="Just A Freak Mod"
 supported_version="3.3.3"
