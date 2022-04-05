@@ -111,7 +111,6 @@ ship_section_template = {
 		category = ship_sections
 		cost = {
 			sr_living_metal = 853
-			minor_artifacts = 42
 		}
 	}
 }

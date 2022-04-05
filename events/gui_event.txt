@@ -191,6 +191,42 @@ country_event = {
 		}
 	}
 	option = {
+		name = sas_gui.1.f.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = system_wide
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.f.on.tooltip
+		hidden_effect = {
+			set_country_flag = system_wide
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.f.off
+		trigger = {
+			ROOT = {
+				has_country_flag = system_wide
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.f.off.tooltip
+		hidden_effect = {
+			remove_country_flag = system_wide
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
 		name = sas_gui.1.z
 		trigger = {
 		}
@@ -328,11 +364,27 @@ event = {
 		if = {
 			limit = {
 				has_component = MALICIOUS_PROJECTION_SYSTEM
+				NOT = {
+					has_ship_flag = malicious_projection_system_cooldown
+				}
+			}
+			set_timed_ship_flag = {
+				flag = malicious_projection_system_cooldown
+				days = 3
 			}
 			This.solar_system = {
 				every_ship_in_system = {
 					limit = {
-						is_in_combat = yes
+						if = {
+							limit = {
+								NOT = {
+									event_target:Ship.owner = {
+										has_country_flag = system_wide
+									}
+								}
+							}
+							is_in_combat = yes
+						}
 						event_target:Disabler_Ship.owner.owner = {
 							is_hostile = event_target:Ship.owner
 						}
@@ -373,7 +425,7 @@ event = {
 						}
 						add_modifier = {
 							modifier = swn_mod_ship_shield_reduction
-							months = 1
+							days = 30
 							multiplier = ship_shield_reduction_number
 						}
 					}
@@ -397,7 +449,7 @@ event = {
 						}
 						add_modifier = {
 							modifier = swn_mod_ship_armor_reduction
-							months = 1
+							days = 30
 							multiplier = ship_armor_reduction_number
 						}
 					}
