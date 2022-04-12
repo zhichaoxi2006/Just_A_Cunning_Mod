@@ -21,16 +21,36 @@ ship_section_template = {
 	}
 	component_slot = {
 		name = "EXTRA_GUN_03"
-		template = "invisible_titanic_swn"
+		template = "invisible_extra_large_fixed"
 		locatorname = "root"
 	}
 	component_slot = {
 		name = "EXTRA_GUN_04"
-		template = "invisible_titanic_swn"
+		template = "invisible_extra_large_fixed"
 		locatorname = "root"
 	}
 	component_slot = {
 		name = "EXTRA_GUN_05"
+		template = "invisible_extra_large_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_GUN_06"
+		template = "invisible_extra_large_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_GUN_07"
+		template = "invisible_titanic_swn"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_GUN_08"
+		template = "invisible_titanic_swn"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "EXTRA_GUN_09"
 		template = "invisible_planet_killer_swn"
 		locatorname = "root"
 	}

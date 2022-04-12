@@ -122,14 +122,14 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "MALICIOUS_PROJECTION_SYSTEM"
+	key = "PARADOX_GENERATION_SYSTEM"
 	size = aux
 	icon = "GFX_malicious_projection_system"
 	icon_frame = 1
 	prerequisites = {
 		"tech_narrative_editing_weapon"
 	}
-	component_set = "MALICIOUS_PROJECTION_SYSTEM"
+	component_set = "PARADOX_GENERATION_SYSTEM"
 	hostile_aura = {
 		name = "narrative_editing_offensive_aura"
 		system_wide = no
@@ -141,7 +141,6 @@ utility_component_template = {
 			ship_armor_reduction = 10
 			ship_shield_reduction = 10
 			ship_hull_regen_add_perc = -1432.74
-			 
 		}
 		damage_per_day = {
 			damage = { min = 25 max = 50 }

@@ -35,6 +35,7 @@ sas_ap_add = {
 	}
 	modifier = {
 		ascension_perks_add = 128
+		tradition_cost_empire_size_mult = -100
 	}
 	ai_weight = {
 		weight = 0
@@ -46,7 +47,7 @@ sas_research_speed_add = {
 	resources = {
 	}
 	modifier = {
-		all_technology_research_speed = 8894.64
+		tech_cost_empire_size_mult = -100
 		ship_anomaly_research_speed_mult = 42.64
 		ship_archaeological_site_excavation_speed_mult = 56.24
 		ship_archeaological_site_clues_add = 10

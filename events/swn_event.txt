@@ -1,5 +1,26 @@
 namespace = s_andrew_swann_entity
 
+event = {
+	id = s_andrew_swann_entity.1
+	hide_window = yes
+	trigger = {
+		From = {
+			army_type = paradox_army
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 2
+			create_army = {
+				name = Warship_Army
+				owner = From.owner
+				type = paradox_army
+			}
+		}
+	}
+}
+
 country_event = {
 	id = s_andrew_swann_entity.12
 	hide_window = yes
@@ -30,26 +51,6 @@ country_event = {
 			country_event = {
 				id = s_andrew_swann_entity.12
 			}
-		}
-	}
-}
-
-event = {
-	id = s_andrew_swann_entity.14
-	hide_window = yes
-	trigger = {
-		This = {
-			is_ship_size = narrative_editing_science
-		}
-		From = {
-			is_scope_type = planet
-		}
-		exists = From.archeaological_site
-	}
-	is_triggered_only = yes
-	immediate = {
-		From.archeaological_site = {
-			finish_site = yes
 		}
 	}
 }

@@ -7,9 +7,12 @@ living_metal_space_dragon = {
 	max_hitpoints = 2642
 	modifier = {
 		ship_evasion_add = 9
-		starbase_shipyard_capacity_add = 2
 	}
-	size_multiplier = 1
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 114.514
+	}
+	size_multiplier = 32
+	fleet_slot_size = 32
 	section_slots = {
 		"core" = {
 			locator = "part1"
@@ -22,14 +25,19 @@ living_metal_space_dragon = {
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
 	enable_3dview_in_ship_browser = yes
+
 	can_disable = yes
 	flip_control_on_disable = no
+	is_space_object = yes
+	can_be_inspected = no
+
 	default_behavior = narrative_editing_warship
 	prerequisites = {
 		"tech_narrative_editing_warship"
 	}
 	combat_disengage_chance = 0
-	class = shipclass_starbase
+
+	class = shipclass_military_special
 	construction_type = starbase_shipyard
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
@@ -38,11 +46,12 @@ living_metal_space_dragon = {
 	required_component_set = "combat_computers"
 	required_component_set = "ship_aura_components"
 	required_component_set = "ship_aura_components"
+
 	resources = {
 		category = ships
 		upkeep = {
-			energy = 0
-			alloys = 0
+			energy = 1
+			alloys = 1
 		}
 	}
 	min_upgrade_cost = {

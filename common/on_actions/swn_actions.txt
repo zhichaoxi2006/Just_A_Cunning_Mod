@@ -4,6 +4,7 @@
 # FromFrom = Country
 on_entering_system = {
 	events = {
+		pgs.3
 	}
 	random_events = {
 	}
@@ -13,7 +14,8 @@ on_entering_system = {
 # From = Disabler Ship
 on_ship_disabled = {
 	events = {
-		sas_gui.3
+		pgs.2
+		sas_gui.2
 	}
 }
 
@@ -39,5 +41,16 @@ on_fleet_enter_orbit = {
 	events = {
 		s_andrew_swann_entity.14
 		s_andrew_swann_entity.15
+	}
+}
+
+#An army has been killed in ground combat
+# This = owner
+# From = army
+# FromFrom = opponent
+# FromFromFrom = planet
+on_army_killed_in_combat = {
+	events = {
+		s_andrew_swann_entity.1
 	}
 }

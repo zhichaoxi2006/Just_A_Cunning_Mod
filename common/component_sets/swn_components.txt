@@ -20,7 +20,7 @@ component_set = {
 }
 
 component_set = {
-	key = "MALICIOUS_PROJECTION_SYSTEM"
+	key = "PARADOX_GENERATION_SYSTEM"
 
 	icon = "GFX_malicious_projection_system"
 	icon_frame = 1
