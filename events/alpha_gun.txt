@@ -1,17 +1,25 @@
 namespace = narrative_strike
-event = {
+country_event = {
 	id = narrative_strike.1
-	hide_window = yes
-	trigger = {
-	}
+	title = narrative_strike.1.name
+	desc = narrative_strike.1.desc
+	picture = GFX_evt_mining_station
+	diplomatic = no	
 	is_triggered_only = yes
+	trigger = {
+		has_global_flag = narrative_strike_system_on
+	}
 	immediate = {
-		every_galaxy_fleet = {
-			delete_fleet = {
-				target = this
-				destroy_template = yes
-			}
+		country_event = {
+			id = narrative_strike.2
 		}
+		observer_event = {
+			id = narrative_strike.3
+			days = 30
+		}
+	}
+	option = {
+		name = narrative_strike.1.a
 	}
 }
 
@@ -23,31 +31,46 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		every_galaxy_planet = {
-			destroy_colony = yes
+			limit = {
+			}
 			remove_planet = yes
 		}
 		every_megastructure = {
-			remove_megastructure = this
+			limit = {
+			}
+			delete_megastructure = this
+		}
+		every_ambient_object = {
+			limit = {
+			}
+			destroy_ambient_object = This
+		}
+		every_system = {
+			limit = {
+			}
+			set_asteroid_belt = {
+				radius = 42
+				type = void_asteroid_belt
+			}
+		}
+		every_galaxy_fleet = {
+			limit = {
+			}
+			delete_fleet = this
+		}
+		every_country = {
+			limit = {
+			}
+			destroy_country = yes
 		}
 	}
 }
 
-event = {
-	id = narrative_strike.3
-	hide_window = yes
-	trigger = {
-	}
-	is_triggered_only = yes
-	immediate = {
-		every_galaxy_pop = {
-			kill_pop = yes
-		}
-	}
-}
 
 country_event = {
-	id = narrative_strike.4
+	id = narrative_strike.3
+	#hide_window = yes
 	is_triggered_only = yes
 	diplomatic = yes
-	custom_gui = "S Andrew Swann Entity Attack Program On"
+	custom_gui = "REALITY BREAKER ON"
 }

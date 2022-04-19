@@ -12,7 +12,7 @@ ship_event = {
 			has_ship_flag = paradox_generation_system_cooldown
 		}
 	}
-	is_triggered_only = yes
+	is_triggered_only = false
 	immediate = {
 		THIS = {
 			save_event_target_as = paradox_generation_system_ship

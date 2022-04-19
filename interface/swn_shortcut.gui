@@ -1,0 +1,158 @@
+containerWindowType = {
+	name = "teleport_shortcut_window"
+	moveable = no
+	size = { width = 32 height = 106 }
+	if_resolution = {
+		min_width = 1280  # min_width or max_width
+		min_height = 1024 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 713 }
+	}
+	if_resolution = {
+		min_width = 1360  # min_width or max_width
+		min_height = 768 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 534 }
+	}
+	if_resolution = {
+		min_width = 1440  # min_width or max_width
+		min_height = 900 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 627 }
+	}
+	if_resolution = {
+		min_width = 1600  # min_width or max_width
+		min_height = 900 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 627 }
+	}
+	if_resolution = {
+		min_width = 1680  # min_width or max_width
+		min_height = 1050 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 729 }
+	}
+	if_resolution = {
+		min_width = 1920  # min_width or max_width
+		min_height = 1080 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 752 }
+	}
+	if_resolution = {
+		min_width = 1920  # min_width or max_width
+		min_height = 1200 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 835 }
+	}
+	if_resolution = {
+		min_width = 2560  # min_width or max_width
+		min_height = 1080 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 752 }
+	}
+	if_resolution = {
+		min_width = 2560  # min_width or max_width
+		min_height = 1440 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 1001 }
+	}
+	if_resolution = {
+		min_width = 3440  # min_width or max_width
+		min_height = 1440 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 1001 }
+	}
+	if_resolution = {
+		min_width = 3840  # min_width or max_width
+		min_height = 2160 # min_height or max_height
+		### code only applies if game is running at x
+		position = { x = 0 y = 1504 }
+	}
+	
+	background = {
+		name = "teleport_shortcut_button_background"
+		size = { x = 3 y = 105 }
+		position = { x = 0 y = 0 }
+		spriteType = "GFX_teleport_sidebar_background"
+		alwaysTransparent = yes
+	}
+
+	instantTextBoxType = {
+		name = "alien_message"
+		font = "cg_16b"
+		position = { x = -100 y = 0 }
+		maxWidth = 50
+		maxHeight = 50
+		format = right
+		scrollbartype = "standardtext_slider"
+	}
+
+	effectbuttonType = {
+		name = "teleport_shortcut_button"
+		quadTextureSprite = "GFX_button_automate"
+		position = { x = -3 y = 34 }
+		effect = ship_teleport_shortcut
+		shortcut = "y"
+		clicksound = interface
+		oversound = mouse_over
+	}
+	
+	containerWindowType = {
+		name = "portrait_background"
+		position = { x = 0 y = 0 }
+		size = { width = 0 height = 0 }
+		clipping = yes
+	}
+	
+	containerWindowType = {
+		name = "portrait"
+		position = { x = 0 y = 0 }
+		size = { width = 0 height = 0 }
+		clipping = yes
+		
+		iconType = {
+			name = "portrait"
+			spriteType = "GFX_portrait_gamesetup_mask"
+			alwaysTransparent = yes
+		}
+				
+		iconType = {
+			name = "black_frame"
+			spriteType = "GFX_diplomacy_portrait_shadow_frame"
+			position = { x = 0 y = 0 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "stripes_1"
+			spriteType = "GFX_diplomacy_stripes_2"
+			alwaysTransparent = yes
+		}
+			
+		iconType = {
+			name = "city_frame"
+			spriteType = "GFX_diplomacy_portrait_frame_trader"
+			position = { x = 0 y = 0 }
+			alwaysTransparent = yes
+		}
+	}	
+	
+	### EVENT DIPLO ###
+	
+	containerWindowType = {
+		name = "EVENT_DIPLO"
+		size = { width = 1 height = 1 }
+		position = { x = 0 y = 0 }
+		moveable = no
+		
+		listboxType = {
+			name = "option_list"
+			position = { x = 0 y = 0 }
+			size = { x = 0 y = 0 }
+			spacing = 1
+			#scrollbartype = "standardlistbox_slider"
+			borderSize = { x = 0 y = 0 }
+			Orientation = center
+		}
+	}
+}	

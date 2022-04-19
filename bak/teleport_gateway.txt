@@ -1,0 +1,91 @@
+# see README.txt for example
+
+teleport_gateway_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes						# indicates this will use "free" placement between the system's inner and outer ring
+															# if this option is active, the placement_rules will be completely ignored
+	show_galactic_map_icon = no
+	build_time = 1080
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 2500
+			influence = 100
+		}
+	}
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+	}
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_teleport_gateway"
+			NOR = {
+				has_megastructure = teleport_gateway_0
+				has_megastructure = teleport_gateway_final
+			}
+		}
+	}
+
+	placement_rules = {			# those would be ignored since the gateway is being "free-placed" between the inner and outer radius of the system
+	}
+
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {}
+}
+
+teleport_gateway_final = {
+	entity = "gateway_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+
+	show_galactic_map_icon = no
+	potential = {
+		has_technology = tech_gateway_activation
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_technology_gateway_construction"
+			from = { has_technology = tech_gateway_construction }
+		}
+	}
+	upgrade_from = {
+		teleport_gateway_0
+	}
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 2500
+			energy = 6000
+		}
+	}
+
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	on_build_complete = {}
+}

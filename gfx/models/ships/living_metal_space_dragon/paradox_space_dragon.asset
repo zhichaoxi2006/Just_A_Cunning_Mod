@@ -1,5 +1,5 @@
 entity = {
-	name = "living_metal_space_dragon_red_entity"
+	name = "paradox_space_dragon_red_entity"
 	pdxmesh = "locator_mesh"
 
 	locator = { name = "part1" 	position = { 0 0 0 } }
@@ -17,8 +17,8 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_red_section_entity"
-	pdxmesh = "living_metal_space_dragon_red_mesh"
+	name = "paradox_space_dragon_red_section_entity"
+	pdxmesh = "paradox_space_dragon_red_mesh"
 	scale = 1.0
 
 	locator = { name = "part1" 	position = { 0 0 0 } }
@@ -228,7 +228,7 @@ entity = {
 }
 
 entity = {
-	name =  "living_metal_space_dragon_blue_entity"
+	name =  "paradox_space_dragon_blue_entity"
 	pdxmesh = "locator_mesh"
 
 	locator = { name = "part1" 	position = { 0 0 0 } }
@@ -246,8 +246,8 @@ entity = {
  	}
 }
 entity = {
-	name = "living_metal_space_dragon_blue_section_entity"
-	pdxmesh = "living_metal_space_dragon_blue_mesh"
+	name = "paradox_space_dragon_blue_section_entity"
+	pdxmesh = "paradox_space_dragon_blue_mesh"
 	scale = 1.0
 
 	locator = { name = "part1" 	position = { 0 0 0 } }
@@ -455,7 +455,7 @@ entity = {
 }
 
 entity = {
-	name =  "living_metal_space_dragon_purple_entity"
+	name =  "paradox_space_dragon_purple_entity"
 	pdxmesh = "locator_mesh"
 
 	locator = { name = "part1" 	position = { 0 0 0 } }
@@ -473,8 +473,8 @@ entity = {
  	}
 }
 entity = {
-	name = "living_metal_space_dragon_purple_section_entity"
-	pdxmesh = "living_metal_space_dragon_purple_mesh"
+	name = "paradox_space_dragon_purple_section_entity"
+	pdxmesh = "paradox_space_dragon_purple_mesh"
 	scale = 1.0
 
 	locator = { name = "part1" 	position = { 0 0 0 } }
@@ -700,7 +700,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_weapon_muzzle_entity"
+	name = "paradox_space_dragon_weapon_muzzle_entity"
 	pdxmesh = "locator_mesh"
 
 	default_state = "idle"
@@ -714,7 +714,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_wing_muzzle_entity"
+	name = "paradox_space_dragon_wing_muzzle_entity"
 	pdxmesh = "locator_mesh"
 
 	default_state = "idle"
@@ -725,7 +725,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_wing_projectile_entity"
+	name = "paradox_space_dragon_wing_projectile_entity"
 	cull_radius = 1.0
 
 	default_state = "idle"
@@ -740,7 +740,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_weapon_hit_entity"
+	name = "paradox_space_dragon_weapon_hit_entity"
 	cull_radius = 1.0
 
 	default_state = "idle"
@@ -753,7 +753,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_wing_hit_entity"
+	name = "paradox_space_dragon_wing_hit_entity"
 	cull_radius = 1.0
 	default_state = "idle"
 	state = { name = "idle"
@@ -763,7 +763,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_weapon_shield_hit_entity"
+	name = "paradox_space_dragon_weapon_shield_hit_entity"
 	cull_radius = 1.0
 
 	default_state = "idle"
@@ -776,7 +776,7 @@ entity = {
 }
 
 entity = {
-	name = "living_metal_space_dragon_wing_shield_hit_entity"
+	name = "paradox_space_dragon_wing_shield_hit_entity"
 	cull_radius = 1.0
 	default_state = "idle"
 	state = { name = "idle"
@@ -792,22 +792,22 @@ entity = {
 ###############
 
 animation = {
-	name = "living_metal_space_dragon_idle_animation"
-	file = "living_metal_space_dragon_idle.anim"
+	name = "paradox_space_dragon_idle_animation"
+	file = "paradox_space_dragon_idle.anim"
 }
 
 animation = {
-	name = "living_metal_space_dragon_moving_animation"
-	file = "living_metal_space_dragon_moving.anim"
+	name = "paradox_space_dragon_moving_animation"
+	file = "paradox_space_dragon_moving.anim"
 }
 
 animation = {
-	name = "living_metal_space_dragon_death_animation"
-	file = "living_metal_space_dragon_death.anim"
+	name = "paradox_space_dragon_death_animation"
+	file = "paradox_space_dragon_death.anim"
 }
 
 animation = {
-	name = "living_metal_space_dragon_attack_animation"
-	file = "living_metal_space_dragon_attack.anim"
+	name = "paradox_space_dragon_attack_animation"
+	file = "paradox_space_dragon_attack.anim"
 }
 

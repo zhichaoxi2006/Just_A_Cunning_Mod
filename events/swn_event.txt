@@ -1,5 +1,4 @@
 namespace = s_andrew_swann_entity
-
 event = {
 	id = s_andrew_swann_entity.1
 	hide_window = yes
@@ -10,12 +9,17 @@ event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		while = {
-			count = 2
-			create_army = {
-				name = Warship_Army
-				owner = From.owner
-				type = paradox_army
+		From = {
+			save_event_target_as = death_army
+		}
+		FromFromFrom = {
+			while = {
+				count = 2
+				create_army = {
+					name = random
+					owner = event_target:death_army.owner
+					type = paradox_army
+				}
 			}
 		}
 	}
@@ -64,7 +68,7 @@ event = {
 	is_triggered_only = yes
 	trigger = {
 		This = {
-			is_ship_size = narrative_editing_warship
+			is_ship_size = paradox_space_dragon
 		}
 		From = {
 			is_scope_type = planet
@@ -146,7 +150,7 @@ event = {
 				create_army = {
 					name = Warship_Army
 					owner = event_target:Tranport_ship.owner
-					type = narrative_editing_army
+					type = paradox_army
 				}
 			}
 		}

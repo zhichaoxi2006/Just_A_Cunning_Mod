@@ -35,4 +35,8 @@ spriteTypes = {
 		name = "GFX_narrative_level_resuscitation_device"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_level_resuscitation_device.dds"
 	}
+	spriteType = {
+		name = "GFX_swn_thruster"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_swn_thruster.dds"
+	}
 }

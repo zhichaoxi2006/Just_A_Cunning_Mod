@@ -40,7 +40,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "NARRATIVE_EDITING_THRUSTER"
 	size = small
-	icon = "GFX_ship_part_thruster_5"
+	icon = "GFX_swn_thruster"
 	icon_frame = 1
 	power = 0
 	resources = {
@@ -140,11 +140,15 @@ utility_component_template = {
 		modifier = {
 			ship_armor_reduction = 10
 			ship_shield_reduction = 10
+			ship_engagement_range_mult = -100
 			ship_hull_regen_add_perc = -1432.74
 		}
 		damage_per_day = {
 			damage = { min = 25 max = 50 }
 			accuracy = 1
+			tracking = 1
+			shield_penetration = 1
+			armor_penetration = 1
 		}
 		graphics = {
 			area_effect = {

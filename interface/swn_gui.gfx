@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_teleport_sidebar_background"
+		texturefile = "gfx/interface/main/teleport_sidebar_background.dds"
+	}
+}

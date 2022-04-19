@@ -191,42 +191,6 @@ country_event = {
 		}
 	}
 	option = {
-		name = sas_gui.1.f.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_country_flag = system_wide
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.f.on.tooltip
-		hidden_effect = {
-			set_country_flag = system_wide
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.f.off
-		trigger = {
-			ROOT = {
-				has_country_flag = system_wide
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.f.off.tooltip
-		hidden_effect = {
-			remove_country_flag = system_wide
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
 		name = sas_gui.1.x.on
 		trigger = {
 			NOT = {
@@ -243,7 +207,9 @@ country_event = {
 				}
 				ship_event = {
 					id = pgs.1
-					scopes = { THIS = THIS }
+					scopes = {
+						THIS = THIS
+					}
 				}
 			}
 		}
@@ -261,15 +227,38 @@ country_event = {
 		}
 	}
 	option = {
-		name = sas_gui.1.y
+		name = sas_gui.1.y.on
 		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = system_wide
+				}
+			}
 		}
 		allow = {
 		}
-		custom_tooltip = sas_gui.1.y.tooltip
+		custom_tooltip = sas_gui.1.y.on.tooltip
 		hidden_effect = {
+			set_country_flag = system_wide
 			country_event = {
-				id = narrative_strike.4
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.y.off
+		trigger = {
+			ROOT = {
+				has_country_flag = system_wide
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.y.off.tooltip
+		hidden_effect = {
+			remove_country_flag = system_wide
+			country_event = {
+				id = sas_gui.1
 			}
 		}
 	}
@@ -289,9 +278,6 @@ event = {
 	id = sas_gui.2
 	hide_window = yes
 	trigger = {
-		This = {
-			has_component = NARRATIVE_LEVEL_RESUSCITATION_DEVICE
-		}
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -306,5 +292,20 @@ event = {
 				set_disabled = no
 			}
 		}
+	}
+}
+
+country_event = {
+	id = sas_gui.3
+	title = "sas_gui.3.name"
+	desc = "sas_gui.3.desc"
+	diplomatic = yes
+	custom_gui = "teleport_shortcut_window"
+	is_triggered_only = yes
+	force_open = yes
+	auto_opens = yes
+	trigger = {
+	}
+	immediate = {
 	}
 }

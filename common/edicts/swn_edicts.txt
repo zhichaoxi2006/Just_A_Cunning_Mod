@@ -94,3 +94,12 @@ sas_warship_console = {
 	}
 }
 
+rankinus_plan = {
+	length = 0
+	resources = {
+	}
+	effect = {
+		set_global_flag = narrative_strike_system_on
+	}
+}
+

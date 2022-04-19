@@ -1,0 +1,44 @@
+#Scope type varies depending on what is selected
+# This = selected object (if planet, ship, fleet, system, ambient object, megastructure, federation, espionage operation, arc site or first contact) or player country
+# From = player country
+# Note: It's advised to check is_scope_type = planet/whatever in the allow trigger, since it's possible to confuse the scopes if multiple interfaces are open
+# Usage example in a .gui file:
+#	effectbuttonType = {
+#		name = button_effect_test
+#		quadTextureSprite = GFX_fleetview_destroy_fleet
+#		position = { x = 283 y = 0 }
+#		scale = 1
+#		orientation = UPPER_LEFT
+#		effect = example_button_effect
+#	}
+ship_teleport_shortcut_debug = {
+	potential = {
+	}
+	allow = {
+		This = {
+			is_scope_type = planet
+		}
+	}
+	effect = {
+		This = {
+			save_event_target_as = teleport_target
+		}
+		From = {
+			every_owned_ship = {
+				limit = {
+					is_ship_size = paradox_space_dragon
+				}
+				This.fleet = {
+					set_location = {
+						target = event_target:teleport_target
+						distance = 5
+						angle = random
+						direction = in_system
+					}
+					clear_orders = yes
+        			clear_fleet_actions = this
+				}
+			}
+		}
+	}
+}

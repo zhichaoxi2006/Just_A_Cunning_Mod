@@ -1,20 +1,18 @@
-living_metal_space_dragon = {
-	formation_priority = 42
+paradox_space_dragon = {
+	formation_priority = @titan_formation_priority
 	max_speed = 2564
 	acceleration = 133.2
 	rotation_speed = 0.42
-	collision_radius = @corvette_collision_radius
-	max_hitpoints = 2642
+	collision_radius = @titan_collision_radius
+	entity = "paradox_space_dragon_red_entity"
+	max_hitpoints = 26426
 	modifier = {
-		ship_evasion_add = 9
-	}
-	ship_modifier = {
-		ship_orbital_bombardment_mult = 114.514
+		ship_evasion_add = 100
 	}
 	size_multiplier = 32
 	fleet_slot_size = 32
 	section_slots = {
-		"core" = {
+		"mid" = {
 			locator = "part1"
 		}
 	}
@@ -25,19 +23,14 @@ living_metal_space_dragon = {
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
 	enable_3dview_in_ship_browser = yes
-
 	can_disable = yes
-	flip_control_on_disable = no
 	is_space_object = yes
-	can_be_inspected = no
-
 	default_behavior = narrative_editing_warship
 	prerequisites = {
 		"tech_narrative_editing_warship"
 	}
 	combat_disengage_chance = 0
-
-	class = shipclass_military_special
+	class = shipclass_starbase
 	construction_type = starbase_shipyard
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
@@ -49,15 +42,15 @@ living_metal_space_dragon = {
 
 	resources = {
 		category = ships
+		cost = {
+			sr_living_metal = 853
+		}
 		upkeep = {
 			energy = 1
 			alloys = 1
 		}
 	}
-	min_upgrade_cost = {
-		alloys = 1
-	}
 	empire_limit = {
-		base = 5
+		base = 1
 	}
 }
