@@ -47,7 +47,7 @@ sas_research_speed_add = {
 	resources = {
 	}
 	modifier = {
-		tech_cost_empire_size_mult = -100
+		all_technology_research_speed = 3812.17
 		ship_anomaly_research_speed_mult = 42.64
 		ship_archaeological_site_excavation_speed_mult = 56.24
 		ship_archeaological_site_clues_add = 10

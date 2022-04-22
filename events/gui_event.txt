@@ -191,6 +191,114 @@ country_event = {
 		}
 	}
 	option = {
+		name = sas_gui.1.f.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = aggro_range_editor
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.f.on.tooltip
+		hidden_effect = {
+			set_country_flag = aggro_range_editor
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.f.off
+		trigger = {
+			ROOT = {
+				has_country_flag = aggro_range_editor
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.f.off.tooltip
+		hidden_effect = {
+			remove_country_flag = aggro_range_editor
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.g.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = anti_hull_repair
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.g.on.tooltip
+		hidden_effect = {
+			set_country_flag = anti_hull_repair
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.g.off
+		trigger = {
+			ROOT = {
+				has_country_flag = anti_hull_repair
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.g.off.tooltip
+		hidden_effect = {
+			remove_country_flag = anti_hull_repair
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.h.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = speed_reduction
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.h.on.tooltip
+		hidden_effect = {
+			set_country_flag = speed_reduction
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.h.off
+		trigger = {
+			ROOT = {
+				has_country_flag = speed_reduction
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.h.off.tooltip
+		hidden_effect = {
+			remove_country_flag = speed_reduction
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
 		name = sas_gui.1.x.on
 		trigger = {
 			NOT = {
@@ -212,6 +320,9 @@ country_event = {
 					}
 				}
 			}
+			country_event = {
+				id = sas_gui.1
+			}
 		}
 	}
 	option = {
@@ -224,6 +335,9 @@ country_event = {
 		custom_tooltip = sas_gui.1.x.off.tooltip
 		hidden_effect = {
 			remove_country_flag = PARADOX_GENERATION_SYSTEM
+			country_event = {
+				id = sas_gui.1
+			}
 		}
 	}
 	option = {
@@ -292,20 +406,5 @@ event = {
 				set_disabled = no
 			}
 		}
-	}
-}
-
-country_event = {
-	id = sas_gui.3
-	title = "sas_gui.3.name"
-	desc = "sas_gui.3.desc"
-	diplomatic = yes
-	custom_gui = "teleport_shortcut_window"
-	is_triggered_only = yes
-	force_open = yes
-	auto_opens = yes
-	trigger = {
-	}
-	immediate = {
 	}
 }

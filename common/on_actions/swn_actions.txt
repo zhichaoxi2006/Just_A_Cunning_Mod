@@ -14,7 +14,6 @@ on_entering_system = {
 # From = Disabler Ship
 on_ship_disabled = {
 	events = {
-		pgs.2
 		sas_gui.2
 	}
 }
@@ -52,13 +51,5 @@ on_fleet_enter_orbit = {
 on_army_killed_in_combat = {
 	events = {
 		s_andrew_swann_entity.1
-	}
-}
-
-# No scope, like on_game_start
-# Does not run when loading MP saves due to OOS concerns
-on_single_player_save_game_load = {
-	events = {
-		narrative_strike.1
 	}
 }

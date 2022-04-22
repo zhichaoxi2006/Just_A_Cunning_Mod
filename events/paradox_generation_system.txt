@@ -74,8 +74,13 @@ ship_event = {
 						which = ship_shield_reduction_number
 						value = 1
 					}
-					remove_modifier = swn_mod_ship_shield_reduction
-					add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_shield_reduction
+						add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+					}
 				}
 				if = {
 					limit = {
@@ -95,8 +100,13 @@ ship_event = {
 						which = ship_armor_reduction_number
 						value = 1
 					}
-					remove_modifier = swn_mod_ship_armor_reduction
-					add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_armor_reduction
+						add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+					}
 				}
 				if = {
 					limit = {
@@ -105,6 +115,87 @@ ship_event = {
 						}
 					}
 					destroy_ship = This
+				}
+				if = {
+					limit = {
+						event_target:paradox_generation_system_ship.owner = {
+							has_country_flag = aggro_range_editor
+						}
+					}
+					fleet = {
+						set_aggro_range = 0
+					}
+				}
+				if = {
+					limit = {
+						event_target:paradox_generation_system_ship.owner = {
+							has_country_flag = anti_hull_repair
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_hull_regen_add_perc
+						variable = ship_hull_regen_add_perc_number
+					}
+					multiply_variable = {
+						which = ship_hull_regen_add_perc_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_hull_regen_add_perc_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
+						}
+						remove_modifier = swn_mod_ship_hull_repair_anti
+						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_hull_regen_add_static
+						variable = ship_hull_regen_add_static_number
+					}
+					multiply_variable = {
+						which = ship_hull_regen_add_static_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_hull_regen_add_static_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
+						}
+						remove_modifier = swn_mod_ship_hull_repair_anti_static
+						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:paradox_generation_system_ship.owner = {
+							has_country_flag = speed_reduction
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_speed_reduction
+						variable = ship_speed_reduction_number
+					}
+					multiply_variable = {
+						which = ship_speed_reduction_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_speed_reduction_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_speed_reduction_number value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_speed_reduction
+						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+					}
 				}
 			}
 		}
@@ -126,14 +217,14 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		This = {
-			save_event_target_as = Ship
+			save_event_target_as = paradox_generation_system_ship
 		}
 		From = {
 			save_event_target_as = Disabler_Ship
 		}
 		if = {
 			limit = {
-				event_target:Ship.owner = {
+				event_target:paradox_generation_system_ship.owner = {
 					has_country_flag = PARADOX_GENERATION_SYSTEM
 				}
 				has_component = PARADOX_GENERATION_SYSTEM
@@ -151,7 +242,7 @@ event = {
 						if = {
 							limit = {
 								NOT = {
-									event_target:Ship.owner = {
+									event_target:paradox_generation_system_ship.owner = {
 										has_country_flag = system_wide
 									}
 								}
@@ -166,7 +257,7 @@ event = {
 					}
 					if = {
 						limit = {
-							event_target:Ship.owner = {
+							event_target:paradox_generation_system_ship.owner = {
 								has_country_flag = ship_hp_amount_reduce_system
 							}
 						}
@@ -198,8 +289,13 @@ event = {
 							which = ship_shield_reduction_number
 							value = 1
 						}
-						remove_modifier = swn_mod_ship_shield_reduction
-						add_modifier = {	modifier = swn_mod_ship_shield_reduction	days = 30	multiplier = ship_shield_reduction_number	}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+							}
+							remove_modifier = swn_mod_ship_shield_reduction
+							add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+						}
 					}
 					if = {
 						limit = {
@@ -217,18 +313,33 @@ event = {
 						}
 						change_variable = {
 							which = ship_armor_reduction_number
-							value = 1
+							value = 0
 						}
-						remove_modifier = swn_mod_ship_armor_reduction
-						add_modifier = {	modifier = swn_mod_ship_armor_reduction	days = 30	multiplier = ship_armor_reduction_number	}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+							}
+							remove_modifier = swn_mod_ship_armor_reduction
+							add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+						}
 					}
 					if = {
 						limit = {
-							event_target:Ship.owner = {
+							event_target:paradox_generation_system_ship.owner = {
 								has_country_flag = narrative_editing_warship_narrative_strike
 							}
 						}
 						destroy_ship = This
+					}
+					if = {
+						limit = {
+							event_target:paradox_generation_system_ship.owner = {
+								has_country_flag = aggro_range_editor
+							}
+						}
+						fleet = {
+							set_aggro_range = 0
+						}
 					}
 				}
 			}
@@ -303,8 +414,13 @@ ship_event = {
 						which = ship_shield_reduction_number
 						value = 1
 					}
-					remove_modifier = swn_mod_ship_shield_reduction
-					add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_shield_reduction
+						add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+					}
 				}
 				if = {
 					limit = {
@@ -324,8 +440,13 @@ ship_event = {
 						which = ship_armor_reduction_number
 						value = 1
 					}
-					remove_modifier = swn_mod_ship_armor_reduction
-					add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_armor_reduction
+						add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+					}
 				}
 				if = {
 					limit = {
@@ -334,6 +455,87 @@ ship_event = {
 						}
 					}
 					destroy_ship = This
+				}
+				if = {
+					limit = {
+						event_target:paradox_generation_system_ship.owner = {
+							has_country_flag = aggro_range_editor
+						}
+					}
+					fleet = {
+						set_aggro_range = 0
+					}
+				}
+				if = {
+					limit = {
+						event_target:paradox_generation_system_ship.owner = {
+							has_country_flag = anti_hull_repair
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_hull_regen_add_perc
+						variable = ship_hull_regen_add_perc_number
+					}
+					multiply_variable = {
+						which = ship_hull_regen_add_perc_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_hull_regen_add_perc_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
+						}
+						remove_modifier = swn_mod_ship_hull_repair_anti
+						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_hull_regen_add_static
+						variable = ship_hull_regen_add_static_number
+					}
+					multiply_variable = {
+						which = ship_hull_regen_add_static_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_hull_regen_add_static_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
+						}
+						remove_modifier = swn_mod_ship_hull_repair_anti_static
+						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:paradox_generation_system_ship.owner = {
+							has_country_flag = speed_reduction
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_speed_reduction
+						variable = ship_speed_reduction_number
+					}
+					multiply_variable = {
+						which = ship_speed_reduction_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_speed_reduction_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_speed_reduction_number value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_speed_reduction
+						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+					}
 				}
 			}
 		}

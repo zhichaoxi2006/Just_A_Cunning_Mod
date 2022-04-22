@@ -63,9 +63,9 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NARRATIVE_EDITING_REACTOR"
+	key = "PARADOX_REACTOR"
 	size = small
-	icon = "GFX_narrative_editing_reactor"
+	icon = "GFX_paradox_reactor"
 	icon_frame = 1
 	power = 1919810
 	resources = {
@@ -108,40 +108,58 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
-	size = aux
-	icon = "GFX_narrative_level_resuscitation_device"
+	key = "SHIP_AURA_ANTI_REPAIR"
+	size = medium
+	icon = "GFX_ship_part_aura_anti_repair"
 	icon_frame = 1
-	component_set = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
-	modifier = {
-		ship_hull_regen_add_perc = 1432
-	}
-	ai_weight = {
-		weight = 0
+	power = 0
+
+	size_restriction = {  }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "aura_anti_repair"
+		system_wide = yes
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_anti_repair
+			priority = 250
+		}
+
+		modifier = {
+			ship_hull_regen_add_perc = -1432.74
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
 	}
 }
 
 utility_component_template = {
-	key = "PARADOX_GENERATION_SYSTEM"
-	size = aux
-	icon = "GFX_malicious_projection_system"
+	key = "SHIP_AURA_MINEFIELD_PARADOX"
+	size = medium
+	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	component_set = "PARADOX_GENERATION_SYSTEM"
+	power = 0
+
+	size_restriction = {  }
+	component_set = "ship_aura_components"
+
 	hostile_aura = {
-		name = "narrative_editing_offensive_aura"
-		system_wide = no
-		stack_info = {
-			id = aura_narrative_editing_offensive
-			priority = 1235
-		}
-		modifier = {
-			ship_armor_reduction = 10
-			ship_shield_reduction = 10
-			ship_engagement_range_mult = -100
-			ship_hull_regen_add_perc = -1432.74
+		name = "aura_minefield_paradox"
+		system_wide = yes
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_minefield_paradox
+			priority = 250
 		}
 		damage_per_day = {
 			damage = { min = 25 max = 50 }
@@ -161,6 +179,31 @@ utility_component_template = {
 			}
 		}
 	}
+}
+
+utility_component_template = {
+	key = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
+	size = aux
+	icon = "GFX_narrative_level_resuscitation_device"
+	icon_frame = 1
+	component_set = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
+	modifier = {
+		ship_hull_regen_add_perc = 1432
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "PARADOX_GENERATION_SYSTEM"
+	size = aux
+	icon = "GFX_paradox_generation_system"
+	icon_frame = 1
+	prerequisites = {
+		"tech_narrative_editing_weapon"
+	}
+	component_set = "PARADOX_GENERATION_SYSTEM"
 	resources = {
 		category = ship_components
 		cost = {

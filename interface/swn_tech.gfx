@@ -1,7 +1,7 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_malicious_projection_system"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_malicious_projection_system.dds"
+		name = "GFX_paradox_generation_system"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_paradox_generation_system.dds"
 	}
 	spriteType = {
 		name = "GFX_narrative_editing_missile"
@@ -24,8 +24,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
 	}
 	spriteType = {
-		name = "GFX_narrative_editing_reactor"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_editing_reactor.dds"
+		name = "GFX_paradox_reactor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_paradox_reactor.dds"
 	}
 	spriteType = {
 		name = "GFX_ship_coordinate_editing_module"
@@ -38,5 +38,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_swn_thruster"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_swn_thruster.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_aura_anti_repair"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_anti_repair.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_aura_minefield_paradox"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_minefield_paradox.dds"
 	}
 }

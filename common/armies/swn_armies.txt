@@ -1,9 +1,9 @@
 paradox_army = {
-	damage = 42.00
-	health = 25.00
+	damage = 53.00
+	health = 20.00
 	has_morale = no
 	morale_damage = 40.00
-	collateral_damage = 0
+	collateral_damage = 1.00
 	war_exhaustion = 1.00
 	time = 10
 	has_species = no

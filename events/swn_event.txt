@@ -148,11 +148,25 @@ event = {
 			}
 			From = {
 				create_army = {
-					name = Warship_Army
+					name = Warship_army
 					owner = event_target:Tranport_ship.owner
 					type = paradox_army
 				}
 			}
+		}
+	}
+	option = {
+		name = s_andrew_swann_entity.15.d
+		trigger = {
+		}
+		allow = {
+			From = {
+				can_destroy_planet_with_PLANET_KILLER_CRACKER = yes
+			}
+		}
+		custom_tooltip = s_andrew_swann_entity.15.d.tooltip
+		hidden_effect = {
+			fire_on_action = { on_action = on_destroy_planet_with_PLANET_KILLER_CRACKER scopes = { From = This This = From } }
 		}
 	}
 	option = {
