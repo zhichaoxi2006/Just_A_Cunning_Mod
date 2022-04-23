@@ -8,6 +8,8 @@ paradox_space_dragon = {
 	max_hitpoints = 26426
 	modifier = {
 		ship_evasion_add = 100
+		ship_armor_add = 20000
+		ship_shield_add = 20000
 	}
 	size_multiplier = 32
 	fleet_slot_size = 32

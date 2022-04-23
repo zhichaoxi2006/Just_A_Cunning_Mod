@@ -13,3 +13,12 @@ swn_mod_ship_hull_repair_anti_static = {
 swn_mod_ship_speed_reduction = {
 	ship_speed_reduction = 1
 }
+swn_mod_ship_fire_rate_mult = {
+	ship_fire_rate_mult = 1
+}
+swn_mod_ship_weapon_damage = {
+	ship_weapon_damage = 1
+}
+swn_mod_ship_weapon_range_mult = {
+	ship_weapon_range_mult = 1
+}

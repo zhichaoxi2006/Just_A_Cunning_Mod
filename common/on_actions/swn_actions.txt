@@ -14,7 +14,7 @@ on_entering_system = {
 # From = Disabler Ship
 on_ship_disabled = {
 	events = {
-		sas_gui.2
+		pgs.2
 	}
 }
 

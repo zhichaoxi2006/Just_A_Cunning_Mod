@@ -21,6 +21,17 @@ ship_event = {
 			flag = paradox_generation_system_cooldown
 			days = 3
 		}
+		if = {
+			limit = {
+				event_target:paradox_generation_system_ship.owner = {
+					has_country_flag = hull_repair
+				}
+			}
+			This = {
+				repair_ship = yes
+				set_disabled = no
+			}
+		}
 		THIS.solar_system = {
 			every_ship_in_system = {
 				limit = {
@@ -191,7 +202,7 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_speed_reduction_number value < 1.00	}
+							check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
 						}
 						remove_modifier = swn_mod_ship_speed_reduction
 						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
@@ -216,131 +227,70 @@ event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		This = {
-			save_event_target_as = paradox_generation_system_ship
-		}
-		From = {
-			save_event_target_as = Disabler_Ship
+		if = {
+			limit = {
+				This.owner = {
+					has_country_flag = hull_repair
+				}
+				This = {
+					has_component = PARADOX_GENERATION_SYSTEM
+				}
+			}
+			This = {
+				repair_ship = yes
+				set_disabled = no
+				add_modifier = {	modifier = swn_mod_ship_fire_rate_mult	days = 10	multiplier = 2	}
+			}
 		}
 		if = {
 			limit = {
-				event_target:paradox_generation_system_ship.owner = {
-					has_country_flag = PARADOX_GENERATION_SYSTEM
+				This.owner = {
+					has_country_flag = debuff_cleaner
 				}
-				has_component = PARADOX_GENERATION_SYSTEM
-				NOT = {
-					has_ship_flag = paradox_generation_system_cooldown
+				This = {
+					has_component = PARADOX_GENERATION_SYSTEM
 				}
 			}
-			set_timed_ship_flag = {
-				flag = paradox_generation_system_cooldown
-				days = 3
-			}
-			This.solar_system = {
-				every_ship_in_system = {
+			This = {
+				export_modifier_to_variable = {
+					modifier = ship_weapon_damage
+					variable = ship_weapon_damage_number
+				}
+				multiply_variable = {
+					which = ship_weapon_damage_number
+					value = -1
+				}
+				change_variable = {
+					which = ship_weapon_damage_number
+					value = 0
+				}
+				if = {
 					limit = {
-						if = {
-							limit = {
-								NOT = {
-									event_target:paradox_generation_system_ship.owner = {
-										has_country_flag = system_wide
-									}
-								}
-							}
-							is_in_combat = yes
-						}
-						NOT = {
-							This = {
-								is_owned_by = event_target:paradox_generation_system_ship.owner
-							}
-						}
+						check_modifier_value = {	modifier = ship_weapon_damage value < -1.00	}
 					}
-					if = {
-						limit = {
-							event_target:paradox_generation_system_ship.owner = {
-								has_country_flag = ship_hp_amount_reduce_system
-							}
-						}
-						export_trigger_value_to_variable = {
-							trigger = has_hp
-							variable = ship_hp_amount
-						}
-						subtract_variable = {
-							which = ship_hp_amount
-							value = @Residual_hull_value
-						}
-						reduce_hp = ship_hp_amount
+					remove_modifier = swn_mod_ship_weapon_damage
+					add_modifier = {	modifier = swn_mod_ship_weapon_damage	months = 1	multiplier = ship_weapon_damage_number	}
+				}
+			}
+			This = {
+				export_modifier_to_variable = {
+					modifier = ship_weapon_range_mult
+					variable = ship_weapon_range_mult_number
+				}
+				multiply_variable = {
+					which = ship_weapon_range_mult_number
+					value = -1
+				}
+				change_variable = {
+					which = ship_weapon_range_mult_number
+					value = 0
+				}
+				if = {
+					limit = {
+						check_modifier_value = {	modifier = ship_weapon_range_mult value < -1.00	}
 					}
-					if = {
-						limit = {
-							event_target:paradox_generation_system_ship.owner = {
-								has_country_flag = shield_erasing_system
-							}
-						}
-						export_modifier_to_variable = {
-							modifier = ship_shield_reduction
-							variable = ship_shield_reduction_number
-						}
-						multiply_variable = {
-							which = ship_shield_reduction_number
-							value = -1
-						}
-						change_variable = {
-							which = ship_shield_reduction_number
-							value = 1
-						}
-						if = {
-							limit = {
-								check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
-							}
-							remove_modifier = swn_mod_ship_shield_reduction
-							add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
-						}
-					}
-					if = {
-						limit = {
-							event_target:paradox_generation_system_ship.owner = {
-								has_country_flag = shield_erasing_system
-							}
-						}
-						export_modifier_to_variable = {
-							modifier = ship_armor_reduction
-							variable = ship_armor_reduction_number
-						}
-						multiply_variable = {
-							which = ship_armor_reduction_number
-							value = -1
-						}
-						change_variable = {
-							which = ship_armor_reduction_number
-							value = 0
-						}
-						if = {
-							limit = {
-								check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
-							}
-							remove_modifier = swn_mod_ship_armor_reduction
-							add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
-						}
-					}
-					if = {
-						limit = {
-							event_target:paradox_generation_system_ship.owner = {
-								has_country_flag = narrative_editing_warship_narrative_strike
-							}
-						}
-						destroy_ship = This
-					}
-					if = {
-						limit = {
-							event_target:paradox_generation_system_ship.owner = {
-								has_country_flag = aggro_range_editor
-							}
-						}
-						fleet = {
-							set_aggro_range = 0
-						}
-					}
+					remove_modifier = swn_mod_ship_speed_reduction
+					add_modifier = {	modifier = swn_mod_ship_weapon_range_mult	months = 1	multiplier = ship_weapon_range_mult_number	}
 				}
 			}
 		}

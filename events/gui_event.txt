@@ -299,6 +299,42 @@ country_event = {
 		}
 	}
 	option = {
+		name = sas_gui.1.i.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = hull_repair
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.i.on.tooltip
+		hidden_effect = {
+			set_country_flag = hull_repair
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.i.off
+		trigger = {
+			ROOT = {
+				has_country_flag = hull_repair
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.i.off.tooltip
+		hidden_effect = {
+			remove_country_flag = hull_repair
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
 		name = sas_gui.1.x.on
 		trigger = {
 			NOT = {
@@ -384,27 +420,6 @@ country_event = {
 		}
 		custom_tooltip = sas_gui.1.z.tooltip
 		hidden_effect = {
-		}
-	}
-}
-
-event = {
-	id = sas_gui.2
-	hide_window = yes
-	trigger = {
-	}
-	is_triggered_only = yes
-	immediate = {
-		if = {
-			limit = {
-				This = {
-					has_component = NARRATIVE_LEVEL_RESUSCITATION_DEVICE
-				}
-			}
-			This = {
-				repair_ship = yes
-				set_disabled = no
-			}
 		}
 	}
 }
