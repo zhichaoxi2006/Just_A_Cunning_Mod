@@ -1,0 +1,486 @@
+ship_section_template = {
+	key = "PARADOX_SPACE_DRAGON_BOW_SECTION"
+	ship_size = paradox_space_dragon
+	fits_on_slot = "bow"
+	entity = "juggernaut_core_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "PLANET_KILLER_01"
+		template = "invisible_planet_killer_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "PLANET_KILLER_02"
+		template = "invisible_planet_killer_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_03"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_04"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_05"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_06"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_07"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_08"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_09"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_10"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_11"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_12"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_13"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_14"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_15"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_16"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_17"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_18"
+		template = "invisible_titanic_swn"
+		locatorname = "xl_gun_02"
+	}
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 21
+	aux_utility_slots = 4
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 960
+		}
+	}
+}
+
+ship_section_template = {
+	key = "PARADOX_SPACE_DRAGON_MID_SECTION"
+	ship_size = paradox_space_dragon
+	fits_on_slot = "mid"
+	entity = "juggernaut_core_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_03"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_04"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_05"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_06"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_07"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_08"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_09"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_10"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_11"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_12"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_13"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_14"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_15"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_16"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_17"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_18"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_19"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_20"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_21"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_22"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_23"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_24"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_25"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_26"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_27"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_28"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_29"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_30"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_31"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_32"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_33"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_34"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_35"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_36"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_37"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_38"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_39"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_40"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_41"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_42"
+		template = "extra_large_turret"
+		locatorname = "xl_gun_02"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 21
+	aux_utility_slots = 4
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 960
+		}
+	}
+}
+
+ship_section_template = {
+	key = "PARADOX_SPACE_DRAGON_MID_2_SECTION"
+	ship_size = paradox_space_dragon
+	fits_on_slot = "mid_2"
+	entity = "juggernaut_core_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_02"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_03"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_04"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_05"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_05"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_06"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_06"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_07"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_08"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_02"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_09"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_03"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_10"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_04"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_11"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_05"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_12"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_06"
+	}component_slot = {
+		name = "STRIKE_CRAFT_13"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_14"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_02"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_15"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_03"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_16"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_04"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_17"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_05"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_18"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_06"
+	}
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 21
+	aux_utility_slots = 4
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 960
+		}
+	}
+}
+
+ship_section_template = {
+	key = "PARADOX_SPACE_DRAGON_STERN_SECTION"
+	ship_size = paradox_space_dragon
+	fits_on_slot = "stern"
+	entity = "juggernaut_core_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "gun_1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "gun_2"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "gun_3"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		template = "medium_turret"
+		locatorname = "gun_4"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_05"
+		template = "medium_turret"
+		locatorname = "gun_5"
+	}
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 21
+	aux_utility_slots = 4
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 960
+		}
+	}
+}

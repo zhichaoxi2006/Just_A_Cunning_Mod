@@ -196,7 +196,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "PARADOX_GENERATION_SYSTEM"
+	key = "REALITY_DISTORTION_SYSTEM"
 	size = aux
 	icon = "GFX_paradox_generation_system"
 	icon_frame = 1

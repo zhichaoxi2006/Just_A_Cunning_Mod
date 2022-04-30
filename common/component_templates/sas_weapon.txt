@@ -46,6 +46,7 @@ strike_craft_component_template = {
 	tags = {
 		weapon_type_strike_craft
 	}
+	hidden = yes
 }
 
 weapon_component_template = {

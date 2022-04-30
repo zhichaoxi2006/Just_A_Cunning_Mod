@@ -137,3 +137,42 @@ event = {
 		}
 	}
 }
+
+country_event = {
+	id = rds.10
+	hide_window = yes
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = last_month_energy_diffence_swn
+					}
+				}
+				export_resource_stockpile_to_variable = { resource = energy variable = energy_stockpile_swn }
+				export_resource_income_to_variable = { resource = energy variable = energy_income_swn }
+				set_variable = { which = last_month_energy_diffence_swn value = energy_income_swn }
+				subtract_variable = { which = last_month_energy_diffence_swn value = energy_stockpile_swn }
+			}
+			else = {
+				export_resource_stockpile_to_variable = { resource = energy variable = energy_stockpile_swn }
+				export_resource_income_to_variable = { resource = energy variable = energy_income_swn }
+				set_variable = { which = energy_diffence_swn value = energy_income_swn }
+				subtract_variable = { which = energy_diffence_swn value = energy_stockpile_swn }
+				if = {
+					limit = {
+						check_variable = { which = energy_diffence_swn value < last_month_energy_diffence_swn }
+					}	
+					set_variable = { which = energy_resource_add_swn value = energy_diffence_swn }
+					multiply_variable = { which = energy_resource_add_swn value = -1 }
+					add_monthly_resource_mult = { resource = energy value = energy_resource_add_swn }
+				}
+				set_variable = { which = last_month_energy_diffence_swn value = energy_diffence_swn }
+			}
+		}
+	}
+}

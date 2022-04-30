@@ -1,7 +1,7 @@
-namespace = pgs
+namespace = rds
 @Residual_hull_value = 1
 ship_event = {
-	id = pgs.1
+	id = rds.1
 	hide_window = yes
 	trigger = {
 		THIS.owner = {
@@ -212,7 +212,7 @@ ship_event = {
 		}
 		THIS = {
 			ship_event = {
-				id = pgs.1
+				id = rds.1
 				day = 3
 				scopes = { THIS = THIS }
 			}
@@ -221,7 +221,7 @@ ship_event = {
 }
 
 event = {
-	id = pgs.2
+	id = rds.2
 	hide_window = yes
 	trigger = {
 	}
@@ -242,63 +242,11 @@ event = {
 				add_modifier = {	modifier = swn_mod_ship_fire_rate_mult	days = 10	multiplier = 2	}
 			}
 		}
-		if = {
-			limit = {
-				This.owner = {
-					has_country_flag = debuff_cleaner
-				}
-				This = {
-					has_component = PARADOX_GENERATION_SYSTEM
-				}
-			}
-			This = {
-				export_modifier_to_variable = {
-					modifier = ship_weapon_damage
-					variable = ship_weapon_damage_number
-				}
-				multiply_variable = {
-					which = ship_weapon_damage_number
-					value = -1
-				}
-				change_variable = {
-					which = ship_weapon_damage_number
-					value = 0
-				}
-				if = {
-					limit = {
-						check_modifier_value = {	modifier = ship_weapon_damage value < -1.00	}
-					}
-					remove_modifier = swn_mod_ship_weapon_damage
-					add_modifier = {	modifier = swn_mod_ship_weapon_damage	months = 1	multiplier = ship_weapon_damage_number	}
-				}
-			}
-			This = {
-				export_modifier_to_variable = {
-					modifier = ship_weapon_range_mult
-					variable = ship_weapon_range_mult_number
-				}
-				multiply_variable = {
-					which = ship_weapon_range_mult_number
-					value = -1
-				}
-				change_variable = {
-					which = ship_weapon_range_mult_number
-					value = 0
-				}
-				if = {
-					limit = {
-						check_modifier_value = {	modifier = ship_weapon_range_mult value < -1.00	}
-					}
-					remove_modifier = swn_mod_ship_speed_reduction
-					add_modifier = {	modifier = swn_mod_ship_weapon_range_mult	months = 1	multiplier = ship_weapon_range_mult_number	}
-				}
-			}
-		}
 	}
 }
 
 ship_event = {
-	id = pgs.3
+	id = rds.3
 	hide_window = yes
 	trigger = {
 		This.owner = {
@@ -489,5 +437,17 @@ ship_event = {
 				}
 			}
 		}
+	}
+}
+
+event = {
+	id = rds.4
+	hide_window = yes
+	trigger = {
+		is_ship_size = paradox_space_dragon
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_disable_at_health = 0.01
 	}
 }

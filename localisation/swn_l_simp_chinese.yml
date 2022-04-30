@@ -12,8 +12,8 @@
  SMALL_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "小型叙事删除奇点加速器"
  MEDIUM_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "中型叙事删除奇点加速器"
  LARGE_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "大型叙事删除奇点加速器"
- PARADOX_GENERATION_SYSTEM: "悖论生成系统"
- PARADOX_GENERATION_SYSTEM_DESC: "向敌方投射恶意的终极武器"
+ REALITY_DISTORTION_SYSTEM: "现实扭曲系统"
+ REALITY_DISTORTION_SYSTEM_DESC: "能扭曲现实的玩意，但是不是通过控制休谟，而是摆弄叙事。"
  aura_paradox_generation: "悖论生成"
  NARRATIVE_LEVEL_RESUSCITATION_DEVICE: "叙事级复苏装置"
  NARRATIVE_LEVEL_RESUSCITATION_DEVICE_DESC: "能在已死的情况下使舰船复活的装置。"
@@ -28,7 +28,10 @@
 
  #Ship_size
  paradox_space_dragon: "悖论星龙"
- paradox_space_dragon_red_key: "悖论星龙核心"
+ PARADOX_SPACE_DRAGON_BOW_SECTION: "悖论星龙舰首"
+ PARADOX_SPACE_DRAGON_MID_SECTION: "悖论星龙舰前中"
+ PARADOX_SPACE_DRAGON_MID_2_SECTION: "悖论星龙舰后中"
+ PARADOX_SPACE_DRAGON_STERN_SECTION: "悖论星龙舰尾"
 
  #Technology
  narrative_editing_technology: "叙事编辑科技"

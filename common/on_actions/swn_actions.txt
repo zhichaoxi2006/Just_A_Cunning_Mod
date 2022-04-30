@@ -4,7 +4,7 @@
 # FromFrom = Country
 on_entering_system = {
 	events = {
-		pgs.3
+		rds.3
 	}
 	random_events = {
 	}
@@ -14,7 +14,7 @@ on_entering_system = {
 # From = Disabler Ship
 on_ship_disabled = {
 	events = {
-		pgs.2
+		rds.2
 	}
 }
 
@@ -27,12 +27,6 @@ on_entering_battle = {
 	}
 }
 
-# This = owner of fleet
-# From = disbanded fleet
-on_fleet_disbanded = {
-	events = {
-	}
-}
 
 #From = Planet/Starbase/Megastructure scope
 #This = Fleet scope
@@ -51,5 +45,14 @@ on_fleet_enter_orbit = {
 on_army_killed_in_combat = {
 	events = {
 		s_andrew_swann_entity.1
+	}
+}
+
+# A ship has been built
+# Root = Ship
+# From = Planet
+on_ship_built = {
+	events = {
+		rds.4
 	}
 }
