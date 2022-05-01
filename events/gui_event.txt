@@ -335,48 +335,6 @@ country_event = {
 		}
 	}
 	option = {
-		name = sas_gui.1.x.on
-		trigger = {
-			NOT = {
-				has_country_flag = PARADOX_GENERATION_SYSTEM
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.x.on.tooltip
-		hidden_effect = {
-			set_country_flag = PARADOX_GENERATION_SYSTEM
-			every_owned_ship = {
-				limit = {
-				}
-				ship_event = {
-					id = pgs.1
-					scopes = {
-						THIS = THIS
-					}
-				}
-			}
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.x.off
-		trigger = {
-			has_country_flag = PARADOX_GENERATION_SYSTEM
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.x.off.tooltip
-		hidden_effect = {
-			remove_country_flag = PARADOX_GENERATION_SYSTEM
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
 		name = sas_gui.1.y.on
 		trigger = {
 			NOT = {

@@ -26,7 +26,7 @@ ship_teleport_shortcut_debug = {
 		From = {
 			every_owned_ship = {
 				limit = {
-					is_ship_size = paradox_space_dragon
+					is_ship_size = pataphysics_strike_ship
 				}
 				This.fleet = {
 					set_location = {

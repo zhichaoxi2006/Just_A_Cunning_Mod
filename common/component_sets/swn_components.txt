@@ -20,7 +20,7 @@ component_set = {
 }
 
 component_set = {
-	key = "PARADOX_GENERATION_SYSTEM"
+	key = "REALITY_DISTORTION_SYSTEM"
 
 	icon = "GFX_paradox_generation_system"
 	icon_frame = 1

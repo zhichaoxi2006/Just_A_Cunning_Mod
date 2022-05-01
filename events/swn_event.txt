@@ -68,7 +68,7 @@ event = {
 	is_triggered_only = yes
 	trigger = {
 		This = {
-			is_ship_size = paradox_space_dragon
+			is_ship_size = pataphysics_strike_ship
 		}
 		From = {
 			is_scope_type = planet

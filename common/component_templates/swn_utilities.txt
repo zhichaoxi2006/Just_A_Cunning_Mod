@@ -203,7 +203,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_narrative_editing_weapon"
 	}
-	component_set = "PARADOX_GENERATION_SYSTEM"
+	component_set = "REALITY_DISTORTION_SYSTEM"
 	resources = {
 		category = ship_components
 		cost = {

@@ -18,7 +18,7 @@ event = {
 				event_target:paradox_generation_system_ship.owner = {
 					has_country_flag = PARADOX_GENERATION_SYSTEM
 				}
-				has_component = PARADOX_GENERATION_SYSTEM
+				has_component = REALITY_DISTORTION_SYSTEM
 				NOT = {
 					has_ship_flag = paradox_generation_system_cooldown
 				}

@@ -4,10 +4,7 @@ ship_event = {
 	id = rds.1
 	hide_window = yes
 	trigger = {
-		THIS.owner = {
-			has_country_flag = PARADOX_GENERATION_SYSTEM
-		}
-		has_component = PARADOX_GENERATION_SYSTEM
+		has_component = REALITY_DISTORTION_SYSTEM
 		NOT = {
 			has_ship_flag = paradox_generation_system_cooldown
 		}
@@ -233,7 +230,7 @@ event = {
 					has_country_flag = hull_repair
 				}
 				This = {
-					has_component = PARADOX_GENERATION_SYSTEM
+					has_component = REALITY_DISTORTION_SYSTEM
 				}
 			}
 			This = {
@@ -249,10 +246,7 @@ ship_event = {
 	id = rds.3
 	hide_window = yes
 	trigger = {
-		This.owner = {
-			has_country_flag = PARADOX_GENERATION_SYSTEM
-		}
-		has_component = PARADOX_GENERATION_SYSTEM
+		has_component = REALITY_DISTORTION_SYSTEM
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -437,6 +431,11 @@ ship_event = {
 				}
 			}
 		}
+		ROOT = {
+			ship_event = {
+				id = rds.1
+			}
+		}
 	}
 }
 
@@ -444,10 +443,13 @@ event = {
 	id = rds.4
 	hide_window = yes
 	trigger = {
-		is_ship_size = paradox_space_dragon
+		has_component = REALITY_DISTORTION_SYSTEM
 	}
 	is_triggered_only = yes
 	immediate = {
 		set_disable_at_health = 0.01
+		ship_event = {
+			id = rds.1
+		}
 	}
 }

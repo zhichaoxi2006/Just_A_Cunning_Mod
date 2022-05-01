@@ -1,17 +1,17 @@
 ship_section_template = {
-	key = "PARADOX_SPACE_DRAGON_BOW_SECTION"
-	ship_size = paradox_space_dragon
+	key = "PATAPHYSICS_STRIKE_SHIP_BOW_SECTION"
+	ship_size = pataphysics_strike_ship
 	fits_on_slot = "bow"
 	entity = "juggernaut_core_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	component_slot = {
-		name = "PLANET_KILLER_01"
-		template = "invisible_planet_killer_swn"
+		name = "TITANIC_01"
+		template = "invisible_titanic_swn"
 		locatorname = "xl_gun_01"
 	}
 	component_slot = {
-		name = "PLANET_KILLER_02"
-		template = "invisible_planet_killer_swn"
+		name = "TITANIC_02"
+		template = "invisible_titanic_swn"
 		locatorname = "xl_gun_02"
 	}
 	component_slot = {
@@ -96,8 +96,8 @@ ship_section_template = {
 	}
 	small_utility_slots = 0
 	medium_utility_slots = 0
-	large_utility_slots = 21
-	aux_utility_slots = 4
+	large_utility_slots = 20
+	aux_utility_slots = 5
 	resources = {
 		category = ship_sections
 		cost = {
@@ -107,8 +107,8 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "PARADOX_SPACE_DRAGON_MID_SECTION"
-	ship_size = paradox_space_dragon
+	key = "PATAPHYSICS_STRIKE_SHIP_MID_SECTION"
+	ship_size = pataphysics_strike_ship
 	fits_on_slot = "mid"
 	entity = "juggernaut_core_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -232,101 +232,11 @@ ship_section_template = {
 		template = "extra_large_turret"
 		locatorname = "xl_gun_02"
 	}
-	component_slot = {
-		name = "EXTRA_LARGE_25"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_26"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_27"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_28"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_29"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_30"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_31"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_32"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_33"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_34"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_35"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_36"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_37"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_38"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_39"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_40"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_41"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_01"
-	}
-	component_slot = {
-		name = "EXTRA_LARGE_42"
-		template = "extra_large_turret"
-		locatorname = "xl_gun_02"
-	}
 	
 	small_utility_slots = 0
 	medium_utility_slots = 0
-	large_utility_slots = 21
-	aux_utility_slots = 4
+	large_utility_slots = 20
+	aux_utility_slots = 5
 	resources = {
 		category = ship_sections
 		cost = {
@@ -336,8 +246,8 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "PARADOX_SPACE_DRAGON_MID_2_SECTION"
-	ship_size = paradox_space_dragon
+	key = "PATAPHYSICS_STRIKE_SHIP_MID_2_SECTION"
+	ship_size = pataphysics_strike_ship
 	fits_on_slot = "mid_2"
 	entity = "juggernaut_core_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -432,8 +342,8 @@ ship_section_template = {
 	}
 	small_utility_slots = 0
 	medium_utility_slots = 0
-	large_utility_slots = 21
-	aux_utility_slots = 4
+	large_utility_slots = 20
+	aux_utility_slots = 5
 	resources = {
 		category = ship_sections
 		cost = {
@@ -443,8 +353,8 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "PARADOX_SPACE_DRAGON_STERN_SECTION"
-	ship_size = paradox_space_dragon
+	key = "PATAPHYSICS_STRIKE_SHIP_STERN_SECTION"
+	ship_size = pataphysics_strike_ship
 	fits_on_slot = "stern"
 	entity = "juggernaut_core_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -473,10 +383,35 @@ ship_section_template = {
 		template = "medium_turret"
 		locatorname = "gun_5"
 	}
+	component_slot = {
+		name = "MEDIUM_GUN_06"
+		template = "medium_turret"
+		locatorname = "gun_1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_07"
+		template = "medium_turret"
+		locatorname = "gun_2"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_08"
+		template = "medium_turret"
+		locatorname = "gun_3"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_09"
+		template = "medium_turret"
+		locatorname = "gun_4"
+	}
+	component_slot = {
+		name = "PLANET_KILLER"
+		template = "invisible_planet_killer_swn"
+		locatorname = "gun_5"
+	}
 	small_utility_slots = 0
 	medium_utility_slots = 0
-	large_utility_slots = 21
-	aux_utility_slots = 4
+	large_utility_slots = 20
+	aux_utility_slots = 5
 	resources = {
 		category = ship_sections
 		cost = {

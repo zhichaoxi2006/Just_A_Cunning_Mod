@@ -1,4 +1,4 @@
-paradox_space_dragon = {
+pataphysics_strike_ship = {
 	formation_priority = @titan_formation_priority
 	max_speed = 2564
 	acceleration = 133.2
@@ -19,7 +19,7 @@ paradox_space_dragon = {
 		"mid" = {
 			locator = "part1"
 		}
-		"mid2" = {
+		"mid_2" = {
 			locator = "part1"
 		}
 		"stern" = {
