@@ -36,9 +36,7 @@ pataphysics_strike_ship = {
 	can_disable = yes
 	is_space_object = yes
 	default_behavior = narrative_editing_warship
-	prerequisites = {
-		"tech_narrative_editing_warship"
-	}
+	prerequisites = {tech_pataphysics_strike_ship}
 	combat_disengage_chance = 0
 	class = shipclass_military
 	construction_type = starbase_shipyard

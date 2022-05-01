@@ -4,24 +4,24 @@ sas_technology_get = {
 	}
 	effect = {
 		give_technology = {
-			tech = narrative_editing_technology
-			message = yes
+			tech = pataphysics_technology
+			message = no
 		}
 		give_technology = {
-			tech = tech_narrative_editing_utilities
-			message = yes
+			tech = tech_pataphysics_ship_utilities
+			message = no
 		}
 		give_technology = {
-			tech = tech_narrative_editing_armies
-			message = yes
+			tech = tech_pataphysics_armies
+			message = no
 		}
 		give_technology = {
-			tech = tech_narrative_editing_warship
-			message = yes
+			tech = tech_pataphysics_strike_ship
+			message = no
 		}
 		give_technology = {
 			tech = tech_narrative_editing_weapon
-			message = yes
+			message = no
 		}
 	}
 	ai_weight = {

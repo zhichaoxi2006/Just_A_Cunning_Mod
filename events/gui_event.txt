@@ -381,3 +381,314 @@ country_event = {
 		}
 	}
 }
+
+planet_event = {
+	id = sas_gui.2
+	title = sas_gui.1.name
+	desc = sas_gui.1.desc
+	picture = GFX_evt_mining_station	#a name of a picture to display
+	is_triggered_only = yes	#The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = sas_gui.1.a.on
+		trigger = {
+			ROOT = {
+				NOT = {
+					has_planet_flag = ship_hp_amount_reduce_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.a.on.tooltip
+		hidden_effect = {
+			set_planet_flag = ship_hp_amount_reduce_system
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.a.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = ship_hp_amount_reduce_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.a.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = ship_hp_amount_reduce_system
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.b.on
+		trigger = {
+			ROOT = {
+				NOT = {
+					has_planet_flag = armor_erasing_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.b.off.tooltip
+		hidden_effect = {
+			set_planet_flag = armor_erasing_system
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.b.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = armor_erasing_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.b.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = armor_erasing_system
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.c.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = shield_erasing_system
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.c.off.tooltip
+		hidden_effect = {
+			set_planet_flag = shield_erasing_system
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.c.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = shield_erasing_system
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.c.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = shield_erasing_system
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.e.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = narrative_editing_warship_narrative_strike
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.e.on.tooltip
+		hidden_effect = {
+			set_planet_flag = narrative_editing_warship_narrative_strike
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.e.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = narrative_editing_warship_narrative_strike
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.e.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = narrative_editing_warship_narrative_strike
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.f.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = aggro_range_editor
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.f.on.tooltip
+		hidden_effect = {
+			set_planet_flag = aggro_range_editor
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.f.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = aggro_range_editor
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.f.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = aggro_range_editor
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.g.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = anti_hull_repair
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.g.on.tooltip
+		hidden_effect = {
+			set_planet_flag = anti_hull_repair
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.g.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = anti_hull_repair
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.g.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = anti_hull_repair
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.h.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = speed_reduction
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.h.on.tooltip
+		hidden_effect = {
+			set_planet_flag = speed_reduction
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.h.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = speed_reduction
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.h.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = speed_reduction
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.y.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = system_wide
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.y.on.tooltip
+		hidden_effect = {
+			set_planet_flag = system_wide
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.y.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = system_wide
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.y.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = system_wide
+			country_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.z
+		trigger = {
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.z.tooltip
+		hidden_effect = {
+		}
+	}
+}
+

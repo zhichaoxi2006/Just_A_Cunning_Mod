@@ -1,0 +1,26 @@
+decision_reality_distortion_system = {
+	owned_planets_only = yes
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+		}
+	}
+
+	potential = {
+	}
+
+	effect = {
+		custom_tooltip = decision_reality_distortion_system_effects_short
+		hidden_effect = {
+			planet_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

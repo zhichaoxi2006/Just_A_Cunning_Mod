@@ -4,7 +4,7 @@ event = {
 	hide_window = yes
 	trigger = {
 		From = {
-			army_type = paradox_army
+			army_type = pataphysics_army
 		}
 	}
 	is_triggered_only = yes
@@ -18,7 +18,7 @@ event = {
 				create_army = {
 					name = random
 					owner = event_target:death_army.owner
-					type = paradox_army
+					type = pataphysics_army
 				}
 			}
 		}

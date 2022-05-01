@@ -31,14 +31,12 @@ utility_component_template = {
 		shipclass_military_special
 		shipclass_starbase
 	}
-	prerequisites = {
-		"tech_narrative_editing_utilities"
-	}
+	prerequisites = { tech_pataphysics_ship_utilities }
 	component_set = "ftl_components"
 }
 
 utility_component_template = {
-	key = "NARRATIVE_EDITING_THRUSTER"
+	key = "SHIP_VECTOR_EDITING_MODULE"
 	size = small
 	icon = "GFX_swn_thruster"
 	icon_frame = 1
@@ -53,9 +51,7 @@ utility_component_template = {
 		ship_speed_mult = 42.14
 		ship_evasion_add = 400
 	}
-	prerequisites = {
-		"tech_narrative_editing_utilities"
-	}
+	prerequisites = { tech_pataphysics_ship_utilities }
 	component_set = "thruster_components"
 	ai_weight = {
 		weight = 0
@@ -63,7 +59,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "PARADOX_REACTOR"
+	key = "PATAPHYSICS_REACTOR"
 	size = small
 	icon = "GFX_paradox_reactor"
 	icon_frame = 1
@@ -78,29 +74,21 @@ utility_component_template = {
 			alloys = 0.01
 		}
 	}
-	prerequisites = {
-		"tech_narrative_editing_utilities"
-	}
+	prerequisites = { tech_pataphysics_ship_utilities }
 	component_set = "power_core"
-	size_restriction = {
-		narrative_editing_warship
-		narrative_editing_constructor
-		narrative_editing_science
-	}
+	size_restriction = { pataphysics_strike_ship }
 	ai_weight = {
 		weight = 0
 	}
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_NARRATIVE_EDITING_WARSHIP"
+	key = "COMBAT_COMPUTER_PATAPHYSICS_STRIKE_SHIP"
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
 	ship_behavior = "narrative_editing_warship"
-	size_restriction = {
-		narrative_editing_warship
-	}
+	size_restriction = { pataphysics_strike_ship }
 	component_set = "combat_computers"
 	ai_weight = {
 		weight = 1
@@ -116,6 +104,7 @@ utility_component_template = {
 
 	size_restriction = {  }
 	component_set = "ship_aura_components"
+	hidden = yes
 
 	hostile_aura = {
 		name = "aura_anti_repair"
@@ -162,7 +151,7 @@ utility_component_template = {
 			priority = 250
 		}
 		damage_per_day = {
-			damage = { min = 25 max = 50 }
+			damage = { min = 15 max = 20 }
 			accuracy = 1
 			tracking = 1
 			shield_penetration = 1
@@ -190,6 +179,7 @@ utility_component_template = {
 	modifier = {
 		ship_hull_regen_add_perc = 1432
 	}
+	hidden = yes
 	ai_weight = {
 		weight = 0
 	}
@@ -200,9 +190,7 @@ utility_component_template = {
 	size = aux
 	icon = "GFX_paradox_generation_system"
 	icon_frame = 1
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
+	prerequisites = { tech_pataphysics_strike_ship }
 	component_set = "REALITY_DISTORTION_SYSTEM"
 	resources = {
 		category = ship_components

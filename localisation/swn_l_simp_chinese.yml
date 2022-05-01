@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  #Behaviours
- NARRATIVE_EDITING_WARSHIP_BEHAVIOR_DESC: "手操AI"
+ NARRATIVE_EDITING_WARSHIP_BEHAVIOR_DESC: "超形上学打击舰专业的作战AI，使用此AI的舰船直接由Swn001实体操控。"
 
  #Components
  STRIKE_CRAFT_SARDINE: "沙丁鱼攻击机"
@@ -13,14 +13,14 @@
  MEDIUM_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "中型叙事删除奇点加速器"
  LARGE_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "大型叙事删除奇点加速器"
  REALITY_DISTORTION_SYSTEM: "现实扭曲系统"
- REALITY_DISTORTION_SYSTEM_DESC: "能扭曲现实的玩意，但是不是通过控制休谟，而是摆弄叙事。"
- aura_paradox_generation: "悖论生成"
+ REALITY_DISTORTION_SYSTEM_DESC: "能扭曲现实的玩意，但是不是通过控制休谟的量，而是通过操纵叙事。"
  NARRATIVE_LEVEL_RESUSCITATION_DEVICE: "叙事级复苏装置"
  NARRATIVE_LEVEL_RESUSCITATION_DEVICE_DESC: "能在已死的情况下使舰船复活的装置。"
  SHIP_COORDINATE_EDITING_MODULE: "舰船坐标编辑模块"
- NARRATIVE_EDITING_THRUSTER: "叙事编辑推进器"
- PARADOX_REACTOR: "悖论反应堆"
- COMBAT_COMPUTER_NARRATIVE_EDITING_WARSHIP: "叙事编辑军舰作战电脑"
+ SHIP_VECTOR_EDITING_MODULE: "舰船矢量编辑模块"
+ PATAPHYSICS_REACTOR: "超形上学反应堆"
+ PATAPHYSICS_REACTOR_DESC: "利用超形上学技术产生能量的反应堆，能达到不可能达到的机械效率。"
+ COMBAT_COMPUTER_PATAPHYSICS_STRIKE_SHIP: "超形上学打击舰作战电脑"
  SHIP_AURA_ANTI_REPAIR: "修复抑制装置"
  aura_anti_repair: "修复抑制器"
  SHIP_AURA_MINEFIELD_PARADOX: "悖论水雷雷区"
@@ -34,14 +34,14 @@
  PATAPHYSICS_STRIKE_SHIP_STERN_SECTION: "超形上学打击舰舰尾"
 
  #Technology
- narrative_editing_technology: "叙事编辑科技"
- narrative_editing_technology_desc: ""
- tech_narrative_editing_utilities: "叙事编辑舰船部件"
- tech_narrative_editing_utilities_desc: ""
- tech_narrative_editing_armies: "叙事编辑军队"
- tech_narrative_editing_armies_desc: ""
- tech_narrative_editing_warship: "叙事编辑军舰理念"
- tech_narrative_editing_warship_desc: ""
+ pataphysics_technology: "超形上学科技"
+ narrative_editing_technology_desc: "使我们有了可以让我们从下层叙事改变上层叙事的办法"
+ tech_pataphysics_ship_utilities: "超形上学舰船部件"
+ tech_pataphysics_ship_utilities_desc: "利用超形上学技术制造出来的新一代舰船部件"
+ tech_pataphysics_armies: "超形上学实体军用化"
+ tech_pataphysics_armies_desc: "使得我们能把超形上学实体作为陆军使用。"
+ tech_pataphysics_strike_ship: "超形上学打击舰"
+ tech_pataphysics_strike_ship_desc: "依靠超形上学技术制造出来的终极武器。"
  tech_narrative_editing_weapon: "叙事编辑武器"
  tech_narrative_editing_weapon_desc: ""
 
@@ -62,14 +62,14 @@
  edict_sas_time_acceleration_off_desc: "关闭时间加速"
  edict_sas_immortal_execution: "不朽处决"
  edict_sas_immortal_execution_desc: "能破坏某些领袖的不死性的玩意"
- edict_sas_warship_console: "叙事编辑军舰控制台"
- edict_sas_warship_console_desc: "打开控制叙事编辑军舰的控制台"
+ edict_sas_warship_console: "现实扭曲系统设置面板"
+ edict_sas_warship_console_desc: "打开现实扭曲系统的设置面板"
  edict_rankinus_plan: "朗基努斯计划"
  edict_rankinus_plan_desc: "§P???§!"
 
  #Armies
- paradox_army: "军用悖论实体"
- paradox_army_desc: "依靠悖论存在的实体，经过一定的改造，它们不会在战斗时死去，还会在死后自我复制。"
+ pataphysics_army: "超形上学实体"
+ pataphysics_army_desc: "它们不会在战斗时死去，还会在死后自我复制。"
 
  #CB
  casus_belli_cb_narrative_editing_warship: "叙事编辑舰——终焉程序"
@@ -84,7 +84,10 @@
  #Traits
  trait_narrative_entity: "叙事实体"
  trait_narrative_entity: "这种生物已经不能算是生物了，他们能像神一般创造一切"
-
+ #Decision
+ decision_reality_distortion_system: "现实扭曲系统设置面板"
+ decision_reality_distortion_system_desc: "现实扭曲系统设置面板" 
+ decision_reality_distortion_system_effects_short: "打开现实扭曲系统的设置面板"
  #Event
  s_andrew_swann_entity.15.name: "对星叙事打击系统"
  s_andrew_swann_entity.15.desc: "叙事编辑军舰配置的叙事打击系统控制面板"

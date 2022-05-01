@@ -1,4 +1,4 @@
-narrative_editing_technology = {
+pataphysics_technology = {
 	cost = 114514
 	area = physics
 	tier = 5
@@ -12,36 +12,36 @@ narrative_editing_technology = {
 
 
 
-tech_narrative_editing_utilities = {
+tech_pataphysics_ship_utilities = {
 	cost = 1919810
 	area = physics
 	tier = 5
 	category = { field_manipulation }
-	prerequisites = { "narrative_editing_technology" }
+	prerequisites = { "pataphysics_technology" }
 	weight = 42
 	is_dangerous = yes
 	potential = {
 	}
 }
 
-tech_narrative_editing_armies = {
+tech_pataphysics_armies = {
 	cost = 666
 	area = society
 	tier = 5
 	category = { military_theory }
-	prerequisites = { "narrative_editing_technology" }
+	prerequisites = { "pataphysics_technology" }
 	weight = 42
 	is_dangerous = yes
 	potential = {
 	}
 }
 
-tech_narrative_editing_warship = {
+tech_pataphysics_strike_ship = {
 	cost = 666
 	area = engineering
 	tier = 5
 	category = { rocketry }
-	prerequisites = { "narrative_editing_technology" }
+	prerequisites = { "pataphysics_technology" }
 	weight = 42
 	is_dangerous = yes
 	potential = {
@@ -53,7 +53,7 @@ tech_narrative_editing_weapon = {
 	area = engineering
 	tier = 5
 	category = { rocketry }
-	prerequisites = { "narrative_editing_technology" }
+	prerequisites = { "pataphysics_technology" }
 	weight = 42
 	is_dangerous = yes
 	potential = {

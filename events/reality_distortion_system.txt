@@ -6,21 +6,21 @@ ship_event = {
 	trigger = {
 		has_component = REALITY_DISTORTION_SYSTEM
 		NOT = {
-			has_ship_flag = paradox_generation_system_cooldown
+			has_ship_flag = reality_distortion_system_cooldown
 		}
 	}
 	is_triggered_only = false
 	immediate = {
 		THIS = {
-			save_event_target_as = paradox_generation_system_ship
+			save_event_target_as = reality_distortion_system_ship
 		}
 		set_timed_ship_flag = {
-			flag = paradox_generation_system_cooldown
+			flag = reality_distortion_system_cooldown
 			days = 3
 		}
 		if = {
 			limit = {
-				event_target:paradox_generation_system_ship.owner = {
+				event_target:reality_distortion_system_ship.owner = {
 					has_country_flag = hull_repair
 				}
 			}
@@ -35,7 +35,7 @@ ship_event = {
 					if = {
 						limit = {
 							NOT = {
-								event_target:paradox_generation_system_ship.owner = {
+								event_target:reality_distortion_system_ship.owner = {
 									has_country_flag = system_wide
 								}
 							}
@@ -44,13 +44,13 @@ ship_event = {
 					}
 					NOT = {
 						This = {
-							is_owned_by = event_target:paradox_generation_system_ship.owner
+							is_owned_by = event_target:reality_distortion_system_ship.owner
 						}
 					}
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = ship_hp_amount_reduce_system
 						}
 					}
@@ -66,7 +66,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = shield_erasing_system
 						}
 					}
@@ -92,7 +92,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = shield_erasing_system
 						}
 					}
@@ -118,7 +118,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = narrative_editing_warship_narrative_strike
 						}
 					}
@@ -126,7 +126,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = aggro_range_editor
 						}
 					}
@@ -136,7 +136,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = anti_hull_repair
 						}
 					}
@@ -181,7 +181,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = speed_reduction
 						}
 					}
@@ -236,7 +236,7 @@ event = {
 			This = {
 				repair_ship = yes
 				set_disabled = no
-				add_modifier = {	modifier = swn_mod_ship_fire_rate_mult	days = 10	multiplier = 2	}
+				add_modifier = {	modifier = swn_mod_ship_fire_rate_mult	months = 10	multiplier = 2	}
 			}
 		}
 	}
@@ -251,7 +251,7 @@ ship_event = {
 	is_triggered_only = yes
 	immediate = {
 		This = {
-			save_event_target_as = paradox_generation_system_ship
+			save_event_target_as = reality_distortion_system_ship
 		}
 		This.solar_system = {
 			every_ship_in_system = {
@@ -259,7 +259,7 @@ ship_event = {
 					if = {
 						limit = {
 							NOT = {
-								event_target:paradox_generation_system_ship.owner = {
+								event_target:reality_distortion_system_ship.owner = {
 									has_country_flag = system_wide
 								}
 							}
@@ -268,13 +268,13 @@ ship_event = {
 					}
 					NOT = {
 						This = {
-							is_owned_by = event_target:paradox_generation_system_ship.owner
+							is_owned_by = event_target:reality_distortion_system_ship.owner
 						}
 					}
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = ship_hp_amount_reduce_system
 						}
 					}
@@ -290,7 +290,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = shield_erasing_system
 						}
 					}
@@ -316,7 +316,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = shield_erasing_system
 						}
 					}
@@ -342,7 +342,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = narrative_editing_warship_narrative_strike
 						}
 					}
@@ -350,7 +350,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = aggro_range_editor
 						}
 					}
@@ -360,7 +360,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = anti_hull_repair
 						}
 					}
@@ -405,7 +405,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						event_target:paradox_generation_system_ship.owner = {
+						event_target:reality_distortion_system_ship.owner = {
 							has_country_flag = speed_reduction
 						}
 					}
@@ -447,9 +447,214 @@ event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		set_disable_at_health = 0.01
+		set_disable_at_health = 0.0001
 		ship_event = {
 			id = rds.1
+		}
+	}
+}
+
+planet_event = {
+	id = rds.5
+	hide_window = yes
+	trigger = {
+		NOT = {
+			has_planet_flag = reality_distortion_system_cooldown
+		}
+	}
+	is_triggered_only = false
+	immediate = {
+		ROOT = {
+			save_event_target_as = reality_distortion_system_planet
+		}
+		set_timed_planet_flag = {
+			flag = reality_distortion_system_cooldown
+			days = 3
+		}
+		THIS.solar_system = {
+			every_ship_in_system = {
+				limit = {
+					if = {
+						limit = {
+							NOT = {
+								event_target:reality_distortion_system_planet = {
+									has_planet_flag = system_wide
+								}
+							}
+						}
+						is_in_combat = yes
+					}
+					NOT = {
+						This = {
+							is_owned_by = event_target:reality_distortion_system_planet.owner
+						}
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = ship_hp_amount_reduce_system
+						}
+					}
+					export_trigger_value_to_variable = {
+						trigger = has_hp
+						variable = ship_hp_amount
+					}
+					subtract_variable = {
+						which = ship_hp_amount
+						value = @Residual_hull_value
+					}
+					reduce_hp = ship_hp_amount
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = shield_erasing_system
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_shield_reduction
+						variable = ship_shield_reduction_number
+					}
+					multiply_variable = {
+						which = ship_shield_reduction_number
+						value = -1
+					}
+					change_variable = {
+						which = ship_shield_reduction_number
+						value = 1
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_shield_reduction
+						add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = shield_erasing_system
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_armor_reduction
+						variable = ship_armor_reduction_number
+					}
+					multiply_variable = {
+						which = ship_armor_reduction_number
+						value = -1
+					}
+					change_variable = {
+						which = ship_armor_reduction_number
+						value = 1
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_armor_reduction
+						add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = narrative_editing_warship_narrative_strike
+						}
+					}
+					destroy_ship = This
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = aggro_range_editor
+						}
+					}
+					fleet = {
+						set_aggro_range = 0
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = anti_hull_repair
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_hull_regen_add_perc
+						variable = ship_hull_regen_add_perc_number
+					}
+					multiply_variable = {
+						which = ship_hull_regen_add_perc_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_hull_regen_add_perc_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
+						}
+						remove_modifier = swn_mod_ship_hull_repair_anti
+						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_hull_regen_add_static
+						variable = ship_hull_regen_add_static_number
+					}
+					multiply_variable = {
+						which = ship_hull_regen_add_static_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_hull_regen_add_static_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
+						}
+						remove_modifier = swn_mod_ship_hull_repair_anti_static
+						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = speed_reduction
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_speed_reduction
+						variable = ship_speed_reduction_number
+					}
+					multiply_variable = {
+						which = ship_speed_reduction_number
+						value = 1
+					}
+					change_variable = {
+						which = ship_speed_reduction_number
+						value = 0
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
+						}
+						remove_modifier = swn_mod_ship_speed_reduction
+						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+					}
+				}
+			}
+		}
+		ROOT = {
+			planet_event = {
+				id = rds.5
+				day = 3
+				scopes = { THIS = THIS }
+			}
 		}
 	}
 }
