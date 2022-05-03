@@ -38,7 +38,7 @@
 
  #Technology
  pataphysics_technology: "超形上学科技"
- narrative_editing_technology_desc: "使我们有了可以让我们从下层叙事改变上层叙事的办法"
+ pataphysics_technology_desc: "使我们有了可以让我们从下层叙事改变上层叙事的办法"
  tech_pataphysics_ship_utilities: "超形上学舰船部件"
  tech_pataphysics_ship_utilities_desc: "利用超形上学技术制造出来的新一代舰船部件"
  tech_pataphysics_armies: "超形上学实体军用化"
@@ -87,6 +87,7 @@
  #Traits
  trait_narrative_entity: "叙事实体"
  trait_narrative_entity: "这种生物已经不能算是生物了，他们能像神一般创造一切"
+
  #Decision
  decision_reality_distortion_system: "现实扭曲系统设置面板"
  decision_reality_distortion_system_desc: "现实扭曲系统设置面板" 
