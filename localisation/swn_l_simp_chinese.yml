@@ -2,6 +2,9 @@
  #Behaviours
  NARRATIVE_EDITING_WARSHIP_BEHAVIOR_DESC: "超形上学打击舰专业的作战AI，使用此AI的舰船直接由Swn001实体操控。"
 
+ #Building
+ building_reality_distortion_system: "现实扭曲系统"
+ building_reality_distortion_system_desc: "能扭曲现实的玩意，但是不是通过控制休谟的量，而是通过操纵叙事来实现。"
  #Components
  STRIKE_CRAFT_SARDINE: "沙丁鱼攻击机"
  STRIKE_CRAFT_SARDINE_DESC: "基于叙事编辑科技的舰载机，强度十分的超模。"
@@ -13,7 +16,7 @@
  MEDIUM_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "中型叙事删除奇点加速器"
  LARGE_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR: "大型叙事删除奇点加速器"
  REALITY_DISTORTION_SYSTEM: "现实扭曲系统"
- REALITY_DISTORTION_SYSTEM_DESC: "能扭曲现实的玩意，但是不是通过控制休谟的量，而是通过操纵叙事。"
+ REALITY_DISTORTION_SYSTEM_DESC: "能扭曲现实的玩意，但是不是通过控制休谟的量，而是通过操纵叙事来实现。"
  NARRATIVE_LEVEL_RESUSCITATION_DEVICE: "叙事级复苏装置"
  NARRATIVE_LEVEL_RESUSCITATION_DEVICE_DESC: "能在已死的情况下使舰船复活的装置。"
  SHIP_COORDINATE_EDITING_MODULE: "舰船坐标编辑模块"
@@ -140,6 +143,14 @@
  sas_gui.1.i.on.tooltip: "这将启动现实扭曲系统的船体修复机关。"
  sas_gui.1.i.off: "船体修复机关——§R关闭§!"
  sas_gui.1.i.off.tooltip: "这将关闭现实扭曲系统的船体修复机关。" 
+ sas_gui.1.j.on: "复活抑制机关——§G开启§!"
+ sas_gui.1.j.on.tooltip: "这将会使敌方舰船失去复活能力。"
+ sas_gui.1.j.off: "复活抑制机关——§R关闭§!"
+ sas_gui.1.j.off.tooltip: "关闭复活抑制机关。" 
+ sas_gui.2.i.on: "星球护盾机关——§G开启§!"
+ sas_gui.2.i.on.tooltip: "这将启动现实扭曲系统的星球护盾机关。"
+ sas_gui.2.i.off: "星球护盾机关——§R关闭§!"
+ sas_gui.2.i.off.tooltip: "这将关闭现实扭曲系统的星球护盾机关。"
  sas_gui.1.y.on: "影响范围——战斗中舰船"
  sas_gui.1.y.on.tooltip: "现实扭曲系统的影响范围将会是战斗中舰船"
  sas_gui.1.y.off: "影响范围——星系"

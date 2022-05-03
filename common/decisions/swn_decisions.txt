@@ -9,6 +9,7 @@ decision_reality_distortion_system = {
 	}
 
 	potential = {
+		has_active_building = building_reality_distortion_system
 	}
 
 	effect = {

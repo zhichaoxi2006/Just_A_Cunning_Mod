@@ -1,5 +1,6 @@
 namespace = rds
 @Residual_hull_value = 1
+@flag_time = 3
 ship_event = {
 	id = rds.1
 	hide_window = yes
@@ -16,7 +17,7 @@ ship_event = {
 		}
 		set_timed_ship_flag = {
 			flag = reality_distortion_system_cooldown
-			days = 3
+			days = @flag_time
 		}
 		if = {
 			limit = {
@@ -63,6 +64,10 @@ ship_event = {
 						value = @Residual_hull_value
 					}
 					reduce_hp = ship_hp_amount
+					set_timed_ship_flag = {
+						flag = ship_hp_amount_reduce_system_target
+						days = @flag_time
+					}
 				}
 				if = {
 					limit = {
@@ -93,7 +98,7 @@ ship_event = {
 				if = {
 					limit = {
 						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = shield_erasing_system
+							has_country_flag = armor_erasing_system
 						}
 					}
 					export_modifier_to_variable = {
@@ -205,6 +210,14 @@ ship_event = {
 						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
 					}
 				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_ship.owner = {
+							has_country_flag = no_disabled_ship
+						}
+						set_disable_at_health = 0
+					}
+				}
 			}
 		}
 		THIS = {
@@ -250,10 +263,25 @@ ship_event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		This = {
+		THIS = {
 			save_event_target_as = reality_distortion_system_ship
 		}
-		This.solar_system = {
+		set_timed_ship_flag = {
+			flag = reality_distortion_system_cooldown
+			days = @flag_time
+		}
+		if = {
+			limit = {
+				event_target:reality_distortion_system_ship.owner = {
+					has_country_flag = hull_repair
+				}
+			}
+			This = {
+				repair_ship = yes
+				set_disabled = no
+			}
+		}
+		THIS.solar_system = {
 			every_ship_in_system = {
 				limit = {
 					if = {
@@ -287,6 +315,10 @@ ship_event = {
 						value = @Residual_hull_value
 					}
 					reduce_hp = ship_hp_amount
+					set_timed_ship_flag = {
+						flag = ship_hp_amount_reduce_system_target
+						days = @flag_time
+					}
 				}
 				if = {
 					limit = {
@@ -317,7 +349,7 @@ ship_event = {
 				if = {
 					limit = {
 						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = shield_erasing_system
+							has_country_flag = armor_erasing_system
 						}
 					}
 					export_modifier_to_variable = {
@@ -423,10 +455,18 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_speed_reduction_number value < 1.00	}
+							check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
 						}
 						remove_modifier = swn_mod_ship_speed_reduction
 						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_ship.owner = {
+							has_country_flag = no_disabled_ship
+						}
+						set_disable_at_health = 0
 					}
 				}
 			}
@@ -461,6 +501,7 @@ planet_event = {
 		NOT = {
 			has_planet_flag = reality_distortion_system_cooldown
 		}
+		has_active_building = building_reality_distortion_system
 	}
 	is_triggered_only = false
 	immediate = {
@@ -474,16 +515,6 @@ planet_event = {
 		THIS.solar_system = {
 			every_ship_in_system = {
 				limit = {
-					if = {
-						limit = {
-							NOT = {
-								event_target:reality_distortion_system_planet = {
-									has_planet_flag = system_wide
-								}
-							}
-						}
-						is_in_combat = yes
-					}
 					NOT = {
 						This = {
 							is_owned_by = event_target:reality_distortion_system_planet.owner
@@ -505,6 +536,7 @@ planet_event = {
 						value = @Residual_hull_value
 					}
 					reduce_hp = ship_hp_amount
+					
 				}
 				if = {
 					limit = {
@@ -535,7 +567,7 @@ planet_event = {
 				if = {
 					limit = {
 						event_target:reality_distortion_system_planet = {
-							has_planet_flag = shield_erasing_system
+							has_planet_flag = armor_erasing_system
 						}
 					}
 					export_modifier_to_variable = {
@@ -647,6 +679,40 @@ planet_event = {
 						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
 					}
 				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = planet_shield
+						}
+					}
+					export_modifier_to_variable = {
+						modifier = ship_orbital_bombardment_mult
+						variable = ship_orbital_bombardment_mult_number
+					}
+					multiply_variable = {
+						which = ship_orbital_bombardment_mult_number
+						value = -1
+					}
+					change_variable = {
+						which = ship_orbital_bombardment_mult_number
+						value = -1
+					}
+					if = {
+						limit = {
+							check_modifier_value = {	modifier = ship_orbital_bombardment_mult value > -1.00	}
+						}
+						remove_modifier = swn_mod_ship_orbital_bombardment_mult
+						add_modifier = {	modifier = swn_mod_ship_orbital_bombardment_mult	months = 1	multiplier = ship_orbital_bombardment_mult_number	}
+					}
+				}
+				if = {
+					limit = {
+						event_target:reality_distortion_system_planet = {
+							has_planet_flag = no_disabled_ship
+						}
+						set_disable_at_health = 0
+					}
+				}
 			}
 		}
 		ROOT = {
@@ -654,6 +720,32 @@ planet_event = {
 				id = rds.5
 				day = 3
 				scopes = { THIS = THIS }
+			}
+		}
+	}
+}
+
+event = {
+	id = rds.6
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		This = {
+			if = {
+				limit = {
+					has_ship_flag = ship_hp_amount_reduce_system_target
+				}
+				export_trigger_value_to_variable = {
+					trigger = has_hp
+					variable = ship_hp_amount
+				}
+				subtract_variable = {
+					which = ship_hp_amount
+					value = @Residual_hull_value
+				}
+				reduce_hp = ship_hp_amount
 			}
 		}
 	}

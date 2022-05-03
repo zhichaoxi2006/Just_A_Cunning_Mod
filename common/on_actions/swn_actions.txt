@@ -56,3 +56,10 @@ on_ship_built = {
 		rds.4
 	}
 }
+
+# This = Ship
+on_ship_enabled = {
+	events = {
+		rds.6
+	}
+}

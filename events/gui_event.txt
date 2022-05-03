@@ -335,6 +335,42 @@ country_event = {
 		}
 	}
 	option = {
+		name = sas_gui.1.j.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = no_disabled_ship
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.j.on.tooltip
+		hidden_effect = {
+			set_country_flag = no_disabled_ship
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.j.off
+		trigger = {
+			ROOT = {
+				has_country_flag = no_disabled_ship
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.j.off.tooltip
+		hidden_effect = {
+			remove_country_flag = no_disabled_ship
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
 		name = sas_gui.1.y.on
 		trigger = {
 			NOT = {
@@ -406,7 +442,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.a.on.tooltip
 		hidden_effect = {
 			set_planet_flag = ship_hp_amount_reduce_system
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -423,7 +459,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.a.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = ship_hp_amount_reduce_system
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -442,7 +478,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.b.off.tooltip
 		hidden_effect = {
 			set_planet_flag = armor_erasing_system
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -459,7 +495,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.b.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = armor_erasing_system
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -478,7 +514,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.c.off.tooltip
 		hidden_effect = {
 			set_planet_flag = shield_erasing_system
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -495,7 +531,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.c.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = shield_erasing_system
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -514,7 +550,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.e.on.tooltip
 		hidden_effect = {
 			set_planet_flag = narrative_editing_warship_narrative_strike
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -531,7 +567,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.e.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = narrative_editing_warship_narrative_strike
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -550,7 +586,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.f.on.tooltip
 		hidden_effect = {
 			set_planet_flag = aggro_range_editor
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -567,7 +603,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.f.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = aggro_range_editor
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -586,7 +622,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.g.on.tooltip
 		hidden_effect = {
 			set_planet_flag = anti_hull_repair
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -603,7 +639,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.g.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = anti_hull_repair
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -622,7 +658,7 @@ planet_event = {
 		custom_tooltip = sas_gui.1.h.on.tooltip
 		hidden_effect = {
 			set_planet_flag = speed_reduction
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
@@ -639,43 +675,79 @@ planet_event = {
 		custom_tooltip = sas_gui.1.h.off.tooltip
 		hidden_effect = {
 			remove_planet_flag = speed_reduction
-			country_event = {
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.y.on
+		name = sas_gui.2.i.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_planet_flag = system_wide
+					has_planet_flag = planet_shield
 				}
 			}
 		}
 		allow = {
 		}
-		custom_tooltip = sas_gui.1.y.on.tooltip
+		custom_tooltip = sas_gui.2.i.on.tooltip
 		hidden_effect = {
-			set_planet_flag = system_wide
-			country_event = {
+			set_planet_flag = planet_shield
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.y.off
+		name = sas_gui.2.i.off
 		trigger = {
 			ROOT = {
-				has_planet_flag = system_wide
+				has_planet_flag = planet_shield
 			}
 		}
 		allow = {
 		}
-		custom_tooltip = sas_gui.1.y.off.tooltip
+		custom_tooltip = sas_gui.2.i.off.tooltip
 		hidden_effect = {
-			remove_planet_flag = system_wide
-			country_event = {
+			remove_planet_flag = planet_shield
+			planet_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.j.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_planet_flag = no_disabled_ship
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.j.on.tooltip
+		hidden_effect = {
+			set_planet_flag = no_disabled_ship
+			planet_event = {
+				id = sas_gui.2
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.j.off
+		trigger = {
+			ROOT = {
+				has_planet_flag = no_disabled_ship
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.j.off.tooltip
+		hidden_effect = {
+			remove_planet_flag = no_disabled_ship
+			planet_event = {
 				id = sas_gui.2
 			}
 		}
