@@ -5,7 +5,12 @@ ship_event = {
 	id = rds.1
 	hide_window = yes
 	trigger = {
-		has_component = REALITY_DISTORTION_SYSTEM
+		OR = {
+			has_component = REALITY_DISTORTION_SYSTEM
+			leader = {
+				has_trait = leader_trait_reality_distortion_system
+			}
+		}
 		NOT = {
 			fleet = {
 				has_fleet_flag = reality_distortion_system_cooldown

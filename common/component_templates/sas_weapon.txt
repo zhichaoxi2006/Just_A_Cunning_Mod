@@ -188,4 +188,3 @@ weapon_component_template = {
 	accuracy = 3.43
 	tracking = 6.82
 }
-

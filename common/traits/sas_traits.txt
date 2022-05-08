@@ -1,10 +1,8 @@
-trait_narrative_entity = {
+leader_trait_reality_distortion_system = {
 	cost = 0
 	initial = no
-	icon = gfx/interface/icons/traits/trait_narrative_entity.dds
-	modifier = {
-		country_war_exhaustion_mult = -1145.14
-		planet_jobs_produces_mult = 88946436.43
-		pop_housing_usage_mult = -45.55
-	}
+	icon = "gfx/interface/icons/traits/trait_narrative_entity.dds"
+	immortal_leaders = yes
+	prerequisites = { pataphysics_technology }
+	leader_trait = all
 }

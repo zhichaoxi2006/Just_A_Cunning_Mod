@@ -9,6 +9,7 @@ pataphysics_strike_ship = {
 		ship_evasion_add = 100
 		ship_armor_add = 20000
 		ship_shield_add = 20000
+		ship_orbital_bombardment_mult = 300
 	}
 	size_multiplier = 32
 	fleet_slot_size = 32

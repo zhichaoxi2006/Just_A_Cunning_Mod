@@ -87,9 +87,25 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
-	ship_behavior = "narrative_editing_warship"
+	ship_behavior = "pataphysics_strike_ship"
 	size_restriction = { pataphysics_strike_ship }
 	component_set = "combat_computers"
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_SWN_CARRIER"
+	size = small
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1
+	ship_behavior = "swn_carrier"
+	size_restriction = {  }
+	component_set = "combat_computers"
+	ship_modifier = {
+		ship_engagement_range_mult = 5.14
+	}
 	ai_weight = {
 		weight = 1
 	}

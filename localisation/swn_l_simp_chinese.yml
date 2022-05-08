@@ -1,10 +1,12 @@
 ﻿l_simp_chinese:
  #Behaviours
- NARRATIVE_EDITING_WARSHIP_BEHAVIOR_DESC: "超形上学打击舰专业的作战AI，使用此AI的舰船直接由Swn001实体操控。"
+ PATAPHYSICS_STRIKE_SHIP_BEHAVIOR_DESC: "超形上学打击舰专业的作战AI，使用此AI的舰船直接由Swn001实体操控。"
+ SWN_CARRIER_BEHAVIOR_DESC: "航母用的作战电脑，但是AI不是很好"
 
  #Building
  building_reality_distortion_system: "现实扭曲系统"
  building_reality_distortion_system_desc: "能扭曲现实的玩意，但是不是通过控制休谟的量，而是通过操纵叙事来实现。"
+
  #Components
  STRIKE_CRAFT_SARDINE: "沙丁鱼攻击机"
  STRIKE_CRAFT_SARDINE_DESC: "基于叙事编辑科技的舰载机，强度十分的超模。"
@@ -24,6 +26,7 @@
  PATAPHYSICS_REACTOR: "超形上学反应堆"
  PATAPHYSICS_REACTOR_DESC: "利用超形上学技术产生能量的反应堆，能达到不可能达到的机械效率。"
  COMBAT_COMPUTER_PATAPHYSICS_STRIKE_SHIP: "超形上学打击舰作战电脑"
+ COMBAT_COMPUTER_SWN_CARRIER: "航母专业作战电脑"
  SHIP_AURA_ANTI_REPAIR: "修复抑制装置"
  aura_anti_repair: "修复抑制器"
  SHIP_AURA_MINEFIELD_PARADOX: "悖论水雷雷区"
@@ -68,7 +71,7 @@
  edict_sas_warship_console: "现实扭曲系统设置面板"
  edict_sas_warship_console_desc: "打开现实扭曲系统的设置面板"
  edict_rankinus_plan: "朗基努斯计划"
- edict_rankinus_plan_desc: "§P???§!"s
+ edict_rankinus_plan_desc: "§P???§!"
  edict_rebirth_program: "重生程式"
 
  #Armies
@@ -86,8 +89,8 @@
  war_goal_wg_end_threat_narrative_editing_warship_desc: "很显然，叙事编辑舰不可能让我们的叙事层获得自由。只会给我们的国家带来终焉，所以，我们必须毁灭叙事编辑舰。"
 
  #Traits
- trait_narrative_entity: "叙事实体"
- trait_narrative_entity: "这种生物已经不能算是生物了，他们能像神一般创造一切"
+ trait_reality_distortion_system: "现实扭曲系统"
+ trait_reality_distortion_system_desc: "这个领袖装配有现实扭曲系统，拥有现实扭曲的能力"
 
  #Decision
  decision_reality_distortion_system: "现实扭曲系统设置面板"
