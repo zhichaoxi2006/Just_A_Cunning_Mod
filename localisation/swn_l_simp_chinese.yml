@@ -68,7 +68,8 @@
  edict_sas_warship_console: "现实扭曲系统设置面板"
  edict_sas_warship_console_desc: "打开现实扭曲系统的设置面板"
  edict_rankinus_plan: "朗基努斯计划"
- edict_rankinus_plan_desc: "§P???§!"
+ edict_rankinus_plan_desc: "§P???§!"s
+ edict_rebirth_program: "重生程式"
 
  #Armies
  pataphysics_army: "超形上学实体"
@@ -148,6 +149,10 @@
  sas_gui.1.j.on.tooltip: "这将会使敌方舰船失去复活能力。"
  sas_gui.1.j.off: "复活抑制机关——§R关闭§!"
  sas_gui.1.j.off.tooltip: "关闭复活抑制机关。" 
+ sas_gui.1.k.on: "脱离阻止机关——§G开启§!"
+ sas_gui.1.k.on.tooltip: "这将会使我方舰船不会脱离战斗状态。"
+ sas_gui.1.k.off: "脱离阻止机关——§R关闭§!"
+ sas_gui.1.k.off.tooltip: "关闭脱离阻止机关。" 
  sas_gui.2.i.on: "星球护盾机关——§G开启§!"
  sas_gui.2.i.on.tooltip: "这将启动现实扭曲系统的星球护盾机关。"
  sas_gui.2.i.off: "星球护盾机关——§R关闭§!"

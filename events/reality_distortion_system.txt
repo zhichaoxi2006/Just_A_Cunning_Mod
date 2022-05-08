@@ -7,7 +7,9 @@ ship_event = {
 	trigger = {
 		has_component = REALITY_DISTORTION_SYSTEM
 		NOT = {
-			has_ship_flag = reality_distortion_system_cooldown
+			fleet = {
+				has_fleet_flag = reality_distortion_system_cooldown
+			}
 		}
 	}
 	is_triggered_only = false
@@ -15,9 +17,11 @@ ship_event = {
 		THIS = {
 			save_event_target_as = reality_distortion_system_ship
 		}
-		set_timed_ship_flag = {
-			flag = reality_distortion_system_cooldown
-			days = @flag_time
+		fleet = {
+			set_timed_fleet_flag = {
+				flag = reality_distortion_system_cooldown
+				days = @flag_time
+			}
 		}
 		if = {
 			limit = {
@@ -26,8 +30,35 @@ ship_event = {
 				}
 			}
 			This = {
+				set_disable_at_health = 0.0001
 				repair_ship = yes
 				set_disabled = no
+			}
+		}
+		if = {
+			limit = {
+				event_target:reality_distortion_system_ship.owner = {
+					has_country_flag = no_disengage
+				}
+			}
+			export_modifier_to_variable = {
+				modifier = ship_disengage_chance_reduction
+				variable = ship_disengage_chance_reduction_number
+			}
+			multiply_variable = {
+				which = ship_disengage_chance_reduction_number
+				value = -1
+			}
+			change_variable = {
+				which = ship_disengage_chance_reduction_number
+				value = 1
+			}
+			if = {
+				limit = {
+					check_modifier_value = {	modifier = ship_disengage_chance_reduction value < 1.00	}
+				}
+				remove_modifier = swn_mod_ship_disengage_chance_reduction
+				add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = 1	multiplier = ship_disengage_chance_reduction_number	}
 			}
 		}
 		THIS.solar_system = {
@@ -196,11 +227,11 @@ ship_event = {
 					}
 					multiply_variable = {
 						which = ship_speed_reduction_number
-						value = 1
+						value = -1
 					}
 					change_variable = {
 						which = ship_speed_reduction_number
-						value = 0
+						value = 1
 					}
 					if = {
 						limit = {
@@ -483,11 +514,9 @@ event = {
 	id = rds.4
 	hide_window = yes
 	trigger = {
-		has_component = REALITY_DISTORTION_SYSTEM
 	}
 	is_triggered_only = yes
 	immediate = {
-		set_disable_at_health = 0.0001
 		ship_event = {
 			id = rds.1
 		}

@@ -25,3 +25,6 @@ swn_mod_ship_weapon_range_mult = {
 swn_mod_ship_orbital_bombardment_mult = {
 	ship_orbital_bombardment_mult = 1
 }
+swn_mod_ship_disengage_chance_reduction = {
+	ship_disengage_chance_reduction = 1
+}

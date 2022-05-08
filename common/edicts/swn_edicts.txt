@@ -103,3 +103,35 @@ rankinus_plan = {
 	}
 }
 
+rebirth_program = {
+	length = 0
+	resources = {
+	}
+	effect = {
+		random_galaxy_planet = {
+			limit = {
+				is_star = no
+			}
+			change_pc = pc_gaia
+			This.solar_system = {
+				create_starbase = {
+					owner = ROOT
+					size = starbase_citadel
+				}
+			}
+			reroll_planet = yes
+			create_colony = {
+				owner = ROOT
+				species = ROOT.owner_species
+				ethos = random
+			}
+		}
+		every_ambient_object = {
+			limit = {
+			}
+			destroy_ambient_object = This
+		}	
+	}
+}
+
+

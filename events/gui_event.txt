@@ -371,6 +371,42 @@ country_event = {
 		}
 	}
 	option = {
+		name = sas_gui.1.k.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = no_disengage
+				}
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.k.on.tooltip
+		hidden_effect = {
+			set_country_flag = no_disengage
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
+		name = sas_gui.1.k.off
+		trigger = {
+			ROOT = {
+				has_country_flag = no_disengage
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = sas_gui.1.k.off.tooltip
+		hidden_effect = {
+			remove_country_flag = no_disengage
+			country_event = {
+				id = sas_gui.1
+			}
+		}
+	}
+	option = {
 		name = sas_gui.1.y.on
 		trigger = {
 			NOT = {
