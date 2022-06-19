@@ -2,266 +2,323 @@ namespace = rds
 @Residual_hull_value = 1
 @flag_time = 3
 ship_event = {
+	id = rds.0
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		ship_event = {
+			id = rds.1
+		}
+	}
+}
+ship_event = {
 	id = rds.1
 	hide_window = yes
 	trigger = {
-		OR = {
-			has_component = REALITY_DISTORTION_SYSTEM
-			leader = {
-				has_trait = leader_trait_reality_distortion_system
-			}
-		}
+		has_component = REALITY_DISTORTION_SYSTEM
 		NOT = {
-			fleet = {
-				has_fleet_flag = reality_distortion_system_cooldown
-			}
+			has_ship_flag = reality_distortion_system_cooldown
 		}
 	}
-	is_triggered_only = false
+	is_triggered_only = no
 	immediate = {
 		THIS = {
 			save_event_target_as = reality_distortion_system_ship
 		}
-		fleet = {
-			set_timed_fleet_flag = {
+		event_target:reality_distortion_system_ship = {
+			set_timed_ship_flag = {
 				flag = reality_distortion_system_cooldown
 				days = @flag_time
 			}
-		}
-		if = {
-			limit = {
-				event_target:reality_distortion_system_ship.owner = {
-					has_country_flag = hull_repair
-				}
-			}
-			This = {
-				set_disable_at_health = 0.0001
-				repair_ship = yes
-				set_disabled = no
-			}
-		}
-		if = {
-			limit = {
-				event_target:reality_distortion_system_ship.owner = {
-					has_country_flag = no_disengage
-				}
-			}
-			export_modifier_to_variable = {
-				modifier = ship_disengage_chance_reduction
-				variable = ship_disengage_chance_reduction_number
-			}
-			multiply_variable = {
-				which = ship_disengage_chance_reduction_number
-				value = -1
-			}
-			change_variable = {
-				which = ship_disengage_chance_reduction_number
-				value = 1
-			}
+			#HULL_REPAIR
 			if = {
 				limit = {
-					check_modifier_value = {	modifier = ship_disengage_chance_reduction value < 1.00	}
+					event_target:reality_distortion_system_ship.fleet = {
+						has_fleet_flag = hull_repair
+					}
 				}
-				remove_modifier = swn_mod_ship_disengage_chance_reduction
-				add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = 1	multiplier = ship_disengage_chance_reduction_number	}
+				This = {
+					set_disable_at_health = 0.0001
+					repair_ship = yes
+					set_disabled = no
+				}
+			}
+			else = {
+				This = {
+					set_disable_at_health = 0
+					repair_ship = yes
+					set_disabled = no
+				}
+			}
+			#NO_DISENGAGE
+			if = {
+				limit = {
+					event_target:reality_distortion_system_ship.fleet = {
+						has_fleet_flag = no_disengage
+					}
+				}
+				export_modifier_to_variable = {
+					modifier = ship_disengage_chance_reduction
+					variable = ship_disengage_chance_reduction_number
+				}
+				multiply_variable = {
+					which = ship_disengage_chance_reduction_number
+					value = -1
+				}
+				change_variable = {
+					which = ship_disengage_chance_reduction_number
+					value = 1
+				}
+				if = {
+					limit = {
+						check_modifier_value = {	modifier = ship_disengage_chance_reduction value < 1.00	}
+					}
+					remove_modifier = swn_mod_ship_disengage_chance_reduction
+					add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = 1	multiplier = ship_disengage_chance_reduction_number	}
+				}
+			}
+			#COORDINATE_EDITING
+			if = {
+				limit = {
+					event_target:reality_distortion_system_ship.fleet = {
+						has_fleet_flag = coordinate_editing
+					}
+				}
+				add_modifier = {	modifier = swn_mod_ship_windup_mult	months = -1	multiplier = -1	}
+				add_modifier = {	modifier = swn_mod_ship_interstellar_speed_mult	months = -1	multiplier = 6.66	}
+				add_modifier = {	modifier = swn_mod_ship_jumpdrive_cooldown_mult	months = -1	multiplier = -4.2	}
+				add_modifier = {	modifier = swn_mod_ship_ftl_jumpdrive_range_mult	months = -1	multiplier = 42	}
+			}
+			else = {
+				remove_modifier = swn_mod_ship_windup_mult
+				remove_modifier = swn_mod_ship_interstellar_speed_mult
+				remove_modifier = swn_mod_ship_jumpdrive_cooldown_mult
+				remove_modifier = swn_mod_ship_ftl_jumpdrive_range_mult
+			}
+			#VECTOR_EDITING
+			if = {
+				limit = {
+					event_target:reality_distortion_system_ship.fleet = {
+						has_fleet_flag = vector_editing
+					}
+				}
+				add_modifier = {	modifier = swn_mod_ship_speed_mult	months = -1	multiplier = 42.14	}
+				add_modifier = {	modifier = swn_mod_ship_evasion_add	months = -1	multiplier = 400	}
+			}
+			else = {
+				remove_modifier = swn_mod_ship_speed_mult
+				remove_modifier = swn_mod_ship_evasion_add
 			}
 		}
-		THIS.solar_system = {
-			every_ship_in_system = {
-				limit = {
-					if = {
-						limit = {
-							NOT = {
-								event_target:reality_distortion_system_ship.owner = {
-									has_country_flag = system_wide
+		if = {
+			limit = {
+				NOT = {
+					fleet = {
+						has_fleet_flag = reality_distortion_system_cooldown
+					}
+				}
+			}
+			fleet = {
+				set_timed_fleet_flag = {
+					flag = reality_distortion_system_cooldown
+					days = @flag_time
+				}
+			}
+			THIS.solar_system = {
+				every_ship_in_system = {
+					limit = {
+						if = {
+							limit = {
+								NOT = {
+									event_target:reality_distortion_system_ship.fleet = {
+										has_fleet_flag = system_wide
+									}
 								}
 							}
+							is_in_combat = yes
 						}
-						is_in_combat = yes
-					}
-					NOT = {
-						This = {
+						NOT = {
 							is_owned_by = event_target:reality_distortion_system_ship.owner
 						}
 					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = ship_hp_amount_reduce_system
+					if = {
+						limit = {
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = ship_hp_amount_reduce_system
+							}
 						}
-					}
-					export_trigger_value_to_variable = {
-						trigger = has_hp
-						variable = ship_hp_amount
-					}
-					subtract_variable = {
-						which = ship_hp_amount
-						value = @Residual_hull_value
-					}
-					reduce_hp = ship_hp_amount
-					set_timed_ship_flag = {
-						flag = ship_hp_amount_reduce_system_target
-						days = @flag_time
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = shield_erasing_system
+						export_trigger_value_to_variable = {
+							trigger = has_hp
+							variable = ship_hp_amount
 						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_shield_reduction
-						variable = ship_shield_reduction_number
-					}
-					multiply_variable = {
-						which = ship_shield_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_shield_reduction_number
-						value = 1
+						subtract_variable = {
+							which = ship_hp_amount
+							value = @Residual_hull_value
+						}
+						reduce_hp = ship_hp_amount
+						set_timed_ship_flag = {
+							flag = ship_hp_amount_reduce_system_target
+							days = @flag_time
+						}
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = shield_erasing_system
+							}
 						}
-						remove_modifier = swn_mod_ship_shield_reduction
-						add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = armor_erasing_system
+						export_modifier_to_variable = {
+							modifier = ship_shield_reduction
+							variable = ship_shield_reduction_number
 						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_armor_reduction
-						variable = ship_armor_reduction_number
-					}
-					multiply_variable = {
-						which = ship_armor_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_armor_reduction_number
-						value = 1
+						multiply_variable = {
+							which = ship_shield_reduction_number
+							value = -1
+						}
+						change_variable = {
+							which = ship_shield_reduction_number
+							value = 1
+						}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+							}
+							remove_modifier = swn_mod_ship_shield_reduction
+							add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+						}
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = armor_erasing_system
+							}
 						}
-						remove_modifier = swn_mod_ship_armor_reduction
-						add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = narrative_editing_warship_narrative_strike
+						export_modifier_to_variable = {
+							modifier = ship_armor_reduction
+							variable = ship_armor_reduction_number
 						}
-					}
-					destroy_ship = This
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = aggro_range_editor
+						multiply_variable = {
+							which = ship_armor_reduction_number
+							value = -1
 						}
-					}
-					fleet = {
-						set_aggro_range = 0
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = anti_hull_repair
+						change_variable = {
+							which = ship_armor_reduction_number
+							value = 1
 						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_hull_regen_add_perc
-						variable = ship_hull_regen_add_perc_number
-					}
-					multiply_variable = {
-						which = ship_hull_regen_add_perc_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_hull_regen_add_perc_number
-						value = 0
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+							}
+							remove_modifier = swn_mod_ship_armor_reduction
+							add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+						}
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = narrative_editing_warship_narrative_strike
+							}
 						}
-						remove_modifier = swn_mod_ship_hull_repair_anti
-						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_hull_regen_add_static
-						variable = ship_hull_regen_add_static_number
-					}
-					multiply_variable = {
-						which = ship_hull_regen_add_static_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_hull_regen_add_static_number
-						value = 0
+						destroy_ship = This
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = aggro_range_editor
+							}
 						}
-						remove_modifier = swn_mod_ship_hull_repair_anti_static
-						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = speed_reduction
+						fleet = {
+							set_aggro_range = 0
 						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_speed_reduction
-						variable = ship_speed_reduction_number
-					}
-					multiply_variable = {
-						which = ship_speed_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_speed_reduction_number
-						value = 1
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = anti_hull_repair
+							}
 						}
-						remove_modifier = swn_mod_ship_speed_reduction
-						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+						export_modifier_to_variable = {
+							modifier = ship_hull_regen_add_perc
+							variable = ship_hull_regen_add_perc_number
+						}
+						multiply_variable = {
+							which = ship_hull_regen_add_perc_number
+							value = 1
+						}
+						change_variable = {
+							which = ship_hull_regen_add_perc_number
+							value = 0
+						}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
+							}
+							remove_modifier = swn_mod_ship_hull_repair_anti
+							add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
+						}
+						export_modifier_to_variable = {
+							modifier = ship_hull_regen_add_static
+							variable = ship_hull_regen_add_static_number
+						}
+						multiply_variable = {
+							which = ship_hull_regen_add_static_number
+							value = 1
+						}
+						change_variable = {
+							which = ship_hull_regen_add_static_number
+							value = 0
+						}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
+							}
+							remove_modifier = swn_mod_ship_hull_repair_anti_static
+							add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
+						}
 					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = no_disabled_ship
+					if = {
+						limit = {
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = speed_reduction
+							}
 						}
-						set_disable_at_health = 0
+						export_modifier_to_variable = {
+							modifier = ship_speed_reduction
+							variable = ship_speed_reduction_number
+						}
+						multiply_variable = {
+							which = ship_speed_reduction_number
+							value = -1
+						}
+						change_variable = {
+							which = ship_speed_reduction_number
+							value = 1
+						}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
+							}
+							remove_modifier = swn_mod_ship_speed_reduction
+							add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+						}
+					}
+					if = {
+						limit = {
+							event_target:reality_distortion_system_ship.fleet = {
+								has_fleet_flag = no_disabled_ship
+							}
+							set_disable_at_health = 0
+						}
 					}
 				}
 			}
 		}
-		THIS = {
-			ship_event = {
-				id = rds.1
-				day = 3
-				scopes = { THIS = THIS }
-			}
+		ship_event = {
+			id = rds.0
+			day = 3
+			scopes = { THIS = THIS }
 		}
 	}
 }
@@ -275,241 +332,17 @@ event = {
 	immediate = {
 		if = {
 			limit = {
-				This.owner = {
-					has_country_flag = hull_repair
+				This.fleet = {
+					has_fleet_flag = hull_repair
 				}
-				This = {
-					has_component = REALITY_DISTORTION_SYSTEM
-				}
+				has_component = REALITY_DISTORTION_SYSTEM
 			}
 			This = {
 				repair_ship = yes
 				set_disabled = no
-				add_modifier = {	modifier = swn_mod_ship_fire_rate_mult	months = 10	multiplier = 2	}
-			}
-		}
-	}
-}
-
-ship_event = {
-	id = rds.3
-	hide_window = yes
-	trigger = {
-		has_component = REALITY_DISTORTION_SYSTEM
-	}
-	is_triggered_only = yes
-	immediate = {
-		THIS = {
-			save_event_target_as = reality_distortion_system_ship
-		}
-		set_timed_ship_flag = {
-			flag = reality_distortion_system_cooldown
-			days = @flag_time
-		}
-		if = {
-			limit = {
-				event_target:reality_distortion_system_ship.owner = {
-					has_country_flag = hull_repair
+				ship_event = {
+					id = rds.1
 				}
-			}
-			This = {
-				repair_ship = yes
-				set_disabled = no
-			}
-		}
-		THIS.solar_system = {
-			every_ship_in_system = {
-				limit = {
-					if = {
-						limit = {
-							NOT = {
-								event_target:reality_distortion_system_ship.owner = {
-									has_country_flag = system_wide
-								}
-							}
-						}
-						is_in_combat = yes
-					}
-					NOT = {
-						This = {
-							is_owned_by = event_target:reality_distortion_system_ship.owner
-						}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = ship_hp_amount_reduce_system
-						}
-					}
-					export_trigger_value_to_variable = {
-						trigger = has_hp
-						variable = ship_hp_amount
-					}
-					subtract_variable = {
-						which = ship_hp_amount
-						value = @Residual_hull_value
-					}
-					reduce_hp = ship_hp_amount
-					set_timed_ship_flag = {
-						flag = ship_hp_amount_reduce_system_target
-						days = @flag_time
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = shield_erasing_system
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_shield_reduction
-						variable = ship_shield_reduction_number
-					}
-					multiply_variable = {
-						which = ship_shield_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_shield_reduction_number
-						value = 1
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
-						}
-						remove_modifier = swn_mod_ship_shield_reduction
-						add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = armor_erasing_system
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_armor_reduction
-						variable = ship_armor_reduction_number
-					}
-					multiply_variable = {
-						which = ship_armor_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_armor_reduction_number
-						value = 1
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
-						}
-						remove_modifier = swn_mod_ship_armor_reduction
-						add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = narrative_editing_warship_narrative_strike
-						}
-					}
-					destroy_ship = This
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = aggro_range_editor
-						}
-					}
-					fleet = {
-						set_aggro_range = 0
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = anti_hull_repair
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_hull_regen_add_perc
-						variable = ship_hull_regen_add_perc_number
-					}
-					multiply_variable = {
-						which = ship_hull_regen_add_perc_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_hull_regen_add_perc_number
-						value = 0
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
-						}
-						remove_modifier = swn_mod_ship_hull_repair_anti
-						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_hull_regen_add_static
-						variable = ship_hull_regen_add_static_number
-					}
-					multiply_variable = {
-						which = ship_hull_regen_add_static_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_hull_regen_add_static_number
-						value = 0
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
-						}
-						remove_modifier = swn_mod_ship_hull_repair_anti_static
-						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = speed_reduction
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_speed_reduction
-						variable = ship_speed_reduction_number
-					}
-					multiply_variable = {
-						which = ship_speed_reduction_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_speed_reduction_number
-						value = 0
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
-						}
-						remove_modifier = swn_mod_ship_speed_reduction
-						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_ship.owner = {
-							has_country_flag = no_disabled_ship
-						}
-						set_disable_at_health = 0
-					}
-				}
-			}
-		}
-		ROOT = {
-			ship_event = {
-				id = rds.1
 			}
 		}
 	}
@@ -524,237 +357,6 @@ event = {
 	immediate = {
 		ship_event = {
 			id = rds.1
-		}
-	}
-}
-
-planet_event = {
-	id = rds.5
-	hide_window = yes
-	trigger = {
-		NOT = {
-			has_planet_flag = reality_distortion_system_cooldown
-		}
-		has_active_building = building_reality_distortion_system
-	}
-	is_triggered_only = false
-	immediate = {
-		ROOT = {
-			save_event_target_as = reality_distortion_system_planet
-		}
-		set_timed_planet_flag = {
-			flag = reality_distortion_system_cooldown
-			days = 3
-		}
-		THIS.solar_system = {
-			every_ship_in_system = {
-				limit = {
-					NOT = {
-						This = {
-							is_owned_by = event_target:reality_distortion_system_planet.owner
-						}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = ship_hp_amount_reduce_system
-						}
-					}
-					export_trigger_value_to_variable = {
-						trigger = has_hp
-						variable = ship_hp_amount
-					}
-					subtract_variable = {
-						which = ship_hp_amount
-						value = @Residual_hull_value
-					}
-					reduce_hp = ship_hp_amount
-					
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = shield_erasing_system
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_shield_reduction
-						variable = ship_shield_reduction_number
-					}
-					multiply_variable = {
-						which = ship_shield_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_shield_reduction_number
-						value = 1
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
-						}
-						remove_modifier = swn_mod_ship_shield_reduction
-						add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = armor_erasing_system
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_armor_reduction
-						variable = ship_armor_reduction_number
-					}
-					multiply_variable = {
-						which = ship_armor_reduction_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_armor_reduction_number
-						value = 1
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
-						}
-						remove_modifier = swn_mod_ship_armor_reduction
-						add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = narrative_editing_warship_narrative_strike
-						}
-					}
-					destroy_ship = This
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = aggro_range_editor
-						}
-					}
-					fleet = {
-						set_aggro_range = 0
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = anti_hull_repair
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_hull_regen_add_perc
-						variable = ship_hull_regen_add_perc_number
-					}
-					multiply_variable = {
-						which = ship_hull_regen_add_perc_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_hull_regen_add_perc_number
-						value = 0
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
-						}
-						remove_modifier = swn_mod_ship_hull_repair_anti
-						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_hull_regen_add_static
-						variable = ship_hull_regen_add_static_number
-					}
-					multiply_variable = {
-						which = ship_hull_regen_add_static_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_hull_regen_add_static_number
-						value = 0
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
-						}
-						remove_modifier = swn_mod_ship_hull_repair_anti_static
-						add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = speed_reduction
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_speed_reduction
-						variable = ship_speed_reduction_number
-					}
-					multiply_variable = {
-						which = ship_speed_reduction_number
-						value = 1
-					}
-					change_variable = {
-						which = ship_speed_reduction_number
-						value = 0
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
-						}
-						remove_modifier = swn_mod_ship_speed_reduction
-						add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = planet_shield
-						}
-					}
-					export_modifier_to_variable = {
-						modifier = ship_orbital_bombardment_mult
-						variable = ship_orbital_bombardment_mult_number
-					}
-					multiply_variable = {
-						which = ship_orbital_bombardment_mult_number
-						value = -1
-					}
-					change_variable = {
-						which = ship_orbital_bombardment_mult_number
-						value = -1
-					}
-					if = {
-						limit = {
-							check_modifier_value = {	modifier = ship_orbital_bombardment_mult value > -1.00	}
-						}
-						remove_modifier = swn_mod_ship_orbital_bombardment_mult
-						add_modifier = {	modifier = swn_mod_ship_orbital_bombardment_mult	months = 1	multiplier = ship_orbital_bombardment_mult_number	}
-					}
-				}
-				if = {
-					limit = {
-						event_target:reality_distortion_system_planet = {
-							has_planet_flag = no_disabled_ship
-						}
-						set_disable_at_health = 0
-					}
-				}
-			}
-		}
-		ROOT = {
-			planet_event = {
-				id = rds.5
-				day = 3
-				scopes = { THIS = THIS }
-			}
 		}
 	}
 }

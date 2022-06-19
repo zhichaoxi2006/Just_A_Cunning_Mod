@@ -10,8 +10,6 @@ pataphysics_technology = {
 	}
 }
 
-
-
 tech_pataphysics_ship_utilities = {
 	cost = 1919810
 	area = physics
@@ -48,7 +46,7 @@ tech_pataphysics_strike_ship = {
 	}
 }
 
-tech_narrative_editing_weapon = {
+tech_pataphysics_weapon = {
 	cost = 13446
 	area = engineering
 	tier = 5

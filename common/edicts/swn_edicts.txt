@@ -20,7 +20,7 @@ sas_technology_get = {
 			message = no
 		}
 		give_technology = {
-			tech = tech_narrative_editing_weapon
+			tech = tech_pataphysics_weapon
 			message = no
 		}
 	}
@@ -89,7 +89,7 @@ sas_warship_console = {
 	}
 	effect = {
 		country_event = {
-			id = sas_gui.1
+			id = rds_setting.3
 		}
 	}
 }
@@ -133,5 +133,3 @@ rebirth_program = {
 		}	
 	}
 }
-
-

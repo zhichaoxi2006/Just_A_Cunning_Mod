@@ -63,7 +63,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_paradox_reactor"
 	icon_frame = 1
-	power = 1919810
+	power = 46272102
 	resources = {
 		category = ship_components
 		cost = {
@@ -112,48 +112,11 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "SHIP_AURA_ANTI_REPAIR"
-	size = medium
-	icon = "GFX_ship_part_aura_anti_repair"
-	icon_frame = 1
-	power = 0
-
-	size_restriction = {  }
-	component_set = "ship_aura_components"
-	hidden = yes
-
-	hostile_aura = {
-		name = "aura_anti_repair"
-		system_wide = yes
-
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-			id = hostile_anti_repair
-			priority = 250
-		}
-
-		modifier = {
-			ship_hull_regen_add_perc = -1432.74
-		}
-
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
-}
-
-utility_component_template = {
 	key = "SHIP_AURA_MINEFIELD_PARADOX"
 	size = medium
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
-	power = 0
+	power = -20
 
 	size_restriction = {  }
 	component_set = "ship_aura_components"
@@ -167,7 +130,7 @@ utility_component_template = {
 			priority = 250
 		}
 		damage_per_day = {
-			damage = { min = 15 max = 20 }
+			damage = { min = 100 max = 200 }
 			accuracy = 1
 			tracking = 1
 			shield_penetration = 1
@@ -187,27 +150,17 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
-	size = aux
-	icon = "GFX_narrative_level_resuscitation_device"
-	icon_frame = 1
-	component_set = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
-	modifier = {
-		ship_hull_regen_add_perc = 1432
-	}
-	hidden = yes
-	ai_weight = {
-		weight = 0
-	}
-}
-
-utility_component_template = {
 	key = "REALITY_DISTORTION_SYSTEM"
 	size = aux
 	icon = "GFX_paradox_generation_system"
 	icon_frame = 1
 	prerequisites = { tech_pataphysics_strike_ship }
 	component_set = "REALITY_DISTORTION_SYSTEM"
+	power = -100
+	modifier = {
+		ship_disengage_chance_mult = -100
+		ship_disengage_chance_reduction = 100
+	}
 	resources = {
 		category = ship_components
 		cost = {

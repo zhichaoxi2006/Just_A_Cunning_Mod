@@ -1,25 +1,4 @@
 component_set = {
-	key = "STRIKE_CRAFT_SARDINE"
-
-	icon = "GFX_strike_craft_sardine"
-	icon_frame = 1
-}
-
-component_set = {
-	key = "NARRATIVE_EDITING_MISSILE"
-
-	icon = "GFX_narrative_editing_missile"
-	icon_frame = 1
-}
-
-component_set = {
-	key = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-
-	icon = "GFX_narrative_destruction_singularity_accelerator"
-	icon_frame = 1
-}
-
-component_set = {
 	key = "REALITY_DISTORTION_SYSTEM"
 
 	icon = "GFX_paradox_generation_system"
@@ -27,8 +6,8 @@ component_set = {
 }
 
 component_set = {
-	key = "NARRATIVE_LEVEL_RESUSCITATION_DEVICE"
+	key = "MINEFIELD_PARADOX"
 
-	icon = "GFX_narrative_level_resuscitation_device"
+	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
 }

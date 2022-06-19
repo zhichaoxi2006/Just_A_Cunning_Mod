@@ -1,0 +1,16 @@
+
+rds_setting_flag_converter = {
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = $RDS_SETTING_FLAG$
+			}
+		}
+		set_fleet_flag = $RDS_SETTING_FLAG$
+	}
+	else = {
+		fleet = {
+			remove_fleet_flag = $RDS_SETTING_FLAG$
+		}
+	}
+}

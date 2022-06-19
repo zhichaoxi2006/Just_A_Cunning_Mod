@@ -54,6 +54,7 @@ on_army_killed_in_combat = {
 on_ship_built = {
 	events = {
 		rds.4
+		rds_setting.5
 	}
 }
 
@@ -61,5 +62,21 @@ on_ship_built = {
 on_ship_enabled = {
 	events = {
 		rds.6
+	}
+}
+
+# A ship has started a new order
+# Root = Ship
+# From = Country
+on_ship_order = {
+	events = {
+		rds.4
+	}
+}
+
+# this = country
+on_monthly_pulse_country = {
+	events = {
+
 	}
 }

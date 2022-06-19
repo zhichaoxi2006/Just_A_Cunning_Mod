@@ -1,341 +1,533 @@
-namespace = sas_gui
-@Residual_hull_value = 1
-country_event = {
-	id = sas_gui.1
-	title = sas_gui.1.name
-	desc = sas_gui.1.desc
-	picture = GFX_evt_mining_station	#a name of a picture to display
-	is_triggered_only = yes	#The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+namespace = rds_setting
+
+fleet_event = {
+	id = rds_setting.2
+	title = rds_setting.gui.name
+	desc = rds_setting.gui.desc
+	picture = GFX_evt_mining_station
+	location = root
+	is_triggered_only = yes
+	diplomatic = yes
 	trigger = {
 	}
 	immediate = {
 	}
 	option = {
-		name = sas_gui.1.a.on
-		trigger = {
-			ROOT = {
-				NOT = {
-					has_country_flag = ship_hp_amount_reduce_system
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.a.on.tooltip
-		hidden_effect = {
-			set_country_flag = ship_hp_amount_reduce_system
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.a.off
-		trigger = {
-			ROOT = {
-				has_country_flag = ship_hp_amount_reduce_system
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.a.off.tooltip
-		hidden_effect = {
-			remove_country_flag = ship_hp_amount_reduce_system
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.b.on
-		trigger = {
-			ROOT = {
-				NOT = {
-					has_country_flag = armor_erasing_system
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.b.off.tooltip
-		hidden_effect = {
-			set_country_flag = armor_erasing_system
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.b.off
-		trigger = {
-			ROOT = {
-				has_country_flag = armor_erasing_system
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.b.off.tooltip
-		hidden_effect = {
-			remove_country_flag = armor_erasing_system
-			country_event = {
-				id = sas_gui.1
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.c.on
+		name = rds_setting.coordinate_editing.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = shield_erasing_system
+					has_fleet_flag = coordinate_editing
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.c.off.tooltip
+		custom_tooltip = rds_setting.coordinate_editing.on.tooltip
 		hidden_effect = {
-			set_country_flag = shield_erasing_system
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = coordinate_editing
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.c.off
+		name = rds_setting.coordinate_editing.off
 		trigger = {
 			ROOT = {
-				has_country_flag = shield_erasing_system
+				has_fleet_flag = coordinate_editing
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.c.off.tooltip
+		custom_tooltip = rds_setting.coordinate_editing.off.tooltip
 		hidden_effect = {
-			remove_country_flag = shield_erasing_system
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = coordinate_editing
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.d.on
+		name = rds_setting.vector_editing.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = star_erasing_system
+					has_fleet_flag = vector_editing
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.d.off.tooltip
+		custom_tooltip = rds_setting.vector_editing.on.tooltip
 		hidden_effect = {
-			set_country_flag = star_erasing_system
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = vector_editing
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.d.off
+		name = rds_setting.vector_editing.off
 		trigger = {
 			ROOT = {
-				has_country_flag = star_erasing_system
+				has_fleet_flag = coordinvector_editingate_editing
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.d.off.tooltip
+		custom_tooltip = rds_setting.vector_editing.off.tooltip
 		hidden_effect = {
-			remove_country_flag = star_erasing_system
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = vector_editing
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.e.on
+		name = rds_setting.no_disabled_ship.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = narrative_editing_warship_narrative_strike
+					has_fleet_flag = no_disabled_ship
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.e.on.tooltip
+		custom_tooltip = rds_setting.no_disabled_ship.on.tooltip
 		hidden_effect = {
-			set_country_flag = narrative_editing_warship_narrative_strike
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = no_disabled_ship
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.e.off
+		name = rds_setting.no_disabled_ship.off
 		trigger = {
 			ROOT = {
-				has_country_flag = narrative_editing_warship_narrative_strike
+				has_fleet_flag = no_disabled_ship
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.e.off.tooltip
+		custom_tooltip = rds_setting.no_disabled_ship.off.tooltip
 		hidden_effect = {
-			remove_country_flag = narrative_editing_warship_narrative_strike
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = no_disabled_ship
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.f.on
+		name = rds_setting.hull_repair.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = aggro_range_editor
+					has_fleet_flag = hull_repair
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.f.on.tooltip
+		custom_tooltip = rds_setting.hull_repair.on.tooltip
 		hidden_effect = {
-			set_country_flag = aggro_range_editor
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = hull_repair
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.f.off
+		name = rds_setting.hull_repair.off
 		trigger = {
 			ROOT = {
-				has_country_flag = aggro_range_editor
+				has_fleet_flag = hull_repair
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.f.off.tooltip
+		custom_tooltip = rds_setting.hull_repair.off.tooltip
 		hidden_effect = {
-			remove_country_flag = aggro_range_editor
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = hull_repair
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.g.on
+		name = rds_setting.no_disengage.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = anti_hull_repair
+					has_fleet_flag = no_disengage
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.g.on.tooltip
+		custom_tooltip = rds_setting.no_disengage.on.tooltip
 		hidden_effect = {
-			set_country_flag = anti_hull_repair
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = no_disengage
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.g.off
+		name = rds_setting.no_disengage.off
 		trigger = {
 			ROOT = {
-				has_country_flag = anti_hull_repair
+				has_fleet_flag = no_disengage
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.g.off.tooltip
+		custom_tooltip = rds_setting.no_disengage.off.tooltip
 		hidden_effect = {
-			remove_country_flag = anti_hull_repair
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = no_disengage
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.h.on
+		name = rds_setting.ship_hp_amount_reduce_system.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = speed_reduction
+					has_fleet_flag = ship_hp_amount_reduce_system
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.h.on.tooltip
+		custom_tooltip = rds_setting.ship_hp_amount_reduce_system.on.tooltip
 		hidden_effect = {
-			set_country_flag = speed_reduction
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = ship_hp_amount_reduce_system
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.h.off
+		name = rds_setting.ship_hp_amount_reduce_system.off
 		trigger = {
 			ROOT = {
-				has_country_flag = speed_reduction
+				has_fleet_flag = ship_hp_amount_reduce_system
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.h.off.tooltip
+		custom_tooltip = rds_setting.ship_hp_amount_reduce_system.off.tooltip
 		hidden_effect = {
-			remove_country_flag = speed_reduction
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = ship_hp_amount_reduce_system
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.i.on
+		name = rds_setting.shield_erasing_system.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = hull_repair
+					has_fleet_flag = shield_erasing_system
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.i.on.tooltip
+		custom_tooltip = rds_setting.shield_erasing_system.on.tooltip
 		hidden_effect = {
-			set_country_flag = hull_repair
-			country_event = {
-				id = sas_gui.1
+			set_fleet_flag = shield_erasing_system
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.i.off
+		name = rds_setting.shield_erasing_system.off
 		trigger = {
 			ROOT = {
-				has_country_flag = hull_repair
+				has_fleet_flag = shield_erasing_system
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.i.off.tooltip
+		custom_tooltip = rds_setting.shield_erasing_system.off.tooltip
 		hidden_effect = {
-			remove_country_flag = hull_repair
-			country_event = {
-				id = sas_gui.1
+			remove_fleet_flag = shield_erasing_system
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.j.on
+		name = rds_setting.armor_erasing_system.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_fleet_flag = armor_erasing_system
+				}
+			}
+		}
+		custom_tooltip = rds_setting.armor_erasing_system.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = armor_erasing_system
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.armor_erasing_system.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = armor_erasing_system
+			}
+		}
+		custom_tooltip = rds_setting.armor_erasing_system.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = armor_erasing_system
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.narrative_editing_warship_narrative_strike.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_fleet_flag = narrative_editing_warship_narrative_strike
+				}
+			}
+		}
+		custom_tooltip = rds_setting.narrative_editing_warship_narrative_strike.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = narrative_editing_warship_narrative_strike
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.narrative_editing_warship_narrative_strike.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = narrative_editing_warship_narrative_strike
+			}
+		}
+		custom_tooltip = rds_setting.narrative_editing_warship_narrative_strike.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = narrative_editing_warship_narrative_strike
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.aggro_range_editor.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_fleet_flag = aggro_range_editor
+				}
+			}
+		}
+		custom_tooltip = rds_setting.aggro_range_editor.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = aggro_range_editor
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.aggro_range_editor.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = aggro_range_editor
+			}
+		}
+		custom_tooltip = rds_setting.aggro_range_editor.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = aggro_range_editor
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.anti_hull_repair.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_fleet_flag = anti_hull_repair
+				}
+			}
+		}
+		custom_tooltip = rds_setting.anti_hull_repair.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = anti_hull_repair
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.anti_hull_repair.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = anti_hull_repair
+			}
+		}
+		custom_tooltip = rds_setting.anti_hull_repair.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = anti_hull_repair
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.speed_reduction.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_fleet_flag = speed_reduction
+				}
+			}
+		}
+		custom_tooltip = rds_setting.speed_reduction.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = speed_reduction
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.speed_reduction.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = speed_reduction
+			}
+		}
+		custom_tooltip = rds_setting.speed_reduction.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = speed_reduction
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.system_wide.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_fleet_flag = system_wide
+				}
+			}
+		}
+		custom_tooltip = rds_setting.system_wide.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = system_wide
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.system_wide.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = system_wide
+			}
+		}
+		custom_tooltip = rds_setting.system_wide.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = system_wide
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.default_settings
+		trigger = {
+		}
+		hidden_effect = {
+			fleet_event = {
+				id = rds_setting.4
+			}
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.gui_close
+		trigger = {
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+country_event = {
+	id = rds_setting.3
+	title = rds_setting.gui.name
+	desc = rds_setting.gui.desc
+	picture = GFX_evt_mining_station
+	location = root
+	is_triggered_only = yes
+	diplomatic = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = rds_setting.coordinate_editing.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = coordinate_editing
+				}
+			}
+		}
+		custom_tooltip = rds_setting.coordinate_editing.on.tooltip
+		hidden_effect = {
+			set_country_flag = coordinate_editing
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.coordinate_editing.off
+		trigger = {
+			ROOT = {
+				has_country_flag = coordinate_editing
+			}
+		}
+		custom_tooltip = rds_setting.coordinate_editing.off.tooltip
+		hidden_effect = {
+			remove_country_flag = coordinate_editing
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.vector_editing.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = vector_editing
+				}
+			}
+		}
+		custom_tooltip = rds_setting.vector_editing.on.tooltip
+		hidden_effect = {
+			set_country_flag = vector_editing
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.vector_editing.off
+		trigger = {
+			ROOT = {
+				has_country_flag = vector_editing
+			}
+		}
+		custom_tooltip = rds_setting.vector_editing.off.tooltip
+		hidden_effect = {
+			remove_country_flag = vector_editing
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.no_disabled_ship.on
 		trigger = {
 			NOT = {
 				ROOT = {
@@ -343,35 +535,63 @@ country_event = {
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.j.on.tooltip
+		custom_tooltip = rds_setting.no_disabled_ship.on.tooltip
 		hidden_effect = {
 			set_country_flag = no_disabled_ship
 			country_event = {
-				id = sas_gui.1
+				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.j.off
+		name = rds_setting.no_disabled_ship.off
 		trigger = {
 			ROOT = {
 				has_country_flag = no_disabled_ship
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.j.off.tooltip
+		custom_tooltip = rds_setting.no_disabled_ship.off.tooltip
 		hidden_effect = {
 			remove_country_flag = no_disabled_ship
 			country_event = {
-				id = sas_gui.1
+				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.k.on
+		name = rds_setting.hull_repair.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = hull_repair
+				}
+			}
+		}
+		custom_tooltip = rds_setting.hull_repair.on.tooltip
+		hidden_effect = {
+			set_country_flag = hull_repair
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.hull_repair.off
+		trigger = {
+			ROOT = {
+				has_country_flag = hull_repair
+			}
+		}
+		custom_tooltip = rds_setting.hull_repair.off.tooltip
+		hidden_effect = {
+			remove_country_flag = hull_repair
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.no_disengage.on
 		trigger = {
 			NOT = {
 				ROOT = {
@@ -379,35 +599,255 @@ country_event = {
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.k.on.tooltip
+		custom_tooltip = rds_setting.no_disengage.on.tooltip
 		hidden_effect = {
 			set_country_flag = no_disengage
 			country_event = {
-				id = sas_gui.1
+				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.k.off
+		name = rds_setting.no_disengage.off
 		trigger = {
 			ROOT = {
 				has_country_flag = no_disengage
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.k.off.tooltip
+		custom_tooltip = rds_setting.no_disengage.off.tooltip
 		hidden_effect = {
 			remove_country_flag = no_disengage
 			country_event = {
-				id = sas_gui.1
+				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.y.on
+		name = rds_setting.ship_hp_amount_reduce_system.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = ship_hp_amount_reduce_system
+				}
+			}
+		}
+		custom_tooltip = rds_setting.ship_hp_amount_reduce_system.on.tooltip
+		hidden_effect = {
+			set_country_flag = ship_hp_amount_reduce_system
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.ship_hp_amount_reduce_system.off
+		trigger = {
+			ROOT = {
+				has_country_flag = ship_hp_amount_reduce_system
+			}
+		}
+		custom_tooltip = rds_setting.ship_hp_amount_reduce_system.off.tooltip
+		hidden_effect = {
+			remove_country_flag = ship_hp_amount_reduce_system
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.shield_erasing_system.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = shield_erasing_system
+				}
+			}
+		}
+		custom_tooltip = rds_setting.shield_erasing_system.on.tooltip
+		hidden_effect = {
+			set_country_flag = shield_erasing_system
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.shield_erasing_system.off
+		trigger = {
+			ROOT = {
+				has_country_flag = shield_erasing_system
+			}
+		}
+		custom_tooltip = rds_setting.shield_erasing_system.off.tooltip
+		hidden_effect = {
+			remove_country_flag = shield_erasing_system
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.armor_erasing_system.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = armor_erasing_system
+				}
+			}
+		}
+		custom_tooltip = rds_setting.armor_erasing_system.on.tooltip
+		hidden_effect = {
+			set_country_flag = armor_erasing_system
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.armor_erasing_system.off
+		trigger = {
+			ROOT = {
+				has_country_flag = armor_erasing_system
+			}
+		}
+		custom_tooltip = rds_setting.armor_erasing_system.off.tooltip
+		hidden_effect = {
+			remove_country_flag = armor_erasing_system
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.narrative_editing_warship_narrative_strike.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = narrative_editing_warship_narrative_strike
+				}
+			}
+		}
+		custom_tooltip = rds_setting.narrative_editing_warship_narrative_strike.on.tooltip
+		hidden_effect = {
+			set_country_flag = narrative_editing_warship_narrative_strike
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.narrative_editing_warship_narrative_strike.off
+		trigger = {
+			ROOT = {
+				has_country_flag = narrative_editing_warship_narrative_strike
+			}
+		}
+		custom_tooltip = rds_setting.narrative_editing_warship_narrative_strike.off.tooltip
+		hidden_effect = {
+			remove_country_flag = narrative_editing_warship_narrative_strike
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.aggro_range_editor.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = aggro_range_editor
+				}
+			}
+		}
+		custom_tooltip = rds_setting.aggro_range_editor.on.tooltip
+		hidden_effect = {
+			set_country_flag = aggro_range_editor
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.aggro_range_editor.off
+		trigger = {
+			ROOT = {
+				has_country_flag = aggro_range_editor
+			}
+		}
+		custom_tooltip = rds_setting.aggro_range_editor.off.tooltip
+		hidden_effect = {
+			remove_country_flag = aggro_range_editor
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.anti_hull_repair.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = anti_hull_repair
+				}
+			}
+		}
+		custom_tooltip = rds_setting.anti_hull_repair.on.tooltip
+		hidden_effect = {
+			set_country_flag = anti_hull_repair
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.anti_hull_repair.off
+		trigger = {
+			ROOT = {
+				has_country_flag = anti_hull_repair
+			}
+		}
+		custom_tooltip = rds_setting.anti_hull_repair.off.tooltip
+		hidden_effect = {
+			remove_country_flag = anti_hull_repair
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.speed_reduction.on
+		trigger = {
+			NOT = {
+				ROOT = {
+					has_country_flag = speed_reduction
+				}
+			}
+		}
+		custom_tooltip = rds_setting.speed_reduction.on.tooltip
+		hidden_effect = {
+			set_country_flag = speed_reduction
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.speed_reduction.off
+		trigger = {
+			ROOT = {
+				has_country_flag = speed_reduction
+			}
+		}
+		custom_tooltip = rds_setting.speed_reduction.off.tooltip
+		hidden_effect = {
+			remove_country_flag = speed_reduction
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.system_wide.on
 		trigger = {
 			NOT = {
 				ROOT = {
@@ -415,388 +855,71 @@ country_event = {
 				}
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.y.on.tooltip
+		custom_tooltip = rds_setting.system_wide.on.tooltip
 		hidden_effect = {
 			set_country_flag = system_wide
 			country_event = {
-				id = sas_gui.1
+				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.y.off
+		name = rds_setting.system_wide.off
 		trigger = {
 			ROOT = {
 				has_country_flag = system_wide
 			}
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.y.off.tooltip
+		custom_tooltip = rds_setting.system_wide.off.tooltip
 		hidden_effect = {
 			remove_country_flag = system_wide
 			country_event = {
-				id = sas_gui.1
+				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = sas_gui.1.z
+		name = rds_setting.gui_close
 		trigger = {
 		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.z.tooltip
 		hidden_effect = {
 		}
 	}
 }
 
-planet_event = {
-	id = sas_gui.2
-	title = sas_gui.1.name
-	desc = sas_gui.1.desc
-	picture = GFX_evt_mining_station	#a name of a picture to display
-	is_triggered_only = yes	#The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+fleet_event = {
+	id = rds_setting.4
+	hide_window = yes
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	immediate = {
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = system_wide }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = speed_reduction }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = anti_hull_repair }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = aggro_range_editor }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = narrative_editing_warship_narrative_strike }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = armor_erasing_system }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = shield_erasing_system }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = ship_hp_amount_reduce_system }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_disengage }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = hull_repair }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_disabled_ship }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = vector_editing }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = coordinate_editing }
+	}
+}
+
+ship_event = {
+	id = rds_setting.5
+	hide_window = yes
 	trigger = {
 	}
+	is_triggered_only = yes
 	immediate = {
-	}
-	option = {
-		name = sas_gui.1.a.on
-		trigger = {
-			ROOT = {
-				NOT = {
-					has_planet_flag = ship_hp_amount_reduce_system
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.a.on.tooltip
-		hidden_effect = {
-			set_planet_flag = ship_hp_amount_reduce_system
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.a.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = ship_hp_amount_reduce_system
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.a.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = ship_hp_amount_reduce_system
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.b.on
-		trigger = {
-			ROOT = {
-				NOT = {
-					has_planet_flag = armor_erasing_system
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.b.off.tooltip
-		hidden_effect = {
-			set_planet_flag = armor_erasing_system
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.b.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = armor_erasing_system
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.b.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = armor_erasing_system
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.c.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = shield_erasing_system
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.c.off.tooltip
-		hidden_effect = {
-			set_planet_flag = shield_erasing_system
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.c.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = shield_erasing_system
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.c.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = shield_erasing_system
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.e.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = narrative_editing_warship_narrative_strike
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.e.on.tooltip
-		hidden_effect = {
-			set_planet_flag = narrative_editing_warship_narrative_strike
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.e.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = narrative_editing_warship_narrative_strike
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.e.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = narrative_editing_warship_narrative_strike
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.f.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = aggro_range_editor
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.f.on.tooltip
-		hidden_effect = {
-			set_planet_flag = aggro_range_editor
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.f.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = aggro_range_editor
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.f.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = aggro_range_editor
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.g.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = anti_hull_repair
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.g.on.tooltip
-		hidden_effect = {
-			set_planet_flag = anti_hull_repair
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.g.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = anti_hull_repair
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.g.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = anti_hull_repair
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.h.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = speed_reduction
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.h.on.tooltip
-		hidden_effect = {
-			set_planet_flag = speed_reduction
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.h.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = speed_reduction
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.h.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = speed_reduction
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.2.i.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = planet_shield
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.2.i.on.tooltip
-		hidden_effect = {
-			set_planet_flag = planet_shield
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.2.i.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = planet_shield
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.2.i.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = planet_shield
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.j.on
-		trigger = {
-			NOT = {
-				ROOT = {
-					has_planet_flag = no_disabled_ship
-				}
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.j.on.tooltip
-		hidden_effect = {
-			set_planet_flag = no_disabled_ship
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.j.off
-		trigger = {
-			ROOT = {
-				has_planet_flag = no_disabled_ship
-			}
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.j.off.tooltip
-		hidden_effect = {
-			remove_planet_flag = no_disabled_ship
-			planet_event = {
-				id = sas_gui.2
-			}
-		}
-	}
-	option = {
-		name = sas_gui.1.z
-		trigger = {
-		}
-		allow = {
-		}
-		custom_tooltip = sas_gui.1.z.tooltip
-		hidden_effect = {
+		fleet_event = {
+			id = rds_setting.4
 		}
 	}
 }
-

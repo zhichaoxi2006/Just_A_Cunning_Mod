@@ -1,26 +1,26 @@
-decision_reality_distortion_system = {
-	owned_planets_only = yes
 
+decision_fleet_reality_distortion_system = {
+	owned_planets_only = no
 	enactment_time = 0
 	resources = {
 		category = decisions
 		cost = {
 		}
 	}
-
 	potential = {
-		has_active_building = building_reality_distortion_system
 	}
-
 	effect = {
-		custom_tooltip = decision_reality_distortion_system_effects_short
+		custom_tooltip = decision_fleet_reality_distortion_system_effects_short
 		hidden_effect = {
-			planet_event = {
-				id = sas_gui.2
+			every_fleet_in_orbit = {
+				limit = {
+				}
+				fleet_event = {
+					id = rds_setting.2
+				}
 			}
 		}
 	}
-
 	ai_weight = {
 		weight = 0
 	}

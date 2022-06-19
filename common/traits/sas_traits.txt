@@ -1,8 +1,0 @@
-leader_trait_reality_distortion_system = {
-	cost = 0
-	initial = no
-	icon = "gfx/interface/icons/traits/trait_narrative_entity.dds"
-	immortal_leaders = yes
-	prerequisites = { pataphysics_technology }
-	leader_trait = all
-}

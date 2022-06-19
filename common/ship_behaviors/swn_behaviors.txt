@@ -17,7 +17,7 @@ ship_behavior = {
 	name = "swn_carrier"
 	preferred_attack_range = max	#this is the distance to target the ship wants to keep when attacking
 
-	formation_distance = 350				#when orbing/following ship will try to keep this distance to assigned position
+	formation_distance = 300				#when orbing/following ship will try to keep this distance to assigned position
 	return_to_formation_distance = 250	#when attacking the ship will switch to passive mode if distance to assigned position is greater that this
 
 	collision_awareness = 0.75			#how much we try to avoid other ships

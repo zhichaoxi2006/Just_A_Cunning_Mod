@@ -1,108 +1,13 @@
-strike_craft_component_template = {
-	key = "STRIKE_CRAFT_SARDINE"
-	size = LARGE
-	entity = "bomber_entity"
-	weapon_type = instant
-	projectile_gfx = "strike_craft_laser_3"
-	power = 0
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = @l_t5_cost
-		}
-		upkeep = {
-			energy = @l_t5_upkeep_energy
-			alloys = @l_t5_upkeep_alloys
-		}
-	}
-	count = 889464
-	regeneration_per_day = 114514
-	launch_time = 0
-	damage = {
-		min = 135420
-		max = 138420
-	}
-	cooldown = 1
-	range = 1937
-	accuracy = 1
-	tracking = 1
-	health = 1747
-	armor = 0
-	shield = 0
-	evasion = 6.82
-	speed = 64
-	rotation_speed = 2.47
-	acceleration = 17
-	hull_damage = 3.63
-	shield_penetration = 6.24
-	armor_penetration = 6.24
-	ship_behavior = "fighters_behavior"
-	icon = "GFX_strike_craft_sardine"
-	icon_frame = 1
-	component_set = "STRIKE_CRAFT_SARDINE"
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	tags = {
-		weapon_type_strike_craft
-	}
-	hidden = yes
-}
+@weapon_damage = 114
 
 weapon_component_template = {
-	key = "NARRATIVE_EDITING_MISSILE"
-	size = torpedo
-	icon = "GFX_narrative_editing_missile"
-	icon_frame = 1
-	type = missile
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	component_set = "NARRATIVE_EDITING_MISSILE"
-	projectile_gfx = "small_missile"
-	damage = {
-		min = 135420
-		max = 138420
-	}
-	total_fire_time = 1
-	missile_speed = 342
-	missile_evasion = 114.514
-	missile_shield = 0
-	missile_armor = 0
-	missile_health = 1546
-	missile_retarget_range = 1000
-	tags = {
-		weapon_type_explosive
-	}
-	ai_tags = {
-		weapon_role_artillery
-	}
-	ai_tag_weight = 0
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = @m_t1_cost
-		}
-		upkeep = {
-			energy = @m_t1_upkeep_energy
-			alloys = @m_t1_upkeep_alloys
-		}
-	}
-}
-
-weapon_component_template = {
-	key = "SMALL_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
+	key = "SMALL_MINEFIELD_PARADOX"
 	size = small
 	type = instant
-	icon = "GFX_narrative_destruction_singularity_accelerator"
+	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	component_set = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-	projectile_gfx = "adv_kinetic_artillery"
-	tags = {
-	}
+	prerequisites = { "tech_pataphysics_weapon" }
+	component_set = "MINEFIELD_PARADOX"
 	resources = {
 		category = ship_components
 		cost = {
@@ -114,28 +19,50 @@ weapon_component_template = {
 		}
 	}
 
+	damage = { min = 1 max = @weapon_damage }
 	total_fire_time = 1
-	damage = { min = 185420 max = 185420 }
-	shield_penetration = 4.2
-	armor_penetration = 4.2
-	range = 3814
-	accuracy = 3.43
-	tracking = 6.82
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+
+	hostile_aura = {
+		name = "aura_minefield_paradox"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_minefield_paradox
+			priority = 250
+		}
+		damage_per_day = {
+			damage = { min = 10 max = 20 }
+			accuracy = 1
+			tracking = 1
+			shield_penetration = 1
+			armor_penetration = 1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
 }
 
 weapon_component_template = {
-	key = "MEDIUM_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
+	key = "MEDIUM_MINEFIELD_PARADOX"
 	size = medium
 	type = instant
-	icon = "GFX_narrative_destruction_singularity_accelerator"
+	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	component_set = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-	projectile_gfx = "adv_kinetic_artillery"
-	tags = {
-	}
+	prerequisites = { "tech_pataphysics_weapon" }
+	component_set = "MINEFIELD_PARADOX"
 	resources = {
 		category = ship_components
 		cost = {
@@ -146,29 +73,51 @@ weapon_component_template = {
 			alloys = @s_t1_upkeep_alloys
 		}
 	}
-
+	
+	damage = { min = 1 max = @weapon_damage }
 	total_fire_time = 1
-	damage = { min = 385420 max = 385420 }
-	shield_penetration = 4.2
-	armor_penetration = 4.2
-	range = 3814
-	accuracy = 3.43
-	tracking = 6.82
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+
+	hostile_aura = {
+		name = "aura_minefield_paradox"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_minefield_paradox
+			priority = 250
+		}
+		damage_per_day = {
+			damage = { min = 30 max = 60 }
+			accuracy = 1
+			tracking = 1
+			shield_penetration = 1
+			armor_penetration = 1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
 }
 
 weapon_component_template = {
-	key = "LARGE_NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
+	key = "LARGE_MINEFIELD_PARADOX"
 	size = large
 	type = instant
-	icon = "GFX_narrative_destruction_singularity_accelerator"
+	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
-	prerequisites = {
-		"tech_narrative_editing_weapon"
-	}
-	component_set = "NARRATIVE_DESTRUCTION_SINGULARITY_ACCELERATOR"
-	projectile_gfx = "adv_kinetic_artillery"
-	tags = {
-	}
+	prerequisites = { "tech_pataphysics_weapon" }
+	component_set = "MINEFIELD_PARADOX"
 	resources = {
 		category = ship_components
 		cost = {
@@ -180,11 +129,93 @@ weapon_component_template = {
 		}
 	}
 
+	damage = { min = 1 max = @weapon_damage }
 	total_fire_time = 1
-	damage = { min = 845420 max = 845420 }
-	shield_penetration = 4.2
-	armor_penetration = 4.2
-	range = 3814
-	accuracy = 3.43
-	tracking = 6.82
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+
+	hostile_aura = {
+		name = "aura_minefield_paradox"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_minefield_paradox
+			priority = 250
+		}
+		damage_per_day = {
+			damage = { min = 60 max = 120 }
+			accuracy = 1
+			tracking = 1
+			shield_penetration = 1
+			armor_penetration = 1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
 }
+
+weapon_component_template = {
+	key = "EXTRA_LARGE_MINEFIELD_PARADOX"
+	size = extra_large
+	type = instant
+	icon = "GFX_ship_part_aura_minefield_paradox"
+	icon_frame = 1
+	prerequisites = { "tech_pataphysics_weapon" }
+	component_set = "MINEFIELD_PARADOX"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t1_cost
+		}
+		upkeep = {
+			energy = @s_t1_upkeep_energy
+			alloys = @s_t1_upkeep_alloys
+		}
+	}
+	damage = { min = 1 max = @weapon_damage }
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	
+	hostile_aura = {
+		name = "aura_minefield_paradox"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_minefield_paradox
+			priority = 250
+		}
+		damage_per_day = {
+			damage = { min = 100 max = 200 }
+			accuracy = 1
+			tracking = 1
+			shield_penetration = 1
+			armor_penetration = 1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
