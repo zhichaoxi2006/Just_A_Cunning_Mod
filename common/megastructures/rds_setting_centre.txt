@@ -160,36 +160,3 @@ rds_setting_centre_1 = {
 
 }
 
-rds_setting_centre_working = {
-	entity = "spyorb_phase_04_entity"
-	construction_entity = "spyorb_phase_04_construction_entity"
-	portrait = "GFX_megastructure_spy_orb_background"
-	place_entity_on_planet_plane = no
-	entity_offset = { x = @entity_x y = @entity_y }
-	build_time = 0
-	resources = {
-	}
-	upgrade_from = {
-		rds_setting_centre_1
-	}
-
-	on_build_complete = {
-		every_fleet_in_orbit = {
-			limit = {
-			}
-			fleet_event = {
-				id = rds_setting.2
-			}
-		}
-		upgrade_megastructure_to = rds_setting_centre_1
-	}
-
-	prerequisites = { "pataphysics_technology" }
-	show_prereqs = yes
-
-	country_modifier = {
-		add_base_country_intel = 40
-	}
-
-}
-

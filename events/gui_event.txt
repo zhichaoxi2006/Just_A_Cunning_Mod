@@ -4,7 +4,10 @@ fleet_event = {
 	id = rds_setting.2
 	title = rds_setting.gui.name
 	desc = rds_setting.gui.desc
-	picture = GFX_evt_mining_station
+	force_open = yes	
+	picture_event_data = {
+		room = "crisis_room"
+	}
 	location = root
 	is_triggered_only = yes
 	diplomatic = yes
@@ -65,7 +68,7 @@ fleet_event = {
 		name = rds_setting.vector_editing.off
 		trigger = {
 			ROOT = {
-				has_fleet_flag = coordinvector_editingate_editing
+				has_fleet_flag = vector_editing
 			}
 		}
 		custom_tooltip = rds_setting.vector_editing.off.tooltip
@@ -109,32 +112,32 @@ fleet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.hull_repair.on
+		name = rds_setting.unbreakable_ship.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_fleet_flag = hull_repair
+					has_fleet_flag = unbreakable_ship
 				}
 			}
 		}
-		custom_tooltip = rds_setting.hull_repair.on.tooltip
+		custom_tooltip = rds_setting.unbreakable_ship.on.tooltip
 		hidden_effect = {
-			set_fleet_flag = hull_repair
+			set_fleet_flag = unbreakable_ship
 			fleet_event = {
 				id = rds_setting.2
 			}
 		}
 	}
 	option = {
-		name = rds_setting.hull_repair.off
+		name = rds_setting.unbreakable_ship.off
 		trigger = {
 			ROOT = {
-				has_fleet_flag = hull_repair
+				has_fleet_flag = unbreakable_ship
 			}
 		}
-		custom_tooltip = rds_setting.hull_repair.off.tooltip
+		custom_tooltip = rds_setting.unbreakable_ship.off.tooltip
 		hidden_effect = {
-			remove_fleet_flag = hull_repair
+			remove_fleet_flag = unbreakable_ship
 			fleet_event = {
 				id = rds_setting.2
 			}
@@ -454,7 +457,10 @@ country_event = {
 	id = rds_setting.3
 	title = rds_setting.gui.name
 	desc = rds_setting.gui.desc
-	picture = GFX_evt_mining_station
+	force_open = yes	
+	picture_event_data = {
+		room = "crisis_room"
+	}
 	location = root
 	is_triggered_only = yes
 	diplomatic = yes
@@ -559,32 +565,32 @@ country_event = {
 		}
 	}
 	option = {
-		name = rds_setting.hull_repair.on
+		name = rds_setting.unbreakable_ship.on
 		trigger = {
 			NOT = {
 				ROOT = {
-					has_country_flag = hull_repair
+					has_country_flag = unbreakable_ship
 				}
 			}
 		}
-		custom_tooltip = rds_setting.hull_repair.on.tooltip
+		custom_tooltip = rds_setting.unbreakable_ship.on.tooltip
 		hidden_effect = {
-			set_country_flag = hull_repair
+			set_country_flag = unbreakable_ship
 			country_event = {
 				id = rds_setting.3
 			}
 		}
 	}
 	option = {
-		name = rds_setting.hull_repair.off
+		name = rds_setting.unbreakable_ship.off
 		trigger = {
 			ROOT = {
-				has_country_flag = hull_repair
+				has_country_flag = unbreakable_ship
 			}
 		}
-		custom_tooltip = rds_setting.hull_repair.off.tooltip
+		custom_tooltip = rds_setting.unbreakable_ship.off.tooltip
 		hidden_effect = {
-			remove_country_flag = hull_repair
+			remove_country_flag = unbreakable_ship
 			country_event = {
 				id = rds_setting.3
 			}
@@ -904,7 +910,7 @@ fleet_event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = shield_erasing_system }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = ship_hp_amount_reduce_system }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_disengage }
-		rds_setting_flag_converter = { RDS_SETTING_FLAG = hull_repair }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = unbreakable_ship }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_disabled_ship }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = vector_editing }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = coordinate_editing }
@@ -920,6 +926,24 @@ ship_event = {
 	immediate = {
 		fleet_event = {
 			id = rds_setting.4
+		}
+	}
+}
+
+fleet_event = {
+	id = rds_setting.6
+	hide_window = yes
+	trigger = {
+		From = {
+			is_megastructure_type = rds_setting_centre_1
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		This = {
+			fleet_event = {
+				id = rds_setting.2
+			}
 		}
 	}
 }

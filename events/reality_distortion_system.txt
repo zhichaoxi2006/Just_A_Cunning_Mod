@@ -13,6 +13,7 @@ ship_event = {
 		}
 	}
 }
+
 ship_event = {
 	id = rds.1
 	hide_window = yes
@@ -32,11 +33,11 @@ ship_event = {
 				flag = reality_distortion_system_cooldown
 				days = @flag_time
 			}
-			#HULL_REPAIR
+			#UNBREAKABLE_SHIP
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = hull_repair
+						has_fleet_flag = unbreakable_ship
 					}
 				}
 				This = {
@@ -333,7 +334,7 @@ event = {
 		if = {
 			limit = {
 				This.fleet = {
-					has_fleet_flag = hull_repair
+					has_fleet_flag = unbreakable_ship
 				}
 				has_component = REALITY_DISTORTION_SYSTEM
 			}
@@ -344,6 +345,23 @@ event = {
 					id = rds.1
 				}
 			}
+		}
+	}
+}
+
+ship_event = {
+	id = rds.3
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		fleet = {
+			remove_fleet_flag = reality_distortion_system_cooldown
+		}
+		remove_ship_flag = reality_distortion_system_cooldown
+		ship_event = {
+			id = rds.1
 		}
 	}
 }
@@ -384,5 +402,25 @@ event = {
 				reduce_hp = ship_hp_amount
 			}
 		}
+	}
+}
+
+planet_event = {
+	id = rds.7
+	hide_window = yes
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	immediate = {
+		#NO_JOB_UPKEEP
+		dynamic_modifier = { MODIFIER = planet_jobs_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
+		#NO_POPS_UPKEEP
+		dynamic_modifier = { MODIFIER = planet_pops_organics_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
+		dynamic_modifier = { MODIFIER = planet_pops_robotics_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
+		#NO_PLANET_STRUTURE_UPKEEP
+		dynamic_modifier = { MODIFIER = planet_structures_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
+		#POP_DO_NOT_NEED_HOUSE
+		dynamic_modifier = { MODIFIER = pop_housing_usage_mult MULTIPLY = -1 CHANGE = -1 }
 	}
 }

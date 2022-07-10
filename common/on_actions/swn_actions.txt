@@ -34,6 +34,7 @@ on_fleet_enter_orbit = {
 	events = {
 		s_andrew_swann_entity.14
 		s_andrew_swann_entity.15
+		rds_setting.6
 	}
 }
 
@@ -77,6 +78,6 @@ on_ship_order = {
 # this = country
 on_monthly_pulse_country = {
 	events = {
-
+		
 	}
 }

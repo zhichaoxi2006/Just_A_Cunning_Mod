@@ -7,7 +7,7 @@ armor_erasing_system
 shield_erasing_system
 ship_hp_amount_reduce_system
 no_disengage
-hull_repair
+unbreakable_ship
 no_disabled_ship
 vector_editing
 coordinate_editing

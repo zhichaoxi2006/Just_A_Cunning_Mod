@@ -46,3 +46,6 @@ swn_mod_ship_speed_mult = {
 swn_mod_ship_evasion_add = {
 	ship_evasion_add = 1
 }
+swn_mod_planet_jobs_upkeep_mult = {
+	planet_jobs_upkeep_mult = 1
+}

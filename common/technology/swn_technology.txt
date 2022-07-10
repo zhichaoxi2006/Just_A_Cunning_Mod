@@ -4,7 +4,7 @@ pataphysics_technology = {
 	tier = 5
 	category = { field_manipulation }
 	prerequisites = { "" }
-	weight = 42
+	weight = 0
 	is_dangerous = yes
 	potential = {
 	}
@@ -16,7 +16,7 @@ tech_pataphysics_ship_utilities = {
 	tier = 5
 	category = { field_manipulation }
 	prerequisites = { "pataphysics_technology" }
-	weight = 42
+	weight = 0
 	is_dangerous = yes
 	potential = {
 	}
@@ -28,7 +28,7 @@ tech_pataphysics_armies = {
 	tier = 5
 	category = { military_theory }
 	prerequisites = { "pataphysics_technology" }
-	weight = 42
+	weight = 0
 	is_dangerous = yes
 	potential = {
 	}
@@ -40,7 +40,7 @@ tech_pataphysics_strike_ship = {
 	tier = 5
 	category = { rocketry }
 	prerequisites = { "pataphysics_technology" }
-	weight = 42
+	weight = 0
 	is_dangerous = yes
 	potential = {
 	}
@@ -52,7 +52,7 @@ tech_pataphysics_weapon = {
 	tier = 5
 	category = { rocketry }
 	prerequisites = { "pataphysics_technology" }
-	weight = 42
+	weight = 0
 	is_dangerous = yes
 	potential = {
 	}
