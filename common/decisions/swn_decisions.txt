@@ -1,0 +1,62 @@
+decision_unkeep_remover = {
+	owned_planets_only = yes
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			influence = 25
+			energy = 500
+		}
+	}
+
+	potential = {
+		NOT = { has_planet_flag = planet_unkeep_remover }
+		has_active_building = building_reality_distortion_system
+	}
+
+	effect = {
+		custom_tooltip = decision_planet_unkeep_remover_effects_short
+		hidden_effect = {
+			set_planet_flag = planet_unkeep_remover
+			planet_event = {
+				id = rds.7
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_unkeep_remover_remove = {
+	owned_planets_only = yes
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			influence = 25
+			energy = 500
+		}
+	}
+
+	potential = {
+		has_planet_flag = planet_unkeep_remover
+		has_active_building = building_reality_distortion_system
+	}
+
+	effect = {
+		custom_tooltip = decision_planet_unkeep_remover_remove_effects_short
+		hidden_effect = {
+			remove_planet_flag = planet_unkeep_remover
+			planet_event = {
+				id = rds.8
+			}
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}

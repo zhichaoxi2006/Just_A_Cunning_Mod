@@ -18,9 +18,9 @@ building_reality_distortion_system = {
 	planet_modifier = { 
 		planet_orbital_bombardment_damage = -100
 	}
-    on_built = {
+    on_destroy = { 
         planet_event = {
-            id = sas_gui.2
+            id = rds.8
         }
-    }
+     }
 }

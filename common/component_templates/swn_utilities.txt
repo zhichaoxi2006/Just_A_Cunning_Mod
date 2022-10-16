@@ -20,7 +20,7 @@ utility_component_template = {
 		ship_ftl_jumpdrive_range_mult = 42
 	}
 	ai_weight = {
-		weight = 5
+		weight = 114514
 	}
 	class_restriction = {
 		shipclass_military
@@ -54,7 +54,7 @@ utility_component_template = {
 	prerequisites = { tech_pataphysics_ship_utilities }
 	component_set = "thruster_components"
 	ai_weight = {
-		weight = 0
+		weight = 114514
 	}
 }
 
@@ -78,7 +78,7 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = { pataphysics_strike_ship }
 	ai_weight = {
-		weight = 0
+		weight = 114514
 	}
 }
 
@@ -91,7 +91,7 @@ utility_component_template = {
 	size_restriction = { pataphysics_strike_ship }
 	component_set = "combat_computers"
 	ai_weight = {
-		weight = 1
+		weight = 114514
 	}
 }
 

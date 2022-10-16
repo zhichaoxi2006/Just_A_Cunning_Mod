@@ -90,12 +90,10 @@ tech_pataphysics_weapon_desc: ""
  trait_reality_distortion_system_desc: "这个领袖装配有现实扭曲系统，拥有现实扭曲的能力"
 
  #Decision
- decision_reality_distortion_system: "星球现实扭曲系统设置面板"
- decision_reality_distortion_system_desc: "星球现实扭曲系统设置面板" 
- decision_reality_distortion_system_effects_short: "打开现实扭曲系统的设置面板"
- decision_fleet_reality_distortion_system: "舰队现实扭曲系统设置面板"
- decision_fleet_reality_distortion_system_desc: "舰队现实扭曲系统设置面板" 
- decision_fleet_reality_distortion_system_effects_short: "打开现实扭曲系统的设置面板"
+ decision_unkeep_remover: "开启维护费移除系统"
+ decision_planet_unkeep_remover_effects_short: "这将会使整个星球无需维护费。"
+ decision_unkeep_remover_remove: "关闭维护费移除系统"
+ decision_planet_unkeep_remover_remove_effects_short: "恢复到正常"
 
  #megastrctures
  rds_setting_centre_0: "$rds_setting_centre_1$"
@@ -122,6 +120,10 @@ tech_pataphysics_weapon_desc: ""
 
  rds_setting.gui.name: "现实扭曲系统控制面板"
  rds_setting.gui.desc: "现实扭曲系统控制面板，你可以在这里调整现实扭曲系统的设置参数。"
+ rds_setting.science_ship_buff.on: "科研船增益——§G开启§!"
+ rds_setting.science_ship_buff.on.tooltip: ""
+ rds_setting.science_ship_buff.off: "科研船增益——§R关闭§!"
+ rds_setting.science_ship_buff.off.tooltip: ""
  rds_setting.coordinate_editing.on: "坐标编辑模块——§G开启§!"
  rds_setting.coordinate_editing.on.tooltip: ""
  rds_setting.coordinate_editing.off: "坐标编辑模块——§R关闭§"
@@ -192,3 +194,10 @@ tech_pataphysics_weapon_desc: ""
  narrative_strike.1.name: "朗基努斯计划"
  narrative_strike.1.desc: "如果你看到这条消息，那么意味着朗基努斯计划已经启动。朗基努斯计划为了完成它的目标，整个宇宙因此而归寂于无，整个叙事梯阵因此而崩塌。如果没有错，大概三天之后就会对你发动攻击。我知道这对你来说只是一个存档，所以，如果没有其他问题的话，请退出该存档。\n\n§R请注意，朗基努斯在三十天后对你进行攻击后会导致游戏崩溃§!"
  narrative_strike.1.a: "我知道了"
+
+#
+swn_mod_planet_jobs_upkeep_mult: "超形上学加护"
+swn_mod_planet_pops_organics_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+swn_mod_planet_pops_robotics_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+swn_mod_planet_structures_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+swn_mod_pop_housing_usage_mult: "$swn_mod_planet_jobs_upkeep_mult$"

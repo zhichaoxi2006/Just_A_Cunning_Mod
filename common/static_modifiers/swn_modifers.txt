@@ -81,3 +81,15 @@ swn_mod_planet_structures_upkeep_mult = {
 swn_mod_pop_housing_usage_mult = {
 	pop_housing_usage_mult = 1
 }
+
+swn_mod_science_ship_survey_speed = {
+	science_ship_survey_speed = 1
+}
+
+swn_mod_ship_archaeological_site_excavation_speed_mult = {
+	ship_archaeological_site_excavation_speed_mult = 1
+}
+
+swn_mod_ship_anomaly_research_speed_mult = {
+	ship_anomaly_research_speed_mult = 1
+}

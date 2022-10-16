@@ -15,6 +15,57 @@ fleet_event = {
 	}
 	immediate = {
 	}
+	#
+	option = {
+		name = rds_setting.science_ship_buff.on
+		trigger = {
+			NOT = {
+				is_ship_class = shipclass_science_ship
+				ROOT = {
+					has_fleet_flag = science_ship_buff
+				}
+			}
+		}
+		custom_tooltip = rds_setting.science_ship_buff.on.tooltip
+		hidden_effect = {
+			set_fleet_flag = science_ship_buff
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				add_modifier = {	modifier = swn_mod_science_ship_survey_speed	months = -1	multiplier = 1313	}
+				add_modifier = {	modifier = swn_mod_ship_archaeological_site_excavation_speed_mult	months = -1	multiplier = 2718	}
+				add_modifier = {	modifier = swn_mod_ship_anomaly_research_speed_mult	months = -1	multiplier = 3215	}
+			}
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.science_ship_buff.off
+		trigger = {
+			ROOT = {
+				has_fleet_flag = science_ship_buff
+			}
+		}
+		custom_tooltip = rds_setting.science_ship_buff.off.tooltip
+		hidden_effect = {
+			remove_fleet_flag = science_ship_buff
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				remove_modifier = swn_mod_science_ship_survey_speed
+				remove_modifier = swn_mod_ship_archaeological_site_excavation_speed_mult
+				remove_modifier = swn_mod_ship_anomaly_research_speed_mult
+			}
+			fleet_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	#
 	option = {
 		name = rds_setting.coordinate_editing.on
 		trigger = {
@@ -27,6 +78,15 @@ fleet_event = {
 		custom_tooltip = rds_setting.coordinate_editing.on.tooltip
 		hidden_effect = {
 			set_fleet_flag = coordinate_editing
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				add_modifier = {	modifier = swn_mod_ship_windup_mult	months = -1	multiplier = -1	}
+				add_modifier = {	modifier = swn_mod_ship_interstellar_speed_mult	months = -1	multiplier = 6.66	}
+				add_modifier = {	modifier = swn_mod_ship_jumpdrive_cooldown_mult	months = -1	multiplier = -4.2	}
+				add_modifier = {	modifier = swn_mod_ship_ftl_jumpdrive_range_mult	months = -1	multiplier = 42	}
+			}
 			fleet_event = {
 				id = rds_setting.2
 			}
@@ -42,11 +102,21 @@ fleet_event = {
 		custom_tooltip = rds_setting.coordinate_editing.off.tooltip
 		hidden_effect = {
 			remove_fleet_flag = coordinate_editing
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				remove_modifier = swn_mod_ship_windup_mult
+				remove_modifier = swn_mod_ship_interstellar_speed_mult
+				remove_modifier = swn_mod_ship_jumpdrive_cooldown_mult
+				remove_modifier = swn_mod_ship_ftl_jumpdrive_range_mult
+			}
 			fleet_event = {
 				id = rds_setting.2
 			}
 		}
 	}
+	#
 	option = {
 		name = rds_setting.vector_editing.on
 		trigger = {
@@ -59,6 +129,13 @@ fleet_event = {
 		custom_tooltip = rds_setting.vector_editing.on.tooltip
 		hidden_effect = {
 			set_fleet_flag = vector_editing
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				add_modifier = {	modifier = swn_mod_ship_speed_mult	months = -1	multiplier = 42.14	}
+				add_modifier = {	modifier = swn_mod_ship_evasion_add	months = -1	multiplier = 400	}
+			}
 			fleet_event = {
 				id = rds_setting.2
 			}
@@ -74,6 +151,13 @@ fleet_event = {
 		custom_tooltip = rds_setting.vector_editing.off.tooltip
 		hidden_effect = {
 			remove_fleet_flag = vector_editing
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				remove_modifier = swn_mod_ship_speed_mult
+				remove_modifier = swn_mod_ship_evasion_add
+			}
 			fleet_event = {
 				id = rds_setting.2
 			}
@@ -467,6 +551,40 @@ country_event = {
 	trigger = {
 	}
 	immediate = {
+	}
+	option = {
+		name = rds_setting.science_ship_buff.on
+		trigger = {
+			NOT = {
+				is_ship_class = shipclass_science_ship
+				ROOT = {
+					has_fleet_flag = science_ship_buff
+				}
+			}
+		}
+		custom_tooltip = rds_setting.science_ship_buff.on.tooltip
+		hidden_effect = {
+			set_country_flag = coordinate_editing
+			country_event = {
+				id = rds_setting.3
+			}
+		}
+	}
+	option = {
+		name = rds_setting.science_ship_buff.off
+		trigger = {
+			is_ship_class = shipclass_science_ship
+				ROOT = {
+					has_fleet_flag = science_ship_buff
+				}
+		}
+		custom_tooltip = rds_setting.science_ship_buff.off.tooltip
+		hidden_effect = {
+			remove_country_flag = science_ship_buff
+			country_event = {
+				id = rds_setting.3
+			}
+		}
 	}
 	option = {
 		name = rds_setting.coordinate_editing.on
@@ -912,8 +1030,48 @@ fleet_event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_disengage }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = unbreakable_ship }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_disabled_ship }
-		rds_setting_flag_converter = { RDS_SETTING_FLAG = vector_editing }
-		rds_setting_flag_converter = { RDS_SETTING_FLAG = coordinate_editing }
+		if = {
+			limit = {
+				has_country_flag = vector_editing
+			}
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				add_modifier = {	modifier = swn_mod_ship_speed_mult	months = -1	multiplier = 42.14	}
+				add_modifier = {	modifier = swn_mod_ship_evasion_add	months = -1	multiplier = 400	}
+			}
+			rds_setting_flag_converter = { RDS_SETTING_FLAG = vector_editing }
+		}
+		if = {
+			limit = {
+				has_country_flag = coordinate_editing
+			}
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				remove_modifier = swn_mod_ship_windup_mult
+				remove_modifier = swn_mod_ship_interstellar_speed_mult
+				remove_modifier = swn_mod_ship_jumpdrive_cooldown_mult
+				remove_modifier = swn_mod_ship_ftl_jumpdrive_range_mult
+			}
+			rds_setting_flag_converter = { RDS_SETTING_FLAG = coordinate_editing }
+		}
+		if = {
+			limit = {
+				has_country_flag = science_ship_buff
+			}
+			every_owned_ship = {
+				limit = {
+					has_component = REALITY_DISTORTION_SYSTEM
+				}
+				add_modifier = {	modifier = swn_mod_science_ship_survey_speed	months = -1	multiplier = 1313	}
+				add_modifier = {	modifier = swn_mod_ship_archaeological_site_excavation_speed_mult	months = -1	multiplier = 2718	}
+				add_modifier = {	modifier = swn_mod_ship_anomaly_research_speed_mult	months = -1	multiplier = 3215	}
+			}
+			rds_setting_flag_converter = { RDS_SETTING_FLAG = science_ship_buff }
+		}
 	}
 }
 

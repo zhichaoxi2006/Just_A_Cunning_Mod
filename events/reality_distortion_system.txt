@@ -33,6 +33,8 @@ ship_event = {
 				flag = reality_distortion_system_cooldown
 				days = @flag_time
 			}
+			#NO_UNKEEP
+			
 			#UNBREAKABLE_SHIP
 			if = {
 				limit = {
@@ -79,38 +81,6 @@ ship_event = {
 					remove_modifier = swn_mod_ship_disengage_chance_reduction
 					add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = 1	multiplier = ship_disengage_chance_reduction_number	}
 				}
-			}
-			#COORDINATE_EDITING
-			if = {
-				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = coordinate_editing
-					}
-				}
-				add_modifier = {	modifier = swn_mod_ship_windup_mult	months = -1	multiplier = -1	}
-				add_modifier = {	modifier = swn_mod_ship_interstellar_speed_mult	months = -1	multiplier = 6.66	}
-				add_modifier = {	modifier = swn_mod_ship_jumpdrive_cooldown_mult	months = -1	multiplier = -4.2	}
-				add_modifier = {	modifier = swn_mod_ship_ftl_jumpdrive_range_mult	months = -1	multiplier = 42	}
-			}
-			else = {
-				remove_modifier = swn_mod_ship_windup_mult
-				remove_modifier = swn_mod_ship_interstellar_speed_mult
-				remove_modifier = swn_mod_ship_jumpdrive_cooldown_mult
-				remove_modifier = swn_mod_ship_ftl_jumpdrive_range_mult
-			}
-			#VECTOR_EDITING
-			if = {
-				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = vector_editing
-					}
-				}
-				add_modifier = {	modifier = swn_mod_ship_speed_mult	months = -1	multiplier = 42.14	}
-				add_modifier = {	modifier = swn_mod_ship_evasion_add	months = -1	multiplier = 400	}
-			}
-			else = {
-				remove_modifier = swn_mod_ship_speed_mult
-				remove_modifier = swn_mod_ship_evasion_add
 			}
 		}
 		if = {
@@ -422,5 +392,21 @@ planet_event = {
 		dynamic_modifier = { MODIFIER = planet_structures_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
 		#POP_DO_NOT_NEED_HOUSE
 		dynamic_modifier = { MODIFIER = pop_housing_usage_mult MULTIPLY = -1 CHANGE = -1 }
+	}
+}
+
+planet_event = {
+	id = rds.8
+	hide_window = yes
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	immediate = {
+		remove_modifier = swn_mod_planet_jobs_upkeep_mult
+		remove_modifier = swn_mod_planet_pops_organics_upkeep_mult
+		remove_modifier = swn_mod_planet_pops_robotics_upkeep_mult
+		remove_modifier = swn_mod_planet_structures_upkeep_mult
+		remove_modifier = swn_mod_pop_housing_usage_mult
 	}
 }
