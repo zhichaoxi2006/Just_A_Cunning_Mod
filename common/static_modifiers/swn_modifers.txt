@@ -1,51 +1,83 @@
 swn_mod_ship_shield_reduction = {
 	ship_shield_reduction = 1
 }
+
 swn_mod_ship_armor_reduction = {
 	ship_armor_reduction = 1
 }
+
 swn_mod_ship_hull_repair_anti = {
 	ship_hull_regen_add_perc = -1
 }
+
 swn_mod_ship_hull_repair_anti_static = {
 	ship_hull_regen_add_static = -1
 }
+
 swn_mod_ship_speed_reduction = {
 	ship_speed_reduction = 1
 }
+
 swn_mod_ship_fire_rate_mult = {
 	ship_fire_rate_mult = 1
 }
+
 swn_mod_ship_weapon_damage = {
 	ship_weapon_damage = 1
 }
+
 swn_mod_ship_weapon_range_mult = {
 	ship_weapon_range_mult = 1
 }
+
 swn_mod_ship_orbital_bombardment_mult = {
 	ship_orbital_bombardment_mult = 1
 }
+
 swn_mod_ship_disengage_chance_reduction = {
 	ship_disengage_chance_reduction = 1
 }
+
 swn_mod_ship_windup_mult = {
 	ship_windup_mult = 1
 }
+
 swn_mod_ship_interstellar_speed_mult = {
 	ship_interstellar_speed_mult = 1
 }
+
 swn_mod_ship_jumpdrive_cooldown_mult = {
 	ship_jumpdrive_cooldown_mult = 1
 }
+
 swn_mod_ship_ftl_jumpdrive_range_mult = {
 	ship_ftl_jumpdrive_range_mult = 1
 }
+
 swn_mod_ship_speed_mult = {
 	ship_speed_mult = 1
 }
+
 swn_mod_ship_evasion_add = {
 	ship_evasion_add = 1
 }
+
 swn_mod_planet_jobs_upkeep_mult = {
 	planet_jobs_upkeep_mult = 1
+}
+
+swn_mod_planet_pops_organics_upkeep_mult = {
+	planet_pops_organics_upkeep_mult = 1
+}
+
+swn_mod_planet_pops_robotics_upkeep_mult = {
+	planet_pops_robotics_upkeep_mult = 1
+}
+
+swn_mod_planet_structures_upkeep_mult = {
+	planet_structures_upkeep_mult = 1
+}
+
+swn_mod_pop_housing_usage_mult = {
+	pop_housing_usage_mult = 1
 }
