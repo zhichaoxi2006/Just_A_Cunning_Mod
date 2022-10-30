@@ -19,6 +19,16 @@ ship_event = {
 	hide_window = yes
 	trigger = {
 		EQUIPPED_WITH_RDS = yes
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = can_ai_use_rds
+				}
+			}
+			owner = {
+				is_ai = no	 
+			}
+		}
 		NOT = {
 			has_ship_flag = reality_distortion_system_cooldown
 		}
@@ -412,7 +422,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = narrative_editing_warship_narrative_strike
+								has_fleet_flag = instant_kill
 							}
 						}
 						destroy_ship = This

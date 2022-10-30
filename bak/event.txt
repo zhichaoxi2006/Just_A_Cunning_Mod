@@ -117,7 +117,7 @@ event = {
 					if = {
 						limit = {
 							event_target:paradox_generation_system_ship.owner = {
-								has_country_flag = narrative_editing_warship_narrative_strike
+								has_country_flag = instant_kill
 							}
 						}
 						destroy_ship = This

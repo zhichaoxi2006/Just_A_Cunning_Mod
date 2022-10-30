@@ -267,28 +267,28 @@ event = {
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
-	#NARRATIVE_EDITING_WARSHIP_NARRATIVE_STRIKE
+	#instant_kill
 	option = {
-		name = rds_setting.narrative_editing_warship_narrative_strike.on
+		name = rds_setting.instant_kill.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = narrative_editing_warship_narrative_strike }
+				dynamic_flag_check = { DYNAMIC_FLAG = instant_kill }
 			}
 		}
-		custom_tooltip = rds_setting.narrative_editing_warship_narrative_strike.on.tooltip
+		custom_tooltip = rds_setting.instant_kill.on.tooltip
 		hidden_effect = {
-			dynamic_flag_set = { DYNAMIC_FLAG = narrative_editing_warship_narrative_strike }
+			dynamic_flag_set = { DYNAMIC_FLAG = instant_kill }
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
 	option = {
-		name = rds_setting.narrative_editing_warship_narrative_strike.off
+		name = rds_setting.instant_kill.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = narrative_editing_warship_narrative_strike }
+			dynamic_flag_check = { DYNAMIC_FLAG = instant_kill }
 		}
-		custom_tooltip = rds_setting.narrative_editing_warship_narrative_strike.off.tooltip
+		custom_tooltip = rds_setting.instant_kill.off.tooltip
 		hidden_effect = {
-			dynamic_flag_remove = { DYNAMIC_FLAG = narrative_editing_warship_narrative_strike }
+			dynamic_flag_remove = { DYNAMIC_FLAG = instant_kill }
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
@@ -424,7 +424,7 @@ fleet_event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = speed_reduction }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = anti_hull_repair }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = fleet_event_unlocker }
-		rds_setting_flag_converter = { RDS_SETTING_FLAG = narrative_editing_warship_narrative_strike }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = instant_kill }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = armor_erasing_system }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = shield_erasing_system }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = ship_hp_amount_reduce_system }
@@ -435,6 +435,7 @@ fleet_event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = vector_editing }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = coordinate_editing }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = science_ship_buff }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = accuracy_debuff }
 	}
 }
 

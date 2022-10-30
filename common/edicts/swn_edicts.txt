@@ -35,3 +35,33 @@ sas_warship_console = {
 		}
 	}
 }
+
+can_ai_use_rds_on = {
+	icon = GFX_button_automate
+	length = 0 
+	potential = {
+		NOT = {
+			has_global_flag = can_ai_use_rds
+		}
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		set_global_flag = can_ai_use_rds
+	}
+}
+
+can_ai_use_rds_off = {
+	icon = GFX_button_automate
+	length = 0 
+	potential = {
+		has_global_flag = can_ai_use_rds
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		remove_global_flag = can_ai_use_rds
+	}
+}

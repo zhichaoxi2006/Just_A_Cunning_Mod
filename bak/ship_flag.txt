@@ -2,7 +2,7 @@ system_wide
 speed_reduction
 anti_hull_repair
 aggro_range_editor
-narrative_editing_warship_narrative_strike
+instant_kill
 armor_erasing_system
 shield_erasing_system
 ship_hp_amount_reduce_system
