@@ -32,9 +32,6 @@ on_entering_battle = {
 #This = Fleet scope
 on_fleet_enter_orbit = {
 	events = {
-		s_andrew_swann_entity.14
-		s_andrew_swann_entity.15
-		rds_setting.6
 	}
 }
 
@@ -55,7 +52,7 @@ on_army_killed_in_combat = {
 on_ship_built = {
 	events = {
 		rds.4
-		rds_setting.5
+		rds_setting.4
 	}
 }
 
@@ -69,6 +66,5 @@ on_ship_enabled = {
 # this = country
 on_monthly_pulse_country = {
 	events = {
-		
 	}
 }

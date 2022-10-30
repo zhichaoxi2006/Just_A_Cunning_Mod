@@ -6,7 +6,7 @@ component_set = {
 }
 
 component_set = {
-	key = "MINEFIELD_PARADOX"
+	key = "SHIP_REAPER"
 
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1

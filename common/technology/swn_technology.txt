@@ -1,21 +1,8 @@
-pataphysics_technology = {
+tech_reality_distortion_system = {
 	cost = 114514
 	area = physics
 	tier = 5
 	category = { field_manipulation }
-	prerequisites = { "" }
-	weight = 0
-	is_dangerous = yes
-	potential = {
-	}
-}
-
-tech_pataphysics_ship_utilities = {
-	cost = 1919810
-	area = physics
-	tier = 5
-	category = { field_manipulation }
-	prerequisites = { "pataphysics_technology" }
 	weight = 0
 	is_dangerous = yes
 	potential = {
@@ -27,19 +14,7 @@ tech_pataphysics_armies = {
 	area = society
 	tier = 5
 	category = { military_theory }
-	prerequisites = { "pataphysics_technology" }
-	weight = 0
-	is_dangerous = yes
-	potential = {
-	}
-}
-
-tech_pataphysics_strike_ship = {
-	cost = 666
-	area = engineering
-	tier = 5
-	category = { rocketry }
-	prerequisites = { "pataphysics_technology" }
+	prerequisites = { "tech_reality_distortion_system" }
 	weight = 0
 	is_dangerous = yes
 	potential = {
@@ -50,8 +25,8 @@ tech_pataphysics_weapon = {
 	cost = 13446
 	area = engineering
 	tier = 5
-	category = { rocketry }
-	prerequisites = { "pataphysics_technology" }
+	category = { military_theory }
+	prerequisites = { "tech_reality_distortion_system" }
 	weight = 0
 	is_dangerous = yes
 	potential = {

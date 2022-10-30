@@ -1,6 +1,5 @@
 decision_unkeep_remover = {
 	owned_planets_only = yes
-
 	enactment_time = 0
 	resources = {
 		category = decisions
@@ -32,7 +31,6 @@ decision_unkeep_remover = {
 
 decision_unkeep_remover_remove = {
 	owned_planets_only = yes
-
 	enactment_time = 0
 	resources = {
 		category = decisions

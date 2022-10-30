@@ -11,33 +11,16 @@
 #		orientation = UPPER_LEFT
 #		effect = example_button_effect
 #	}
-ship_teleport_shortcut_debug = {
+fleet_rds_setting = {
 	potential = {
 	}
 	allow = {
-		This = {
-			is_scope_type = planet
-		}
 	}
 	effect = {
-		This = {
-			save_event_target_as = teleport_target
-		}
-		From = {
-			every_owned_ship = {
-				limit = {
-					is_ship_size = pataphysics_strike_ship
-				}
-				This.fleet = {
-					set_location = {
-						target = event_target:teleport_target
-						distance = 5
-						angle = random
-						direction = in_system
-					}
-					clear_orders = yes
-        			clear_fleet_actions = this
-				}
+		custom_tooltip = custom_tooltip_button_rds_setting_fleet
+		hidden_effect = {
+			fleet_event = {
+				id = rds_setting.2
 			}
 		}
 	}

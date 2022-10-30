@@ -1,0 +1,21 @@
+dynamic_flag_check = {
+	if = {
+		limit = {
+			is_scope_type = country
+		}
+		has_country_flag = $DYNAMIC_FLAG$
+	}
+	else_if = {
+		limit = { 
+			is_scope_type = fleet
+		}
+		has_fleet_flag = $DYNAMIC_FLAG$
+	}
+}
+
+EQUIPPED_WITH_RDS = {
+	OR = {
+		has_component = REALITY_DISTORTION_SYSTEM 
+		has_component = CORE_OF_PERFORMANCE 
+	}
+}

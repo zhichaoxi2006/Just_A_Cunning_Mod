@@ -138,7 +138,7 @@ rds_setting_centre_1 = {
 		}
 
 		upkeep = {
-			energy = 100
+			energy = 0
 		}
 	}
 	upgrade_from = {

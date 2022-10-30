@@ -1,69 +1,9 @@
-
 utility_component_template = {
-	key = "SHIP_COORDINATE_EDITING_MODULE"
-	size = small
-	icon = "GFX_ship_coordinate_editing_module"
-	icon_frame = 1
-	power = 0
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 5
-		}
-	}
-	ftl = yes
-	jumpdrive = yes
-	ship_modifier = {
-		ship_windup_mult = -1
-		ship_interstellar_speed_mult = 6.66
-		ship_jumpdrive_cooldown_mult = -4.2
-		ship_ftl_jumpdrive_range_mult = 42
-	}
-	ai_weight = {
-		weight = 114514
-	}
-	class_restriction = {
-		shipclass_military
-		shipclass_constructor
-		shipclass_colonizer
-		shipclass_science_ship
-		shipclass_transport
-		shipclass_military_special
-		shipclass_starbase
-	}
-	prerequisites = { tech_pataphysics_ship_utilities }
-	component_set = "ftl_components"
-}
-
-utility_component_template = {
-	key = "SHIP_VECTOR_EDITING_MODULE"
-	size = small
-	icon = "GFX_swn_thruster"
-	icon_frame = 1
-	power = 0
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 5
-		}
-	}
-	modifier = {
-		ship_speed_mult = 42.14
-		ship_evasion_add = 400
-	}
-	prerequisites = { tech_pataphysics_ship_utilities }
-	component_set = "thruster_components"
-	ai_weight = {
-		weight = 114514
-	}
-}
-
-utility_component_template = {
-	key = "PATAPHYSICS_REACTOR"
+	key = "CORE_OF_PERFORMANCE"
 	size = small
 	icon = "GFX_paradox_reactor"
 	icon_frame = 1
-	power = 46272102
+	power = 544397
 	resources = {
 		category = ship_components
 		cost = {
@@ -74,11 +14,10 @@ utility_component_template = {
 			alloys = 0.01
 		}
 	}
-	prerequisites = { tech_pataphysics_ship_utilities }
+	prerequisites = { tech_reality_distortion_system }
 	component_set = "power_core"
-	size_restriction = { pataphysics_strike_ship }
 	ai_weight = {
-		weight = 114514
+		weight = 0
 	}
 }
 
@@ -88,10 +27,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
 	ship_behavior = "pataphysics_strike_ship"
-	size_restriction = { pataphysics_strike_ship }
+	size_restriction = {  }
 	component_set = "combat_computers"
 	ai_weight = {
-		weight = 114514
+		weight = 0
 	}
 }
 
@@ -112,7 +51,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "SHIP_AURA_MINEFIELD_PARADOX"
+	key = "SHIP_AURA_KILLER_AURA"
 	size = medium
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
@@ -122,17 +61,16 @@ utility_component_template = {
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
-		name = "aura_minefield_paradox"
+		name = "aura_killer_aura"
 		system_wide = yes
 
 		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-			id = hostile_minefield_paradox
+			id = hostile_killer_aura
 			priority = 250
 		}
 		damage_per_day = {
 			damage = { min = 100 max = 200 }
-			accuracy = 1
-			tracking = 1
+			accuracy = 114.514
 			shield_penetration = 1
 			armor_penetration = 1
 		}
@@ -154,7 +92,7 @@ utility_component_template = {
 	size = aux
 	icon = "GFX_paradox_generation_system"
 	icon_frame = 1
-	prerequisites = { tech_pataphysics_strike_ship }
+	prerequisites = { tech_reality_distortion_system }
 	component_set = "REALITY_DISTORTION_SYSTEM"
 	power = -100
 	modifier = {

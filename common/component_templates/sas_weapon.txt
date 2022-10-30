@@ -1,13 +1,13 @@
-@weapon_damage = 243
+@weapon_damage = 512
 
 weapon_component_template = {
-	key = "SMALL_MINEFIELD_PARADOX"
+	key = "SMALL_SHIP_REAPER"
 	size = small
 	type = instant
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
 	prerequisites = { "tech_pataphysics_weapon" }
-	component_set = "MINEFIELD_PARADOX"
+	component_set = "SHIP_REAPER"
 	resources = {
 		category = ship_components
 		cost = {
@@ -26,43 +26,16 @@ weapon_component_template = {
 	tracking = 42
 	shield_penetration = 1
 	armor_penetration = 1
-
-	hostile_aura = {
-		name = "aura_minefield_paradox"
-		system_wide = yes
-
-		stack_info = {
-			id = hostile_minefield_paradox
-			priority = 0
-		}
-		damage_per_day = {
-			damage = { min = 10 max = 20 }
-			accuracy = 1
-			tracking = 1
-			shield_penetration = 1
-			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
 }
 
 weapon_component_template = {
-	key = "MEDIUM_MINEFIELD_PARADOX"
+	key = "MEDIUM_SHIP_REAPER"
 	size = medium
 	type = instant
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
 	prerequisites = { "tech_pataphysics_weapon" }
-	component_set = "MINEFIELD_PARADOX"
+	component_set = "SHIP_REAPER"
 	resources = {
 		category = ship_components
 		cost = {
@@ -81,43 +54,16 @@ weapon_component_template = {
 	tracking = 42
 	shield_penetration = 1
 	armor_penetration = 1
-
-	hostile_aura = {
-		name = "aura_minefield_paradox"
-		system_wide = yes
-
-		stack_info = {
-			id = hostile_minefield_paradox
-			priority = 1
-		}
-		damage_per_day = {
-			damage = { min = 30 max = 60 }
-			accuracy = 1
-			tracking = 1
-			shield_penetration = 1
-			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
 }
 
 weapon_component_template = {
-	key = "LARGE_MINEFIELD_PARADOX"
+	key = "LARGE_SHIP_REAPER"
 	size = large
 	type = instant
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
 	prerequisites = { "tech_pataphysics_weapon" }
-	component_set = "MINEFIELD_PARADOX"
+	component_set = "SHIP_REAPER"
 	resources = {
 		category = ship_components
 		cost = {
@@ -136,43 +82,16 @@ weapon_component_template = {
 	tracking = 42
 	shield_penetration = 1
 	armor_penetration = 1
-
-	hostile_aura = {
-		name = "aura_minefield_paradox"
-		system_wide = yes
-
-		stack_info = {
-			id = hostile_minefield_paradox
-			priority = 2
-		}
-		damage_per_day = {
-			damage = { min = 60 max = 120 }
-			accuracy = 1
-			tracking = 1
-			shield_penetration = 1
-			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
 }
 
 weapon_component_template = {
-	key = "EXTRA_LARGE_MINEFIELD_PARADOX"
+	key = "EXTRA_LARGE_SHIP_REAPER"
 	size = extra_large
 	type = instant
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
 	prerequisites = { "tech_pataphysics_weapon" }
-	component_set = "MINEFIELD_PARADOX"
+	component_set = "SHIP_REAPER"
 	resources = {
 		category = ship_components
 		cost = {
@@ -190,33 +109,6 @@ weapon_component_template = {
 	tracking = 42
 	shield_penetration = 1
 	armor_penetration = 1
-	
-	hostile_aura = {
-		name = "aura_minefield_paradox"
-		system_wide = yes
-
-		stack_info = {
-			id = hostile_minefield_paradox
-			priority = 3
-		}
-		damage_per_day = {
-			damage = { min = 100 max = 200 }
-			accuracy = 1
-			tracking = 1
-			shield_penetration = 1
-			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
 }
 
 

@@ -38,7 +38,7 @@ pataphysics_strike_ship = {
 	enable_3dview_in_ship_browser = yes
 	can_disable = yes
 	is_space_object = yes
-	default_behavior = narrative_editing_warship
+	default_behavior = pataphysics_strike_ship
 	prerequisites = {tech_pataphysics_strike_ship}
 	combat_disengage_chance = 0
 	class = shipclass_military
@@ -60,8 +60,5 @@ pataphysics_strike_ship = {
 			energy = 1
 			alloys = 1
 		}
-	}
-	empire_limit = {
-		base = 1
 	}
 }

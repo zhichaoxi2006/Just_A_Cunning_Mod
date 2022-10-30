@@ -93,3 +93,15 @@ swn_mod_ship_archaeological_site_excavation_speed_mult = {
 swn_mod_ship_anomaly_research_speed_mult = {
 	ship_anomaly_research_speed_mult = 1
 }
+
+swn_mod_ship_accuracy_add = {
+	ship_accuracy_add = 1
+}
+
+swn_mod_ship_accuracy_mult = {
+	ship_accuracy_mult = 1
+}
+
+swn_mod_ship_hull_mult = {
+	ship_hull_mult = 1
+}

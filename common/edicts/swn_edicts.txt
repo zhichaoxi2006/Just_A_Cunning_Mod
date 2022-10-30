@@ -1,22 +1,16 @@
 sas_technology_get = {
+	icon = GFX_button_automate
 	length = 0
 	resources = {
+		category = campaigns
 	}
 	effect = {
 		give_technology = {
-			tech = pataphysics_technology
-			message = no
-		}
-		give_technology = {
-			tech = tech_pataphysics_ship_utilities
+			tech = tech_reality_distortion_system
 			message = no
 		}
 		give_technology = {
 			tech = tech_pataphysics_armies
-			message = no
-		}
-		give_technology = {
-			tech = tech_pataphysics_strike_ship
 			message = no
 		}
 		give_technology = {
@@ -29,107 +23,15 @@ sas_technology_get = {
 	}
 }
 
-sas_ap_add = {
-	length = -1
-	resources = {
-	}
-	modifier = {
-		ascension_perks_add = 128
-		tradition_cost_empire_size_mult = -100
-	}
-	ai_weight = {
-		weight = 0
-	}
-}
-
-sas_research_speed_add = {
-	length = -1
-	resources = {
-	}
-	modifier = {
-		all_technology_research_speed = 3812.17
-		ship_anomaly_research_speed_mult = 42.64
-		ship_archaeological_site_excavation_speed_mult = 56.24
-		ship_archeaological_site_clues_add = 10
-	}
-}
-
-sas_time_acceleration_on = {
-	length = 0
-	resources = {
-	}
-	potential = {
-		NOT = {
-			has_country_flag = sas_time_acceleration
-		}
-	}
-	effect = {
-		set_country_flag = sas_time_acceleration
-		country_event = {
-			id = s_andrew_swann_entity.12
-		}
-	}
-}
-
-sas_time_acceleration_off = {
-	length = 0
-	resources = {
-	}
-	potential = {
-		has_country_flag = sas_time_acceleration
-	}
-	effect = {
-		remove_country_flag = sas_time_acceleration
-	}
-}
-
 sas_warship_console = {
+	icon = GFX_button_automate
 	length = 0 
 	resources = {
+		category = campaigns
 	}
 	effect = {
 		country_event = {
-			id = rds_setting.3
+			id = rds_setting.2
 		}
-	}
-}
-
-rankinus_plan = {
-	length = 0
-	resources = {
-	}
-	effect = {
-		set_global_flag = narrative_strike_system_on
-	}
-}
-
-rebirth_program = {
-	length = 0
-	resources = {
-	}
-	effect = {
-		random_galaxy_planet = {
-			limit = {
-				is_star = no
-			}
-			change_pc = pc_gaia
-			This.solar_system = {
-				create_starbase = {
-					owner = ROOT
-					size = starbase_citadel
-				}
-			}
-			reroll_planet = yes
-			create_colony = {
-				owner = ROOT
-				species = ROOT.owner_species
-				ethos = random
-			}
-		}
-		every_ambient_object = {
-			limit = {
-			}
-			destroy_ambient_object = This
-		}	
 	}
 }
