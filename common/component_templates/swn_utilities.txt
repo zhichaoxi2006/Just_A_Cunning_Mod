@@ -22,6 +22,33 @@ utility_component_template = {
 }
 
 utility_component_template = {
+	key = "DEVICE_OF_PERFORMANCE"
+	size = medium
+	icon = "GFX_ship_part_performence_device"
+	icon_frame = 1
+	power = -30
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 40
+		}
+		upkeep = {
+			energy = 0.4
+			alloys = 0.2
+		}
+	}
+	sensor_range = 20
+	hyperlane_range = 25
+	
+	ship_modifier = {
+		ship_tracking_add = 50
+	}
+	
+	prerequisites = { "tech_reality_distortion_system" }
+	component_set = "sensor_components"
+}
+
+utility_component_template = {
 	key = "COMBAT_COMPUTER_PATAPHYSICS_STRIKE_SHIP"
 	size = small
 	icon = "GFX_ship_part_computer_default"
@@ -70,7 +97,7 @@ utility_component_template = {
 		}
 		damage_per_day = {
 			damage = { min = 100 max = 200 }
-			accuracy = 114.514
+			accuracy = 1
 			shield_penetration = 1
 			armor_penetration = 1
 		}
@@ -96,8 +123,6 @@ utility_component_template = {
 	component_set = "REALITY_DISTORTION_SYSTEM"
 	power = -100
 	modifier = {
-		ship_disengage_chance_mult = -100
-		ship_disengage_chance_reduction = 100
 	}
 	resources = {
 		category = ship_components
@@ -108,5 +133,66 @@ utility_component_template = {
 			energy = @s_t1_upkeep_energy
 			alloys = @s_t1_upkeep_alloys
 		}
+	}
+}
+
+
+utility_component_template = {
+	key = "SHIP_COORDINATE_EDITING_MODULE"
+	size = small
+	icon = "GFX_ship_coordinate_editing_module"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}
+	}
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_windup_mult = -1
+		ship_interstellar_speed_mult = 6.66
+		ship_jumpdrive_cooldown_mult = -4.2
+		ship_ftl_jumpdrive_range_mult = 42
+	}
+	ai_weight = {
+		weight = 0
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_constructor
+		shipclass_colonizer
+		shipclass_science_ship
+		shipclass_transport
+		shipclass_military_special
+		shipclass_starbase
+	}
+	prerequisites = { tech_reality_distortion_system }
+	component_set = "ftl_components"
+}
+
+utility_component_template = {
+	key = "SHIP_VECTOR_EDITING_MODULE"
+	size = small
+	icon = "GFX_swn_thruster"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}
+	}
+	ship_modifier = {
+		ship_base_speed_mult = 10
+		ship_speed_mult = 5
+		ship_evasion_add = 400
+	}
+	prerequisites = { tech_reality_distortion_system }
+	component_set = "thruster_components"
+	ai_weight = {
+		weight = 0
 	}
 }

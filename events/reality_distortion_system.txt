@@ -43,38 +43,84 @@ ship_event = {
 				flag = reality_distortion_system_cooldown
 				days = @flag_time
 			}
+			#NO_SHIP_UNKEEP
+			if = {
+				limit = {
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = no_unkeep
+					}
+				}
+				export_modifier_to_variable = {
+					modifier = ships_upkeep_mult
+					variable = ships_upkeep_mult_number
+				}
+				multiply_variable = {
+					which = ships_upkeep_mult_number
+					value = -1
+				}
+				change_variable = {
+					which = ships_upkeep_mult_number
+					value = -1
+				}
+				if = {
+					limit = {
+						check_modifier_value = {	modifier = ship_speed_mult value > -1 }
+					}
+					remove_modifier = swn_mod_ships_upkeep_mult
+					add_modifier = {	modifier = swn_mod_ships_upkeep_mult	months = -1	multiplier = ships_upkeep_mult_number }
+				}
+			}
 			#VECTOR_EDITING
 			if = {
 				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = vector_editing
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = vector_editing
 					}
 				}
 				export_modifier_to_variable = {
 					modifier = ship_speed_mult
 					variable = Ship_speed_mult_number
 				}
+				export_modifier_to_variable = {
+					modifier = ship_base_speed_mult
+					variable = ship_base_speed_mult_number
+				}
 				multiply_variable = {
 					which = ship_speed_mult_number
 					value = -1
 				}
+				multiply_variable = {
+					which = ship_base_speed_mult_number
+					value = -1
+				}
 				change_variable = {
 					which = ship_speed_mult_number
-					value = 42.14
+					value = 5
+				}
+				change_variable = {
+					which = ship_base_speed_mult_number
+					value = 10
 				}
 				if = {
 					limit = {
-						check_modifier_value = {	modifier = ship_speed_mult value < 42.14 }
+						check_modifier_value = {	modifier = ship_speed_mult value < 5 }
 					}
 					remove_modifier = swn_mod_ship_speed_mult
 					add_modifier = {	modifier = swn_mod_ship_speed_mult	months = -1	multiplier = ship_speed_mult_number }
+				}
+				if = {
+					limit = {
+						check_modifier_value = {	modifier = ship_speed_mult value < 10 }
+					}
+					remove_modifier = swn_mod_ship_base_speed_mult
+					add_modifier = {	modifier = swn_mod_ship_base_speed_mult	months = -1	multiplier = ship_base_speed_mult_number }
 				}
 			}
 			#COORDINATE_EDITING
 			if = {
 				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = coordinate_editing
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = coordinate_editing
 					}
 				}
 				export_modifier_to_variable = {
@@ -117,7 +163,7 @@ ship_event = {
 				}
 				change_variable = {
 					which = ship_interstellar_speed_mult
-					value = 10
+					value = 5
 				}
 				change_variable = {
 					which = ship_jumpdrive_cooldown_mult_number
@@ -137,7 +183,7 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						check_modifier_value = {	modifier = ship_interstellar_speed_mult value < 10.00	}
+						check_modifier_value = {	modifier = ship_interstellar_speed_mult value < 5.00	}
 					}
 					remove_modifier = swn_mod_ship_interstellar_speed_mult
 					add_modifier = {	modifier = swn_mod_ship_interstellar_speed_mult	months = -1	multiplier = ship_interstellar_speed_mult_number	}
@@ -160,8 +206,8 @@ ship_event = {
 			#UNBREAKABLE_SHIP
 			if = {
 				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = unbreakable_ship
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = unbreakable_ship
 					}
 				}
 				This = {
@@ -199,8 +245,8 @@ ship_event = {
 			#NO_DISENGAGE
 			if = {
 				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = no_disengage
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = no_disengage
 					}
 				}
 				export_modifier_to_variable = {
@@ -226,8 +272,8 @@ ship_event = {
 			#ACCURACY_BUFF
 			if = {
 				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = accuracy_buff
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = accuracy_buff
 					}
 				}
 				export_modifier_to_variable = {
@@ -269,6 +315,16 @@ ship_event = {
 					add_modifier = {	modifier = swn_mod_ship_accuracy_mult	months = 1	multiplier = ship_accuracy_mult_number	}
 				}
 			}
+			#Owner
+			if = {
+				limit = {
+					NOT = {
+						has_ship_flag = the_ship_owner_has_configured
+					}
+				}
+				set_ship_flag = the_ship_owner_has_configured
+				set_ship_flag = ship_owner_@This.owner
+			}
 		}
 		if = {
 			limit = {
@@ -290,8 +346,8 @@ ship_event = {
 						if = {
 							limit = {
 								NOT = {
-									event_target:reality_distortion_system_ship.fleet = {
-										has_fleet_flag = system_wide
+									event_target:reality_distortion_system_ship = {
+										has_ship_flag = system_wide
 									}
 								}
 							}
@@ -304,8 +360,8 @@ ship_event = {
 					#ACCURACY_BUFF
 			if = {
 				limit = {
-					event_target:reality_distortion_system_ship.fleet = {
-						has_fleet_flag = accuracy_debuff
+					event_target:reality_distortion_system_ship = {
+						has_ship_flag = accuracy_debuff
 					}
 				}
 				export_modifier_to_variable = {
@@ -349,8 +405,8 @@ ship_event = {
 			}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = ship_hp_amount_reduce_system
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = ship_hp_amount_reduce_system
 							}
 						}
 						export_trigger_value_to_variable = {
@@ -369,8 +425,8 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = shield_erasing_system
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = shield_erasing_system
 							}
 						}
 						export_modifier_to_variable = {
@@ -395,8 +451,8 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = armor_erasing_system
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = armor_erasing_system
 							}
 						}
 						export_modifier_to_variable = {
@@ -421,16 +477,16 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = instant_kill
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = instant_kill
 							}
 						}
 						destroy_ship = This
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = fleet_event_unlocker
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = fleet_event_unlocker
 							}
 						}
 						fleet = {
@@ -439,8 +495,8 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = anti_hull_repair
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = anti_hull_repair
 							}
 						}
 						export_modifier_to_variable = {
@@ -484,8 +540,8 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = speed_reduction
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = speed_reduction
 							}
 						}
 						export_modifier_to_variable = {
@@ -510,8 +566,8 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							event_target:reality_distortion_system_ship.fleet = {
-								has_fleet_flag = no_disabled_ship
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = no_disabled_ship
 							}
 						}
 						set_disable_at_health = 0
@@ -535,9 +591,7 @@ event = {
 	immediate = {
 		if = {
 			limit = {
-				This.fleet = {
-					has_fleet_flag = unbreakable_ship
-				}
+				has_ship_flag = unbreakable_ship
 				has_component = REALITY_DISTORTION_SYSTEM
 			}
 			This = {
@@ -607,56 +661,3 @@ event = {
 	}
 }
 
-planet_event = {
-	id = rds.7
-	hide_window = yes
-	trigger = {
-		
-	}
-	is_triggered_only = yes
-	immediate = {
-		#NO_JOB_UPKEEP
-		dynamic_modifier = { MODIFIER = planet_jobs_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
-		#NO_POPS_UPKEEP
-		dynamic_modifier = { MODIFIER = planet_pops_organics_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
-		dynamic_modifier = { MODIFIER = planet_pops_robotics_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
-		#NO_PLANET_STRUTURE_UPKEEP
-		dynamic_modifier = { MODIFIER = planet_structures_upkeep_mult MULTIPLY = -1 CHANGE = -1 }
-		#POP_DO_NOT_NEED_HOUSE
-		dynamic_modifier = { MODIFIER = pop_housing_usage_mult MULTIPLY = -1 CHANGE = -1 }
-	}
-}
-
-planet_event = {
-	id = rds.8
-	hide_window = yes
-	trigger = {
-		
-	}
-	is_triggered_only = yes
-	immediate = {
-		remove_modifier = swn_mod_planet_jobs_upkeep_mult
-		remove_modifier = swn_mod_planet_pops_organics_upkeep_mult
-		remove_modifier = swn_mod_planet_pops_robotics_upkeep_mult
-		remove_modifier = swn_mod_planet_structures_upkeep_mult
-		remove_modifier = swn_mod_pop_housing_usage_mult
-	}
-}
-
-country_event = {
-	id = rds.9
-	hide_window = yes
-	trigger = {
-	}
-	is_triggered_only = yes
-	immediate = {
-		export_resource_stockpile_to_variable = { resource = energy variable = energy_stockpile }
-		export_resource_income_to_variable = { resource = energy variable = energy_income }
-		if = {
-			limit = {
-				check_variable = { which = energy_stockpile value > energy_income }
-			}
-			add_monthly_resource_mult = { resource = energy value = -1}
-		}
-	}
-}

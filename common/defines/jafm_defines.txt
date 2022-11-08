@@ -1,0 +1,3 @@
+NShip = {
+	JUMP_DRIVE_WINDUP					= 4 	# Jump drive windup in days
+}

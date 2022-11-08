@@ -15,6 +15,9 @@ fleet_rds_setting = {
 	potential = {
 	}
 	allow = {
+		owner = {
+			is_ai = no
+		}
 	}
 	effect = {
 		custom_tooltip = custom_tooltip_button_rds_setting_fleet

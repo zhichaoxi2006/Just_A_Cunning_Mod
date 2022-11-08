@@ -105,3 +105,15 @@ swn_mod_ship_accuracy_mult = {
 swn_mod_ship_hull_mult = {
 	ship_hull_mult = 1
 }
+
+swn_mod_ship_base_speed_mult = {
+	ship_base_speed_mult = 1
+}
+
+swn_mod_ships_upkeep_mult = {
+	ships_upkeep_mult = 1
+}
+
+swn_mod_leader_age = {
+	leader_age = 1
+}

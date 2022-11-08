@@ -8,4 +8,4 @@ tags={
 	"Buildings"
 }
 name="Just A Freak Mod"
-supported_version="3.3.3"
+supported_version="3.5.2"

@@ -15,6 +15,31 @@ event = {
 	}
 	immediate = {
 	}
+	#NO_UNKEEP
+	option = {
+		name = rds_setting.no_unkeep.on
+		trigger = {
+			NOT = {
+				dynamic_flag_check = { DYNAMIC_FLAG = no_unkeep }
+			}
+		}
+		custom_tooltip = rds_setting.no_unkeep.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = no_unkeep }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	option = {
+		name = rds_setting.no_unkeep.off
+		trigger = {
+			dynamic_flag_check = { DYNAMIC_FLAG = no_unkeep }
+		}
+		custom_tooltip = rds_setting.no_unkeep.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = no_unkeep }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
 	#COORDINATE_EDITING
 	option = {
 		name = rds_setting.coordinate_editing.on
@@ -409,11 +434,24 @@ event = {
 		trigger = {
 		}
 		hidden_effect = {
+			if = {
+				limit = {
+					is_scope_type = fleet
+				}
+				every_owned_ship = {
+					limit = {
+						EQUIPPED_WITH_RDS = yes
+					}
+					ship_event = {
+						id = rds_setting.3
+					}
+				}
+			}
 		}
 	}
 }
 
-fleet_event = {
+event = {
 	id = rds_setting.3
 	hide_window = yes
 	trigger = {
@@ -436,6 +474,7 @@ fleet_event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = coordinate_editing }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = science_ship_buff }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = accuracy_debuff }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_unkeep }
 	}
 }
 
@@ -446,10 +485,8 @@ ship_event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		fleet = {
-			fleet_event = {
-				id = rds_setting.3
-			}
+		ship_event = {
+			id = rds_setting.3
 		}
 	}
 }

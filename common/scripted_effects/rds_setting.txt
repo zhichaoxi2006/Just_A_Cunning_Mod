@@ -1,15 +1,36 @@
 rds_setting_flag_converter = {
 	if = {
 		limit = {
-			owner = {
-				has_country_flag = $RDS_SETTING_FLAG$
+			is_scope_type = country
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = $RDS_SETTING_FLAG$
+				}
+			}
+			set_fleet_flag = $RDS_SETTING_FLAG$
+		}
+		else = {
+			fleet = {
+				remove_fleet_flag = $RDS_SETTING_FLAG$
 			}
 		}
-		set_fleet_flag = $RDS_SETTING_FLAG$
 	}
-	else = {
-		fleet = {
-			remove_fleet_flag = $RDS_SETTING_FLAG$
+	else_if = {
+		limit = { 
+			is_scope_type = fleet
+		}
+		if = {
+			limit = {
+				fleet = {
+					has_fleet_flag = $RDS_SETTING_FLAG$
+				}
+			}
+			set_ship_flag = $RDS_SETTING_FLAG$
+		}
+		else = {
+			remove_ship_flag = $RDS_SETTING_FLAG$
 		}
 	}
 }
@@ -27,6 +48,12 @@ dynamic_flag_set = {
 		}
 		set_fleet_flag = $DYNAMIC_FLAG$
 	}
+	else_if = {
+		limit = {
+			is_scope_type = ship
+		}
+		set_ship_flag = $DYNAMIC_FLAG$
+	}
 }
 
 dynamic_flag_remove = {
@@ -41,6 +68,12 @@ dynamic_flag_remove = {
 			is_scope_type = fleet
 		}
 		remove_fleet_flag = $DYNAMIC_FLAG$
+	}
+	else_if = {
+		limit = {
+			is_scope_type = ship
+		}
+		remove_ship_flag = $DYNAMIC_FLAG$
 	}
 }
 
@@ -61,26 +94,34 @@ dynamic_event = {
 			id = $EVENT$
 		}
 	}
+	else_if = {
+		limit = { 
+			is_scope_type = ship
+		}
+		ship_event = {
+			id = $EVENT$
+		}
+	}
 }
 
-dynamic_modifier = {
-	export_modifier_to_variable = {
-		modifier = $MODIFIER$
-		variable = $MODIFIER$_number
-	}
-	multiply_variable = {
-		which = $MODIFIER$_number
-		value = $MULTIPLY$ #一般是负一
-	}
-	change_variable = {
-		which = $MODIFIER$_number
-		value = $CHANGE$ 
-	}
-	if = {
-		limit = {
-			check_modifier_value = {modifier = $MODIFIER$ value > $CHANGE$}
-		}
-		remove_modifier = swn_mod_$MODIFIER$
-		add_modifier = {modifier = swn_mod_$MODIFIER$ months = -1 multiplier = $MODIFIER$_number}
-	}
-}
+#dynamic_modifier = {
+#	export_modifier_to_variable = {
+#		modifier = $MODIFIER$
+#		variable = $MODIFIER$_number
+#	}
+#	multiply_variable = {
+#		which = $MODIFIER$_number
+#		value = $MULTIPLY$ #一般是负一
+#	}
+#	change_variable = {
+#		which = $MODIFIER$_number
+#		value = $CHANGE$ 
+#	}
+#	if = {
+#		limit = {
+#			check_modifier_value = {modifier = $MODIFIER$ value > $CHANGE$}
+#		}
+#		remove_modifier = swn_mod_$MODIFIER$
+#		add_modifier = {modifier = swn_mod_$MODIFIER$ months = -1 multiplier = $MODIFIER$_number}
+#	}
+#}

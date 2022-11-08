@@ -47,4 +47,8 @@ spriteTypes = {
 		name = "GFX_ship_part_aura_minefield_paradox"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_minefield_paradox.dds"
 	}
+	spriteType = {
+		name = "GFX_ship_part_performence_device"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_performence_device.dds"
+	}
 }
