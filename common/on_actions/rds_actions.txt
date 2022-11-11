@@ -25,7 +25,7 @@ on_ship_disabled = {
 # FromFromFrom = planet
 on_army_killed_in_combat = {
 	events = {
-		s_andrew_swann_entity.1
+		rds_misc.1
 	}
 }
 
@@ -33,6 +33,15 @@ on_army_killed_in_combat = {
 # Root = Ship
 # From = Planet
 on_ship_built = {
+	events = {
+		rds.4
+		rds_setting.4
+	}
+}
+
+# A ship has been upgraded
+# Root = Ship
+on_ship_upgraded = {
 	events = {
 		rds.4
 		rds_setting.4
@@ -57,5 +66,29 @@ on_monthly_pulse_country = {
 # From = Leader
 on_leader_death = {
 	events = {
+	}
+}
+
+# Planet has taken damage from orbital bombardment - Damage is applied daily
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		rds_misc.2
+	}
+}
+
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+on_leader_spawned = {
+	events = {
+		rds_misc.4
+	}
+}
+
+# Scope: Leader (after assignment)
+on_leader_assigned = {
+	events = {
+		rds_misc.5
 	}
 }

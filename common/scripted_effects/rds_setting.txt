@@ -1,7 +1,7 @@
 rds_setting_flag_converter = {
 	if = {
 		limit = {
-			is_scope_type = country
+			is_scope_type = fleet
 		}
 		if = {
 			limit = {
@@ -19,7 +19,7 @@ rds_setting_flag_converter = {
 	}
 	else_if = {
 		limit = { 
-			is_scope_type = fleet
+			is_scope_type = ship
 		}
 		if = {
 			limit = {

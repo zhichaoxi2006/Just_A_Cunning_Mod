@@ -1,0 +1,17 @@
+leader_trait_death = {
+	initial = no
+	randomized = no
+	icon = "gfx/interface/icons/traits/trait_death_tag.dds"
+	leader_trait = all
+}
+
+leader_trait_rds = {
+	icon = "gfx/interface/icons/traits/stellaris.dds"
+	immortal_leaders = yes
+	initial = no
+	randomized = no
+	modifier = {
+		ship_weapon_range_mult = 2
+		ships_upkeep_mult = -1145.14
+	}
+}

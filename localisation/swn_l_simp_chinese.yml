@@ -46,10 +46,16 @@
  #Technology
  tech_reality_distortion_system: "超形上学科技"
  tech_reality_distortion_system_desc: "使我们有了可以让我们从下层叙事改变上层叙事的办法"
- tech_pataphysics_armies: "超形上学实体军用化"
- tech_pataphysics_armies_desc: "使得我们能把超形上学实体作为陆军使用。"
+ tech_reality_distortion_system_armies: "超形上学实体军用化"
+ tech_reality_distortion_system_armies_desc: "使得我们能把超形上学实体作为陆军使用。"
  tech_pataphysics_weapon: "超形上学武器"
  tech_pataphysics_weapon_desc: "你知道的，§P对吧？§!"
+
+ #LEADER_TRAIT
+ leader_trait_death: "死亡标记"
+ leader_trait_death_desc: "这个领袖浑身充满了不祥的气息。"
+ leader_trait_rds: "现实扭曲系统"
+ leader_trait_rds_desc: "这位领袖装配了现实扭曲系统，在战斗中能大范围的扭曲现实。"
 
  #Edicts
  edict_sas_technology_get: "获取Mod科技"
@@ -66,8 +72,8 @@
  edict_Leader_Killer_desc: "大幅减少领袖寿命"
 
  #Armies
- pataphysics_army: "超形上学实体"
- pataphysics_army_desc: "它们不会在战斗时死去，还会在死后自我复制。"
+ reality_distortion_system_army: "超形上学实体"
+ reality_distortion_system_army_desc: "它们不会在战斗时死去，还会在死后自我复制。"
 
  #CB
  casus_belli_cb_narrative_editing_warship: "叙事编辑舰——终焉程序"
@@ -78,10 +84,6 @@
  war_goal_wg_narrative_editing_warship_desc: "为了解放叙事层的灭国宣言。"
  war_goal_wg_end_threat_narrative_editing_warship: "停止叙事编辑舰威胁"
  war_goal_wg_end_threat_narrative_editing_warship_desc: "很显然，叙事编辑舰不可能让我们的叙事层获得自由。只会给我们的国家带来终焉，所以，我们必须毁灭叙事编辑舰。"
-
- #Traits
- trait_reality_distortion_system: "现实扭曲系统"
- trait_reality_distortion_system_desc: "这个领袖装配有现实扭曲系统，拥有现实扭曲的能力"
 
  #Decision
  decision_unkeep_remover: "开启维护费移除系统"
@@ -99,23 +101,14 @@
  rds_setting_centre_2_DESC: "现实扭曲系统设置调整仪 ——工作中"
  
  #Event
- s_andrew_swann_entity.15.name: "对星叙事打击系统"
- s_andrew_swann_entity.15.desc: "叙事编辑军舰配置的叙事打击系统控制面板"
- s_andrew_swann_entity.15.a: "星系抹除"
- s_andrew_swann_entity.15.a.tooltip: "这将会使目标恒星附近的时间加速到极快的速度，从而使目标恒星放出极大的能量，毁灭整个星系。"
- s_andrew_swann_entity.15.b: "生态回归"
- s_andrew_swann_entity.15.b.tooltip: "使星球回归到未殖民的状态。"
- s_andrew_swann_entity.15.c: "投放军队"
- s_andrew_swann_entity.15.c.tooltip: "向星球投放军队。"
- s_andrew_swann_entity.15.d: "地爆天星"
- s_andrew_swann_entity.15.d.tooltip: "Test"
- s_andrew_swann_entity.15.z: "取消启动"
- s_andrew_swann_entity.15.z.tooltip: "不启动系统"
-
  rds_setting.gui.name: "现实扭曲系统控制面板"
  rds_setting.gui.desc: "现实扭曲系统控制面板，你可以在这里调整现实扭曲系统的设置参数。"
+ rds_setting.planet_destroyer.on: "星球破坏者——§G开启§!"
+ rds_setting.planet_destroyer.on.tooltip: "这能极大的提升舰船的轨道轰炸破坏力。"
+ rds_setting.planet_destroyer.off: "星球破坏者——§R关闭§!"
+ rds_setting.planet_destroyer.off.tooltip: ""
  rds_setting.no_unkeep.on: "自动维护——§G开启§!"
- rds_setting.no_unkeep.on.tooltip: ""
+ rds_setting.no_unkeep.on.tooltip: "使得舰船不需要维护费。"
  rds_setting.no_unkeep.off: "自动维护——§R关闭§!"
  rds_setting.no_unkeep.off.tooltip: ""
  rds_setting.coordinate_editing.on: "坐标编辑模块——§G开启§!"

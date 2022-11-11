@@ -1,6 +1,7 @@
 namespace = rds
 @Residual_hull_value = 1
 @flag_time = 1
+@modifier_time = 1
 ship_event = {
 	id = rds.0
 	hide_window = yes
@@ -64,10 +65,10 @@ ship_event = {
 				}
 				if = {
 					limit = {
-						check_modifier_value = {	modifier = ship_speed_mult value > -1 }
+						check_modifier_value = {	modifier = swn_mod_ships_upkeep_mult value > -1 }
 					}
 					remove_modifier = swn_mod_ships_upkeep_mult
-					add_modifier = {	modifier = swn_mod_ships_upkeep_mult	months = -1	multiplier = ships_upkeep_mult_number }
+					add_modifier = {	modifier = swn_mod_ships_upkeep_mult	months = @modifier_time	multiplier = ships_upkeep_mult_number }
 				}
 			}
 			#VECTOR_EDITING
@@ -106,14 +107,14 @@ ship_event = {
 						check_modifier_value = {	modifier = ship_speed_mult value < 5 }
 					}
 					remove_modifier = swn_mod_ship_speed_mult
-					add_modifier = {	modifier = swn_mod_ship_speed_mult	months = -1	multiplier = ship_speed_mult_number }
+					add_modifier = {	modifier = swn_mod_ship_speed_mult	months = @modifier_time	multiplier = ship_speed_mult_number }
 				}
 				if = {
 					limit = {
 						check_modifier_value = {	modifier = ship_speed_mult value < 10 }
 					}
 					remove_modifier = swn_mod_ship_base_speed_mult
-					add_modifier = {	modifier = swn_mod_ship_base_speed_mult	months = -1	multiplier = ship_base_speed_mult_number }
+					add_modifier = {	modifier = swn_mod_ship_base_speed_mult	months = @modifier_time	multiplier = ship_base_speed_mult_number }
 				}
 			}
 			#COORDINATE_EDITING
@@ -179,28 +180,28 @@ ship_event = {
 						check_modifier_value = {	modifier = ship_windup_mult value > -1.00	}
 					}
 					remove_modifier = swn_mod_ship_windup_mult
-					add_modifier = {	modifier = swn_mod_ship_windup_mult	months = -1	multiplier = ship_windup_mult_number	}
+					add_modifier = {	modifier = swn_mod_ship_windup_mult	months = @modifier_time	multiplier = ship_windup_mult_number	}
 				}
 				if = {
 					limit = {
 						check_modifier_value = {	modifier = ship_interstellar_speed_mult value < 5.00	}
 					}
 					remove_modifier = swn_mod_ship_interstellar_speed_mult
-					add_modifier = {	modifier = swn_mod_ship_interstellar_speed_mult	months = -1	multiplier = ship_interstellar_speed_mult_number	}
+					add_modifier = {	modifier = swn_mod_ship_interstellar_speed_mult	months = @modifier_time	multiplier = ship_interstellar_speed_mult_number	}
 				}
 				if = {
 					limit = {
 						check_modifier_value = {	modifier = ship_jumpdrive_cooldown_mult value > -1.00	}
 					}
 					remove_modifier = swn_mod_ship_jumpdrive_cooldown_mult
-					add_modifier = {	modifier = swn_mod_ship_jumpdrive_cooldown_mult	months = -1	multiplier = ship_jumpdrive_cooldown_mult_number	}
+					add_modifier = {	modifier = swn_mod_ship_jumpdrive_cooldown_mult	months = @modifier_time	multiplier = ship_jumpdrive_cooldown_mult_number	}
 				}
 				if = {
 					limit = {
 						check_modifier_value = {	modifier = ship_ftl_jumpdrive_range_mult value < 42.00	}
 					}
 					remove_modifier = swn_mod_ship_ftl_jumpdrive_range_mult
-					add_modifier = {	modifier = swn_mod_ship_ftl_jumpdrive_range_mult	months = -1	multiplier = ship_ftl_jumpdrive_range_mult_number	}
+					add_modifier = {	modifier = swn_mod_ship_ftl_jumpdrive_range_mult	months = @modifier_time	multiplier = ship_ftl_jumpdrive_range_mult_number	}
 				}
 			}
 			#UNBREAKABLE_SHIP
@@ -229,7 +230,7 @@ ship_event = {
 							check_modifier_value = {	modifier = ship_hull_mult value < 1.00	}
 						}
 						remove_modifier = swn_mod_ship_hull_mult
-						add_modifier = {	modifier = swn_mod_ship_hull_mult	months = 1	multiplier = ship_hull_mult_number	}
+						add_modifier = {	modifier = swn_mod_ship_hull_mult	months = @modifier_time	multiplier = ship_hull_mult_number	}
 					}
 					repair_ship = yes
 					set_disabled = no
@@ -266,7 +267,7 @@ ship_event = {
 						check_modifier_value = {	modifier = ship_disengage_chance_reduction value < 1.00	}
 					}
 					remove_modifier = swn_mod_ship_disengage_chance_reduction
-					add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = 1	multiplier = ship_disengage_chance_reduction_number	}
+					add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = @modifier_time	multiplier = ship_disengage_chance_reduction_number	}
 				}
 			}
 			#ACCURACY_BUFF
@@ -305,17 +306,17 @@ ship_event = {
 						check_modifier_value = {	modifier = ship_accuracy_add value < 0.00	}
 					}
 					remove_modifier = swn_mod_ship_accuracy_add
-					add_modifier = {	modifier = swn_mod_ship_accuracy_add	months = 1	multiplier = ship_accuracy_add_number	}
+					add_modifier = {	modifier = swn_mod_ship_accuracy_add	months = @modifier_time	multiplier = ship_accuracy_add_number	}
 				}
 				if = {
 					limit = {
 						check_modifier_value = {	modifier = ship_accuracy_mult value < 0.00	}
 					}
 					remove_modifier = swn_mod_ship_accuracy_mult
-					add_modifier = {	modifier = swn_mod_ship_accuracy_mult	months = 1	multiplier = ship_accuracy_mult_number	}
+					add_modifier = {	modifier = swn_mod_ship_accuracy_mult	months = @modifier_time	multiplier = ship_accuracy_mult_number	}
 				}
 			}
-			#Owner
+			#Owner_Set
 			if = {
 				limit = {
 					NOT = {
@@ -342,67 +343,72 @@ ship_event = {
 			}
 			THIS.solar_system = {
 				every_ship_in_system = {
+					#目标判定
 					limit = {
-						if = {
-							limit = {
-								NOT = {
-									event_target:reality_distortion_system_ship = {
-										has_ship_flag = system_wide
+						AND = {
+							if = {
+								limit = {
+									NOT = {
+										event_target:reality_distortion_system_ship = {
+											has_ship_flag = system_wide
+										}
 									}
 								}
+								is_in_combat = yes
 							}
-							is_in_combat = yes
-						}
-						NOT = {
-							is_owned_by = event_target:reality_distortion_system_ship.owner
+							NOT = {
+								is_owned_by = event_target:reality_distortion_system_ship.owner
+							}
+							EQUIPPED_WITH_RDS = no
 						}
 					}
 					#ACCURACY_BUFF
-			if = {
-				limit = {
-					event_target:reality_distortion_system_ship = {
-						has_ship_flag = accuracy_debuff
+					if = {
+						limit = {
+							event_target:reality_distortion_system_ship = {
+								has_ship_flag = accuracy_debuff
+							}
+						}
+						export_modifier_to_variable = {
+							modifier = ship_accuracy_add
+							variable = ship_accuracy_add_number
+						}
+						export_modifier_to_variable = {
+							modifier = ship_accuracy_mult
+							variable = ship_accuracy_mult_number
+						}
+						multiply_variable = {
+							which = ship_accuracy_add_number
+							value = -1
+						}
+						multiply_variable = {
+							which = ship_accuracy_mult_number
+							value = -1
+						}
+						change_variable = {
+							which = ship_accuracy_add_number
+							value = -100
+						}
+						change_variable = {
+							which = ship_accuracy_mult_number
+							value = -1
+						}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_accuracy_add value > -100.00	}
+							}
+							remove_modifier = swn_mod_ship_accuracy_add
+							add_modifier = {	modifier = swn_mod_ship_accuracy_add	months = @modifier_time	multiplier = ship_accuracy_add_number	}
+						}
+						if = {
+							limit = {
+								check_modifier_value = {	modifier = ship_accuracy_mult value > -1.00	}
+							}
+							remove_modifier = swn_mod_ship_accuracy_mult
+							add_modifier = {	modifier = swn_mod_ship_accuracy_mult	months = @modifier_time	multiplier = ship_accuracy_mult_number	}
+						}
 					}
-				}
-				export_modifier_to_variable = {
-					modifier = ship_accuracy_add
-					variable = ship_accuracy_add_number
-				}
-				export_modifier_to_variable = {
-					modifier = ship_accuracy_mult
-					variable = ship_accuracy_mult_number
-				}
-				multiply_variable = {
-					which = ship_accuracy_add_number
-					value = -1
-				}
-				multiply_variable = {
-					which = ship_accuracy_mult_number
-					value = -1
-				}
-				change_variable = {
-					which = ship_accuracy_add_number
-					value = -100
-				}
-				change_variable = {
-					which = ship_accuracy_mult_number
-					value = -1
-				}
-				if = {
-					limit = {
-						check_modifier_value = {	modifier = ship_accuracy_add value > -100.00	}
-					}
-					remove_modifier = swn_mod_ship_accuracy_add
-					add_modifier = {	modifier = swn_mod_ship_accuracy_add	months = 1	multiplier = ship_accuracy_add_number	}
-				}
-				if = {
-					limit = {
-						check_modifier_value = {	modifier = ship_accuracy_mult value > -1.00	}
-					}
-					remove_modifier = swn_mod_ship_accuracy_mult
-					add_modifier = {	modifier = swn_mod_ship_accuracy_mult	months = 1	multiplier = ship_accuracy_mult_number	}
-				}
-			}
+					#SHIP_HP_AMOUNT_REDUCE_SYSTEM
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -423,6 +429,7 @@ ship_event = {
 							days = @flag_time
 						}
 					}
+					#SHIELD_ERASING_SYSTEM
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -446,9 +453,10 @@ ship_event = {
 								check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
 							}
 							remove_modifier = swn_mod_ship_shield_reduction
-							add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = 1	multiplier = ship_shield_reduction_number	}
+							add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = @modifier_time	multiplier = ship_shield_reduction_number	}
 						}
 					}
+					#ARMOR_ERASING_SYSTEM
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -472,9 +480,10 @@ ship_event = {
 								check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
 							}
 							remove_modifier = swn_mod_ship_armor_reduction
-							add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = 1	multiplier = ship_armor_reduction_number	}
+							add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = @modifier_time	multiplier = ship_armor_reduction_number	}
 						}
 					}
+					#INSTANT_KILL
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -483,6 +492,7 @@ ship_event = {
 						}
 						destroy_ship = This
 					}
+					#FLEET_EVENT_UNLOCKER
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -493,6 +503,7 @@ ship_event = {
 							set_event_locked = no
 						}
 					}
+					#ANTI_HULL_REPAIR
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -516,7 +527,7 @@ ship_event = {
 								check_modifier_value = {	modifier = ship_hull_regen_add_perc value > 0.00	}
 							}
 							remove_modifier = swn_mod_ship_hull_repair_anti
-							add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = 1	multiplier = ship_hull_regen_add_perc_number	}
+							add_modifier = {	modifier = swn_mod_ship_hull_repair_anti	months = @modifier_time	multiplier = ship_hull_regen_add_perc_number	}
 						}
 						export_modifier_to_variable = {
 							modifier = ship_hull_regen_add_static
@@ -535,9 +546,10 @@ ship_event = {
 								check_modifier_value = {	modifier = ship_hull_regen_add_static value > 0.00	}
 							}
 							remove_modifier = swn_mod_ship_hull_repair_anti_static
-							add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = 1	multiplier = ship_hull_regen_add_static_number	}
+							add_modifier = {	modifier = swn_mod_ship_hull_repair_anti_static	months = @modifier_time	multiplier = ship_hull_regen_add_static_number	}
 						}
 					}
+					#SPEED_REDUCTION
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -561,9 +573,10 @@ ship_event = {
 								check_modifier_value = {	modifier = ship_speed_reduction value < 1.00	}
 							}
 							remove_modifier = swn_mod_ship_speed_reduction
-							add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = 1	multiplier = ship_speed_reduction_number	}
+							add_modifier = {	modifier = swn_mod_ship_speed_reduction	months = @modifier_time	multiplier = ship_speed_reduction_number	}
 						}
 					}
+					#NO_DISABLED_SHIP
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
@@ -592,7 +605,7 @@ event = {
 		if = {
 			limit = {
 				has_ship_flag = unbreakable_ship
-				has_component = REALITY_DISTORTION_SYSTEM
+				EQUIPPED_WITH_RDS = yes
 			}
 			This = {
 				repair_ship = yes

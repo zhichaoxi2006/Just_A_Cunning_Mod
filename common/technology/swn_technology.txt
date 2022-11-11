@@ -9,7 +9,7 @@ tech_reality_distortion_system = {
 	}
 }
 
-tech_pataphysics_armies = {
+tech_reality_distortion_system_armies = {
 	cost = 666
 	area = society
 	tier = 5

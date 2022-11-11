@@ -18,7 +18,7 @@ weapon_component_template = {
 		}
 	}
 
-	damage = { min = 1 max = 52 }
+	damage = { min =1 max = 52 }
 	total_fire_time = 1
 	range = 700
 	accuracy = 42
@@ -46,7 +46,7 @@ weapon_component_template = {
 		}
 	}
 	
-	damage = { min = 1 max = 124 }
+	damage = { min = 52 max = 124 }
 	total_fire_time = 1
 	range = 700
 	accuracy = 42
@@ -74,7 +74,7 @@ weapon_component_template = {
 		}
 	}
 
-	damage = { min = 1 max = 243 }
+	damage = { min = 124 max = 243 }
 	total_fire_time = 1
 	range = 700
 	accuracy = 42
@@ -101,7 +101,7 @@ weapon_component_template = {
 			alloys = @s_t1_upkeep_alloys
 		}
 	}
-	damage = { min = 1 max = 444 }
+	damage = { min = 243 max = 444 }
 	total_fire_time = 1
 	range = 700
 	accuracy = 42

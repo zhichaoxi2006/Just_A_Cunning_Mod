@@ -1,4 +1,4 @@
-pataphysics_army = {
+reality_distortion_system_army = {
 	damage = 500.00
 	health = 200.00
 	has_morale = no
@@ -7,7 +7,7 @@ pataphysics_army = {
 	war_exhaustion = 1.00
 	time = 10
 	has_species = no
-	prerequisites = { tech_pataphysics_armies }
+	prerequisites = { tech_reality_distortion_system_armies }
 	resources = {
 		category = armies
 		cost = {

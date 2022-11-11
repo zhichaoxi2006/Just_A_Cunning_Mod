@@ -11,6 +11,12 @@ dynamic_flag_check = {
 		}
 		has_fleet_flag = $DYNAMIC_FLAG$
 	}
+	else_if = {
+		limit = { 
+			is_scope_type = ship
+		}
+		has_ship_flag = $DYNAMIC_FLAG$
+	}
 }
 
 EQUIPPED_WITH_RDS = {
@@ -18,5 +24,8 @@ EQUIPPED_WITH_RDS = {
 		has_component = REALITY_DISTORTION_SYSTEM 
 		has_component = CORE_OF_PERFORMANCE 
 		has_component = DEVICE_OF_PERFORMANCE
+		leader = {
+			has_trait = leader_trait_rds
+		}
 	}
 }

@@ -1,3 +1,17 @@
+NGameplay = {
+	MID_GAME_START_DEFAULT = 100
+	MID_GAME_START_MAX = 400
+	MID_GAME_START_MIN = 0
+	END_GAME_START_DEFAULT = 200
+	END_GAME_START_MAX = 800
+	END_GAME_START_MIN = 5
+	START_YEAR_SLIDER_INTERVAL = 5
+	LEADER_MAX_SKILL_CAP = 1000
+	ALLOW_EMPIRE_DESIGN_CHEATS = yes
+	NAVAL_CAPACITY_MAX = 1000000	# Max value of Naval Capacity
+}
+
 NShip = {
+	SHIP_MAX_EVASION					= 0.999		# The maximum evasion value a ship is allowed to have (percent)
 	JUMP_DRIVE_WINDUP					= 4 	# Jump drive windup in days
 }

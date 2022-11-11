@@ -1,0 +1,101 @@
+namespace = rds_misc
+#ARMY_CLONE
+event = {
+	id = rds_misc.1
+	hide_window = yes
+	trigger = {
+		From = {
+			army_type = reality_distortion_system_army
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		From = {
+			save_event_target_as = death_army
+		}
+		FromFromFrom = {
+			while = {
+				count = 2
+				create_army = {
+					name = random
+					owner = event_target:death_army.owner
+					type = reality_distortion_system_army
+				}
+			}
+		}
+	}
+}
+#PLANET_DESTROYER
+event = {
+	id = rds_misc.2
+	hide_window = yes
+	trigger = {
+		This = {
+			any_fleet_in_orbit = {
+				any_owned_ship = {
+					AND = {
+						has_ship_flag = planet_destroyer
+						EQUIPPED_WITH_RDS = yes
+					}
+				}
+			}
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		This = {
+			add_planet_devastation = 100
+		}
+	}
+}
+#LEADER_KILLER
+event = {
+	id = rds_misc.4
+	hide_window = yes
+	trigger = {
+		From = {
+			has_trait = leader_trait_death
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		From = {
+			kill_leader = {
+				show_notification = yes
+			}
+		}
+	}
+}
+
+event = {
+	id = rds_misc.5
+	hide_window = yes
+	trigger = {
+		has_trait = leader_trait_death
+	}
+	is_triggered_only = yes
+	immediate = {
+		kill_leader = {
+			show_notification = yes
+		}
+	}
+}
+#TECH_COPYER
+country_event = {
+	id = rds_misc.6
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = {
+				is_country_type = fallen_empire
+			}
+			save_event_target_as = target_to_copy_tech
+		}
+		copy_techs_from = {
+			target = event_target:target_to_copy_tech
+		}
+	}
+}

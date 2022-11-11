@@ -10,7 +10,7 @@ sas_technology_get = {
 			message = no
 		}
 		give_technology = {
-			tech = tech_pataphysics_armies
+			tech = tech_reality_distortion_system_armies
 			message = no
 		}
 		give_technology = {
@@ -109,8 +109,9 @@ Leader_Killer = {
 		every_owned_leader = {
 			limit = {
 			}
-			set_age = 2147483647
+			set_age = 10000
 			set_immortal = no
+			add_trait = leader_trait_death
 		}
 	}
 }
