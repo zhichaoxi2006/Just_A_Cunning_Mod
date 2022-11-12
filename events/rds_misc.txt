@@ -1,4 +1,5 @@
 namespace = rds_misc
+
 #ARMY_CLONE
 event = {
 	id = rds_misc.1
@@ -25,6 +26,7 @@ event = {
 		}
 	}
 }
+
 #PLANET_DESTROYER
 event = {
 	id = rds_misc.2
@@ -32,9 +34,9 @@ event = {
 	trigger = {
 		This = {
 			any_fleet_in_orbit = {
+				has_fleet_flag = planet_destroyer
 				any_owned_ship = {
 					AND = {
-						has_ship_flag = planet_destroyer
 						EQUIPPED_WITH_RDS = yes
 					}
 				}
@@ -48,6 +50,7 @@ event = {
 		}
 	}
 }
+
 #LEADER_KILLER
 event = {
 	id = rds_misc.4
@@ -80,6 +83,7 @@ event = {
 		}
 	}
 }
+
 #TECH_COPYER
 country_event = {
 	id = rds_misc.6
@@ -96,6 +100,25 @@ country_event = {
 		}
 		copy_techs_from = {
 			target = event_target:target_to_copy_tech
+		}
+	}
+}
+
+#SYSTEM_DESTROYER
+event = {
+	id = rds_misc.7
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			every_system_planet = {
+				limit = {
+					is_star = no
+				}
+				remove_planet = yes
+			}
 		}
 	}
 }

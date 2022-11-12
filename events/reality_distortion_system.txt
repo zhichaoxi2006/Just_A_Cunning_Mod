@@ -44,11 +44,11 @@ ship_event = {
 				flag = reality_distortion_system_cooldown
 				days = @flag_time
 			}
-			#NO_SHIP_UNKEEP
+			#no_ships_unkeep
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship = {
-						has_ship_flag = no_unkeep
+						rds_flag_check = { FLAG = no_ships_unkeep }
 					}
 				}
 				export_modifier_to_variable = {
@@ -75,7 +75,7 @@ ship_event = {
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship = {
-						has_ship_flag = vector_editing
+						rds_flag_check = { FLAG = vector_editing }
 					}
 				}
 				export_modifier_to_variable = {
@@ -121,7 +121,7 @@ ship_event = {
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship = {
-						has_ship_flag = coordinate_editing
+						rds_flag_check = { FLAG = coordinate_editing }
 					}
 				}
 				export_modifier_to_variable = {
@@ -208,7 +208,7 @@ ship_event = {
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship = {
-						has_ship_flag = unbreakable_ship
+						rds_flag_check = { FLAG = unbreakable_ship }
 					}
 				}
 				This = {
@@ -247,7 +247,7 @@ ship_event = {
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship = {
-						has_ship_flag = no_disengage
+						rds_flag_check = { FLAG = no_disengage }
 					}
 				}
 				export_modifier_to_variable = {
@@ -274,7 +274,7 @@ ship_event = {
 			if = {
 				limit = {
 					event_target:reality_distortion_system_ship = {
-						has_ship_flag = accuracy_buff
+						rds_flag_check = { FLAG = accuracy_buff }
 					}
 				}
 				export_modifier_to_variable = {
@@ -345,28 +345,26 @@ ship_event = {
 				every_ship_in_system = {
 					#目标判定
 					limit = {
-						AND = {
-							if = {
-								limit = {
-									NOT = {
-										event_target:reality_distortion_system_ship = {
-											has_ship_flag = system_wide
-										}
+						if = {
+							limit = {
+								NOT = {
+									event_target:reality_distortion_system_ship = {
+										rds_flag_check = { FLAG = system_wide }
 									}
 								}
-								is_in_combat = yes
 							}
-							NOT = {
-								is_owned_by = event_target:reality_distortion_system_ship.owner
-							}
-							EQUIPPED_WITH_RDS = no
+							is_in_combat = yes
 						}
+						NOT = {
+							is_owned_by = event_target:reality_distortion_system_ship.owner
+						}
+						EQUIPPED_WITH_RDS = no
 					}
 					#ACCURACY_BUFF
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = accuracy_debuff
+								rds_flag_check = { FLAG = accuracy_debuff }
 							}
 						}
 						export_modifier_to_variable = {
@@ -412,7 +410,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = ship_hp_amount_reduce_system
+								rds_flag_check = { FLAG = ship_hp_amount_reduce_system }
 							}
 						}
 						export_trigger_value_to_variable = {
@@ -433,7 +431,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = shield_erasing_system
+								rds_flag_check = { FLAG = shield_erasing_system }
 							}
 						}
 						export_modifier_to_variable = {
@@ -460,7 +458,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = armor_erasing_system
+								rds_flag_check = { FLAG = armor_erasing_system }
 							}
 						}
 						export_modifier_to_variable = {
@@ -487,7 +485,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = instant_kill
+								rds_flag_check = { FLAG = instant_kill }
 							}
 						}
 						destroy_ship = This
@@ -496,7 +494,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = fleet_event_unlocker
+								rds_flag_check = { FLAG = fleet_event_unlocker }
 							}
 						}
 						fleet = {
@@ -507,7 +505,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = anti_hull_repair
+								rds_flag_check = { FLAG = anti_hull_repair }
 							}
 						}
 						export_modifier_to_variable = {
@@ -553,7 +551,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = speed_reduction
+								rds_flag_check = { FLAG = speed_reduction }
 							}
 						}
 						export_modifier_to_variable = {
@@ -580,7 +578,7 @@ ship_event = {
 					if = {
 						limit = {
 							event_target:reality_distortion_system_ship = {
-								has_ship_flag = no_disabled_ship
+								rds_flag_check = { FLAG = no_disabled_ship }
 							}
 						}
 						set_disable_at_health = 0
@@ -604,7 +602,7 @@ event = {
 	immediate = {
 		if = {
 			limit = {
-				has_ship_flag = unbreakable_ship
+				rds_flag_check = { FLAG = unbreakable_ship }
 				EQUIPPED_WITH_RDS = yes
 			}
 			This = {

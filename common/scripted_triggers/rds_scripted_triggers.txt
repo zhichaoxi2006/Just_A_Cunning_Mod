@@ -29,3 +29,9 @@ EQUIPPED_WITH_RDS = {
 		}
 	}
 }
+
+rds_flag_check = {
+	fleet = {
+		has_fleet_flag = $FLAG$
+	}
+}

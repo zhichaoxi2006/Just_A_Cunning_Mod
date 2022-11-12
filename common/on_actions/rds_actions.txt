@@ -92,3 +92,13 @@ on_leader_assigned = {
 		rds_misc.5
 	}
 }
+
+# Called upon a catapult jump being finished, per fleet
+# THIS = Fleet
+# FROM = System jumping to
+# FROMFROM = System jumped from
+on_fleet_quantum_catapult = {
+	events = {
+		rds_misc.7
+	}
+}

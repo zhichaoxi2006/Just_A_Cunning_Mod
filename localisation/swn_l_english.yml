@@ -1,35 +1,35 @@
-﻿l_simp_chinese:
+﻿l_english:
  #Button_Effects
- custom_tooltip_button_rds_setting_fleet: "现实扭曲系统设置"
+ custom_tooltip_button_rds_setting_fleet: "Reality distortion system settings"
 
  #Behaviours
- PATAPHYSICS_STRIKE_SHIP_BEHAVIOR_DESC: "常长老们喜欢用的作战AI，使用此AI的舰船直接由常长老操控。"
+ PATAPHYSICS_STRIKE_SHIP_BEHAVIOR_DESC: "超形上学打击舰专业的作战AI，使用此AI的舰船直接由常长老操控。"
 
  #Building
- building_reality_distortion_system: "现实扭曲系统"
- building_reality_distortion_system_desc: "能扭曲现实的玩意，但是不是通过控制休谟的量，而是通过操纵叙事来实现。"
+ building_reality_distortion_system: "Reality distortion system"
+ building_reality_distortion_system_desc: "Stuff that can distort reality, but not by controlling the amount of Hume, but by manipulating the narrative."
 
  #Components
- SHIP_REAPER: "舰船收割者"
- SHIP_REAPER_DESC: "收割被现实扭曲系统削除船体的舰船的高射速武器。"
- SMALL_SHIP_REAPER: "小型舰船收割者"
- MEDIUM_SHIP_REAPER: "中型舰船收割者"
- LARGE_SHIP_REAPER: "大型舰船收割者"
- EXTRA_LARGE_SHIP_REAPER: "千兆舰船收割者"
- REALITY_DISTORTION_SYSTEM: "现实扭曲系统"
- REALITY_DISTORTION_SYSTEM_DESC: "能扭曲现实的玩意，但是不是通过控制休谟的量来扭曲现实，而是通过操纵叙事来实现的。"
- SHIP_COORDINATE_EDITING_MODULE: "舰船坐标编辑模块"
- SHIP_COORDINATE_EDITING_MODULE_DESC: "就是一个星际文明的瞬间移动工具"
- SHIP_VECTOR_EDITING_MODULE: "舰船矢量编辑模块"
- SHIP_VECTOR_EDITING_MODULE_DESC: "能通过改变舰船的矢量使舰船能在太空中高速亚光速移动的装置。"
- CORE_OF_PERFORMANCE: "演绎之核"
- CORE_OF_PERFORMANCE_DESC: "演绎故事来产生能量的反应堆，能达到不可能达到的机械效率。"
- DEVICE_OF_PERFORMANCE: "探测演绎设备"
- DEVICE_OF_PERFORMANCE_DESC: "敌之动向，皆在设备演绎之中，而绝无偏差。"
- COMBAT_COMPUTER_PATAPHYSICS_STRIKE_SHIP: "手动作战电脑"
- SHIP_AURA_KILLER_AURA: "杀戮光环"
- SHIP_AURA_KILLER_AURA_DESC: "杀~戮~光~环~Rua~"
- aura_killer_aura: "杀戮光环"
+ SHIP_REAPER: "Ship Reaper"
+ SHIP_REAPER_DESC: "A high rate of fire weapon that harvests ships whose hulls have been clipped by the reality distortion system."
+ SMALL_SHIP_REAPER: "Small Ship Reaper"
+ MEDIUM_SHIP_REAPER: "Medium Ship Reaper"
+ LARGE_SHIP_REAPER: "Large ship reaper"
+ EXTRA_LARGE_SHIP_REAPER: "Gigabit Ship Reaper"
+ REALITY_DISTORTION_SYSTEM: "Reality distortion system"
+ REALITY_DISTORTION_SYSTEM_DESC: "Stuff that can distort reality, but not by controlling the amount of Hume, but by manipulating the narrative."
+ SHIP_COORDINATE_EDITING_MODULE: "Ship coordinates editing module"
+ SHIP_COORDINATE_EDITING_MODULE_DESC: "It is the instantaneous movement tool of an interstellar civilization"
+ SHIP_VECTOR_EDITING_MODULE: "Ship Vector Edit Module"
+ SHIP_VECTOR_EDITING_MODULE_DESC: "A device that enables a ship to move at sublight speeds in space at high speeds by changing the ship's vector."
+ CORE_OF_PERFORMANCE: "Core of Performance"
+ CORE_OF_PERFORMANCE_DESC: "The reactor that deduces the story to generate energy is able to achieve impossible mechanical efficiency."
+ DEVICE_OF_PERFORMANCE: "Detection of interpretation equipment"
+ DEVICE_OF_PERFORMANCE_DESC: "The enemy's movement is all in the interpretation of the equipment, and there is no deviation."
+ COMBAT_COMPUTER_PATAPHYSICS_STRIKE_SHIP: "超形上学打击舰作战电脑"
+ SHIP_AURA_KILLER_AURA: "Killing Aura"
+ SHIP_AURA_KILLER_AURA_DESC: "Kill~ing~Aura~Rua~"
+ aura_killer_aura: "Killing Aura"
  STRIKE_CRAFT_SARDINE: "沙丁鱼舰载机"
  STRIKE_CRAFT_SARDINE_DESC: ""
 
@@ -50,16 +50,16 @@
  tech_pataphysics_weapon_desc: "你知道的，§P对吧？§!"
 
  #LEADER_TRAIT
- leader_trait_death: "死亡标记"
- leader_trait_death_desc: "这个领袖浑身充满了不祥的气息。"
- leader_trait_rds: "现实扭曲系统"
- leader_trait_rds_desc: "这位领袖装配了现实扭曲系统，在战斗中能大范围的扭曲现实。"
+ leader_trait_death: "Death Marker"
+ leader_trait_death_desc: "This leader is full of ominous aura."
+ leader_trait_rds: "Reality distortion system"
+ leader_trait_rds_desc: "This leader is equipped with a reality distortion system that can distort reality on a wide scale during battle."
 
  #Edicts
  edict_sas_technology_get: "获取Mod科技"
  edict_sas_technology_get_desc: "获取Mod科技"
- edict_sas_warship_console: "现实扭曲系统设置面板"
- edict_sas_warship_console_desc: "打开现实扭曲系统的设置面板"
+ edict_sas_warship_console: "Reality Distortion System Settings Panel"
+ edict_sas_warship_console_desc: "Open the settings panel of the Reality Distortion System"
  edict_can_ai_use_rds_on: "允许AI使用RDS"
  edict_can_ai_use_rds_on_desc: ""
  edict_can_ai_use_rds_off: "禁止AI使用RDS"
@@ -74,16 +74,6 @@
  #Armies
  reality_distortion_system_army: "超形上学实体"
  reality_distortion_system_army_desc: "它们不会在战斗时死去，还会在死后自我复制。"
-
- #CB
- casus_belli_cb_narrative_editing_warship: "叙事编辑舰——终焉程序"
- casus_belli_cb_stop_narrative_editing_warship: "停止叙事编辑舰威胁"
-
- #WG
- war_goal_wg_narrative_editing_warship: "终焉程序"
- war_goal_wg_narrative_editing_warship_desc: "为了解放叙事层的灭国宣言。"
- war_goal_wg_end_threat_narrative_editing_warship: "停止叙事编辑舰威胁"
- war_goal_wg_end_threat_narrative_editing_warship_desc: "很显然，叙事编辑舰不可能让我们的叙事层获得自由。只会给我们的国家带来终焉，所以，我们必须毁灭叙事编辑舰。"
 
  #Decision
  decision_unkeep_remover: "开启维护费移除系统"
