@@ -117,3 +117,7 @@ swn_mod_ships_upkeep_mult = {
 swn_mod_leader_age = {
 	leader_age = 1
 }
+
+swn_mod_ascension_perks_add = {
+	ascension_perks_add = 1
+}

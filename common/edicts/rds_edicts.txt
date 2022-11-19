@@ -14,7 +14,15 @@ sas_technology_get = {
 			message = no
 		}
 		give_technology = {
-			tech = tech_pataphysics_weapon
+			tech = tech_reality_distortion_system_ship_components
+			message = no
+		}
+		give_technology = {
+			tech = tech_reality_distortion_system_megastructures
+			message = no
+		}
+		give_technology = {
+			tech = tech_reality_distortion_system_buidings
 			message = no
 		}
 	}
@@ -96,26 +104,6 @@ self_delete = {
 	}
 }
 
-Leader_Killer = {
-	icon = GFX_button_automate
-	length = 0
-	potential = {
-		is_ai = no
-	}
-	resources = {
-		category = campaigns
-	}
-	effect = {
-		every_owned_leader = {
-			limit = {
-			}
-			set_age = 10000
-			set_immortal = no
-			add_trait = leader_trait_death
-		}
-	}
-}
-
 faster_quantum_catapult = {
 	icon = GFX_button_automate
 	length = -1
@@ -126,7 +114,26 @@ faster_quantum_catapult = {
 		category = campaigns
 	}
 	modifier = {
-		catapult_spread_base = 0
+		catapult_spread_base = 100
 		catapult_range_base = 50000
+	}
+}
+
+site_project_longinus = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		is_ai = no
+		NOT = {
+			has_global_flag = project_longinus_exist
+		}
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		country_event = {
+			id = project_longinus.6
+		}
 	}
 }

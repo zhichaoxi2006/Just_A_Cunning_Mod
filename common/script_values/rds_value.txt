@@ -1,0 +1,42 @@
+
+dynamic_pop_growth_speed = {
+	base = 0
+	subtract = modifier:pop_growth_speed
+	add = 1
+}
+
+dynamic_pop_assembly_speed = {
+	base = 0
+	subtract = modifier:pop_assembly_speed
+	add = 1
+}
+
+dynamic_planet_jobs_upkeep_mult = {
+	base = 0
+	subtract = modifier:planet_jobs_upkeep_mult
+	subtract = 1
+}
+
+dynamic_planet_pops_upkeep_mult = {
+	base = 0
+	subtract = modifier:planet_pops_upkeep_mult
+	subtract = 1
+}
+
+dynamic_planet_structures_upkeep_mult = {
+	base = 0
+	subtract = modifier:planet_structures_upkeep_mult
+	subtract = 1
+}
+
+dynamic_pop_housing_usage_mult = {
+	base = 0
+	subtract = modifier:pop_housing_usage_mult
+	subtract = 1
+}
+
+dynamic_energy_number = {
+	base = 0
+	add = trigger:income
+	divide = 4
+}

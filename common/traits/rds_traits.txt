@@ -15,3 +15,14 @@ leader_trait_rds = {
 		ships_upkeep_mult = -1145.14
 	}
 }
+
+specie_trait_rds = {
+	cost = 0
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID MACHINE ROBOT }
+	icon = "gfx/interface/icons/traits/stellaris.dds"
+	initial = yes
+	randomized = no
+	sapient = no
+	modifier = {
+	}
+}

@@ -1,27 +1,7 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_paradox_generation_system"
+		name = "GFX_ship_parts_reality_distortion_system"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_paradox_generation_system.dds"
-	}
-	spriteType = {
-		name = "GFX_narrative_editing_missile"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_editing_missile.dds"
-	}
-	spriteType = {
-		name = "GFX_strike_craft_sardine"
-		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_sardine.dds"
-	}
-	spriteType = {
-		name = "GFX_narrative_destruction_singularity_accelerator"
-		texturefile = "gfx/interface/icons/ship_parts/narrative_destruction_singularity_accelerator.dds"
-	}
-	spriteType = {
-		name = "wg_end_threat_narrative_editing_warship"
-		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
-	}
-	spriteType = {
-		name = "wg_narrative_editing_warship"
-		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
 	}
 	spriteType = {
 		name = "GFX_paradox_reactor"
@@ -36,7 +16,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_narrative_level_resuscitation_device.dds"
 	}
 	spriteType = {
-		name = "GFX_swn_thruster"
+		name = "GFX_ship_parts_ship_vector_editing_module"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_swn_thruster.dds"
 	}
 	spriteType = {
@@ -50,5 +30,29 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_ship_part_performence_device"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_performence_device.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_ship_reaper"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ship_reaper.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_extra_large_ship_reaper"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_extra_large_ship_reaper.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_titanic_ship_reaper"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_titanic_ship_reaper.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_pd_ship_reaper"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_pd_ship_reaper.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_rds_missile"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_rds_missile.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_360totalsecurity"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_360totalsecurity.dds"
 	}
 }

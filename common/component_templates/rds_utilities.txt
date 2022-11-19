@@ -8,16 +8,20 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 4
+			multiplier = -2
 		}
 		upkeep = {
-			energy = 0.1
-			alloys = 0.01
+			multiplier =  -2
 		}
 	}
-	prerequisites = { tech_reality_distortion_system }
+	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "power_core"
 	ai_weight = {
-		weight = 0
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
 	}
 }
 
@@ -44,8 +48,15 @@ utility_component_template = {
 		ship_tracking_add = 50
 	}
 	
-	prerequisites = { "tech_reality_distortion_system" }
+	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "sensor_components"
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
 }
 
 utility_component_template = {
@@ -73,9 +84,9 @@ utility_component_template = {
 
 	hostile_aura = {
 		name = "aura_killer_aura"
-		system_wide = yes
+		system_wide = no
 
-		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+		stack_info = {
 			id = hostile_killer_aura
 			priority = 250
 		}
@@ -101,9 +112,9 @@ utility_component_template = {
 utility_component_template = {
 	key = "REALITY_DISTORTION_SYSTEM"
 	size = aux
-	icon = "GFX_paradox_generation_system"
+	icon = "GFX_ship_parts_reality_distortion_system"
 	icon_frame = 1
-	prerequisites = { tech_reality_distortion_system }
+	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "REALITY_DISTORTION_SYSTEM"
 	power = -100
 	modifier = {
@@ -111,22 +122,24 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @s_t1_cost
+			alloys = 10
 		}
 		upkeep = {
-			energy = @s_t1_upkeep_energy
-			alloys = @s_t1_upkeep_alloys
+			energy = 0.4
+			alloys = 0.2
 		}
 	}
+	ai_weight = {
+		weight = 0
+	}
 }
-
 
 utility_component_template = {
 	key = "SHIP_COORDINATE_EDITING_MODULE"
 	size = small
 	icon = "GFX_ship_coordinate_editing_module"
 	icon_frame = 1
-	power = 0
+	power = -20
 	resources = {
 		category = ship_components
 		cost = {
@@ -141,9 +154,6 @@ utility_component_template = {
 		ship_jumpdrive_cooldown_mult = -4.2
 		ship_ftl_jumpdrive_range_mult = 42
 	}
-	ai_weight = {
-		weight = 0
-	}
 	class_restriction = {
 		shipclass_military
 		shipclass_constructor
@@ -153,20 +163,29 @@ utility_component_template = {
 		shipclass_military_special
 		shipclass_starbase
 	}
-	prerequisites = { tech_reality_distortion_system }
+	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "ftl_components"
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
 }
 
 utility_component_template = {
 	key = "SHIP_VECTOR_EDITING_MODULE"
 	size = small
-	icon = "GFX_swn_thruster"
+	icon = "GFX_ship_parts_ship_vector_editing_module"
 	icon_frame = 1
-	power = 0
+	power = -10
 	resources = {
 		category = ship_components
 		cost = {
 			alloys = 5
+		}
+		upkeep = {
 		}
 	}
 	ship_modifier = {
@@ -174,9 +193,109 @@ utility_component_template = {
 		ship_speed_mult = 5
 		ship_evasion_add = 400
 	}
-	prerequisites = { tech_reality_distortion_system }
+	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "thruster_components"
 	ai_weight = {
-		weight = 0
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SMALL_360TOTALSECURITY"
+	size = small
+	icon = "GFX_ship_part_360totalsecurity"
+	icon_frame = 1
+	component_set = "360TOTALSECURITY"
+	power = -16
+	modifier = {
+		ship_shield_add = 5000
+		ship_shield_regen_add_perc = 1
+		ship_armor_add = 5000
+		ship_armor_regen_add_perc = 1
+		ship_hull_add = 5000
+		ship_hull_regen_add_perc = 1
+	}
+	
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+	prerequisites = { tech_reality_distortion_system_ship_components }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 16
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_360TOTALSECURITY"
+	size = medium
+	icon = "GFX_ship_part_360totalsecurity"
+	icon_frame = 1
+	component_set = "360TOTALSECURITY"
+	power = -36
+	modifier = {
+		ship_shield_add = 11250
+		ship_shield_regen_add_perc = 1
+		ship_armor_add = 11250
+		ship_armor_regen_add_perc = 1
+		ship_hull_add = 11250
+		ship_hull_regen_add_perc = 1
+	}
+	
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+	prerequisites = { tech_reality_distortion_system_ship_components }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 36
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_360TOTALSECURITY"
+	size = large
+	icon = "GFX_ship_part_360totalsecurity"
+	icon_frame = 1
+	power = -90
+	component_set = "360TOTALSECURITY"
+	modifier = {
+		ship_shield_add = 28125
+		ship_shield_regen_add_perc = 1
+		ship_armor_add = 28125
+		ship_armor_regen_add_perc = 1
+		ship_hull_add = 28125
+		ship_hull_regen_add_perc = 1
+	}
+	
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+	prerequisites = { tech_reality_distortion_system_ship_components }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 90
+		}
 	}
 }

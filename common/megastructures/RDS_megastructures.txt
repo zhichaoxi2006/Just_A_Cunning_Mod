@@ -1,0 +1,33 @@
+@entity_x = 0
+@entity_y = 0
+
+RDS_OMNI_Core = {
+	entity = "dyson_sphere_phase_05_entity"
+	portrait = "GFX_megastructure_dyson_sphere_background"
+	build_time = 36000
+	country_modifier = {
+		country_resource_max_add = 100000000
+	}
+	show_in_outliner = no
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 40000
+		}
+		produces = {
+			trigger = {
+			}
+			energy = 2
+            multiplier = owner.trigger:expenses
+		}
+	}
+
+	prerequisites = { "tech_reality_distortion_system_megastructures" }
+	show_prereqs = yes
+
+	on_build_complete = {
+	}
+	ai_weight = {
+		factor = 0
+	}
+}

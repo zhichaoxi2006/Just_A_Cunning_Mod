@@ -55,12 +55,6 @@ on_ship_enabled = {
 	}
 }
 
-# this = country
-on_monthly_pulse_country = {
-	events = {
-	}
-}
-
 # Executed as a leader has died
 # This = Country
 # From = Leader
@@ -100,5 +94,23 @@ on_leader_assigned = {
 on_fleet_quantum_catapult = {
 	events = {
 		rds_misc.7
+	}
+}
+
+# Executed just after country has established communications with another country
+# This = Planet where the pop was bombed to death
+# From = Country which is raining down fire and brimstone
+on_pop_bombed_to_death = {
+	events = {
+		rds_misc.8
+	}
+}
+
+# This = owner of fleet 1
+# From = owner of fleet 2
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_entering_battle = {
+	events = {
 	}
 }

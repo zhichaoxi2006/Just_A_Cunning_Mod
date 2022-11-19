@@ -1,0 +1,39 @@
+r_project_longinus = {
+	activation_duration = 0
+	portrait = "GFX_relic_orb_insight"
+	sound = "relic_activation_vultaum_real_perforator"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			energy = 10
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	score = 1000
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		ship_weapon_range_mult = 1
+	}
+
+	active_effect = {
+		hidden_effect = {
+			custom_tooltip = effect_project_longinus
+			country_event = {
+				id = project_longinus.1
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+	}
+}

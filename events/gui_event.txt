@@ -3,7 +3,18 @@ namespace = rds_setting
 event = {
 	id = rds_setting.2
 	title = rds_setting.gui.name
-	desc = rds_setting.gui.desc
+	desc = {
+		text = rds_setting.country.desc.conditional	# Localization string
+		trigger = {
+			is_scope_type = country
+		}
+	}
+	desc = {
+		text = rds_setting.fleet.desc.conditional	# Localization string
+		trigger = {
+			is_scope_type = fleet
+		}
+	}
 	force_open = yes	
 	picture_event_data = {
 		room = "crisis_room"
@@ -40,7 +51,7 @@ event = {
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
-	#no_ships_unkeep
+	#NO_SHIPS_UNKEEP
 	option = {
 		name = rds_setting.no_ships_unkeep.on
 		trigger = {
@@ -317,7 +328,7 @@ event = {
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
-	#instant_kill
+	#INSTANT_KILL
 	option = {
 		name = rds_setting.instant_kill.on
 		trigger = {
@@ -339,6 +350,56 @@ event = {
 		custom_tooltip = rds_setting.instant_kill.off.tooltip
 		hidden_effect = {
 			dynamic_flag_remove = { DYNAMIC_FLAG = instant_kill }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	#COUNTRY_DESTROYER
+	option = {
+		name = rds_setting.country_destroyer.on
+		trigger = {
+			NOT = {
+				dynamic_flag_check = { DYNAMIC_FLAG = country_destroyer }
+			}
+		}
+		custom_tooltip = rds_setting.country_destroyer.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = country_destroyer }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	option = {
+		name = rds_setting.country_destroyer.off
+		trigger = {
+			dynamic_flag_check = { DYNAMIC_FLAG = country_destroyer }
+		}
+		custom_tooltip = rds_setting.country_destroyer.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = country_destroyer }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	#OWNER_CHANGER
+	option = {
+		name = rds_setting.owner_changer.on
+		trigger = {
+			NOT = {
+				dynamic_flag_check = { DYNAMIC_FLAG = owner_changer }
+			}
+		}
+		custom_tooltip = rds_setting.owner_changer.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = owner_changer }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	option = {
+		name = rds_setting.owner_changer.off
+		trigger = {
+			dynamic_flag_check = { DYNAMIC_FLAG = owner_changer }
+		}
+		custom_tooltip = rds_setting.owner_changer.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = owner_changer }
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
@@ -501,6 +562,8 @@ event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = accuracy_debuff }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = no_ships_unkeep }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = planet_destroyer }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = country_destroyer }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = owner_changer }
 	}
 }
 

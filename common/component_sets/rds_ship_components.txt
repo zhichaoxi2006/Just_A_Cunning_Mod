@@ -1,0 +1,55 @@
+component_set = {
+	key = "REALITY_DISTORTION_SYSTEM"
+
+	icon = "GFX_ship_parts_reality_distortion_system"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "PD_SHIP_REAPER"
+
+	icon = "GFX_ship_part_pd_ship_reaper"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SHIP_REAPER"
+
+	icon = "GFX_ship_part_ship_reaper"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "EXTRA_LARGE_SHIP_REAPER"
+
+	icon = "GFX_ship_part_extra_large_ship_reaper"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "TITANIC_SHIP_REAPER"
+
+	icon = "GFX_ship_part_titanic_ship_reaper"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "STRIKE_CRAFT_SARDINE"
+
+	icon = "GFX_ship_part_aura_minefield_paradox"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RDS_MISSILE"
+
+	icon = "GFX_ship_part_rds_missile"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "360TOTALSECURITY"
+
+	icon = "GFX_ship_part_360totalsecurity"
+	icon_frame = 1
+}

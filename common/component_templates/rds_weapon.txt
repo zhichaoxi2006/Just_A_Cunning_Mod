@@ -1,0 +1,359 @@
+weapon_component_template = {
+	key = "PD_SHIP_REAPER"
+	size = point_defence
+	type = point_defence
+	icon = "GFX_ship_part_pd_ship_reaper"
+	icon_frame = 1
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	component_set = "PD_SHIP_REAPER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = {
+		min = 214
+		max = 406
+	}
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	tags = {
+		weapon_type_point_defense
+		weapon_type_kinetic
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "SMALL_SHIP_REAPER"
+	size = small
+	type = instant
+	entity = "small_laser_gun_entity"
+	icon = "GFX_ship_part_ship_reaper"
+	icon_frame = 1
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	component_set = "SHIP_REAPER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = {
+		min = 214
+		max = 406
+	}
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	tags = {
+		weapon_type_energy
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "MEDIUM_SHIP_REAPER"
+	size = medium
+	type = instant
+	icon = "GFX_ship_part_ship_reaper"
+	entity = "medium_laser_gun_entity"
+	icon_frame = 1
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	component_set = "SHIP_REAPER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = {
+		min = 406
+		max = 817
+	}
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	tags = {
+		weapon_type_energy
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "LARGE_SHIP_REAPER"
+	size = large
+	type = instant
+	icon = "GFX_ship_part_ship_reaper"
+	icon_frame = 1
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	component_set = "SHIP_REAPER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 42
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = {
+		min = 817
+		max = 1678
+	}
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	tags = {
+		weapon_type_energy
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "EXTRA_LARGE_SHIP_REAPER"
+	size = extra_large
+	type = instant
+	icon = "GFX_ship_part_extra_large_ship_reaper"
+	icon_frame = 1
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	component_set = "EXTRA_LARGE_SHIP_REAPER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = {
+		min = 1678
+		max = 3274
+	}
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "TITANIC_SHIP_REAPER"
+	size = titanic
+	type = instant
+	icon = "GFX_ship_part_titanic_ship_reaper"
+	icon_frame = 1
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	component_set = "TITANIC_SHIP_REAPER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = {
+		min = 3274
+		max = 6543
+	}
+	total_fire_time = 1
+	range = 700
+	accuracy = 42
+	tracking = 42
+	shield_penetration = 1
+	armor_penetration = 1
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+strike_craft_component_template = {
+	key = "STRIKE_CRAFT_SARDINE"
+	size = LARGE
+	entity = "bomber_entity"
+	weapon_type = instant
+	projectile_gfx = "strike_craft_laser_3"
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	count = 200
+	regeneration_per_day = 100
+	launch_time = 1
+	damage = {
+		min = 817
+		max = 1653
+	}
+	cooldown = 1
+	range = 120
+	accuracy = 10
+	tracking = 10
+	health = 1845
+	armor = 0
+	shield = 0
+	evasion = 11
+	speed = 10
+	rotation_speed = 0.6
+	acceleration = 1.2
+	hull_damage = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	ship_behavior = "fighters_behavior"
+	icon = "GFX_ship_part_aura_minefield_paradox"
+	icon_frame = 1
+	component_set = "STRIKE_CRAFT_SARDINE"
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	tags = {
+		weapon_type_strike_craft
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "RDS_MISSILE"
+	size = torpedo
+	icon = GFX_ship_part_rds_missile
+	icon_frame = 1
+	type = missile
+	damage = {
+		min = 786
+		max = 1484
+	}
+	windup = {
+		min = 0
+		max = 0
+	}
+	total_fire_time = 1
+	range = 500
+	accuracy = 1
+	missile_speed = 3
+	missile_evasion = 0.45
+	missile_health = 15
+	missile_retarget_range = 800
+	power = -30
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	hull_damage = 1
+	armor_damage = 1
+	armor_penetration = 1
+	shield_damage = 1
+	shield_penetration = 1
+	tracking = 1.25
+	prerequisites = {
+		"tech_reality_distortion_system"
+	}
+	component_set = RDS_MISSILE
+	tags = {
+		weapon_type_explosive
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+	}
+}

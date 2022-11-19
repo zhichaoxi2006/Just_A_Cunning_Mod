@@ -1,0 +1,3 @@
+@Residual_hull_value = 1
+@flag_time = 1
+@modifier_time = 1

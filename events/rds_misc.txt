@@ -122,3 +122,51 @@ event = {
 		}
 	}
 }
+
+#POP_REBIRTHER
+event = {
+	id = rds_misc.8
+	hide_window = yes
+	trigger = {
+		has_trait = specie_trait_rds
+	}
+	is_triggered_only = yes
+	immediate = {
+		create_pop = {
+			species = This
+			ethos = This
+		}
+	}
+}
+
+#ANTI_PLANET_BOMBARDED
+event = {
+	id = rds_misc.9
+	hide_window = yes
+	trigger = {
+		has_active_building = building_reality_distortion_system
+	}
+	is_triggered_only = yes
+	immediate = {
+		This = {
+			add_planet_devastation = trigger:planet_devastation
+		}
+	}
+}
+
+#INFINTE_ASCENSION_PERKS_SLOTS
+event = {
+	id = rds_misc.10
+	hide_window = yes
+	trigger = {
+		This = {
+			NOT = {
+				num_ascension_perks < trigger:num_ascension_perk_slots	
+			}
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		add_modifier = {	modifier = swn_mod_ascension_perks_add	}
+	}
+}

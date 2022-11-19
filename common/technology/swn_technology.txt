@@ -10,25 +10,57 @@ tech_reality_distortion_system = {
 }
 
 tech_reality_distortion_system_armies = {
-	cost = 666
+	cost = 132456
 	area = society
 	tier = 5
 	category = { military_theory }
-	prerequisites = { "tech_reality_distortion_system" }
 	weight = 0
 	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
 	potential = {
 	}
 }
 
-tech_pataphysics_weapon = {
-	cost = 13446
+tech_reality_distortion_system_ship_components = {
+	cost = 143245
 	area = engineering
 	tier = 5
-	category = { military_theory }
-	prerequisites = { "tech_reality_distortion_system" }
+	category = { statecraft }
 	weight = 0
 	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	potential = {
+	}
+}
+
+tech_reality_distortion_system_megastructures = {
+	cost = 243145
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	weight = 0
+	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	potential = {
+	}
+}
+
+tech_reality_distortion_system_buidings = {
+	cost = 283145
+	area = engineering
+	tier = 5
+	category = { new_worlds }
+	weight = 0
+	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
 	potential = {
 	}
 }

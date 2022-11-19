@@ -1,0 +1,7 @@
+triggered_planet_modifier = {
+	potential = {
+		free_housing < 0
+	}
+	planet_housing_add = 1
+	mult = value:another_free_housing
+}
