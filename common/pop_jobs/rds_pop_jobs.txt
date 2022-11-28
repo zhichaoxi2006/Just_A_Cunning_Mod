@@ -1,0 +1,86 @@
+laplace_demon_operator = {
+	category = specialist
+	building_icon = building_laplace_research_facility
+	clothes_texture_index = 3
+	icon = researcher
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+            physics_research = 1
+            society_research = 1
+            engineering_research = 1
+            unity = 3
+            multiplier = owner.value:dynamic_energy_income
+        }
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+deduction_engineer = {
+	category = worker
+	building_icon = building_wheeler_performing_reactors
+	clothes_texture_index = 3
+	icon = technician
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			consumer_goods = 2
+		}
+		produces = {
+            energy = 2
+            multiplier = owner.value:dynamic_energy_expenses
+        }
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+mass_energy_conversion_engineer = {
+	category = worker
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = miner
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = owner.value:dynamic_energy_income
+        }
+        produces = {
+            minerals = 1
+            multiplier = owner.value:dynamic_energy_income
+        }
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+structural_reconstructionist = {
+	category = specialist
+	building_icon = building_structural_reconstruction_facility
+	clothes_texture_index = 3
+	icon = researcher
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 2
+            multiplier = owner.value:dynamic_energy_income
+        }
+		produces = {
+            consumer_goods = 1
+			alloys = 1
+            multiplier = owner.value:dynamic_energy_income
+        }
+	}
+	weight = {
+		factor = 10
+	}
+}

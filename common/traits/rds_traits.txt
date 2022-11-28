@@ -6,23 +6,16 @@ leader_trait_death = {
 }
 
 leader_trait_rds = {
+	cost = 0
 	icon = "gfx/interface/icons/traits/stellaris.dds"
 	immortal_leaders = yes
 	initial = no
 	randomized = no
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	custom_tooltip = leader_trait_rds_tooltip
 	modifier = {
-		ship_weapon_range_mult = 2
-		ships_upkeep_mult = -1145.14
-	}
-}
-
-specie_trait_rds = {
-	cost = 0
-	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID MACHINE ROBOT }
-	icon = "gfx/interface/icons/traits/stellaris.dds"
-	initial = yes
-	randomized = no
-	sapient = no
-	modifier = {
+		ships_upkeep_mult = -0.5
+		ship_weapon_range_mult = 0.40
 	}
 }

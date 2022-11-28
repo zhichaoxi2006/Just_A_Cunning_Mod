@@ -107,19 +107,70 @@ country_event = {
 #SYSTEM_DESTROYER
 event = {
 	id = rds_misc.7
-	hide_window = yes
+	title = rds_misc.7.name
+	desc = rds_misc.7.desc
+	hide_window = no
 	trigger = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		FROM = {
-			every_system_planet = {
-				limit = {
-					is_star = no
+	}
+	option = {
+		name = rds_system_destroyer.neutron_extermination
+		trigger = {
+		}
+		custom_tooltip = rds_system_destroyer.neutron_extermination.tooltip
+		hidden_effect = {
+			This.solar_system = {
+				every_system_colony = {
+					limit = {						
+					}
+					every_owned_pop = {
+						limit = {
+						}
+						kill_pop = yes
+					}
 				}
-				remove_planet = yes
 			}
 		}
+	}
+	option = {
+		name = rds_system_destroyer.planetary_system_silence
+		trigger = {
+		}
+		custom_tooltip = rds_system_destroyer.planetary_system_silence.tooltip
+		hidden_effect = {
+			This.solar_system = {
+				set_asteroid_belt = { radius = 0 }
+				every_system_ambient_object = {
+					limit = {
+					}
+					destroy_ambient_object = this
+				}
+				every_system_megastructure = {
+					limit = {
+					}
+					remove_megastructure = this
+				}
+				every_system_planet = {
+					limit = {
+						is_star = no
+					}
+					remove_planet = yes
+				}
+				every_fleet_in_system = {
+					limit = {
+					}
+					destroy_fleet = this
+				}
+			}
+		}
+	}
+	option = {
+		name = rds_system_destroyer.gui_close
+		trigger = {
+		}
+		custom_tooltip = rds_system_destroyer.gui_close.tooltip
 	}
 }
 
@@ -128,7 +179,7 @@ event = {
 	id = rds_misc.8
 	hide_window = yes
 	trigger = {
-		has_trait = specie_trait_rds
+		always = no
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -144,7 +195,7 @@ event = {
 	id = rds_misc.9
 	hide_window = yes
 	trigger = {
-		has_active_building = building_reality_distortion_system
+		has_active_building = building_rds_planetary_shield_generator
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -168,5 +219,49 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		add_modifier = {	modifier = swn_mod_ascension_perks_add	}
+	}
+}
+
+#RDS_BUILDING
+event = {
+	id = rds_misc.11
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = dynamic_housing_number value = value:dynamic_housing }
+		set_variable = { which = dynamic_country_resource_max_add_number value = value:dynamic_country_resource_max_add }
+	}
+}
+
+event = {
+	id = rds_misc.12
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			set_variable = { which = dynamic_housing_number value = value:dynamic_housing }
+		}
+	}
+}
+
+#Leader_RDS
+event = {
+	id = rds_misc.13
+	hide_window = yes
+	trigger = {
+		has_technology = tech_reality_distortion_system
+		from = {
+			leader_class = admiral
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			add_trait = leader_trait_rds
+		}
 	}
 }

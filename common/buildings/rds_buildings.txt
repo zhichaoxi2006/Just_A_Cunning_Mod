@@ -1,10 +1,8 @@
 building_reality_distortion_system = { 
-    base_buildtime = 240
-
+    base_buildtime = 60
 	base_cap_amount = 1
-	icon = building_planetary_shield_generator
-	planetary_ftl_inhibitor = yes
-	category = army
+	icon = building_akx_worm_3
+	category = government
     resources = {
         category = planet_buildings
         cost = {
@@ -15,13 +13,21 @@ building_reality_distortion_system = {
             energy = 2
         }
     }
-	planet_modifier = { 
-		planet_orbital_bombardment_damage = -1
-	}
+    convert_to = {
+        building_reality_distortion_system
+    }
+    destroy_trigger = {
+        NOT = {
+            has_planet_flag = building_reality_distortion_system_cooldown
+        }
+    }
+    on_destroy = {
+        set_timed_planet_flag = { flag = building_reality_distortion_system_cooldown months = 1 }
+    }
 }
 
 building_rds_pop_creater = {
-    base_buildtime = 240
+    base_buildtime = 60
 	base_cap_amount = 1
 	icon = building_robot_assembly_plant
 	category = pop_assembly
@@ -41,10 +47,10 @@ building_rds_pop_creater = {
     }
 }
 
-building_upkeep_remover = {
-    base_cap_amount = 1
-    base_buildtime = 240
-	icon = building_energy_grid
+building_wheeler_performing_reactors = {
+    base_cap_amount = 1 
+    base_buildtime = 60
+	icon = building_energy_nexus
 	category = resource
     resources = {
         category = planet_buildings
@@ -53,16 +59,17 @@ building_upkeep_remover = {
             energy = 100
         }
     }
+    allow = {
+        has_building = building_reality_distortion_system
+    }
     planet_modifier = {
-        planet_jobs_upkeep_mult = -10
-        planet_structures_upkeep_mult = -10
-        planet_pops_upkeep_mult = -10
+        job_deduction_engineer_add = 1
     }
 }
 
-building_unlimited_house = {
+building_hilbert_hotel = {
     base_cap_amount = 1
-    base_buildtime = 240
+    base_buildtime = 60
 	icon = building_luxury_residence
 	category = resource
     resources = {
@@ -72,14 +79,26 @@ building_unlimited_house = {
             energy = 100
         }
     }
-    planet_modifier = {
-        pop_housing_usage_mult = -10
+    allow = {
+        has_building = building_reality_distortion_system
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_variable_set = dynamic_housing_number
+        }
+        planet_housing_add = 1
+        multiplier = dynamic_housing_number
+    }
+    on_built = {
+        planet_event = {
+            id = rds_misc.11
+        }
     }
 }
 
-building_etm = {
+building_mass_energy_conversion_center = {
     base_cap_amount = 1
-    base_buildtime = 240
+    base_buildtime = 60
 	icon = building_mineral_purification_hub
 	category = resource
     resources = {
@@ -88,22 +107,20 @@ building_etm = {
             minerals = 100
             energy = 100
         }
-        upkeep = {
-            energy = 1
-            multiplier = owner.value:dynamic_energy_number
-        }
-        produces = {
-            minerals = 1
-            multiplier = owner.value:dynamic_energy_number
-        }
+    }
+    allow = {
+        has_building = building_reality_distortion_system
+    }
+    planet_modifier = {
+        job_mass_energy_conversion_engineer_add = 1
     }
 }
 
-building_rds_research_hub = {
+building_laplace_research_facility = {
     base_cap_amount = 1
-    base_buildtime = 240
+    base_buildtime = 60
 	icon = building_research_lab_3
-	category = resource
+	category = research
     resources = {
         category = planet_buildings
         cost = {
@@ -111,15 +128,83 @@ building_rds_research_hub = {
             energy = 100
         }
         upkeep = {
-            energy = 1
-            multiplier = owner.value:dynamic_energy_number
+            alloys = 1
         }
-        produces = {
-            physics_research = 1
-            society_research = 1
-            engineering_research = 1
-            unity = 3
-            multiplier = owner.value:dynamic_energy_number
+    }
+    allow = {
+        has_building = building_reality_distortion_system
+    }
+    planet_modifier = {
+        job_laplace_demon_operator_add = 1
+    }
+}
+
+building_rds_resource_cage = {
+    base_cap_amount = 1
+    base_buildtime = 60
+	icon = building_resource_silo
+	category = resource
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
         }
+    }
+    allow = {
+        has_building = building_reality_distortion_system
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_variable_set = dynamic_country_resource_max_add_number
+        }
+        country_resource_max_add = 1
+        multiplier = dynamic_country_resource_max_add_number
+    }
+    on_built = {
+        planet_event = {
+            id = rds_misc.11
+        }
+    }
+}
+
+building_rds_planetary_shield_generator = {
+    base_cap_amount = 1
+    position_priority = 100
+    base_buildtime = 60
+	icon = building_planetary_shield_generator
+	category = army
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+    }
+    allow = {
+        has_building = building_reality_distortion_system
+    }
+}
+
+building_structural_reconstruction_facility = {
+    base_cap_amount = 1
+    base_buildtime = 60
+	icon = building_class_4_singularity
+	category = manufacturing
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+        upkeep = {
+            alloys = 1
+        }
+    }
+    allow = {
+        has_building = building_reality_distortion_system
+    }
+    planet_modifier = {
+        job_structural_reconstructionist_add = 1
     }
 }

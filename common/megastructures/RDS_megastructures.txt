@@ -18,7 +18,7 @@ RDS_OMNI_Core = {
 			trigger = {
 			}
 			energy = 2
-            multiplier = owner.trigger:expenses
+            multiplier = owner.value:dynamic_energy_expenses
 		}
 	}
 

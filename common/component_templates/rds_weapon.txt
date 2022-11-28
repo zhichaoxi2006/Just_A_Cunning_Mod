@@ -266,7 +266,7 @@ strike_craft_component_template = {
 	}
 	count = 200
 	regeneration_per_day = 100
-	launch_time = 1
+	launch_time = 10
 	damage = {
 		min = 817
 		max = 1653
@@ -310,21 +310,6 @@ weapon_component_template = {
 	icon = GFX_ship_part_rds_missile
 	icon_frame = 1
 	type = missile
-	damage = {
-		min = 786
-		max = 1484
-	}
-	windup = {
-		min = 0
-		max = 0
-	}
-	total_fire_time = 1
-	range = 500
-	accuracy = 1
-	missile_speed = 3
-	missile_evasion = 0.45
-	missile_health = 15
-	missile_retarget_range = 800
 	power = -30
 	resources = {
 		category = ship_components
@@ -336,6 +321,21 @@ weapon_component_template = {
 			alloys = 0
 		}
 	}
+	damage = {
+		min = 786
+		max = 1484
+	}
+	windup = {
+		min = 0
+		max = 0
+	}
+	total_fire_time = 10
+	range = 500
+	accuracy = 1
+	missile_speed = 3
+	missile_evasion = 0.45
+	missile_health = 15
+	missile_retarget_range = 800
 	hull_damage = 1
 	armor_damage = 1
 	armor_penetration = 1

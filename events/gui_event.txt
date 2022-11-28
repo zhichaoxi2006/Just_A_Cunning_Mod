@@ -584,3 +584,137 @@ ship_event = {
 		}
 	}
 }
+
+country_event = {
+	id = rds_setting.5
+	title = rds_setting.5.name
+	desc = rds_setting.5.desc
+	picture = GFX_evt_mining_station #a name of a picture to display
+	is_triggered_only = yes #The game will not consider this event for starting on its own. Event will need to be triggered by another event, or by some other effect. Most events will use this.
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = rds_setting.get_technology
+		trigger = {
+		}
+		hidden_effect = {
+			give_technology = {
+				tech = tech_reality_distortion_system
+				message = no
+			}
+			give_technology = {
+				tech = tech_reality_distortion_system_armies
+				message = no
+			}
+			give_technology = {
+				tech = tech_reality_distortion_system_ship_components
+				message = no
+			}
+			give_technology = {
+				tech = tech_reality_distortion_system_megastructures
+				message = no
+			}
+			give_technology = {
+				tech = tech_reality_distortion_system_buildings
+				message = no
+			}
+			country_event = {
+				id = rds_setting.5
+			} 
+		}
+	}
+	option = {
+		name = rds_setting.can_ai_use_rds_on
+		trigger = {
+			NOT = {
+				has_global_flag = can_ai_use_rds
+			}
+		}
+		hidden_effect = {
+			set_global_flag = can_ai_use_rds
+			country_event = {
+				id = rds_setting.5
+			} 
+		}
+	}
+	option = {
+		name = rds_setting.can_ai_use_rds_off
+		trigger = {
+			has_global_flag = can_ai_use_rds
+		}
+		hidden_effect = {
+			remove_global_flag = can_ai_use_rds
+			country_event = {
+				id = rds_setting.5
+			}
+		}
+	}
+	option = {
+		name = rds_setting.can_use_rds_on
+		trigger = {
+			NOT = {
+				has_country_flag = can_use_rds
+			}
+		}
+		hidden_effect = {
+			set_country_flag = can_use_rds
+			country_event = {
+				id = rds_setting.5
+			} 
+		}
+	}
+	option = {
+		name = rds_setting.can_use_rds_off
+		trigger = {
+			has_country_flag = can_use_rds
+		}
+		hidden_effect = {
+			remove_country_flag = can_use_rds
+			country_event = {
+				id = rds_setting.5
+			}
+		}
+	}
+	option = {
+		name = rds_setting.setting_console
+		trigger = {
+		}
+		hidden_effect = {
+			country_event = {
+				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.self_delete
+		trigger = {
+		}
+		hidden_effect = {
+			every_galaxy_fleet = {
+				limit = {}
+				every_owned_ship = {
+					limit = {
+						has_ship_flag = ship_owner_@ROOT
+						NOT = {
+							is_owned_by = ROOT
+						}
+					}
+					destroy_ship = THIS
+				}
+			}
+			country_event = {
+				id = rds_setting.5
+			} 
+		}
+	}
+	option = {
+		name = rds_setting.gui_close
+		trigger = {
+		}
+		hidden_effect = {
+
+		}
+	}
+}

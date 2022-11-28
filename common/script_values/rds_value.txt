@@ -29,14 +29,30 @@ dynamic_planet_structures_upkeep_mult = {
 	subtract = 1
 }
 
-dynamic_pop_housing_usage_mult = {
+dynamic_housing = {
 	base = 0
-	subtract = modifier:pop_housing_usage_mult
-	subtract = 1
+	add = trigger:num_housing
+	subtract = trigger:free_housing
+	add = 10
 }
 
-dynamic_energy_number = {
+dynamic_country_resource_max_add = {
+	base = 100000000
+	subtract = modifier:country_resource_max_add
+}
+
+dynamic_energy_income = {
 	base = 0
 	add = trigger:income
-	divide = 4
+	divide = 5
+	modifier = {
+		divide = 2
+		owner = { has_deficit = energy }
+	}
+}
+
+dynamic_energy_expenses = {
+	base = 0
+	add = trigger:expenses
+	max = 100000000
 }

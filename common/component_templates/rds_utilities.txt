@@ -73,7 +73,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "SHIP_AURA_KILLER_AURA"
+	key = "SHIP_COMBAT_INTEGRATED_SYSTEM"
 	size = medium
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
@@ -82,12 +82,48 @@ utility_component_template = {
 	size_restriction = {  }
 	component_set = "ship_aura_components"
 
+
+	friendly_aura = {
+		name = aura_weapon_range
+		system_wide = yes
+		stack_info = { 
+			id = aura_weapon_range
+			priority = 250
+		}
+		modifier = {
+			ship_weapon_range_mult = 1
+		}
+	}
+	hostile_aura = {
+		name = "aura_somebody_else_problem"
+		system_wide = no
+		stack_info = {
+			id = aura_anti_repair
+			priority = 250
+		}
+		modifier = {
+			ship_engagement_range_mult = -4.2
+		}
+	}
+	hostile_aura = {
+		name = "aura_anti_repair"
+		system_wide = no
+		stack_info = {
+			id = aura_anti_repair
+			priority = 250
+		}
+		modifier = {
+			ship_shield_regen_add_perc = -2
+			ship_armor_regen_add_perc = -2
+			ship_hull_regen_add_perc = -2
+		}
+	}
 	hostile_aura = {
 		name = "aura_killer_aura"
 		system_wide = no
 
 		stack_info = {
-			id = hostile_killer_aura
+			id = aura_killer_aura
 			priority = 250
 		}
 		damage_per_day = {
@@ -95,16 +131,6 @@ utility_component_template = {
 			accuracy = 1
 			shield_penetration = 1
 			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
 		}
 	}
 }
@@ -127,6 +153,28 @@ utility_component_template = {
 		upkeep = {
 			energy = 0.4
 			alloys = 0.2
+		}
+	}
+	hostile_aura = {
+		name = "aura_enemy_marker"
+		system_wide = no
+
+		stack_info = {
+			id = hostile_enemy_marker
+			priority = 250
+		}
+		modifier = {
+			mod_enemy_marker = 1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
 		}
 	}
 	ai_weight = {

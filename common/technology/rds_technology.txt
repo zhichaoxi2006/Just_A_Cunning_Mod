@@ -51,8 +51,8 @@ tech_reality_distortion_system_megastructures = {
 	}
 }
 
-tech_reality_distortion_system_buidings = {
-	cost = 283145
+tech_reality_distortion_system_buildings = {
+	cost = 286145
 	area = engineering
 	tier = 5
 	category = { new_worlds }

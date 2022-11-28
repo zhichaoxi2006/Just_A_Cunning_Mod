@@ -19,6 +19,9 @@ ship_event = {
 		NOT = {
 			has_ship_flag = reality_distortion_system_cooldown
 		}
+		owner = {
+			has_country_flag  = can_use_rds
+		}
 		EQUIPPED_WITH_RDS = yes
 	}
 	is_triggered_only = yes
@@ -332,11 +335,14 @@ ship_event = {
 						every_ship_in_system = {
 							#目标判定
 							limit = {
-								NOT = {
-									is_owned_by = event_target:reality_distortion_system_ship.owner
+								NOR = {
+									is_owned_by = event_target:reality_distortion_system_ship.owner #不是舰船所有者
+									owner = {
+										is_friendly_to = event_target:reality_distortion_system_ship.owner #不是与舰船所有者友好的国家
+										is_neutral_to = event_target:reality_distortion_system_ship.owner #不是与舰船所有者中立的国家
+									}
 								}
 								is_in_combat = yes
-								EQUIPPED_WITH_RDS = no
 							}
 							#ACCURACY_DEBUFF
 							if = {

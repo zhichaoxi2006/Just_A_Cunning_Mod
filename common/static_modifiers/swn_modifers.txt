@@ -1,3 +1,7 @@
+mod_enemy_marker = {
+	ship_weapon_range_mult = -0.2
+}
+
 swn_mod_ship_shield_reduction = {
 	ship_shield_reduction = 1
 }

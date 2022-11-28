@@ -22,10 +22,11 @@ dynamic_flag_check = {
 EQUIPPED_WITH_RDS = {
 	OR = {
 		has_component = REALITY_DISTORTION_SYSTEM 
-		has_component = CORE_OF_PERFORMANCE 
-		has_component = DEVICE_OF_PERFORMANCE
 		leader = {
-			has_trait = leader_trait_rds
+			OR = {
+				has_trait = leader_trait_rds
+				has_leader_flag = EQUIPPED_WITH_RDS
+			}
 		}
 	}
 }
