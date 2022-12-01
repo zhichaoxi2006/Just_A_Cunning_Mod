@@ -136,3 +136,68 @@ country_event = {
 		set_global_flag = project_longinus_exist
 	}
 }
+
+event = {
+	id = project_longinus.7
+	hide_window = yes
+	trigger = {
+		has_global_flag = project_longinus_on
+	}
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = project_longinus.8
+			}
+		}
+		observer_event = {
+			id = observer.1
+		}
+	}
+}
+
+event = {
+	id =  project_longinus.8
+	title =  project_longinus.8.name
+	desc =  project_longinus.8.desc
+	picture = GFX_evt_mining_station #a name of a picture to display
+	is_triggered_only = yes 
+	trigger = {
+	}
+	immediate = {
+		country_event = {
+			id = project_longinus.1
+			days = 3
+		}
+	}
+	option = {
+		name = project_longinus.8.1
+		trigger = {
+		}
+		custom_tooltip = project_longinus.8.1.tooltip
+		hidden_effect = {
+			country_event = {
+				id = project_longinus.1
+			}
+		}
+	}
+}
+
+event = {
+	id =  project_longinus.9
+	title =  project_longinus.9.name
+	desc =  project_longinus.9.desc
+	picture = GFX_evt_mining_station #a name of a picture to display
+	is_triggered_only = yes 
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = project_longinus.9.1
+		remove_relic = r_project_longinus
+	}
+}

@@ -1,0 +1,31 @@
+create_rds_wormhole_link = {
+	fromfrom = {
+		random_megastructure = {
+			limit = {
+				is_megastructure_type = quantum_catapult_rds
+			}
+			save_event_target_as = catapult
+		}
+		spawn_megastructure = {
+			type = rds_wormhole_node
+			owner = root
+			coords_from = event_target:catapult
+			init_effect = {
+				set_megastructure_flag = rds_wormhole_node
+			}
+		}
+	}
+	this = {
+		solar_system = {
+			save_event_target_as = quantum_gateway_target
+			spawn_megastructure = {
+				type = rds_wormhole_node
+				owner = root
+				coords_from = prev
+				init_effect = {
+					set_megastructure_flag = rds_wormhole_nexus
+				}
+			}
+		}
+	}
+}

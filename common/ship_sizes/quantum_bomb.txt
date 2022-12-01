@@ -1,4 +1,4 @@
-transport = {
+quantum_bomb = {
 	max_speed = @speed_very_fast
 	rotation_speed = 0.2
 	acceleration = 0.6
@@ -13,16 +13,28 @@ transport = {
 	num_target_locators = 0
 	is_space_station = no
 	icon = ship_size_transport
+	base_buildtime = @corvette_build_time
+	can_have_federation_design = yes
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
 
 	combat_disengage_chance = 1.5
-
-	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	construction_type = starbase_shipyard
+	class = shipclass_military_special
 	is_designable = yes
 	components_add_to_cost = no
-	class = shipclass_transport
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	auto_upgrade = no
+	resources = {
+		category = ships
+		cost = {
+			energy = 10000
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
 }

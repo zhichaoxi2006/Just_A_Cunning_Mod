@@ -1,4 +1,4 @@
-version="1.0.0"
+version="2.5.2"
 tags={
 	"Military"
 	"Spaceships"
@@ -7,5 +7,5 @@ tags={
 	"Events"
 	"Buildings"
 }
-name="Just A Freak Mod"
+name="Cheat Mode With Dynamic Modding"
 supported_version="3.5.2"

@@ -26,8 +26,15 @@ r_project_longinus = {
 	active_effect = {
 		hidden_effect = {
 			custom_tooltip = effect_project_longinus
-			country_event = {
-				id = project_longinus.1
+			set_global_flag = project_longinus_on
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = {
+					id = project_longinus.1
+					days = 360
+				}
 			}
 		}
 	}

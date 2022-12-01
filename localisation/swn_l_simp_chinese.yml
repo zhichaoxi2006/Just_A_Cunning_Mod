@@ -4,6 +4,10 @@
 
  #Behaviours
  PATAPHYSICS_STRIKE_SHIP_BEHAVIOR_DESC: "常长老们喜欢用的作战AI，使用此AI的舰船直接由常长老操控。"
+ 
+ #Bypass
+ RDS_WORMHOLE_GALACTIC: "现实裂缝"
+ RDS_WORMHOLE_DESC: "舰队在$quantum_catapult_rds$中弹射时现实撕裂的产物。"
 
  #Components
  360TOTALSECURITY: "360安全卫士"
@@ -47,6 +51,10 @@
 
  #Ship_size
  quantum_bomb: "量子炸弹"
+ quantum_bomb_plural: ""
+
+ #Section Template
+ QUANTUM_BOMB_MID_SECTION: "$quantum_bomb$"
 
  #Technology
  tech_reality_distortion_system: "超形上学科技"
@@ -62,7 +70,7 @@
 
  #Building
  building_reality_distortion_system: "现实扭曲系统"
- building_reality_distortion_system_desc: "某些建筑必须的核心。"
+ building_reality_distortion_system_desc: "RDS系列建筑的核心，RDS系列建筑需要它才能运作"
  building_rds_pop_creater: "RDS人口生成器"
  building_rds_pop_creater_desc: "你不该用的玩意。"
  building_wheeler_performing_reactors: "惠勒演绎反应堆"
@@ -77,8 +85,8 @@
  building_rds_resource_cage_desc: "可以存储巨量资源的建筑"
  building_rds_planetary_shield_generator: "超形上学星球护盾"
  building_rds_planetary_shield_generator_desc: "利用超形上学归零轨道轰炸产生的破坏的装置"
- building_structural_reconstruction_facility: "结构重构设施"
- building_structural_reconstruction_facility_desc: "结构重构师将在这里将能量重构消费品及合金。"
+ building_multiverse_trade_center: "多元宇宙交易中心"
+ building_multiverse_trade_center_desc: "多元宇宙的贸易在此集中。"
 
  #POP_JOBS
  job_laplace_demon_operator: "拉普拉斯妖操作员"
@@ -86,17 +94,25 @@
  job_laplace_demon_operator_desc: "负责操作拉普拉斯妖的职业。"
  mod_job_laplace_demon_operator_add: "拉普拉斯妖操作员岗位"
  job_deduction_engineer: "演绎工程师"
- job_deduction_engineer_plural: "TEST"
+ job_deduction_engineer_plural: "演绎工程师"
  job_deduction_engineer_desc: "他们通过演绎故事来生产巨量的能量"
  mod_job_deduction_engineer_add: "演绎工程师岗位"
- job_mass_energy_conversion_engineer: "质能转换工程师"
- job_mass_energy_conversion_engineer_plural: "TEST"
- job_mass_energy_conversion_engineer_desc: "他们将能量等比例的转换为矿物。"
- mod_job_mass_energy_conversion_engineer_add: "质能转换工程师岗位"
- job_structural_reconstructionist: "结构重构师"
- job_structural_reconstructionist_plural: "TEST"
- job_structural_reconstructionist_desc: "他们可以将矿物重构成消费品和合金。"
- mod_job_structural_reconstructionist_add: "结构重构师岗位"
+ job_mass_energy_conversion_miner: "质能转换矿工"
+ job_mass_energy_conversion_miner_plural: "质能转换矿工"
+ job_mass_energy_conversion_miner_desc: "他们将能量等比例的转换为矿物。"
+ mod_job_mass_energy_conversion_miner_add: "质能转换矿工岗位"
+ job_mass_energy_conversion_foundry: "合金质能转换师"
+ job_mass_energy_conversion_foundry_plural: "合金质能转换师"
+ job_mass_energy_conversion_foundry_desc: "他们将能量等比例的转换为合金"
+ mod_job_mass_energy_conversion_foundry_add: "合金质能转换师岗位"
+ job_mass_energy_conversion_artisan: "消费品质能转换师"
+ job_mass_energy_conversion_artisan_plural: "消费品质能转换师"
+ job_mass_energy_conversion_artisan_desc: "他们将能量等比例的转换为消费品"
+ mod_job_mass_energy_conversion_artisan_add: "消费品质能转换师岗位"
+ job_multiverse_trader: "多元宇宙商人"
+ job_multiverse_trader_plural: "多元宇宙商人"
+ job_multiverse_trader_desc: "多元宇宙商人们行走于各个宇宙中与他人交易，是贸易市场供货商的大头。"
+ mod_job_multiverse_trader_add: "多元宇宙商人岗位"
 
  #TRAIT
  leader_trait_death: "死亡标记"
@@ -108,23 +124,13 @@
  specie_trait_rds_desc: "这个物种已经和现实扭曲系统融为一体，拥有可怕的能力。"
 
  #Edicts
- edict_sas_warship_console: "JAFM设置面板"
- edict_sas_warship_console_desc: "打开JAFM的设置面板"
+ edict_sas_warship_console: "CMWDM设置面板"
+ edict_sas_warship_console_desc: "打开CMWDM设置面板"
  edict_faster_quantum_catapult: "量子弹弓超形上学化"
  edict_faster_quantum_catapult_desc: ""
  edict_site_project_longinus: "生成朗基努斯计划考古站点"
  edict_site_project_longinus_desc: ""
  
- #policy
- policy_can_use_reality_distortion_system: "是否军用现实扭曲系统"
- policy_can_use_reality_distortion_system_desc: "决定RDS是否被军用"
- use_reality_distortion_system_name: "是"
- use_reality_distortion_system: "允许RDS军用"
- use_reality_distortion_system_desc: "这将允许RDS应用在军事领域。"
- not_use_reality_distortion_system_name: "否"
- not_use_reality_distortion_system: "禁止RDS军用"
- not_use_reality_distortion_system_desc: "这将禁止RDS应用在军事领域"
-
  #Armies
  reality_distortion_system_army: "超形上学实体"
  reality_distortion_system_army_desc: "它们不会在战斗时死去，还会在死后自我复制。"
@@ -139,6 +145,12 @@
  RDS_OMNI_Core: "RDS核心引擎"
  RDS_OMNI_Core_DESC: "通过叙事修改无限的力量生成需求的能量，也附有资源存储的功能"
  RDS_OMNI_Core_MEGASTRUCTURE_DETAILS: "以叙事修改为基础的永动机。"
+ quantum_catapult_rds: "量子弹弓"
+ quantum_catapult_rds_DESC: "装配了现实扭曲系统的量子弹弓，性能有了极大的提升。"
+ rds_wormhole_node: "$RDS_WORMHOLE_GALACTIC$"
+ rds_wormhole_node_DESC: "$RDS_WORMHOLE_GALACTIC_DESC$"
+ rds_wormhole_node_dummy: "$RDS_WORMHOLE_GALACTIC$"
+ rds_wormhole_node_dummy_DESC: "$RDS_WORMHOLE_GALACTIC_DESC$"
  
  #RDS_SETTING
  rds_setting.gui.name: "现实扭曲系统控制面板"
@@ -255,10 +267,18 @@ swn_mod_ship_base_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
 swn_mod_ships_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
 swn_mod_leader_age: "$swn_mod_planet_jobs_upkeep_mult$"
 swn_mod_ascension_perks_add: "$swn_mod_planet_jobs_upkeep_mult$"
+swn_mod_ship_hull_add: "$swn_mod_planet_jobs_upkeep_mult$"
 mod_enemy_marker: "敌人标记"
 l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
 
 #PROJECT_LONGINUS
+ project_longinus.9.name: "终焉之曲"
+ project_longinus.9.desc: "我们抛出朗基努斯计划实体化的枪，朗基努斯之枪飞出不远后，便消失在空中。如果那位家伙说的没错，那么，我们的神将会被击落。只是，我们仍未知道我们是否能得到自由。"
+ project_longinus.9.1: "终焉之曲已然奏响，而无人聆听。"
+ project_longinus.8.name: "还没完呢"
+ project_longinus.8.desc: "我就知道你会这么干，试图逃脱朗基努斯计划的攻击。上层叙事，还没完呢！"
+ project_longinus.8.1: "啊！"
+ project_longinus.8.1.tooltip: "§R警告：如果不想让你的游戏崩溃，请立即退出存档！§!"
  project_longinus: "朗基努斯计划"
  project_longinus_desc: "一艘与我们国家空间站外貌相差无几的空间站忽然出现在这颗星球的轨道上，这引起了我们的注意。"
  project_longinus.2.name: "空间站"
@@ -275,11 +295,11 @@ l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
  project_longinus.5.option: "回去开庆功宴吧"
  r_project_longinus: "$project_longinus$"
  r_project_longinus_desc: "上层叙事默许制造的，能终结上层叙事对这个世界的干涉的装置。（造型是EVA的，效果是SCP的。）"
- effect_project_longinus: "§R使游戏崩溃§!"
+ effect_project_longinus: "§R游戏会在该遗珍启动360天后崩溃§!"
 
 #mod_setting
- rds_setting.5.name: "JAFM设置面板"
- rds_setting.5.desc: "在这里设置JAFM的各项设置"
+ rds_setting.5.name: "CMWDM设置面板"
+ rds_setting.5.desc: "在这里设置CMWDM的各项设置"
  rds_setting.get_technology: "获取科技"
  rds_setting.can_ai_use_rds_on: "允许AI使用RDS"
  rds_setting.can_ai_use_rds_off: "禁止AI使用RDS"
@@ -287,6 +307,11 @@ l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
  rds_setting.self_delete: "舰船自毁程序"
  rds_setting.can_use_rds_on: "启用舰船RDS"
  rds_setting.can_use_rds_off: "禁用舰船RDS"
+ 
+ rds_setting.6.name: "CMWDM内容设置"
+ rds_setting.6.desc: "在这调整CMWDM的启用内容"
+ rds_setting.ship_components.on: "允许使用CMWDM舰船部件"
+ rds_setting.ship_components.off: "禁止使用CMWDM舰船部件"
 
 #system_destroyer
  rds_misc.7.name: "量子炸弹"
@@ -297,3 +322,6 @@ l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
  rds_system_destroyer.planetary_system_silence.tooltip: ""
  rds_system_destroyer.gui_close: "取消启动"
  rds_system_destroyer.gui_close.tooltip: ""
+
+# New Dynamic Mod Menu support.
+ cmwdm_menu_name: "“动态修改作弊模式”模组设置面板"

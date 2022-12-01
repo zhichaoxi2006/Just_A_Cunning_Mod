@@ -1,3 +1,22 @@
+on_game_start = {
+	events = {
+		rds_setting.0		# New Dynamic Mod Menu support.
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+		rds_setting.0		# New Dynamic Mod Menu support.
+		project_longinus.7
+	}
+}
+
+dmm_mod_selected = {
+	events = {
+		rds_setting.1		# New Dynamic Mod Menu support.
+	}
+}
+
 # Triggers event when ship enters a system. It's usually better to use on_entering_system_first_time or on_entering_system_fleet
 # Scope = Ship
 # From = System
@@ -96,6 +115,7 @@ on_leader_assigned = {
 on_fleet_quantum_catapult = {
 	events = {
 		rds_misc.7
+		rds_misc.14
 	}
 }
 

@@ -110,6 +110,10 @@ swn_mod_ship_hull_mult = {
 	ship_hull_mult = 1
 }
 
+swn_mod_ship_hull_add = {
+	ship_hull_add = 1
+}
+
 swn_mod_ship_base_speed_mult = {
 	ship_base_speed_mult = 1
 }

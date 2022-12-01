@@ -71,7 +71,7 @@ building_hilbert_hotel = {
     base_cap_amount = 1
     base_buildtime = 60
 	icon = building_luxury_residence
-	category = resource
+	category = amenity
     resources = {
         category = planet_buildings
         cost = {
@@ -99,7 +99,7 @@ building_hilbert_hotel = {
 building_mass_energy_conversion_center = {
     base_cap_amount = 1
     base_buildtime = 60
-	icon = building_mineral_purification_hub
+	icon = building_production_center
 	category = resource
     resources = {
         category = planet_buildings
@@ -112,7 +112,9 @@ building_mass_energy_conversion_center = {
         has_building = building_reality_distortion_system
     }
     planet_modifier = {
-        job_mass_energy_conversion_engineer_add = 1
+        job_mass_energy_conversion_miner_add = 1
+        job_mass_energy_conversion_foundry_add = 1
+        job_mass_energy_conversion_artisan_add = 1
     }
 }
 
@@ -186,25 +188,22 @@ building_rds_planetary_shield_generator = {
     }
 }
 
-building_structural_reconstruction_facility = {
+building_multiverse_trade_center = {
     base_cap_amount = 1
     base_buildtime = 60
-	icon = building_class_4_singularity
-	category = manufacturing
+	icon = building_galactic_stock_exchange
+	category = trade
     resources = {
         category = planet_buildings
         cost = {
             minerals = 100
             energy = 100
         }
-        upkeep = {
-            alloys = 1
-        }
+    }
+    planet_modifier = {
+        job_multiverse_trader_add = 1
     }
     allow = {
         has_building = building_reality_distortion_system
-    }
-    planet_modifier = {
-        job_structural_reconstructionist_add = 1
     }
 }

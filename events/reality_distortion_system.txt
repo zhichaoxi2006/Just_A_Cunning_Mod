@@ -38,11 +38,10 @@ ship_event = {
 						has_rds_flag = { FLAG = unbreakable_ship }
 					}
 				}
-				Root = {
-					set_disable_at_health = 0.0001
-					repair_ship = yes
-					set_disabled = no
-				}
+				set_ship_flag = invincible
+				set_disable_at_health = 0.0001
+				repair_ship = yes
+				set_disabled = no
 			}
 			else_if = {
 				limit = {
@@ -53,6 +52,7 @@ ship_event = {
 						EQUIPPED_WITH_RDS = no
 					}
 				}
+				remove_ship_flag = invincible
 				set_disable_at_health = -1
 				set_disabled = no
 			}
@@ -255,7 +255,7 @@ ship_event = {
 					}
 					if = {
 						limit = {
-							check_modifier_value = {	modifier = ship_disengage_chance_reduction value < 1.00	}
+							check_modifier_value = { modifier = ship_disengage_chance_reduction value < 1.00	}
 						}
 						remove_modifier = swn_mod_ship_disengage_chance_reduction
 						add_modifier = {	modifier = swn_mod_ship_disengage_chance_reduction	months = @modifier_time	multiplier = ship_disengage_chance_reduction_number	}
@@ -342,7 +342,14 @@ ship_event = {
 										is_neutral_to = event_target:reality_distortion_system_ship.owner #不是与舰船所有者中立的国家
 									}
 								}
-								is_in_combat = yes
+								if = {
+									limit = {
+										NOT = {
+											has_rds_flag = { FLAG = system_wide }
+										}
+									}
+									is_in_combat = yes
+								}
 							}
 							#ACCURACY_DEBUFF
 							if = {
@@ -397,15 +404,9 @@ ship_event = {
 										has_rds_flag = { FLAG = ship_hp_amount_reduce_system }
 									}
 								}
-								export_trigger_value_to_variable = {
-									trigger = has_hp
-									variable = ship_hp_amount
-								}
-								subtract_variable = {
-									which = ship_hp_amount
-									value = @Residual_hull_value
-								}
-								reduce_hp = ship_hp_amount
+								reduce_hp = value:dynamic_reduce_hp
+								add_modifier = { modifier = swn_mod_ship_hull_mult months = @modifier_time multiplier = value:dynamic_ship_hull_mult }
+								add_modifier = { modifier = swn_mod_ship_hull_add months = @modifier_time multiplier = value:dynamic_ship_hull_add }
 								set_timed_ship_flag = {
 									flag = ship_hp_amount_reduce_system_target
 									days = @flag_time

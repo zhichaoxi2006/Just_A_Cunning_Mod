@@ -16,11 +16,20 @@ utility_component_template = {
 	}
 	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "power_core"
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
-			factor = 0
+			multiply = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -50,11 +59,20 @@ utility_component_template = {
 	
 	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "sensor_components"
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -143,6 +161,11 @@ utility_component_template = {
 	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "REALITY_DISTORTION_SYSTEM"
 	power = -100
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	modifier = {
 	}
 	resources = {
@@ -213,11 +236,20 @@ utility_component_template = {
 	}
 	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "ftl_components"
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -243,11 +275,20 @@ utility_component_template = {
 	}
 	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "thruster_components"
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -259,6 +300,12 @@ utility_component_template = {
 	icon_frame = 1
 	component_set = "360TOTALSECURITY"
 	power = -16
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 16
+		}
+	}
 	modifier = {
 		ship_shield_add = 5000
 		ship_shield_regen_add_perc = 1
@@ -267,21 +314,23 @@ utility_component_template = {
 		ship_hull_add = 5000
 		ship_hull_regen_add_perc = 1
 	}
-	
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
 		}
-	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 16
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
+	prerequisites = { tech_reality_distortion_system_ship_components }
 }
 
 utility_component_template = {
@@ -291,6 +340,12 @@ utility_component_template = {
 	icon_frame = 1
 	component_set = "360TOTALSECURITY"
 	power = -36
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 36
+		}
+	}
 	modifier = {
 		ship_shield_add = 11250
 		ship_shield_regen_add_perc = 1
@@ -299,21 +354,23 @@ utility_component_template = {
 		ship_hull_add = 11250
 		ship_hull_regen_add_perc = 1
 	}
-	
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
 		}
-	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 36
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
+	prerequisites = { tech_reality_distortion_system_ship_components }
 }
 
 utility_component_template = {
@@ -323,6 +380,12 @@ utility_component_template = {
 	icon_frame = 1
 	power = -90
 	component_set = "360TOTALSECURITY"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 90
+		}
+	}
 	modifier = {
 		ship_shield_add = 28125
 		ship_shield_regen_add_perc = 1
@@ -331,19 +394,21 @@ utility_component_template = {
 		ship_hull_add = 28125
 		ship_hull_regen_add_perc = 1
 	}
-	
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
 		}
-	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 90
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
+	prerequisites = { tech_reality_distortion_system_ship_components }
 }

@@ -32,11 +32,20 @@ weapon_component_template = {
 		weapon_type_point_defense
 		weapon_type_kinetic
 	}
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -75,11 +84,20 @@ weapon_component_template = {
 	tags = {
 		weapon_type_energy
 	}
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -118,11 +136,20 @@ weapon_component_template = {
 	tags = {
 		weapon_type_energy
 	}
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -160,11 +187,20 @@ weapon_component_template = {
 	tags = {
 		weapon_type_energy
 	}
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -199,11 +235,20 @@ weapon_component_template = {
 	tracking = 42
 	shield_penetration = 1
 	armor_penetration = 1
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -238,11 +283,20 @@ weapon_component_template = {
 	tracking = 42
 	shield_penetration = 1
 	armor_penetration = 1
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -295,11 +349,20 @@ strike_craft_component_template = {
 	tags = {
 		weapon_type_strike_craft
 	}
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }
@@ -349,11 +412,20 @@ weapon_component_template = {
 	tags = {
 		weapon_type_explosive
 	}
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
 	ai_weight = {
 		weight = 114514
 		modifier = {
 			factor = 0
 			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
 		}
 	}
 }

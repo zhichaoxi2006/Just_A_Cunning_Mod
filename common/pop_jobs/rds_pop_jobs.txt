@@ -1,3 +1,23 @@
+deduction_engineer = {
+	category = worker
+	building_icon = building_wheeler_performing_reactors
+	clothes_texture_index = 3
+	icon = technician
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			consumer_goods = 2
+		}
+		produces = {
+            energy = 2
+            multiplier = owner.value:dynamic_energy_expenses
+        }
+	}
+	weight = {
+		factor = 10
+	}
+}
+
 laplace_demon_operator = {
 	category = specialist
 	building_icon = building_laplace_research_facility
@@ -22,27 +42,7 @@ laplace_demon_operator = {
 	}
 }
 
-deduction_engineer = {
-	category = worker
-	building_icon = building_wheeler_performing_reactors
-	clothes_texture_index = 3
-	icon = technician
-	resources = {
-		category = planet_jobs
-		upkeep = {
-			consumer_goods = 2
-		}
-		produces = {
-            energy = 2
-            multiplier = owner.value:dynamic_energy_expenses
-        }
-	}
-	weight = {
-		factor = 10
-	}
-}
-
-mass_energy_conversion_engineer = {
+mass_energy_conversion_miner = {
 	category = worker
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
@@ -63,22 +63,63 @@ mass_energy_conversion_engineer = {
 	}
 }
 
-structural_reconstructionist = {
+mass_energy_conversion_artisan = {
 	category = specialist
-	building_icon = building_structural_reconstruction_facility
+	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
-	icon = researcher
+	icon = artisan
 	resources = {
 		category = planet_jobs
 		upkeep = {
-            energy = 2
+            energy = 1
             multiplier = owner.value:dynamic_energy_income
         }
 		produces = {
             consumer_goods = 1
+            multiplier = owner.value:dynamic_energy_income
+        }
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+mass_energy_conversion_foundry = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = foundry
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = owner.value:dynamic_energy_income
+        }
+		produces = {
 			alloys = 1
             multiplier = owner.value:dynamic_energy_income
         }
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+multiverse_trader = {
+	category = ruler
+	building_icon = building_multiverse_trade_center
+	clothes_texture_index = 3
+	icon = merchant
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = owner.value:dynamic_energy_income
+        }
+	}
+	triggered_planet_modifier = {
+		trade_value_add = 1
+		multiplier = owner.value:dynamic_energy_income
 	}
 	weight = {
 		factor = 10

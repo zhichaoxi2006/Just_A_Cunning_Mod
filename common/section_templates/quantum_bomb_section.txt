@@ -1,0 +1,11 @@
+ship_section_template = {
+	key = "QUANTUM_BOMB_MID_SECTION"
+	ship_size = quantum_bomb
+	fits_on_slot = "mid"
+	entity = "transport_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 5
+	aux_utility_slots = 5
+}

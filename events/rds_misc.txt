@@ -111,6 +111,9 @@ event = {
 	desc = rds_misc.7.desc
 	hide_window = no
 	trigger = {
+		This = {
+			is_ship_size = 	quantum_bomb
+		}
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -200,7 +203,7 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		This = {
-			add_planet_devastation = trigger:planet_devastation
+			add_planet_devastation = value:dynamic_planet_devastation
 		}
 	}
 }
@@ -262,6 +265,38 @@ event = {
 	immediate = {
 		from = {
 			add_trait = leader_trait_rds
+		}
+	}
+}
+
+#Bypass
+fleet_event = {
+	id = rds_misc.14
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				fromfrom = {
+					solar_system = {
+						any_system_megastructure = {
+							is_megastructure_type = quantum_catapult_rds
+						}
+					}
+					owner = {
+						has_technology = tech_mega_engineering
+						NOT = {
+							has_country_flag = yeeted_a_fleet_rds
+						}
+					}
+				}
+			}
+			this = {
+				owner = {
+					set_country_flag = yeeted_a_fleet_rds
+				}
+			}
+			create_rds_wormhole_link = yes
 		}
 	}
 }

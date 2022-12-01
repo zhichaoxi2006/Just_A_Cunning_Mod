@@ -1,0 +1,95 @@
+
+rds_wormhole_node = {
+	entity = "natural_wormhole_entity"
+	construction_entity = "natural_wormhole_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	show_galactic_map_icon = no
+	potential = {
+		always = no
+	}
+	possible = {
+		always = no
+	}
+	construction_blocks_and_blocked_by = self_type
+	bypass_type = rds_wormhole
+}
+
+rds_wormhole_node_dummy = {
+	build_time = 0
+	entity = "natural_wormhole_entity"
+	construction_entity = "natural_wormhole_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	show_galactic_map_icon = no
+	upgrade_from = {
+		rds_wormhole_node
+	}
+	on_build_complete = {
+		From = {
+			every_owned_megastructure = {
+				limit = {
+					is_megastructure_type = rds_wormhole_node
+				}
+				remove_megastructure = this
+			}
+			remove_country_flag = yeeted_a_fleet_rds
+		}
+		fromfrom = {
+			remove_megastructure = this
+		}
+	}
+}
+
+# Quantum Catapult Rds
+quantum_catapult_rds = {
+	#entity = "quantum_catapult_stage_3_entity"
+	#construction_entity = "quantum_catapult_stage_3_entity"
+	entity = "quantum_catapult_stage_3_entity"
+	construction_entity = "quantum_catapult_stage_3_entity"
+	portrait = GFX_megastructure_quantum_catapult_background
+	place_entity_on_planet_plane = yes
+	entity_offset = {
+		x = 0
+		y = 0
+	}
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 10000
+		}
+		upkeep = {
+			energy = 30
+		}
+	}
+	upgrade_from = {
+		quantum_catapult_3
+	}
+	possible = {
+		from = {
+			has_technology = tech_mega_engineering
+		}
+	}
+	prerequisites = {
+		"tech_quantum_catapult"
+	}
+	show_prereqs = yes
+	country_modifier = {
+		country_mia_time_mult = -1
+	}
+	station_modifier = {
+		catapult_spread_base = 0
+		catapult_range_base = 10000
+		quantum_catapult_megastructure_bypass_windup_mult = -1
+	}
+	on_build_complete = {
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = {
+				id = over.10
+			}
+		}
+	}
+	bypass_type = quantum_catapult
+}
