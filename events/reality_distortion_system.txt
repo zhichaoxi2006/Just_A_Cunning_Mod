@@ -404,9 +404,29 @@ ship_event = {
 										has_rds_flag = { FLAG = ship_hp_amount_reduce_system }
 									}
 								}
-								reduce_hp = value:dynamic_reduce_hp
-								add_modifier = { modifier = swn_mod_ship_hull_mult months = @modifier_time multiplier = value:dynamic_ship_hull_mult }
-								add_modifier = { modifier = swn_mod_ship_hull_add months = @modifier_time multiplier = value:dynamic_ship_hull_add }
+								export_trigger_value_to_variable = {
+									trigger = has_hp
+									variable = ship_hp_amount
+								}
+								subtract_variable = {
+									which = ship_hp_amount
+									value = @Residual_hull_value
+								}
+								reduce_hp = ship_hp_amount
+								if = {
+									limit = {
+										check_modifier_value = { modifier = ship_hull_mult value > -0.99 }
+									}
+									remove_modifier = swn_mod_ship_hull_mult
+									add_modifier = { modifier = swn_mod_ship_hull_mult months = @modifier_time multiplier = value:dynamic_ship_hull_mult }
+								}
+								if = {
+									limit = {
+										check_modifier_value = { modifier = ship_hull_mult value > 0 }
+									}
+									remove_modifier = swn_mod_ship_hull_add
+									add_modifier = { modifier = swn_mod_ship_hull_add months = @modifier_time multiplier = value:dynamic_ship_hull_add }
+								}
 								set_timed_ship_flag = {
 									flag = ship_hp_amount_reduce_system_target
 									days = @flag_time

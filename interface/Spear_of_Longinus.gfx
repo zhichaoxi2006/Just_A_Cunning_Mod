@@ -19,3 +19,12 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 }
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_DaWuJiangTu"
+		texturefile = "gfx/event_pictures/Xushen.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

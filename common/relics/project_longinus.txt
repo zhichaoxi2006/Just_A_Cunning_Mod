@@ -35,6 +35,9 @@ r_project_longinus = {
 					id = project_longinus.1
 					days = 360
 				}
+				country_event = {
+					id = project_longinus.9
+				}
 			}
 		}
 	}

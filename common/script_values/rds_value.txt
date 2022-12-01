@@ -62,18 +62,13 @@ dynamic_planet_devastation = {
 	subtract = trigger:planet_devastation
 }
 
-dynamic_reduce_hp = {
-	base = 0
-	subtract = trigger:has_hp
-	add = @Residual_hull_value
-}
-
 dynamic_ship_hull_mult = {
 	base = 0
 	subtract = modifier:ship_hull_mult
+	subtract = 0.99
 }
 
 dynamic_ship_hull_add = {
 	base = 0
-	subtract = modifier:ship_hull_add
+	subtract = trigger:has_hp
 }

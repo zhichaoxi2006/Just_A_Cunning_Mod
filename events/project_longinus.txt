@@ -159,11 +159,12 @@ event = {
 	}
 }
 
-event = {
+country_event = {
 	id =  project_longinus.8
 	title =  project_longinus.8.name
 	desc =  project_longinus.8.desc
-	picture = GFX_evt_mining_station #a name of a picture to display
+	auto_opens = yes 
+	picture = GFX_evt_DaWuJiangTu #a name of a picture to display
 	is_triggered_only = yes 
 	trigger = {
 	}
@@ -186,11 +187,11 @@ event = {
 	}
 }
 
-event = {
+country_event = {
 	id =  project_longinus.9
 	title =  project_longinus.9.name
 	desc =  project_longinus.9.desc
-	picture = GFX_evt_mining_station #a name of a picture to display
+	picture = GFX_evt_vortex #a name of a picture to display
 	is_triggered_only = yes 
 	trigger = {
 	}
