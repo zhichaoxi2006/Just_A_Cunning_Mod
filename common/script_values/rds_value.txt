@@ -65,10 +65,16 @@ dynamic_planet_devastation = {
 dynamic_ship_hull_mult = {
 	base = 0
 	subtract = modifier:ship_hull_mult
-	subtract = 0.99
+	subtract = @rds_script_ship_hull_mult
 }
 
 dynamic_ship_hull_add = {
 	base = 0
 	subtract = trigger:has_hp
+}
+
+zeno_turtle = {
+	base = 100
+	subtract = trigger:situation_progress
+	divide = 2
 }

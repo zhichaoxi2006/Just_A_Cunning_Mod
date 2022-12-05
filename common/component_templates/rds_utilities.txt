@@ -412,3 +412,41 @@ utility_component_template = {
 	}
 	prerequisites = { tech_reality_distortion_system_ship_components }
 }
+
+utility_component_template = {
+	key = "AUX_360TOTALSECURITY"
+	size = aux
+	icon = "GFX_ship_parts_reality_distortion_system"
+	icon_frame = 1
+	prerequisites = { tech_reality_distortion_system_ship_components }
+	component_set = "360TOTALSECURITY"
+	power = -100
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_components
+		}
+	}
+	modifier = {
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+		upkeep = {
+			energy = 0.4
+			alloys = 0.2
+		}
+	}
+	ai_weight = {
+		weight = 114514
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
+		modifier = {
+			multiply = 0
+			has_country_flag = disable_rds_ship_components
+		}
+	}
+}

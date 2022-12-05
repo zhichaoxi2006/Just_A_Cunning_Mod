@@ -175,6 +175,11 @@ event = {
 		}
 		custom_tooltip = rds_system_destroyer.gui_close.tooltip
 	}
+	after = {
+		This = {
+			destroy_fleet = This
+		}
+	}
 }
 
 #POP_REBIRTHER
@@ -198,7 +203,7 @@ event = {
 	id = rds_misc.9
 	hide_window = yes
 	trigger = {
-		has_active_building = building_rds_planetary_shield_generator
+		has_active_building = building_rds_stronghold
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -260,6 +265,7 @@ event = {
 		from = {
 			leader_class = admiral
 		}
+		always = no
 	}
 	is_triggered_only = yes
 	immediate = {

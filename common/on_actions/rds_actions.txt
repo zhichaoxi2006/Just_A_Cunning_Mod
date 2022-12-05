@@ -55,6 +55,7 @@ on_ship_built = {
 	events = {
 		rds.4
 		rds_setting.4
+		rds.7
 	}
 }
 
@@ -64,6 +65,7 @@ on_ship_upgraded = {
 	events = {
 		rds.4
 		rds_setting.4
+		rds.7
 	}
 }
 
@@ -89,6 +91,7 @@ on_pop_added = {
 on_planet_bombarded = {
 	events = {
 		rds_misc.2
+		rds_misc.9
 	}
 }
 

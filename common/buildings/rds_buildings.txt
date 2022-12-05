@@ -24,6 +24,12 @@ building_reality_distortion_system = {
     on_destroy = {
         set_timed_planet_flag = { flag = building_reality_distortion_system_cooldown months = 1 }
     }
+    country_modifier = {
+        country_subject_integration_speed_add = 100
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
+    }
 }
 
 building_rds_pop_creater = {
@@ -45,6 +51,9 @@ building_rds_pop_creater = {
         pop_growth_speed = 100
         pop_assembly_speed = 100
     }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
+    }
 }
 
 building_wheeler_performing_reactors = {
@@ -60,10 +69,13 @@ building_wheeler_performing_reactors = {
         }
     }
     allow = {
-        has_building = building_reality_distortion_system
+
     }
     planet_modifier = {
         job_deduction_engineer_add = 1
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
     }
 }
 
@@ -80,7 +92,6 @@ building_hilbert_hotel = {
         }
     }
     allow = {
-        has_building = building_reality_distortion_system
     }
     triggered_planet_modifier = {
         potential = {
@@ -94,13 +105,16 @@ building_hilbert_hotel = {
             id = rds_misc.11
         }
     }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
+    }
 }
 
 building_mass_energy_conversion_center = {
     base_cap_amount = 1
     base_buildtime = 60
 	icon = building_production_center
-	category = resource
+	category = manufacturing
     resources = {
         category = planet_buildings
         cost = {
@@ -109,12 +123,15 @@ building_mass_energy_conversion_center = {
         }
     }
     allow = {
-        has_building = building_reality_distortion_system
     }
     planet_modifier = {
         job_mass_energy_conversion_miner_add = 1
-        job_mass_energy_conversion_foundry_add = 1
-        job_mass_energy_conversion_artisan_add = 1
+        job_advanced_resources_mass_energy_conversion_add = 1
+        job_stategic_resources_mass_energy_conversion_add = 1
+        job_rare_resources_mass_energy_conversion_add = 1
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
     }
 }
 
@@ -134,10 +151,12 @@ building_laplace_research_facility = {
         }
     }
     allow = {
-        has_building = building_reality_distortion_system
     }
     planet_modifier = {
         job_laplace_demon_operator_add = 1
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
     }
 }
 
@@ -154,7 +173,6 @@ building_rds_resource_cage = {
         }
     }
     allow = {
-        has_building = building_reality_distortion_system
     }
     triggered_country_modifier = {
         potential = {
@@ -168,13 +186,16 @@ building_rds_resource_cage = {
             id = rds_misc.11
         }
     }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
+    }
 }
 
-building_rds_planetary_shield_generator = {
+building_rds_stronghold = {
     base_cap_amount = 1
     position_priority = 100
     base_buildtime = 60
-	icon = building_planetary_shield_generator
+	icon = building_stronghold
 	category = army
     resources = {
         category = planet_buildings
@@ -183,8 +204,15 @@ building_rds_planetary_shield_generator = {
             energy = 100
         }
     }
-    allow = {
-        has_building = building_reality_distortion_system
+    planet_modifier = {
+        planet_orbital_bombardment_damage = -10
+        pop_defense_armies_add = 10
+    }
+    convert_to = {
+        building_rds_stronghold
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
     }
 }
 
@@ -204,6 +232,8 @@ building_multiverse_trade_center = {
         job_multiverse_trader_add = 1
     }
     allow = {
-        has_building = building_reality_distortion_system
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
     }
 }

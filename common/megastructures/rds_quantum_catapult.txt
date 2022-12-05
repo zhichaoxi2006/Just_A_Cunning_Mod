@@ -69,6 +69,7 @@ quantum_catapult_rds = {
 	possible = {
 		from = {
 			has_technology = tech_mega_engineering
+			has_technology = tech_reality_distortion_system_megastructures
 		}
 	}
 	prerequisites = {

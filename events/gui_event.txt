@@ -655,7 +655,7 @@ country_event = {
 			set_country_flag = has_rds_tech
 			country_event = {
 				id = rds_setting.5
-			} 
+			}
 		}
 	}
 	option = {
@@ -717,6 +717,16 @@ country_event = {
 		hidden_effect = {
 			country_event = {
 				id = rds_setting.2
+			}
+		}
+	}
+	option = {
+		name = rds_setting.content_setting_console
+		trigger = {
+		}
+		hidden_effect = {
+			country_event = {
+				id = rds_setting.6
 			}
 		}
 	}
@@ -790,7 +800,9 @@ country_event = {
 		trigger = {
 		}
 		hidden_effect = {
-
+			country_event = {
+				id = rds_setting.5
+			}
 		}
 	}
 }

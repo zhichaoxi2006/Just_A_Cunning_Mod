@@ -8,6 +8,9 @@ RDS_OMNI_Core = {
 	country_modifier = {
 		country_resource_max_add = 100000000
 	}
+	potential = {
+		always = no
+	}
 	show_in_outliner = no
 	resources = {
 		category = megastructures
