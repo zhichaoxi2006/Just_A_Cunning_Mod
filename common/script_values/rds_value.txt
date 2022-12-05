@@ -46,7 +46,7 @@ dynamic_energy_income = {
 	add = trigger:income
 	divide = 8
 	modifier = {
-		divide = 2
+		multiply = 0
 		owner = { has_deficit = energy }
 	}
 }
@@ -55,6 +55,7 @@ dynamic_energy_expenses = {
 	base = 0
 	add = trigger:expenses
 	max = 10000000
+	min = 0
 }
 
 dynamic_planet_devastation = {

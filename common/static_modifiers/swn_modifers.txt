@@ -11,11 +11,11 @@ swn_mod_ship_armor_reduction = {
 }
 
 swn_mod_ship_hull_repair_anti = {
-	ship_hull_regen_add_perc = -1
+	ship_hull_regen_add_perc = 1
 }
 
 swn_mod_ship_hull_repair_anti_static = {
-	ship_hull_regen_add_static = -1
+	ship_hull_regen_add_static = 1
 }
 
 swn_mod_ship_speed_reduction = {
