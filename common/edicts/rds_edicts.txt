@@ -14,21 +14,6 @@ sas_warship_console = {
 	}
 }
 
-faster_quantum_catapult = {
-	icon = GFX_button_automate
-	length = -1
-	potential = {
-		is_ai = no
-	}
-	resources = {
-		category = campaigns
-	}
-	modifier = {
-		catapult_spread_base = 100
-		catapult_range_base = 50000
-	}
-}
-
 site_project_longinus = {
 	icon = GFX_button_automate
 	length = 0
@@ -45,5 +30,19 @@ site_project_longinus = {
 		country_event = {
 			id = project_longinus.6
 		}
+	}
+}
+
+super_crisis = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		is_ai = no
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		multiply_crisis_strength = 20000
 	}
 }

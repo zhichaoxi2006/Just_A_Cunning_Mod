@@ -1,0 +1,20 @@
+namespace = rds_test
+country_event = {
+	id = rds_test.1
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		create_leader = {
+			name = "NAME_rds_test"
+			species = root.built_species
+			class = admiral
+			skill = 20
+			set_age = -1
+			traits = {
+				trait = leader_trait_rds
+			}
+		}
+	}
+}

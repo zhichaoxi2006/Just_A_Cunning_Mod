@@ -43,7 +43,16 @@ dynamic_country_resource_max_add = {
 
 dynamic_energy_income = {
 	base = 0
-	add = trigger:income
+	modifier = {
+		add = owner.trigger:income
+		NOT = {
+			is_scope_type = country
+		}
+	}
+	modifier = {
+		add = trigger:income
+		is_scope_type = country
+	}
 	divide = 8
 	modifier = {
 		multiply = 0
@@ -53,7 +62,7 @@ dynamic_energy_income = {
 
 dynamic_energy_expenses = {
 	base = 0
-	add = trigger:expenses
+	add = owner.trigger:expenses
 	max = 10000000
 	min = 0
 }
@@ -74,8 +83,8 @@ dynamic_ship_hull_add = {
 	subtract = trigger:has_hp
 }
 
-zeno_turtle = {
-	base = 100
-	subtract = trigger:situation_progress
-	divide = 2
+dynmic_laplace_demon = {
+	base = 0
+	add = value:dynamic_energy_income
+	multiply = modifier:planet_researchers_produces_mult
 }

@@ -2,7 +2,6 @@ r_project_longinus = {
 	activation_duration = 0
 	portrait = "GFX_relic_Spear_of_Longinus"
 	sound = "relic_activation_vultaum_real_perforator"
-
 	resources = {
 		category = relics
 		# Activation cost
@@ -10,21 +9,21 @@ r_project_longinus = {
 			energy = 10
 		}
 	}
-
 	ai_weight = {
 		weight = 0
 	}
-
 	score = 1000
-
 	triggered_country_modifier = {
 		potential = {
 			always = yes
 		}
 	}
-
 	active_effect = {
 		hidden_effect = {
+			country_list_tooltip = {
+				limit = {
+				}
+			}
 			custom_tooltip = effect_project_longinus
 			set_global_flag = project_longinus_on
 			every_country = {
@@ -41,7 +40,6 @@ r_project_longinus = {
 			}
 		}
 	}
-
 	# Possible check for activation
 	possible = {
 	}

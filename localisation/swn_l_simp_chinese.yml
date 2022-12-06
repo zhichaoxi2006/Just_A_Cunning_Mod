@@ -79,9 +79,9 @@
  building_hilbert_hotel: "希尔伯特旅馆"
  building_hilbert_hotel_desc: "希尔伯特旅馆，一个满了但没有完全满的旅馆，能满足一整个星球的居住需求。"
  building_mass_energy_conversion_center: "质能转换中心"
- building_mass_energy_conversion_center_desc: "破坏物理定律，能用能量制造出几乎一切物质的机器。"
+ building_mass_energy_conversion_center_desc: "破坏物理定律，能用能量转换出几乎一切物质的机器。"
  building_laplace_research_facility: "拉普拉斯科研装置"
- building_laplace_research_facility_desc: "人造的拉普拉斯妖，只要输入足够的能量，拉普拉斯妖会为我们解答一切。"
+ building_laplace_research_facility_desc: "§R受研究人员产出加成的增益§!人造的拉普拉斯妖，只要输入足够的能量，拉普拉斯妖会为我们解答一切。"
  building_rds_resource_cage: "希尔伯特仓库"
  building_rds_resource_cage_desc: "凭借着现实扭曲系统，我们制造出了一个希尔伯特空间用于存储资源。"
  building_rds_stronghold: "现实扭曲系统军事要塞"
@@ -119,7 +119,7 @@
  job_rare_resources_mass_energy_conversion_desc: "凭借现实扭曲系统的力量,他们将能量变成各种稀有资源。"
  mod_job_rare_resources_mass_energy_conversion_add: "稀有资源质能转换师岗位"
 
- #TRAIT
+ #Trait
  leader_trait_death: "死亡标记"
  leader_trait_death_desc: "这个领袖浑身充满了不祥的气息。"
  leader_trait_rds: "现实扭曲系统"
@@ -131,10 +131,10 @@
  #Edicts
  edict_sas_warship_console: "CMWDM设置面板"
  edict_sas_warship_console_desc: "打开CMWDM设置面板"
- edict_faster_quantum_catapult: "量子弹弓超形上学化"
- edict_faster_quantum_catapult_desc: ""
  edict_site_project_longinus: "生成朗基努斯计划考古站点"
  edict_site_project_longinus_desc: ""
+ edict_super_crisis: "超级天灾增强"
+ edict_super_crisis_desc: "专为RDS使用者提供的天灾强度，其他东西也许可以打，但是不被秒就算胜利。（两万倍天灾强度）"
  
  #Armies
  reality_distortion_system_army: "超形上学实体"
@@ -153,10 +153,10 @@
  quantum_catapult_rds: "量子弹弓"
  quantum_catapult_rds_DESC: "装配了现实扭曲系统的量子弹弓，性能有了极大的提升。"
  rds_wormhole_node: "$RDS_WORMHOLE_GALACTIC$"
- rds_wormhole_node_desc: "$RDS_WORMHOLE_GALACTIC_DESC$"
- rds_wormhole_node_details: "$RDS_WORMHOLE_GALACTIC_DESC$"
+ rds_wormhole_node_DESC: "$RDS_WORMHOLE_GALACTIC_DESC$"
+ rds_wormhole_node_DETAILS: "$RDS_WORMHOLE_GALACTIC_DESC$"
  rds_wormhole_node_dummy: "$RDS_WORMHOLE_GALACTIC$"
- rds_wormhole_node_dummy_desc: "$RDS_WORMHOLE_GALACTIC_DESC$"
+ rds_wormhole_node_dummy_DESC: "$RDS_WORMHOLE_GALACTIC_DESC$"
  
  #RDS_SETTING
  rds_setting.gui.name: "现实扭曲系统控制面板"

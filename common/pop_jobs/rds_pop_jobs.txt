@@ -10,7 +10,7 @@ deduction_engineer = {
 		}
 		produces = {
             energy = 2
-            multiplier = owner.value:dynamic_energy_expenses
+            multiplier = value:dynamic_energy_expenses
         }
 	}
 	possible = {
@@ -40,8 +40,8 @@ laplace_demon_operator = {
             physics_research = 1
             society_research = 1
             engineering_research = 1
-            unity = 3
-            multiplier = owner.value:dynamic_energy_income
+            unity = 1
+            multiplier = value:dynmic_laplace_demon
         }
 	}
 	possible = {
@@ -65,11 +65,11 @@ mass_energy_conversion_miner = {
 		category = planet_jobs
 		upkeep = {
             energy = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
         produces = {
             minerals = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
@@ -93,12 +93,12 @@ advanced_resources_mass_energy_conversion = {
 		category = planet_jobs
 		upkeep = {
             energy = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 		produces = {
 			alloys = 1
 			consumer_goods = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
@@ -122,13 +122,13 @@ stategic_resources_mass_energy_conversion = {
 		category = planet_jobs
 		upkeep = {
             energy = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 		produces = {
 			volatile_motes = 1
 			exotic_gases = 1
 			rare_crystals = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
@@ -152,14 +152,14 @@ rare_resources_mass_energy_conversion = {
 		category = planet_jobs
 		upkeep = {
             energy = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 		produces = {
 			sr_living_metal = 1
 			sr_zro = 1
 			sr_dark_matter = 1
 			nanites = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
@@ -183,12 +183,12 @@ multiverse_trader = {
 		category = planet_jobs
 		upkeep = {
             energy = 1
-            multiplier = owner.value:dynamic_energy_income
+            multiplier = value:dynamic_energy_income
         }
 	}
 	triggered_planet_modifier = {
 		trade_value_add = 1
-		multiplier = owner.value:dynamic_energy_income
+		multiplier = value:dynamic_energy_income
 	}
 	weight = {
 		factor = 10

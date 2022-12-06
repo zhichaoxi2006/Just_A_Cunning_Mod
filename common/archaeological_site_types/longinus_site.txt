@@ -11,22 +11,22 @@ project_longinus = {
 		default_site_visible_trigger = yes
 	}
 	stage = {
-		difficulty = 0
+		difficulty = -42
 		icon = GFX_archaeology_runes_F1
 		event = project_longinus.2
 	}
 	stage = {
-		difficulty = 0
+		difficulty = -42
 		icon = GFX_archaeology_runes_F2
 		event = project_longinus.3
 	}
 	stage = {
-		difficulty = 0
+		difficulty = -42
 		icon = GFX_archaeology_runes_F3
 		event = project_longinus.4
 	}
 	stage = {
-		difficulty = 0
+		difficulty = -42
 		icon = GFX_archaeology_runes_F4
 		event = project_longinus.5
 	}
