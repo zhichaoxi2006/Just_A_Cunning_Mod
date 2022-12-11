@@ -95,6 +95,15 @@ on_planet_bombarded = {
 	}
 }
 
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+	events = {
+		rds_leader.2
+	}
+}
+
 # a new leader is generated for an empire, to be available for recruitment
 # scope: country, from: leader
 on_leader_spawned = {
@@ -137,5 +146,29 @@ on_pop_bombed_to_death = {
 # FromFromFrom = fleet 2
 on_entering_battle = {
 	events = {
+	}
+}
+
+# called during empire initialization when starting a new game
+# scope: country
+empire_init_add_technologies = {
+	events = {
+		rds_origin.1
+	}
+}
+
+# A district construction has been queued.
+# This = Planet
+on_district_queued = {
+	events = {
+		rds_misc.10
+	}
+}
+
+# A district construction has been unqueued.
+# This = Planet
+on_district_unqueued = {
+	events = {
+		rds_misc.1001
 	}
 }

@@ -93,17 +93,8 @@ building_hilbert_hotel = {
     }
     allow = {
     }
-    triggered_planet_modifier = {
-        potential = {
-            is_variable_set = dynamic_housing_number
-        }
-        planet_housing_add = 1
-        multiplier = dynamic_housing_number
-    }
-    on_built = {
-        planet_event = {
-            id = rds_misc.11
-        }
+    planet_modifier = {
+        job_hilbert_hotel_manager_add = 1
     }
     prerequisites = {
         tech_reality_distortion_system_buildings
@@ -111,7 +102,7 @@ building_hilbert_hotel = {
 }
 
 building_mass_energy_conversion_center = {
-    base_cap_amount = 1
+    empire_limit = 1
     base_buildtime = 60
 	icon = building_production_center
 	category = manufacturing
@@ -125,9 +116,12 @@ building_mass_energy_conversion_center = {
     allow = {
     }
     planet_modifier = {
-        job_mass_energy_conversion_miner_add = 1
-        job_advanced_resources_mass_energy_conversion_add = 1
-        job_stategic_resources_mass_energy_conversion_add = 1
+        job_minerals_mass_energy_conversion_add = 1
+        job_alloys_resources_mass_energy_conversion_add = 1
+        job_consumer_goods_resources_mass_energy_conversion_add = 1
+        job_volatile_motes_mass_energy_conversion_add = 1
+        job_exotic_gases_mass_energy_conversion_add = 1
+        job_rare_crystals_mass_energy_conversion_add = 1
         job_rare_resources_mass_energy_conversion_add = 1
     }
     prerequisites = {
@@ -136,7 +130,7 @@ building_mass_energy_conversion_center = {
 }
 
 building_laplace_research_facility = {
-    base_cap_amount = 1
+    empire_limit = 1
     base_buildtime = 60
 	icon = building_research_lab_3
 	category = research
@@ -206,6 +200,7 @@ building_rds_stronghold = {
     }
     planet_modifier = {
         planet_orbital_bombardment_damage = -10
+        army_collateral_damage_mult = -10
         pop_defense_armies_add = 10
     }
     convert_to = {
@@ -217,7 +212,7 @@ building_rds_stronghold = {
 }
 
 building_multiverse_trade_center = {
-    base_cap_amount = 1
+    empire_limit = 1
     base_buildtime = 60
 	icon = building_galactic_stock_exchange
 	category = trade
@@ -232,6 +227,29 @@ building_multiverse_trade_center = {
         job_multiverse_trader_add = 1
     }
     allow = {
+    }
+    prerequisites = {
+        tech_reality_distortion_system_buildings
+    }
+}
+
+building_hilbert_space_create_machine = {
+    base_cap_amount = 1
+    base_buildtime = 60
+	category = trade
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+    }
+    triggered_planet_modifier = {
+        planet_max_districts_add = 1
+        multiplier = hilbert_disticts
+    }
+    on_built = {
+        set_variable = { which = hilbert_disticts value = 0 }
     }
     prerequisites = {
         tech_reality_distortion_system_buildings

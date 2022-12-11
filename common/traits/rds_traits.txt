@@ -19,3 +19,24 @@ leader_trait_rds = {
 		ship_weapon_range_mult = 0.40
 	}
 }
+
+trait_rds_mp = {
+	cost = 0
+	initial = yes
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT PRESAPIENT }
+	randomized = no
+	sorting_priority = 114514
+	icon = "gfx/interface/icons/traits/species_trait_transdimensional.dds"
+	potential_crossbreeding_chance = 0
+	modifier = {
+		pop_environment_tolerance = 2
+		planet_colony_development_speed_mult = 5
+		planet_jobs_produces_mult = 4
+		pop_housing_usage_base = 0
+		pop_demotion_time_mult = -10
+		planet_pops_upkeep_mult = -10
+	}
+	slave_cost = {
+		energy = 50
+	}
+}

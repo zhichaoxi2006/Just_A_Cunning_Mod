@@ -1,0 +1,4 @@
+sound_effect = {
+    name = dies_irae
+    file = "Requiem Dies irae.wav"
+}

@@ -1,4 +1,4 @@
-version="2.5.2"
+version="2.5.4"
 tags={
 	"Military"
 	"Spaceships"
@@ -7,5 +7,5 @@ tags={
 	"Events"
 	"Buildings"
 }
-name="Cheat Mode With Dynamic Modding"
+name="Just A Cunning Mod"
 supported_version="3.5.2"

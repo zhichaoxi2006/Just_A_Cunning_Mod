@@ -19,20 +19,21 @@ dynamic_flag_check = {
 	}
 }
 
-EQUIPPED_WITH_RDS = {
-	OR = {
-		has_component = REALITY_DISTORTION_SYSTEM 
-		leader = {
-			OR = {
-				has_trait = leader_trait_rds
-				has_leader_flag = EQUIPPED_WITH_RDS
-			}
-		}
-	}
-}
 
 has_rds_flag = {
 	fleet = {
 		has_fleet_flag = $FLAG$
+	}
+}
+
+EQUIPPED_WITH_RDS = {
+	OR = {
+		has_component = REALITY_DISTORTION_SYSTEM 
+		has_ship_flag = Ship_Equipped_With_RDS
+		leader = {
+			OR = {
+				has_leader_flag = Leader_Equipped_With_RDS
+			}
+		}
 	}
 }

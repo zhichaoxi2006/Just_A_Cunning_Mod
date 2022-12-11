@@ -56,7 +56,7 @@ laplace_demon_operator = {
 	}
 }
 
-mass_energy_conversion_miner = {
+minerals_mass_energy_conversion = {
 	category = worker
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
@@ -75,7 +75,7 @@ mass_energy_conversion_miner = {
 	possible = {
 		owner = {
 			NOT = {
-				num_assigned_jobs = { job = mass_energy_conversion_miner value > 1 }
+				num_assigned_jobs = { job = minerals_mass_energy_conversion value > 1 }
 			}
 		}
 	}
@@ -84,7 +84,7 @@ mass_energy_conversion_miner = {
 	}
 }
 
-advanced_resources_mass_energy_conversion = {
+alloys_resources_mass_energy_conversion = {
 	category = specialist
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
@@ -97,14 +97,13 @@ advanced_resources_mass_energy_conversion = {
         }
 		produces = {
 			alloys = 1
-			consumer_goods = 1
             multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
 		owner = {
 			NOT = {
-				num_assigned_jobs = { job = advanced_resources_mass_energy_conversion value > 1 }
+				num_assigned_jobs = { job = alloys_resources_mass_energy_conversion value > 1 }
 			}
 		}
 	}
@@ -113,11 +112,39 @@ advanced_resources_mass_energy_conversion = {
 	}
 }
 
-stategic_resources_mass_energy_conversion = {
+consumer_goods_resources_mass_energy_conversion = {
 	category = specialist
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
-	icon = foundry
+	icon = artisan
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			consumer_goods = 1
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+		owner = {
+			NOT = {
+				num_assigned_jobs = { job = consumer_goods_resources_mass_energy_conversion value > 1 }
+			}
+		}
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+volatile_motes_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = chemist
 	resources = {
 		category = planet_jobs
 		upkeep = {
@@ -126,7 +153,61 @@ stategic_resources_mass_energy_conversion = {
         }
 		produces = {
 			volatile_motes = 1
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+		owner = {
+			NOT = {
+				num_assigned_jobs = { job = volatile_motes_mass_energy_conversion value > 1 }
+			}
+		}
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+exotic_gases_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = gas_refiner
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
 			exotic_gases = 1
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+		owner = {
+			NOT = {
+				num_assigned_jobs = { job = exotic_gases_mass_energy_conversion value > 1 }
+			}
+		}
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+rare_crystals_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = translucer
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
 			rare_crystals = 1
             multiplier = value:dynamic_energy_income
         }
@@ -134,7 +215,7 @@ stategic_resources_mass_energy_conversion = {
 	possible = {
 		owner = {
 			NOT = {
-				num_assigned_jobs = { job = stategic_resources_mass_energy_conversion value > 1 }
+				num_assigned_jobs = { job = rare_crystals_mass_energy_conversion value > 1 }
 			}
 		}
 	}
@@ -197,6 +278,56 @@ multiverse_trader = {
 		owner = {
 			NOT = {
 				num_assigned_jobs = { job = multiverse_trader value > 1 }
+			}
+		}
+	}
+}
+
+hilbert_hotel_manager = {
+	category = specialist
+	building_icon = building_hilbert_hotel
+	clothes_texture_index = 3
+	icon = manager
+	resources = {
+		category = planet_jobs
+		upkeep = {
+            energy = 1
+            multiplier = planet.trigger:num_pops
+        }
+	}
+	triggered_planet_modifier = {
+		job_hilbert_hotel_clerk_add = 1
+		multiplier = planet.trigger:num_pops
+	}
+	weight = {
+		factor = 10
+	}
+}
+
+hilbert_hotel_clerk = {
+	category = worker
+	building_icon = building_hilbert_hotel
+	clothes_texture_index = 3
+	icon = clerk
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			consumer_goods = 0.1
+        }
+	}
+	planet_modifier = {
+		planet_amenities_add = 2
+		planet_housing_add = 4
+	}
+	weight = {
+		factor = 10
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					free_amenities > 10
+					free_housing > 10
+				}
 			}
 		}
 	}

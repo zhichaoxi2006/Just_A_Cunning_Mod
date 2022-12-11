@@ -99,7 +99,7 @@ utility_component_template = {
 
 	size_restriction = {  }
 	component_set = "ship_aura_components"
-
+	ftl_inhibitor = yes
 
 	friendly_aura = {
 		name = aura_weapon_range
@@ -416,11 +416,13 @@ utility_component_template = {
 utility_component_template = {
 	key = "AUX_360TOTALSECURITY"
 	size = aux
-	icon = "GFX_ship_parts_reality_distortion_system"
+	icon = "GFX_ship_part_360totalsecurity"
 	icon_frame = 1
 	prerequisites = { tech_reality_distortion_system_ship_components }
 	component_set = "360TOTALSECURITY"
 	power = -100
+	hidden = yes
+	should_ai_use = no
 	valid_for_country = {
 		NOT = {
 			has_country_flag = disable_rds_ship_components

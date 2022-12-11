@@ -1,0 +1,65 @@
+namespace = rds_leader
+country_event = {
+	id = rds_leader.1
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		create_leader = {
+			name = NAME_rds_test
+			species = root.built_species
+			class = admiral
+			skill = 20
+			traits = {
+				trait = leader_trait_rds
+			}
+		}
+		last_created_leader = {
+			set_age = -1
+			set_leader_flag = rds_tester
+			set_leader_flag = Leader_Equipped_With_RDS
+		}
+	}
+}
+
+country_event = {
+	id = rds_leader.2
+	hide_window = yes
+	trigger = {
+		From = {
+			has_leader_flag = Leader_Equipped_With_RDS
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		clone_leader = {
+			target = From
+			effect = {
+				set_age = 17
+				if = {
+					limit = {
+						has_leader_flag = Leader_Equipped_With_RDS
+					}
+					set_leader_flag = Leader_Equipped_With_RDS
+				}
+				if = {
+					limit = {
+						has_leader_flag = rds_tester
+					}
+					set_leader_flag = rds_tester
+				}
+				set_owner = root
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				has_trait = leader_trait_rds
+				NOT = {
+					has_leader_flag = rds_tester
+				}
+			}
+			exile_leader_as = fake_rds_tester
+		}
+	}
+}

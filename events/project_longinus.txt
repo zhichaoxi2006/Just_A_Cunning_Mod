@@ -184,26 +184,14 @@ country_event = {
 	title =  project_longinus.8.name
 	desc =  project_longinus.8.desc
 	auto_opens = yes 
-	picture = GFX_evt_DaWuJiangTu #a name of a picture to display
+	picture = GFX_evt_vortex #a name of a picture to display
 	is_triggered_only = yes 
 	trigger = {
 	}
 	immediate = {
-		country_event = {
-			id = project_longinus.1
-			days = 3
-		}
 	}
 	option = {
 		name = project_longinus.8.1
-		trigger = {
-		}
-		custom_tooltip = project_longinus.8.1.tooltip
-		hidden_effect = {
-			country_event = {
-				id = project_longinus.1
-			}
-		}
 	}
 }
 
@@ -216,6 +204,19 @@ country_event = {
 	trigger = {
 	}
 	immediate = {
+		play_sound = dies_irae
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = project_longinus.1
+				days = 360
+			}
+			country_event = {
+				id = project_longinus.9
+			}
+		}
 	}
 	option = {
 		name = project_longinus.9.1

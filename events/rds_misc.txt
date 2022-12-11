@@ -213,20 +213,28 @@ event = {
 	}
 }
 
-#INFINTE_ASCENSION_PERKS_SLOTS
-event = {
+#INFINTE_DISTRICTS_SLOTS
+planet_event = {
 	id = rds_misc.10
 	hide_window = yes
 	trigger = {
-		This = {
-			NOT = {
-				num_ascension_perks < trigger:num_ascension_perk_slots	
-			}
-		}
+		has_active_building = building_hilbert_space_create_machine
 	}
 	is_triggered_only = yes
 	immediate = {
-		add_modifier = {	modifier = swn_mod_ascension_perks_add	}
+		change_variable = { which = hilbert_disticts value = 1 }
+	}
+}
+
+planet_event = {
+	id = rds_misc.1001
+	hide_window = yes
+	trigger = {
+		has_active_building = building_hilbert_space_create_machine
+	}
+	is_triggered_only = yes
+	immediate = {
+		subtract_variable = { which = hilbert_disticts value = 1 }
 	}
 }
 
@@ -239,6 +247,7 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		set_variable = { which = dynamic_housing_number value = value:dynamic_housing }
+		set_variable = { which = dynmic_amenities_number value = value:dynmic_amenities }
 		set_variable = { which = dynamic_country_resource_max_add_number value = value:dynamic_country_resource_max_add }
 	}
 }
@@ -252,6 +261,7 @@ event = {
 	immediate = {
 		FROM = {
 			set_variable = { which = dynamic_housing_number value = value:dynamic_housing }
+			set_variable = { which = dynmic_amenities_number value = value:dynmic_amenities }
 		}
 	}
 }
@@ -280,6 +290,11 @@ fleet_event = {
 	id = rds_misc.14
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = {
+		owner = {
+			has_country_flag = spawn_rds_bypass
+		}
+	}
 	immediate = {
 		if = {
 			limit = {

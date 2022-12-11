@@ -56,8 +56,17 @@ dynamic_energy_income = {
 	divide = 8
 	modifier = {
 		multiply = 0
+		NOT = {
+			is_scope_type = country
+		}
 		owner = { has_deficit = energy }
 	}
+	modifier = {
+		multiply = 0
+		is_scope_type = country
+		has_deficit = energy
+	}
+	min = 0
 }
 
 dynamic_energy_expenses = {
@@ -87,4 +96,11 @@ dynmic_laplace_demon = {
 	base = 0
 	add = value:dynamic_energy_income
 	multiply = modifier:planet_researchers_produces_mult
+	add = value:dynamic_energy_income
+}
+
+dynmic_amenities = {
+	base = 0
+	subtract = trigger:free_amenities
+	add = 10
 }

@@ -711,6 +711,32 @@ country_event = {
 		}
 	}
 	option = {
+		name = rds_setting.spawn_rds_bypass.on
+		trigger = {
+			NOT = {
+				has_country_flag = can_use_rds
+			}
+		}
+		hidden_effect = {
+			set_country_flag = spawn_rds_bypass
+			country_event = {
+				id = rds_setting.5
+			} 
+		}
+	}
+	option = {
+		name = rds_setting.spawn_rds_bypass.off
+		trigger = {
+			has_country_flag = spawn_rds_bypass
+		}
+		hidden_effect = {
+			remove_country_flag = spawn_rds_bypass
+			country_event = {
+				id = rds_setting.5
+			}
+		}
+	}
+	option = {
 		name = rds_setting.setting_console
 		trigger = {
 		}
