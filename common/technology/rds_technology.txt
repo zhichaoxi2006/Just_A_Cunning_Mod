@@ -23,20 +23,6 @@ tech_reality_distortion_system_armies = {
 	}
 }
 
-tech_reality_distortion_system_ship_components = {
-	cost = 143245
-	area = engineering
-	tier = 5
-	category = { statecraft }
-	weight = 0
-	is_dangerous = yes
-	prerequisites = {
-		tech_reality_distortion_system
-	}
-	potential = {
-	}
-}
-
 tech_reality_distortion_system_megastructures = {
 	cost = 243145
 	area = engineering
@@ -65,7 +51,58 @@ tech_reality_distortion_system_buildings = {
 	}
 }
 
+tech_hilbert_space_theory = {
+	cost = 286145
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	weight = 0
+	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	potential = {
+	}
+}
 
+tech_laplace_demon_manufacturing = {
+	cost = 286145
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	weight = 0
+	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	potential = {
+	}
+}
 
+tech_deduction_theory = {
+	cost = 286145
+	area = society
+	tier = 5
+	category = { psionics }
+	weight = 0
+	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	potential = {
+	}
+}
 
-
+tech_reaper_weapons_strategy = {
+	cost = 286145
+	area = physics
+	tier = 5
+	category = { particles }
+	weight = 0
+	is_dangerous = yes
+	prerequisites = {
+		tech_reality_distortion_system
+	}
+	potential = {
+	}
+}

@@ -1,0 +1,35 @@
+give_all_rds_tech = {
+	give_technology = {
+		tech = tech_reality_distortion_system
+		message = no
+	}
+	give_technology = {
+		tech = tech_reality_distortion_system_armies
+		message = no
+	}
+	give_technology = {
+		tech = tech_reality_distortion_system_megastructures
+		message = no
+	}
+	give_technology = {
+		tech = tech_reality_distortion_system_buildings
+		message = no
+	}
+	give_technology = {
+		tech = tech_hilbert_space_theory
+		message = no
+	}
+	give_technology = {
+		tech = tech_laplace_demon_manufacturing
+		message = no
+	}
+	give_technology = {
+		tech = tech_deduction_theory
+		message = no
+	}
+	give_technology = {
+		tech = tech_reaper_weapons_strategy
+		message = no
+	}
+	set_country_flag = has_rds_tech
+}

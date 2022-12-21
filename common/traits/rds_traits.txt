@@ -5,22 +5,7 @@ leader_trait_death = {
 	leader_trait = all
 }
 
-leader_trait_rds = {
-	cost = 0
-	icon = "gfx/interface/icons/traits/stellaris.dds"
-	immortal_leaders = yes
-	initial = no
-	randomized = no
-	leader_trait = { admiral }
-	leader_class = { admiral }
-	custom_tooltip = leader_trait_rds_tooltip
-	modifier = {
-		ships_upkeep_mult = -0.5
-		ship_weapon_range_mult = 0.40
-	}
-}
-
-trait_rds_mp = {
+trait_rds_mystical_power = {
 	cost = 0
 	initial = yes
 	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT PRESAPIENT }
@@ -32,9 +17,10 @@ trait_rds_mp = {
 		pop_environment_tolerance = 2
 		planet_colony_development_speed_mult = 5
 		planet_jobs_produces_mult = 4
-		pop_housing_usage_base = 0
+		pop_housing_usage_mult = -1
 		pop_demotion_time_mult = -10
 		planet_pops_upkeep_mult = -10
+		empire_size_pops_mult = -1 
 	}
 	slave_cost = {
 		energy = 50

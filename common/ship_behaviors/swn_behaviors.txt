@@ -2,4 +2,4 @@ ship_behavior = {
 	name = "pataphysics_strike_ship"
 	desc = "PATAPHYSICS_STRIKE_SHIP_BEHAVIOR_DESC"
 	ignore_combat_movement = yes
-}
+}  

@@ -8,25 +8,6 @@ country_event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		give_technology = {
-			tech = tech_reality_distortion_system
-			message = no
-		}
-		give_technology = {
-			tech = tech_reality_distortion_system_armies
-			message = no
-		}
-		give_technology = {
-			tech = tech_reality_distortion_system_ship_components
-			message = no
-		}
-		give_technology = {
-			tech = tech_reality_distortion_system_megastructures
-			message = no
-		}
-		give_technology = {
-			tech = tech_reality_distortion_system_buildings
-			message = no
-		}
+		give_all_rds_tech = yes
 	}
 }

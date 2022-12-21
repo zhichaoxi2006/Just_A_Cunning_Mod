@@ -1,12 +1,13 @@
 reality_distortion_system_army = {
+	icon = GFX_army_type_assault
 	time = 10
 	has_species = no
 	has_morale = no
-	damage = 500.00
-	health = 200.00
-	morale_damage = 200.00
+	damage = 10.00
+	health = 20.00
+	morale_damage = 10.00
 	collateral_damage = 1.00
-	war_exhaustion = 1.00
+	war_exhaustion = 100.00
 	prerequisites = { tech_reality_distortion_system_armies }
 	resources = {
 		category = armies

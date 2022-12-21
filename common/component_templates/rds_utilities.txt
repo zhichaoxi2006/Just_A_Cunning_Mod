@@ -14,11 +14,11 @@ utility_component_template = {
 			multiplier =  -2
 		}
 	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_deduction_theory }
 	component_set = "power_core"
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -29,7 +29,7 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 }
@@ -57,11 +57,11 @@ utility_component_template = {
 		ship_tracking_add = 50
 	}
 	
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_deduction_theory }
 	component_set = "sensor_components"
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -72,7 +72,7 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 }
@@ -145,7 +145,7 @@ utility_component_template = {
 			priority = 250
 		}
 		damage_per_day = {
-			damage = { min = 100 max = 200 }
+			damage = { min = 100000 max = 200000 }
 			accuracy = 1
 			shield_penetration = 1
 			armor_penetration = 1
@@ -158,12 +158,12 @@ utility_component_template = {
 	size = aux
 	icon = "GFX_ship_parts_reality_distortion_system"
 	icon_frame = 1
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_deduction_theory }
 	component_set = "REALITY_DISTORTION_SYSTEM"
 	power = -100
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	modifier = {
@@ -234,11 +234,11 @@ utility_component_template = {
 		shipclass_military_special
 		shipclass_starbase
 	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_deduction_theory }
 	component_set = "ftl_components"
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -249,7 +249,7 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 }
@@ -269,15 +269,15 @@ utility_component_template = {
 		}
 	}
 	ship_modifier = {
-		ship_base_speed_mult = 10
-		ship_speed_mult = 5
+		ship_base_speed_mult = 3
+		ship_speed_mult = 4
 		ship_evasion_add = 400
 	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_deduction_theory }
 	component_set = "thruster_components"
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -288,7 +288,7 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 }
@@ -316,7 +316,7 @@ utility_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -327,10 +327,10 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_reaper_weapons_strategy }
 }
 
 utility_component_template = {
@@ -356,7 +356,7 @@ utility_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -367,10 +367,10 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
+	prerequisites = { tech_reaper_weapons_strategy }
 }
 
 utility_component_template = {
@@ -396,7 +396,7 @@ utility_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
 	ai_weight = {
@@ -407,48 +407,8 @@ utility_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 	}
-	prerequisites = { tech_reality_distortion_system_ship_components }
-}
-
-utility_component_template = {
-	key = "AUX_360TOTALSECURITY"
-	size = aux
-	icon = "GFX_ship_part_360totalsecurity"
-	icon_frame = 1
-	prerequisites = { tech_reality_distortion_system_ship_components }
-	component_set = "360TOTALSECURITY"
-	power = -100
-	hidden = yes
-	should_ai_use = no
-	valid_for_country = {
-		NOT = {
-			has_country_flag = disable_rds_ship_components
-		}
-	}
-	modifier = {
-	}
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 10
-		}
-		upkeep = {
-			energy = 0.4
-			alloys = 0.2
-		}
-	}
-	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_components
-		}
-	}
+	prerequisites = { tech_reaper_weapons_strategy }
 }

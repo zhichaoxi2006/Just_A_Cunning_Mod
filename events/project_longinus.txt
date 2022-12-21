@@ -112,27 +112,7 @@ fleet_event = {
 		}
 		owner = {
 			add_relic = r_project_longinus
-			give_technology = {
-				tech = tech_reality_distortion_system
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_armies
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_ship_components
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_megastructures
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_buildings
-				message = no
-			}
-			set_country_flag = has_rds_tech
+			give_all_rds_tech = yes
 		}
 	}
 }
@@ -204,7 +184,6 @@ country_event = {
 	trigger = {
 	}
 	immediate = {
-		play_sound = dies_irae
 		every_country = {
 			limit = {
 				is_ai = no
@@ -212,9 +191,6 @@ country_event = {
 			country_event = {
 				id = project_longinus.1
 				days = 360
-			}
-			country_event = {
-				id = project_longinus.9
 			}
 		}
 	}

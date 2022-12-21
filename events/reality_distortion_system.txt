@@ -634,7 +634,6 @@ event = {
 				has_rds_flag = { FLAG = unbreakable_ship }
 				OR = {
 					EQUIPPED_WITH_RDS = yes
-					has_component = AUX_360TOTALSECURITY
 				}
 			}
 			This = {
@@ -708,10 +707,52 @@ event = {
 	id = rds.7
 	hide_window = yes
 	trigger = {
-		has_component = AUX_360TOTALSECURITY
+		always = no
 	}
 	is_triggered_only = yes
 	immediate = {
 		set_disable_at_health = 0.001
+	}
+}
+
+
+fleet_event = {
+	id = rds.8
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ship_class = shipclass_science_ship
+		has_fleet_flag = instant_survey
+		any_controlled_ship = {
+			EQUIPPED_WITH_RDS = yes
+		}
+	}
+	immediate = {
+		random_controlled_ship = { save_event_target_as = rds_target_ship }
+		if = {
+			limit = { solar_system = { any_system_planet = { is_surveyed = { who = root.owner status = no } } } }
+			solar_system = {
+				every_system_planet = {
+					limit = { is_surveyed = { who = root.owner status = no } }
+					set_surveyed = { surveyor = root.owner surveyed = yes }
+					fire_on_action = {
+						on_action = on_planet_surveyed
+						scopes = { from = root.owner fromfrom = root }
+					}
+					event_target:rds_target_ship = { fire_on_action = {
+						on_action = on_survey
+						scopes = { from = prev }
+					} }
+				}
+			}
+			owner = { fire_on_action = {
+				on_action = on_system_survey
+				scopes = { from = root.solar_system fromfrom = event_target:rds_target_ship }
+			} }
+			event_target:rds_target_ship = { fire_on_action = {
+				on_action = on_system_survey_ship
+				scopes = { from = root.solar_system }
+			} }
+		}
 	}
 }

@@ -5,7 +5,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_pd_ship_reaper"
 	icon_frame = 1
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	component_set = "PD_SHIP_REAPER"
 	resources = {
@@ -34,7 +34,7 @@ weapon_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -45,7 +45,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -58,7 +58,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_ship_reaper"
 	icon_frame = 1
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	component_set = "SHIP_REAPER"
 	resources = {
@@ -86,7 +86,7 @@ weapon_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -97,7 +97,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -110,7 +110,7 @@ weapon_component_template = {
 	entity = "medium_laser_gun_entity"
 	icon_frame = 1
 	prerequisites = {
-		tech_reality_distortion_system
+		tech_reaper_weapons_strategy
 	}
 	component_set = "SHIP_REAPER"
 	resources = {
@@ -138,7 +138,7 @@ weapon_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -149,7 +149,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -161,7 +161,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_ship_reaper"
 	icon_frame = 1
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	component_set = "SHIP_REAPER"
 	resources = {
@@ -189,7 +189,7 @@ weapon_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -200,7 +200,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -212,7 +212,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_extra_large_ship_reaper"
 	icon_frame = 1
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	component_set = "EXTRA_LARGE_SHIP_REAPER"
 	resources = {
@@ -237,7 +237,7 @@ weapon_component_template = {
 	armor_penetration = 42
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -248,7 +248,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -260,7 +260,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_titanic_ship_reaper"
 	icon_frame = 1
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	component_set = "TITANIC_SHIP_REAPER"
 	resources = {
@@ -285,7 +285,7 @@ weapon_component_template = {
 	armor_penetration = 42
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -296,7 +296,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -344,14 +344,14 @@ strike_craft_component_template = {
 	icon_frame = 1
 	component_set = "STRIKE_CRAFT_SARDINE"
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	tags = {
 		weapon_type_strike_craft
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -362,7 +362,7 @@ strike_craft_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }
@@ -406,7 +406,7 @@ weapon_component_template = {
 	shield_penetration = 42
 	tracking = 1.25
 	prerequisites = {
-		"tech_reality_distortion_system"
+		"tech_reaper_weapons_strategy"
 	}
 	component_set = RDS_MISSILE
 	tags = {
@@ -414,7 +414,7 @@ weapon_component_template = {
 	}
 	valid_for_country = {
 		NOT = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 	ai_weight = {
@@ -425,7 +425,7 @@ weapon_component_template = {
 		}
 		modifier = {
 			multiply = 0
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_w_components
 		}
 	}
 }

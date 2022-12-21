@@ -36,11 +36,6 @@ dynamic_housing = {
 	add = 10
 }
 
-dynamic_country_resource_max_add = {
-	base = 100000000
-	subtract = modifier:country_resource_max_add
-}
-
 dynamic_energy_income = {
 	base = 0
 	modifier = {
@@ -53,7 +48,7 @@ dynamic_energy_income = {
 		add = trigger:income
 		is_scope_type = country
 	}
-	divide = 8
+	divide = 20
 	modifier = {
 		multiply = 0
 		NOT = {
@@ -90,13 +85,6 @@ dynamic_ship_hull_mult = {
 dynamic_ship_hull_add = {
 	base = 0
 	subtract = trigger:has_hp
-}
-
-dynmic_laplace_demon = {
-	base = 0
-	add = value:dynamic_energy_income
-	multiply = modifier:planet_researchers_produces_mult
-	add = value:dynamic_energy_income
 }
 
 dynmic_amenities = {

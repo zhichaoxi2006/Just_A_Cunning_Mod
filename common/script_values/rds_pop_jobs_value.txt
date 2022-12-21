@@ -1,0 +1,27 @@
+dynmic_laplace_demon_operator_produce = {
+	base = 0
+	add = value:dynamic_energy_income
+	multiply = modifier:planet_researchers_produces_mult
+	add = value:dynamic_energy_income
+}
+
+dynmic_laplace_demon_operator_upkeep = {
+	base = 0
+	add = value:dynamic_energy_income
+	multiply = modifier:planet_researchers_upkeep_mult
+	add = value:dynamic_energy_income
+}
+
+dynmic_deduction_engineer = {
+	base = 0
+	add = value:dynamic_energy_expenses
+	multiply = modifier:planet_technician_produces_mult
+	add = value:dynamic_energy_expenses
+}
+
+dynmic_minerals_mass_energy_conversion_produce = {
+	base = 0
+	add = value:dynamic_energy_income
+	multiply = modifier:planet_miners_produces_mult
+	add = value:dynamic_energy_income
+}

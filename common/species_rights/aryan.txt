@@ -1,0 +1,11 @@
+citizenship_aryan_purge = {
+	token = citizenship_aryan_purge
+	new_pop_weight = 0.0
+	potential = {
+	}
+	allow = {
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

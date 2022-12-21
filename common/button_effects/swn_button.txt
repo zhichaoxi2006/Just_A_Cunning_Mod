@@ -16,14 +16,14 @@ fleet_rds_setting = {
 	}
 	allow = {
 		owner = {
-			is_ai = no
+			is_ai = no 
 		}
 	}
 	effect = {
 		custom_tooltip = custom_tooltip_button_rds_setting_fleet
 		hidden_effect = {
 			fleet_event = {
-				id = rds_setting.2
+				id = rds_setting.8
 			}
 		}
 	}

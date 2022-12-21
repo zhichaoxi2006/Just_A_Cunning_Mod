@@ -1,15 +1,15 @@
 ﻿l_simp_chinese:
- #Button_Effects
+#Button_Effects
  custom_tooltip_button_rds_setting_fleet: "现实扭曲系统设置"
 
- #Behaviours
+#Behaviours
  PATAPHYSICS_STRIKE_SHIP_BEHAVIOR_DESC: "常长老们喜欢用的作战AI，使用此AI的舰船直接由常长老操控。"
  
- #Bypass
+#Bypass
  RDS_WORMHOLE_GALACTIC: "现实裂缝"
  RDS_WORMHOLE_DESC: "舰队在$quantum_catapult_rds$中弹射时现实撕裂的产物。"
 
- #Components
+#Components
  360TOTALSECURITY: "360安全卫士"
  360TOTALSECURITY_DESC: "来自于上层叙事的最高防御，即使是打破第四面墙的大能也对这玩意无可奈何。"
  SMALL_360TOTALSECURITY: "360安全卫士"
@@ -50,16 +50,16 @@
  aura_somebody_else_problem: "别人的问题场"
  aura_enemy_marker: "敌人标记光环"
 
- #Ship_size
+#Ship_size
  quantum_bomb: "量子炸弹"
- quantum_bomb_plural: ""
+ quantum_bomb_plural: "量子炸弹"
 
- #Section Template
+#Section Template
  QUANTUM_BOMB_MID_SECTION: "$quantum_bomb$"
 
- #Technology
+#Technology
  tech_reality_distortion_system: "超形上学科技"
- tech_reality_distortion_system_desc: "使我们有了可以让我们从下层叙事改变上层叙事的办法"
+ tech_reality_distortion_system_desc: "戏里戏外，其实为一。"
  tech_reality_distortion_system_armies: "超形上学军事实体"
  tech_reality_distortion_system_armies_desc: "使得我们能把超形上学实体作为陆军使用。"
  tech_reality_distortion_system_ship_components: "超形上学舰船部件"
@@ -68,13 +68,21 @@
  tech_reality_distortion_system_megastructures_desc: "得到了超形上学科技，我们可以制造出曾经不敢想象的东西"
  tech_reality_distortion_system_buildings: "超形上学建筑"
  tech_reality_distortion_system_buildings_desc: "拥有了超形上学科技，我们可以制造出曾经不敢想象的东西"
+ tech_hilbert_space_theory: "希尔伯特空间理论"
+ tech_hilbert_space_theory_desc: "制造出希尔伯特空间所需要的理论"
+ tech_laplace_demon_manufacturing: "拉普拉斯妖制造"
+ tech_laplace_demon_manufacturing_desc: "仅有制造拉普拉斯妖的办法，没有拉普拉斯妖的原理。"
+ tech_deduction_theory: "演绎理论"
+ tech_deduction_theory_desc: "演绎，我们终将演绎超验真理。"
+ tech_reaper_weapons_strategy: "收割者武器理论"
+ tech_reaper_weapons_strategy_desc: "为了迎合现实扭曲系统，我们需要一种全新的武器概念。"
 
- #PFT
+#PFT
  pft_accelerationism: "加速主义派"
  pft_accelerationism_desc: "他们提倡用朗基努斯计划来提前迎接国家的命定之死，以便终结一切的痛苦。"
  accelerationism_warming: ""
 
- #Building
+#Building
  building_reality_distortion_system: "现实扭曲系统"
  building_reality_distortion_system_desc: "RDS系列建筑的核心，RDS系列建筑需要它才能运作"
  building_rds_pop_creater: "RDS人口生成器"
@@ -96,7 +104,7 @@
  building_hilbert_space_create_machine: "希尔伯特空间创造机"
  building_hilbert_space_create_machine_desc: "这台机器的诞生使我们的殖民地进入了无限扩张的时代。"
 
- #Pop_job
+#Pop_Job
  job_laplace_demon_operator: "拉普拉斯妖操作员"
  job_laplace_demon_operator_plural: "拉普拉斯妖操作员"
  job_laplace_demon_operator_desc: "操作拉普拉斯妖是一个技术活，需要极高的知识水平。"
@@ -105,7 +113,6 @@
  job_deduction_engineer_plural: "演绎工程师"
  job_deduction_engineer_desc: "他们通过演绎故事来生产巨量的能量，尽管我们并不知道其中的原理所在。"
  mod_job_deduction_engineer_add: "演绎工程师岗位"
- mod_job_mass_energy_conversion_miner_add: "质能转换矿工岗位"
  job_multiverse_trader: "多元宇宙商人"
  job_multiverse_trader_plural: "多元宇宙商人"
  job_multiverse_trader_desc: "多元宇宙商人们行走于各个宇宙中与他人交易，是贸易市场供货商的大头。"
@@ -146,43 +153,87 @@
  job_hilbert_hotel_clerk_plural: "希尔伯特旅馆职员"
  job_hilbert_hotel_clerk_desc: "一个无限大的旅馆需要许多人来管理。"
  mod_job_hilbert_hotel_clerk_add: "希尔伯特旅馆职员岗位"
+ 
+ job_hive_laplace_demon_operator: "拉普拉斯妖操作子个体"
+ job_hive_laplace_demon_operator_plural: "拉普拉斯妖操作子个体"
+ job_hive_laplace_demon_operator_desc: "操作拉普拉斯妖是一个技术活，需要极高的知识水平。"
+ mod_job_hive_laplace_demon_operator_add: "拉普拉斯妖操作子个体岗位"
+ job_hive_deduction_engineer: "演绎子个体"
+ job_hive_deduction_engineer_plural: "演绎子个体"
+ job_hive_deduction_engineer_desc: "他们通过演绎故事来生产巨量的能量，尽管我们并不知道其中的原理所在。"
+ mod_job_hive_deduction_engineer_add: "演绎子个体岗位"
+ job_hive_minerals_mass_energy_conversion: "矿物质能转换子个体"
+ job_hive_minerals_mass_energy_conversion_plural: "矿物质能转换子个体"
+ job_hive_minerals_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为矿物。"
+ mod_job_hive_minerals_mass_energy_conversion_add: "矿物质能转换子个体岗位"
+ job_hive_alloys_resources_mass_energy_conversion: "合金质能转换子个体"
+ job_hive_alloys_resources_mass_energy_conversion_plural: "合金质能转换子个体"
+ job_hive_alloys_resources_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为合金。"
+ mod_job_hive_alloys_resources_mass_energy_conversion_add: "合金质能转换子个体岗位"
+ job_hive_consumer_goods_resources_mass_energy_conversion: "消费品质能转换子个体"
+ job_hive_consumer_goods_resources_mass_energy_conversion_plural: "消费品质能转换子个体"
+ job_hive_consumer_goods_resources_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为消费品。"
+ mod_job_hive_consumer_goods_resources_mass_energy_conversion_add: "消费品质能转换子个体岗位"
+ job_hive_volatile_motes_mass_energy_conversion: "易爆微粒质能转换子个体"
+ job_hive_volatile_motes_mass_energy_conversion_plural: "易爆微粒质能转换子个体"
+ job_hive_volatile_motes_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为易爆微粒。"
+ mod_job_hive_volatile_motes_mass_energy_conversion_add: "易爆微粒质能转换子个体岗位"
+ job_hive_exotic_gases_mass_energy_conversion: "异星天然气质能转换子个体"
+ job_hive_exotic_gases_mass_energy_conversion_plural: "异星天然气质能转换子个体"
+ job_hive_exotic_gases_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为异星天然气。"
+ mod_job_hive_exotic_gases_mass_energy_conversion_add: "异星天然气质能转换子个体岗位"
+ job_hive_rare_crystals_mass_energy_conversion: "稀有水晶质能转换子个体"
+ job_hive_rare_crystals_mass_energy_conversion_plural: "稀有水晶质能转换子个体"
+ job_hive_rare_crystals_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为稀有水晶。"
+ mod_job_hive_rare_crystals_mass_energy_conversion_add: "稀有水晶质能转换子个体岗位"
+ job_hive_rare_resources_mass_energy_conversion: "稀有资源质能转换子个体"
+ job_hive_rare_resources_mass_energy_conversion_plural: "稀有资源质能转换子个体"
+ job_hive_rare_resources_mass_energy_conversion_desc: "他们用加装了现实扭曲系统的物质创造光束将能量转化为稀有资源。"
+ mod_job_hive_rare_resources_mass_energy_conversion_add: "稀有资源质能转换子个体岗位"
+ job_hive_hilbert_hotel_manager: "希尔伯特旅馆管理子个体"
+ job_hive_hilbert_hotel_manager_plural: "希尔伯特旅馆管理子个体"
+ job_hive_hilbert_hotel_manager_desc: "管理一个希尔伯特旅馆是个难题，这需要专业的知识。"
+ mod_job_hive_hilbert_hotel_manager_add: "希尔伯特旅馆管理子个体岗位"
+ job_hive_hilbert_hotel_clerk: "希尔伯特旅馆维护子个体"
+ job_hive_hilbert_hotel_clerk_plural: "希尔伯特旅馆维护子个体"
+ job_hive_hilbert_hotel_clerk_desc: "一个无限大的旅馆需要许多人来管理。"
+ mod_job_hive_hilbert_hotel_clerk_add: "希尔伯特旅馆维护子个体岗位"
 
- #Trait
+#Trait
  leader_trait_death: "死亡标记"
  leader_trait_death_desc: "这个领袖浑身充满了不祥的气息。"
  leader_trait_rds: "现实扭曲系统"
  leader_trait_rds_desc: "这位领袖装配了现实扭曲系统，在战斗中能大范围的扭曲现实。"
  leader_trait_rds_tooltip: "该位领袖领导的舰队所有舰船将被视有装配RDS。"
- trait_rds_mp: "神秘之力"
- trait_rds_mp_desc: "依据超验真理将自己改造后得到的东西，可以行使部分超然实体的权能。"
+ trait_rds_mystical_power: "神秘之力"
+ trait_rds_mystical_power_desc: "依据超验真理将自己改造后得到的东西，可以行使部分超然实体的权能。"
 
- #Edicts
+#Edicts
  edict_sas_warship_console: "JACM设置面板"
  edict_sas_warship_console_desc: "你可以随时在这里调整Just A Cunning Mod的设置。"
  edict_site_project_longinus: "生成朗基努斯计划考古站点"
- edict_site_project_longinus_desc: ""
+ edict_site_project_longinus_desc: "开局为孤立星团请使用此法令。"
  edict_aryan_superman_assimilation_order: "雅利安超人同化令"
  edict_aryan_superman_assimilation_order_desc: "将所有的非雅利安的种族同化为雅利安人。"
  edict_hyper_relay_windup_delete: "超空间中继器充能时间移除"
  edict_hyper_relay_windup_delete_desc: "移除掉超空间中继器10天的充能时间。"
- 
- 
- #Origin
+
+#Origin
  origin_transdimensional: "超越叙事之力"
  origin_transdimensional_desc: "我本来不想再说下去的，我已经观察了这个文明好几百年了，他们终于将要在核战中自我毁灭。可是如果这个文明毁灭了，我又干什么呢？再找一个文明观察吗？不，我已经看过无数的土著文明在进入太空之前就毁灭了，我是彻底不相信奇迹了。与其坐以待毙，不如直接击碎这无聊的概率。于是，我就下场干涉，给予了他们他们不应拥有了东西。不过这也无所谓了，我也不过在寻乐子罢了。"
  civic_tooltip_transdimensional_effects: "开局给予Mod全体科技"
 
- #Armies
+#Armies
  reality_distortion_system_army: "超形上学实体"
  reality_distortion_system_army_desc: "它们不会在战斗时死去，还会在死后自我复制。"
 
- #Decision
+#Decision
  decision_unkeep_remover: "开启维护费移除系统"
  decision_planet_unkeep_remover_effects_short: "这将会使整个星球无需维护费。"
  decision_unkeep_remover_remove: "关闭维护费移除系统"
  decision_planet_unkeep_remover_remove_effects_short: "恢复到正常"
 
- #Megastrctures
+#Megastrctures
  RDS_OMNI_Core: "RDS核心引擎"
  RDS_OMNI_Core_DESC: "通过叙事修改无限的力量生成需求的能量，也附有资源存储的功能"
  RDS_OMNI_Core_MEGASTRUCTURE_DETAILS: "以叙事修改为基础的永动机。"
@@ -194,7 +245,7 @@
  rds_wormhole_node_dummy: "$RDS_WORMHOLE_GALACTIC$"
  rds_wormhole_node_dummy_DESC: "$RDS_WORMHOLE_GALACTIC_DESC$"
  
- #RDS_SETTING
+#RDS_SETTING
  rds_setting.gui.name: "现实扭曲系统控制面板"
  rds_setting.fleet.desc.conditional: "现实扭曲系统控制面板，你可以在这里调整现实扭曲系统的设置参数。"
  rds_setting.country.desc.conditional: "现实扭曲系统控制面板，你可以在这里调整现实扭曲系统的默认设置参数。"
@@ -219,7 +270,7 @@
  rds_setting.no_disabled_ship.off: "复活抑制机关——§R关闭§!"
  rds_setting.no_disabled_ship.off.tooltip: "关闭复活抑制机关。"
  rds_setting.unbreakable_ship.on: "舰船无敌机关——§G开启§!"
- rds_setting.unbreakable_ship.on.tooltip: "这将导致你的舰船不可破坏."
+ rds_setting.unbreakable_ship.on.tooltip: "这将导致你的舰船不可破坏。（不建议给某些魔怔舰船用，因为会发生什么是不可知的）"
  rds_setting.unbreakable_ship.off: "舰船无敌机关——§R关闭§!"
  rds_setting.unbreakable_ship.off.tooltip: "这将让你的舰船可以被破坏。"
  rds_setting.no_disengage.on: "脱离阻止机关——§G开启§!"
@@ -276,57 +327,68 @@
  rds_setting.system_wide.off.tooltip: "现实扭曲系统的影响范围将会是星系。"
  rds_setting.default_settings: "写入默认设定"
  rds_setting.gui_close: "关闭"
+ rds_setting.science_ship.setting: "科研船特供"
+ rds_setting.7.name: "现实扭曲系统科研船特供功能设置面板"
+ rds_setting.7.desc: "现实扭曲系统控制面板，你可以在这里调整现实扭曲系统的设置参数。"
+ rds_setting.instant_survey.on: "瞬间探索——§G开启§!"
+ rds_setting.instant_survey.on.tooltip: "启动将会使科研船在进入星系的瞬间完成探索。"
+ rds_setting.instant_survey.off: "瞬间探索——§R关闭§!"
+ rds_setting.instant_survey.off.tooltip: "关闭该功能"
+ 
+ rds_setting.8.name: "现实扭曲系统通用装配面板"
+ rds_setting.8.desc: "在这里给你的事件船只装上RDS吧。"
+ rds_setting.equipped_with_rds: "RDS装配"
+ rds_setting.rds_setting.open: "现实扭曲系统控制面板"
 
 #Modifers
-swn_mod_planet_jobs_upkeep_mult: "超形上学加护"
-swn_mod_planet_pops_organics_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_planet_pops_robotics_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_planet_structures_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_pop_housing_usage_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_shield_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_armor_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_hull_repair_anti: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_hull_repair_anti_static: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_speed_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_fire_rate_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_weapon_damage: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_weapon_range_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_orbital_bombardment_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_disengage_chance_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_windup_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_interstellar_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_jumpdrive_cooldown_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_ftl_jumpdrive_range_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_evasion_add: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_science_ship_survey_speed: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_archaeological_site_excavation_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_anomaly_research_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_accuracy_add: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_accuracy_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_hull_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_base_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ships_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_leader_age: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ascension_perks_add: "$swn_mod_planet_jobs_upkeep_mult$"
-swn_mod_ship_hull_add: "$swn_mod_planet_jobs_upkeep_mult$"
-mod_enemy_marker: "敌人标记"
-l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
+ swn_mod_planet_jobs_upkeep_mult: "超形上学加护"
+ swn_mod_planet_pops_organics_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_planet_pops_robotics_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_planet_structures_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_pop_housing_usage_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_shield_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_armor_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_hull_repair_anti: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_hull_repair_anti_static: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_speed_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_fire_rate_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_weapon_damage: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_weapon_range_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_orbital_bombardment_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_disengage_chance_reduction: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_windup_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_interstellar_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_jumpdrive_cooldown_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_ftl_jumpdrive_range_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_evasion_add: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_science_ship_survey_speed: "$swn_mod_planet_jobs_upkeep_mult$"  swn_mod_ship_archaeological_site_excavation_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_anomaly_research_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_accuracy_add: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_accuracy_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_hull_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_base_speed_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ships_upkeep_mult: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_leader_age: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ascension_perks_add: "$swn_mod_planet_jobs_upkeep_mult$"
+ swn_mod_ship_hull_add: "$swn_mod_planet_jobs_upkeep_mult$"
+ mod_enemy_marker: "敌人标记"
+ l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
 
-#PROJECT_LONGINUS
+#Project Longinus
  project_longinus: "朗基努斯计划"
  project_longinus_desc: "一艘与我们国家空间站外貌相差无几的空间站忽然出现在这颗星球的轨道上，这引起了我们的注意。"
  project_longinus.2.name: "空间站"
  project_longinus.2.desc: "意外地是，我们十分顺利地进入了空间站，而且内部也和我们国家的空间站相差无几。"
  project_longinus.2.option: "真奇怪"
  project_longinus.3.name: "投影仪"
- project_longinus.3.desc: "我们在空间站中发现了一台全息投影仪，上面画了一些奇怪的符号，经我们的语言学家翻译，这是我们国家在前太空时期使用的一种语言，是一种已经废弃使用的存在，上面写着：“收件人：[Root.ruler.GetName]”。"
- project_longinus.3.option: "先不管这个了，把投影仪打开吧"
+ project_longinus.3.desc: "我们在空间站中发现了一台通讯装置，上面画了一些奇怪的符号，经我们的语言学家翻译，这是我们国家在前太空时期使用的一种语言，是一种已经废弃使用的存在，上面写着：“收件人：[Root.ruler.GetName]”。"
+ project_longinus.3.option: "先不管这个了，把通讯装置打开吧"
  project_longinus.4.name: "Self-Reference"
- project_longinus.4.desc: "我们开启了全息投影仪，但是我们永远都想不到，全息投影仪竟然投影出了\n\n§H我是无名之人，你不需要知道我是谁，这种空间站是上层叙事委托我建造的东西。里面存储了一份电子文档，关于如何使用上层叙事的力量的。我参阅过那份档案，里面明确写到：该档案所提供的方法仅在有上层叙事在场时才有效。所以我猜测，空间站会且仅会传送到存在上层叙事的宇宙中，你们既然已经打开了投影仪，也就表明了你们这边大概是有上层叙事的，不过也不排除我的猜想是错误的。但是，上层叙事肯定知道真相如何，因为投影仪的内容，不仅你们看得见，上层叙事也看得见。§!"
+ project_longinus.4.desc: "通讯装置在我们的调试下启动了。\n\n§H先让让我自我介绍一下，我是真上之民的使徒。奉真上之民的命令，我将给予你们足以改变整个宇宙的技术。我并不清楚为什么真上之民要给予你们此等强大之力量，不过也无所谓，既然真上之民要给予此等强大的力量，必然有他的理由就是了，我也拦不了。那技术就在这空间站里，去寻找它吧！还有，他还给你们送了一份小礼物，那是什么，你们等会就知道了§!"
  project_longinus.4.option: "？？？"
  project_longinus.5.name: "之后的探索"
- project_longinus.5.desc: "在之后的在空间站探索中，我们找到全息投影仪投影实体所所说的“朗基努斯计划”，并在其附近发现了存储超形上学科技的数据库。但是说来也奇怪，为什么他说上层叙事在我们这里呢？§P（是啊，怎么回事呢？你又不是不知道你到底是谁）§!"
+ project_longinus.5.desc: "在之后的在空间站探索中，我们找到那份小礼物，并在其附近发现了存储一个数据库。"
  project_longinus.5.option: "回去开庆功宴吧"
  r_project_longinus: "$project_longinus$"
  r_project_longinus_desc: "上层叙事默许制造的，能终结上层叙事对这个世界的干涉的装置。（造型是EVA的，效果是SCP的。）"
@@ -338,26 +400,28 @@ l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
  project_longinus.8.desc: "这里是朗基努斯计划的真正制造者，我知道你就是上层叙事，因为我也是。这里我要告诉你，如果还想让你的存档还能玩，请回档到朗基努斯计划启动前的时间点。请勿回档到朗基努斯计划开启后，这将会使这条信息再次显现，游戏也会在朗基努斯计划开启一年整时崩溃。"
  project_longinus.8.1: "知道了"
 
-#mod_setting
- rds_setting.5.name: "CMWDM设置面板"
- rds_setting.5.desc: "在这里设置CMWDM的各项设置"
+#Mod Setting
+ rds_setting.5.name: "JACM设置面板"
+ rds_setting.5.desc: "在这里设置JACM的各项设置"
  rds_setting.get_technology: "获取科技"
  rds_setting.can_ai_use_rds_on: "允许AI使用RDS"
  rds_setting.can_ai_use_rds_off: "禁止AI使用RDS"
  rds_setting.setting_console: "RDS默认设置面板"
- rds_setting.content_setting_console: "CMWDM内容设置"
+ rds_setting.content_setting_console: "JACM内容设置"
  rds_setting.self_delete: "舰船自毁程序"
  rds_setting.can_use_rds_on: "启用舰船RDS"
  rds_setting.can_use_rds_off: "禁用舰船RDS"
  rds_setting.spawn_rds_bypass.on: "允许量子弹弓(RDS版)生成现实裂缝"
  rds_setting.spawn_rds_bypass.off: "禁止量子弹弓(RDS版)生成现实裂缝"
  
- rds_setting.6.name: "CMWDM内容设置"
- rds_setting.6.desc: "在这调整CMWDM的启用内容"
- rds_setting.ship_components.on: "允许使用CMWDM舰船部件"
- rds_setting.ship_components.off: "禁止使用CMWDM舰船部件"
+ rds_setting.6.name: "JACM内容设置"
+ rds_setting.6.desc: "在这调整JACM的启用内容"
+ rds_setting.ship_u_components.on: "允许使用JACM舰船部件"
+ rds_setting.ship_u_components.off: "禁止使用JACM舰船部件"
+ rds_setting.ship_w_components.on: "允许使用JACM舰船武器"
+ rds_setting.ship_w_components.off: "禁止使用JACM舰船武器"
 
-#system_destroyer
+#System Destroyer
  rds_misc.7.name: "量子炸弹"
  rds_misc.7.desc: "在此设定量子炸弹的攻击方式。"
  rds_system_destroyer.neutron_extermination: "中子灭杀"
@@ -367,5 +431,10 @@ l_mod_enemy_marker: "添加一个供RDS识别敌我的标记。"
  rds_system_destroyer.gui_close: "取消启动"
  rds_system_destroyer.gui_close.tooltip: ""
 
+#Species_Right
+ citizenship_aryan_purge: "转化为雅利安人"
+ citizenship_aryan_purge_tooltip: "X"
+ citizenship_aryan_purge_tooltip_delayed: "X"
+
 # New Dynamic Mod Menu support.
- cmwdm_menu_name: "“动态修改作弊模式”模组设置面板"
+ cmwdm_menu_name: "“只是个狡猾模组”模组设置面板"

@@ -187,7 +187,7 @@ event = {
 	id = rds_misc.8
 	hide_window = yes
 	trigger = {
-		always = no
+		has_trait = trait_rds_mystical_power
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -203,11 +203,45 @@ event = {
 	id = rds_misc.9
 	hide_window = yes
 	trigger = {
-		has_active_building = building_rds_stronghold
+		This = {
+			has_building = building_rds_stronghold
+		}
 	}
 	is_triggered_only = yes
 	immediate = {
 		This = {
+			add_planet_devastation = value:dynamic_planet_devastation
+		}
+	}
+}
+
+event = {
+	id = rds_misc.901
+	hide_window = yes
+	trigger = {
+		This = {
+			has_building = building_rds_stronghold
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		create_pop = {
+			species = This.owner.owner_species
+		}
+	}
+}
+
+event = {
+	id = rds_misc.902
+	hide_window = yes
+	trigger = {
+		FromFromFrom = {
+			has_building = building_rds_stronghold
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		FromFromFrom = {
 			add_planet_devastation = value:dynamic_planet_devastation
 		}
 	}
@@ -248,7 +282,6 @@ event = {
 	immediate = {
 		set_variable = { which = dynamic_housing_number value = value:dynamic_housing }
 		set_variable = { which = dynmic_amenities_number value = value:dynmic_amenities }
-		set_variable = { which = dynamic_country_resource_max_add_number value = value:dynamic_country_resource_max_add }
 	}
 }
 
@@ -266,22 +299,15 @@ event = {
 	}
 }
 
-#Leader_RDS
+#Faster_Terraforming
 event = {
 	id = rds_misc.13
 	hide_window = yes
 	trigger = {
-		has_technology = tech_reality_distortion_system
-		from = {
-			leader_class = admiral
-		}
-		always = no
 	}
 	is_triggered_only = yes
 	immediate = {
-		from = {
-			add_trait = leader_trait_rds
-		}
+		
 	}
 }
 

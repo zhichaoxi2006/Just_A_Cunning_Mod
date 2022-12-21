@@ -40,8 +40,7 @@ building_rds_pop_creater = {
     resources = {
         category = planet_buildings
         cost = {
-            minerals = 100
-            energy = 100
+            influence = 1001
         }
         upkeep = {
             energy = 2
@@ -64,18 +63,38 @@ building_wheeler_performing_reactors = {
     resources = {
         category = planet_buildings
         cost = {
-            minerals = 100
-            energy = 100
+            minerals = 200
         }
     }
     allow = {
 
     }
-    planet_modifier = {
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_authority = auth_hive_mind
+                    has_authority = auth_machine_intelligence
+                }
+            }
+        }
         job_deduction_engineer_add = 1
     }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_authority = auth_machine_intelligence
+                    has_authority = auth_hive_mind
+                }
+            }
+        }
+        job_hive_deduction_engineer_add = 1
+    }
     prerequisites = {
-        tech_reality_distortion_system_buildings
+        tech_deduction_theory
     }
 }
 
@@ -87,17 +106,37 @@ building_hilbert_hotel = {
     resources = {
         category = planet_buildings
         cost = {
-            minerals = 100
-            energy = 100
+            minerals = 200
         }
     }
     allow = {
     }
-    planet_modifier = {
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_authority = auth_hive_mind
+                    has_authority = auth_machine_intelligence
+                }
+            }
+        }
         job_hilbert_hotel_manager_add = 1
     }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_authority = auth_machine_intelligence
+                    has_authority = auth_hive_mind
+                }
+            }
+        }
+        job_hive_hilbert_hotel_manager_add = 1
+    }
     prerequisites = {
-        tech_reality_distortion_system_buildings
+        tech_hilbert_space_theory
     }
 }
 
@@ -109,13 +148,21 @@ building_mass_energy_conversion_center = {
     resources = {
         category = planet_buildings
         cost = {
-            minerals = 100
-            energy = 100
+            minerals = 200
         }
     }
     allow = {
     }
-    planet_modifier = {
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_authority = auth_hive_mind
+                    has_authority = auth_machine_intelligence
+                }
+            }
+        }
         job_minerals_mass_energy_conversion_add = 1
         job_alloys_resources_mass_energy_conversion_add = 1
         job_consumer_goods_resources_mass_energy_conversion_add = 1
@@ -123,6 +170,24 @@ building_mass_energy_conversion_center = {
         job_exotic_gases_mass_energy_conversion_add = 1
         job_rare_crystals_mass_energy_conversion_add = 1
         job_rare_resources_mass_energy_conversion_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_authority = auth_machine_intelligence
+                    has_authority = auth_hive_mind
+                }
+            }
+        }
+        job_hive_minerals_mass_energy_conversion_add = 1
+        job_hive_alloys_resources_mass_energy_conversion_add = 1
+        job_hive_consumer_goods_resources_mass_energy_conversion_add = 1
+        job_hive_volatile_motes_mass_energy_conversion_add = 1
+        job_hive_exotic_gases_mass_energy_conversion_add = 1
+        job_hive_rare_crystals_mass_energy_conversion_add = 1
+        job_hive_rare_resources_mass_energy_conversion_add = 1
     }
     prerequisites = {
         tech_reality_distortion_system_buildings
@@ -137,8 +202,7 @@ building_laplace_research_facility = {
     resources = {
         category = planet_buildings
         cost = {
-            minerals = 100
-            energy = 100
+            minerals = 200
         }
         upkeep = {
             alloys = 1
@@ -146,11 +210,32 @@ building_laplace_research_facility = {
     }
     allow = {
     }
-    planet_modifier = {
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_authority = auth_hive_mind
+                    has_authority = auth_machine_intelligence
+                }
+            }
+        }
         job_laplace_demon_operator_add = 1
     }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_authority = auth_machine_intelligence
+                    has_authority = auth_hive_mind
+                }
+            }
+        }
+        job_hive_laplace_demon_operator_add = 1
+    }
     prerequisites = {
-        tech_reality_distortion_system_buildings
+        tech_laplace_demon_manufacturing
     }
 }
 
@@ -162,18 +247,13 @@ building_rds_resource_cage = {
     resources = {
         category = planet_buildings
         cost = {
-            minerals = 100
-            energy = 100
+            minerals = 100  
         }
     }
     allow = {
     }
     triggered_country_modifier = {
-        potential = {
-            is_variable_set = dynamic_country_resource_max_add_number
-        }
-        country_resource_max_add = 1
-        multiplier = dynamic_country_resource_max_add_number
+        country_resource_max_add = 50000000
     }
     on_built = {
         planet_event = {
@@ -181,7 +261,7 @@ building_rds_resource_cage = {
         }
     }
     prerequisites = {
-        tech_reality_distortion_system_buildings
+        tech_hilbert_space_theory
     }
 }
 
@@ -191,20 +271,16 @@ building_rds_stronghold = {
     base_buildtime = 60
 	icon = building_stronghold
 	category = army
+    planetary_ftl_inhibitor = yes
     resources = {
         category = planet_buildings
         cost = {
             minerals = 100
-            energy = 100
         }
     }
     planet_modifier = {
         planet_orbital_bombardment_damage = -10
-        army_collateral_damage_mult = -10
-        pop_defense_armies_add = 10
-    }
-    convert_to = {
-        building_rds_stronghold
+        pop_defense_armies_add = 50
     }
     prerequisites = {
         tech_reality_distortion_system_buildings
@@ -215,12 +291,20 @@ building_multiverse_trade_center = {
     empire_limit = 1
     base_buildtime = 60
 	icon = building_galactic_stock_exchange
+    potential = {
+        exists = owner
+            owner = {
+                NOT = {
+                    has_authority = auth_hive_mind
+                    has_authority = auth_machine_intelligence
+                }
+            }
+    }
 	category = trade
     resources = {
         category = planet_buildings
         cost = {
             minerals = 100
-            energy = 100
         }
     }
     planet_modifier = {
@@ -236,12 +320,11 @@ building_multiverse_trade_center = {
 building_hilbert_space_create_machine = {
     base_cap_amount = 1
     base_buildtime = 60
-	category = trade
+	category = government
     resources = {
         category = planet_buildings
         cost = {
             minerals = 100
-            energy = 100
         }
     }
     triggered_planet_modifier = {
@@ -252,6 +335,6 @@ building_hilbert_space_create_machine = {
         set_variable = { which = hilbert_disticts value = 0 }
     }
     prerequisites = {
-        tech_reality_distortion_system_buildings
+        tech_hilbert_space_theory
     }
 }

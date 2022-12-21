@@ -55,6 +55,16 @@ event = {
 	}
 	immediate = {
 	}
+	#SCIENCE_SHIP
+	option = {
+		name = rds_setting.science_ship.setting
+		trigger = {
+		}
+		custom_tooltip = rds_setting.planet_destroyer.on.tooltip
+		hidden_effect = {
+			dynamic_event = { EVENT = rds_setting.7 }
+		}
+	}
 	#PLANET_DESTROYER
 	option = {
 		name = rds_setting.planet_destroyer.on
@@ -714,7 +724,7 @@ country_event = {
 		name = rds_setting.spawn_rds_bypass.on
 		trigger = {
 			NOT = {
-				has_country_flag = can_use_rds
+				has_country_flag = spawn_rds_bypass
 			}
 		}
 		hidden_effect = {
@@ -802,23 +812,55 @@ country_event = {
 	}
 	#Ship_Components
 	option = {
-		name = rds_setting.ship_components.on
+		name = rds_setting.ship_u_components.on
 		trigger = {
 			NOT = {
-				has_country_flag = disable_rds_ship_components
+				has_country_flag = disable_rds_ship_u_components
 			}
 		}
 		hidden_effect = {
-			set_country_flag = disable_rds_ship_components
+			set_country_flag = disable_rds_ship_u_components
+			country_event = {
+				id = rds_setting.6
+			}
 		}
 	}
 	option = {
-		name = rds_setting.ship_components.off
+		name = rds_setting.ship_u_components.off
 		trigger = {
-			has_country_flag = disable_rds_ship_components
+			has_country_flag = disable_rds_ship_u_components
 		}
 		hidden_effect = {
-			remove_country_flag = disable_rds_ship_components
+			remove_country_flag = disable_rds_ship_u_components
+			country_event = {
+				id = rds_setting.6
+			}
+		}
+	}
+	option = {
+		name = rds_setting.ship_w_components.on
+		trigger = {
+			NOT = {
+				has_country_flag = disable_rds_ship_w_components
+			}
+		}
+		hidden_effect = {
+			set_country_flag = disable_rds_ship_w_components
+			country_event = {
+				id = rds_setting.6
+			}
+		}
+	}
+	option = {
+		name = rds_setting.ship_w_components.off
+		trigger = {
+			has_country_flag = disable_rds_ship_w_components
+		}
+		hidden_effect = {
+			remove_country_flag = disable_rds_ship_w_components
+			country_event = {
+				id = rds_setting.6
+			}
 		}
 	}
 	option = {
@@ -829,6 +871,107 @@ country_event = {
 			country_event = {
 				id = rds_setting.5
 			}
+		}
+	}
+}
+
+event = {
+	id = rds_setting.7
+	title = rds_setting.7.name
+	desc = rds_setting.7.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	force_open = yes	
+	picture_event_data = {
+		room = "crisis_room"
+	}
+	location = root
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	#INSTANT_SURVEY
+	option = {
+		name = rds_setting.instant_survey.on
+		trigger = {
+			NOT = {
+				dynamic_flag_check = { DYNAMIC_FLAG = instant_survey }
+			}
+		}
+		custom_tooltip = rds_setting.instant_survey.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = instant_survey }
+			dynamic_event = { EVENT = rds_setting.7 }
+		}
+	}
+	option = {
+		name = rds_setting.instant_survey.off
+		trigger = {
+			dynamic_flag_check = { DYNAMIC_FLAG = instant_survey }
+		}
+		custom_tooltip = rds_setting.instant_survey.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = instant_survey }
+			dynamic_event = { EVENT = rds_setting.7 }
+		}
+	}
+	option = {
+		name = rds_setting.gui_close
+		trigger = {
+		}
+		hidden_effect = {
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+}
+
+event = {
+	id = rds_setting.8
+	title = rds_setting.8.name
+	desc = rds_setting.8.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	force_open = yes	
+	picture_event_data = {
+		room = "crisis_room"
+	}
+	location = root
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = rds_setting.equipped_with_rds
+		trigger = {
+			NOT = {
+			}
+		}
+		hidden_effect = {
+			every_owned_ship = {
+				limit = {
+					is_designable = no
+				}
+				set_ship_flag = Ship_Equipped_With_RDS
+			}
+		}
+	}
+	option = {
+		name = rds_setting.rds_setting.open
+		trigger = {
+		}
+		hidden_effect = {
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	option = {
+		name = rds_setting.gui_close
+		trigger = {
+		}
+		hidden_effect = {
 		}
 	}
 }
