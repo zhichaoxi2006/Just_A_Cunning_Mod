@@ -129,3 +129,7 @@ swn_mod_leader_age = {
 swn_mod_ascension_perks_add = {
 	ascension_perks_add = 1
 }
+
+swn_mod_ship_engagement_range_mult = {
+	ship_engagement_range_mult = 1
+}

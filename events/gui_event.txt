@@ -33,13 +33,13 @@ event = {
 	id = rds_setting.2
 	title = rds_setting.gui.name
 	desc = {
-		text = rds_setting.country.desc.conditional	# Localization string
+		text = rds_setting.country.desc.conditional
 		trigger = {
 			is_scope_type = country
 		}
 	}
 	desc = {
-		text = rds_setting.fleet.desc.conditional	# Localization string
+		text = rds_setting.fleet.desc.conditional
 		trigger = {
 			is_scope_type = fleet
 		}
@@ -70,7 +70,7 @@ event = {
 		name = rds_setting.planet_destroyer.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = planet_destroyer }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = planet_destroyer }
 			}
 		}
 		custom_tooltip = rds_setting.planet_destroyer.on.tooltip
@@ -82,7 +82,7 @@ event = {
 	option = {
 		name = rds_setting.planet_destroyer.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = planet_destroyer }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = planet_destroyer }
 		}
 		custom_tooltip = rds_setting.planet_destroyer.off.tooltip
 		hidden_effect = {
@@ -95,7 +95,7 @@ event = {
 		name = rds_setting.no_ships_unkeep.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = no_ships_unkeep }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = no_ships_unkeep }
 			}
 		}
 		custom_tooltip = rds_setting.no_ships_unkeep.on.tooltip
@@ -107,7 +107,7 @@ event = {
 	option = {
 		name = rds_setting.no_ships_unkeep.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = no_ships_unkeep }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = no_ships_unkeep }
 		}
 		custom_tooltip = rds_setting.no_ships_unkeep.off.tooltip
 		hidden_effect = {
@@ -120,7 +120,7 @@ event = {
 		name = rds_setting.coordinate_editing.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = coordinate_editing }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = coordinate_editing }
 			}
 		}
 		custom_tooltip = rds_setting.coordinate_editing.on.tooltip
@@ -132,7 +132,7 @@ event = {
 	option = {
 		name = rds_setting.coordinate_editing.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = coordinate_editing }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = coordinate_editing }
 		}
 		custom_tooltip = rds_setting.coordinate_editing.off.tooltip
 		hidden_effect = {
@@ -145,7 +145,7 @@ event = {
 		name = rds_setting.vector_editing.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = vector_editing }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = vector_editing }
 			}
 		}
 		custom_tooltip = rds_setting.vector_editing.on.tooltip
@@ -157,7 +157,7 @@ event = {
 	option = {
 		name = rds_setting.vector_editing.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = vector_editing }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = vector_editing }
 		}
 		custom_tooltip = rds_setting.vector_editing.off.tooltip
 		hidden_effect = {
@@ -170,7 +170,7 @@ event = {
 		name = rds_setting.no_disabled_ship.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = no_disabled_ship }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = no_disabled_ship }
 			}
 		}
 		custom_tooltip = rds_setting.no_disabled_ship.on.tooltip
@@ -182,7 +182,7 @@ event = {
 	option = {
 		name = rds_setting.no_disabled_ship.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = no_disabled_ship }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = no_disabled_ship }
 		}
 		custom_tooltip = rds_setting.no_disabled_ship.off.tooltip
 		hidden_effect = {
@@ -195,7 +195,7 @@ event = {
 		name = rds_setting.unbreakable_ship.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = unbreakable_ship }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = unbreakable_ship }
 			}
 		}
 		custom_tooltip = rds_setting.unbreakable_ship.on.tooltip
@@ -208,7 +208,7 @@ event = {
 		name = rds_setting.unbreakable_ship.off
 		trigger = {
 			ROOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = unbreakable_ship }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = unbreakable_ship }
 			}
 		}
 		custom_tooltip = rds_setting.unbreakable_ship.off.tooltip
@@ -222,7 +222,7 @@ event = {
 		name = rds_setting.no_disengage.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = no_disengage }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = no_disengage }
 			}
 		}
 		custom_tooltip = rds_setting.no_disengage.on.tooltip
@@ -234,7 +234,7 @@ event = {
 	option = {
 		name = rds_setting.no_disengage.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = no_disengage }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = no_disengage }
 		}
 		custom_tooltip = rds_setting.no_disengage.off.tooltip
 		hidden_effect = {
@@ -247,7 +247,7 @@ event = {
 		name = rds_setting.accuracy_buff.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = accuracy_buff }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = accuracy_buff }
 			}
 		}
 		custom_tooltip = rds_setting.accuracy_buff.on.tooltip
@@ -259,7 +259,7 @@ event = {
 	option = {
 		name = rds_setting.accuracy_buff.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = accuracy_buff }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = accuracy_buff }
 		}
 		custom_tooltip = rds_setting.accuracy_buff.off.tooltip
 		hidden_effect = {
@@ -272,7 +272,7 @@ event = {
 		name = rds_setting.ship_hp_amount_reduce_system.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = ship_hp_amount_reduce_system }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = ship_hp_amount_reduce_system }
 			}
 		}
 		custom_tooltip = rds_setting.ship_hp_amount_reduce_system.on.tooltip
@@ -284,7 +284,7 @@ event = {
 	option = {
 		name = rds_setting.ship_hp_amount_reduce_system.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = ship_hp_amount_reduce_system }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = ship_hp_amount_reduce_system }
 		}
 		custom_tooltip = rds_setting.ship_hp_amount_reduce_system.off.tooltip
 		hidden_effect = {
@@ -297,7 +297,7 @@ event = {
 		name = rds_setting.shield_erasing_system.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = shield_erasing_system }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = shield_erasing_system }
 			}
 		}
 		custom_tooltip = rds_setting.shield_erasing_system.on.tooltip
@@ -309,7 +309,7 @@ event = {
 	option = {
 		name = rds_setting.shield_erasing_system.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = shield_erasing_system }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = shield_erasing_system }
 		}
 		custom_tooltip = rds_setting.shield_erasing_system.off.tooltip
 		hidden_effect = {
@@ -322,7 +322,7 @@ event = {
 		name = rds_setting.armor_erasing_system.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = armor_erasing_system }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = armor_erasing_system }
 			}
 		}
 		custom_tooltip = rds_setting.armor_erasing_system.on.tooltip
@@ -334,11 +334,36 @@ event = {
 	option = {
 		name = rds_setting.armor_erasing_system.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = armor_erasing_system }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = armor_erasing_system }
 		}
 		custom_tooltip = rds_setting.armor_erasing_system.off.tooltip
 		hidden_effect = {
 			dynamic_flag_remove = { DYNAMIC_FLAG = armor_erasing_system }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	#SOMEBODY_ELSE_PROBLEM_AURA
+	option = {
+		name = rds_setting.somebody_else_problem_aura.on
+		trigger = {
+			NOT = {
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = somebody_else_problem_aura }
+			}
+		}
+		custom_tooltip = rds_setting.somebody_else_problem_aura.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = somebody_else_problem_aura }
+			dynamic_event = { EVENT = rds_setting.2 }
+		}
+	}
+	option = {
+		name = rds_setting.somebody_else_problem_aura.off
+		trigger = {
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = somebody_else_problem_aura }
+		}
+		custom_tooltip = rds_setting.somebody_else_problem_aura.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = somebody_else_problem_aura }
 			dynamic_event = { EVENT = rds_setting.2 }
 		}
 	}
@@ -347,7 +372,7 @@ event = {
 		name = rds_setting.accuracy_debuff.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = accuracy_debuff }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = accuracy_debuff }
 			}
 		}
 		custom_tooltip = rds_setting.accuracy_debuff.on.tooltip
@@ -359,7 +384,7 @@ event = {
 	option = {
 		name = rds_setting.accuracy_debuff.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = accuracy_debuff }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = accuracy_debuff }
 		}
 		custom_tooltip = rds_setting.accuracy_debuff.off.tooltip
 		hidden_effect = {
@@ -372,7 +397,7 @@ event = {
 		name = rds_setting.instant_kill.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = instant_kill }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = instant_kill }
 			}
 		}
 		custom_tooltip = rds_setting.instant_kill.on.tooltip
@@ -384,7 +409,7 @@ event = {
 	option = {
 		name = rds_setting.instant_kill.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = instant_kill }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = instant_kill }
 		}
 		custom_tooltip = rds_setting.instant_kill.off.tooltip
 		hidden_effect = {
@@ -397,7 +422,7 @@ event = {
 		name = rds_setting.country_destroyer.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = country_destroyer }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = country_destroyer }
 			}
 		}
 		custom_tooltip = rds_setting.country_destroyer.on.tooltip
@@ -409,7 +434,7 @@ event = {
 	option = {
 		name = rds_setting.country_destroyer.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = country_destroyer }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = country_destroyer }
 		}
 		custom_tooltip = rds_setting.country_destroyer.off.tooltip
 		hidden_effect = {
@@ -422,7 +447,7 @@ event = {
 		name = rds_setting.owner_changer.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = owner_changer }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = owner_changer }
 			}
 		}
 		custom_tooltip = rds_setting.owner_changer.on.tooltip
@@ -434,7 +459,7 @@ event = {
 	option = {
 		name = rds_setting.owner_changer.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = owner_changer }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = owner_changer }
 		}
 		custom_tooltip = rds_setting.owner_changer.off.tooltip
 		hidden_effect = {
@@ -447,7 +472,7 @@ event = {
 		name = rds_setting.fleet_event_unlocker.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = fleet_event_unlocker }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = fleet_event_unlocker }
 			}
 		}
 		custom_tooltip = rds_setting.fleet_event_unlocker.on.tooltip
@@ -459,7 +484,7 @@ event = {
 	option = {
 		name = rds_setting.fleet_event_unlocker.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = fleet_event_unlocker }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = fleet_event_unlocker }
 		}
 		custom_tooltip = rds_setting.fleet_event_unlocker.off.tooltip
 		hidden_effect = {
@@ -472,7 +497,7 @@ event = {
 		name = rds_setting.anti_hull_repair.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = anti_hull_repair }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = anti_hull_repair }
 			}
 		}
 		custom_tooltip = rds_setting.anti_hull_repair.on.tooltip
@@ -484,7 +509,7 @@ event = {
 	option = {
 		name = rds_setting.anti_hull_repair.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = anti_hull_repair }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = anti_hull_repair }
 		}
 		custom_tooltip = rds_setting.anti_hull_repair.off.tooltip
 		hidden_effect = {
@@ -497,7 +522,7 @@ event = {
 		name = rds_setting.speed_reduction.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = speed_reduction }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = speed_reduction }
 			}
 		}
 		custom_tooltip = rds_setting.speed_reduction.on.tooltip
@@ -509,7 +534,7 @@ event = {
 	option = {
 		name = rds_setting.speed_reduction.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = speed_reduction }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = speed_reduction }
 		}
 		custom_tooltip = rds_setting.speed_reduction.off.tooltip
 		hidden_effect = {
@@ -522,7 +547,7 @@ event = {
 		name = rds_setting.system_wide.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = system_wide }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = system_wide }
 			}
 		}
 		custom_tooltip = rds_setting.system_wide.on.tooltip
@@ -534,7 +559,7 @@ event = {
 	option = {
 		name = rds_setting.system_wide.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = system_wide }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = system_wide }
 		}
 		custom_tooltip = rds_setting.system_wide.off.tooltip
 		hidden_effect = {
@@ -603,6 +628,7 @@ event = {
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = planet_destroyer }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = country_destroyer }
 		rds_setting_flag_converter = { RDS_SETTING_FLAG = owner_changer }
+		rds_setting_flag_converter = { RDS_SETTING_FLAG = somebody_else_problem_aura }
 	}
 }
 
@@ -897,7 +923,7 @@ event = {
 		name = rds_setting.instant_survey.on
 		trigger = {
 			NOT = {
-				dynamic_flag_check = { DYNAMIC_FLAG = instant_survey }
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = instant_survey }
 			}
 		}
 		custom_tooltip = rds_setting.instant_survey.on.tooltip
@@ -909,7 +935,7 @@ event = {
 	option = {
 		name = rds_setting.instant_survey.off
 		trigger = {
-			dynamic_flag_check = { DYNAMIC_FLAG = instant_survey }
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = instant_survey }
 		}
 		custom_tooltip = rds_setting.instant_survey.off.tooltip
 		hidden_effect = {

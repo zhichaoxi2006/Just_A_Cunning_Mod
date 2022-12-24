@@ -1,4 +1,4 @@
-dynamic_flag_check = {
+dynamic_rds_flag_check = {
 	if = {
 		limit = {
 			is_scope_type = country
@@ -31,9 +31,7 @@ EQUIPPED_WITH_RDS = {
 		has_component = REALITY_DISTORTION_SYSTEM 
 		has_ship_flag = Ship_Equipped_With_RDS
 		leader = {
-			OR = {
-				has_leader_flag = Leader_Equipped_With_RDS
-			}
+			has_leader_flag = Leader_Equipped_With_RDS
 		}
 	}
 }

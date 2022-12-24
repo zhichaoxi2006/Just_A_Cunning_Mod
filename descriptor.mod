@@ -8,4 +8,4 @@ tags={
 	"Buildings"
 }
 name="Just A Cunning Mod"
-supported_version="3.5.2"
+supported_version="3.6.1"

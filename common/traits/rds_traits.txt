@@ -23,6 +23,6 @@ trait_rds_mystical_power = {
 		empire_size_pops_mult = -1 
 	}
 	slave_cost = {
-		energy = 50
+		energy = 100
 	}
 }

@@ -1,0 +1,54 @@
+decision_resource_replication_protocol_on = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resources
+
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		NOT = {
+			has_planet_flag = Resource_Replication_Beam
+		}
+	}
+
+	allow = {
+	}
+
+	effect = {
+		set_planet_flag = Resource_Replication_Beam
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			has_building = building_hilbert_hotel
+			add = 1000
+		}
+	}
+}
+
+decision_resource_replication_protocol_off = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resources
+
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		has_planet_flag = Resource_Replication_Beam
+	}
+
+	allow = {
+	}
+
+	effect = {
+		remove_planet_flag = Resource_Replication_Beam
+	}
+
+	ai_weight = {
+	}
+}

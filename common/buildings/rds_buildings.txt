@@ -58,7 +58,6 @@ building_rds_pop_creater = {
 building_wheeler_performing_reactors = {
     base_cap_amount = 1 
     base_buildtime = 60
-	icon = building_energy_nexus
 	category = resource
     resources = {
         category = planet_buildings
@@ -74,8 +73,7 @@ building_wheeler_performing_reactors = {
             exists = owner
             owner = {
                 NOT = {
-                    has_authority = auth_hive_mind
-                    has_authority = auth_machine_intelligence
+                    has_ethic = ethic_gestalt_consciousness
                 }
             }
         }
@@ -85,10 +83,7 @@ building_wheeler_performing_reactors = {
         potential = {
             exists = owner
             owner = {
-                OR = {
-                    has_authority = auth_machine_intelligence
-                    has_authority = auth_hive_mind
-                }
+                has_ethic = ethic_gestalt_consciousness
             }
         }
         job_hive_deduction_engineer_add = 1
@@ -101,7 +96,6 @@ building_wheeler_performing_reactors = {
 building_hilbert_hotel = {
     base_cap_amount = 1
     base_buildtime = 60
-	icon = building_luxury_residence
 	category = amenity
     resources = {
         category = planet_buildings
@@ -116,8 +110,7 @@ building_hilbert_hotel = {
             exists = owner
             owner = {
                 NOT = {
-                    has_authority = auth_hive_mind
-                    has_authority = auth_machine_intelligence
+                    has_ethic = ethic_gestalt_consciousness
                 }
             }
         }
@@ -127,10 +120,7 @@ building_hilbert_hotel = {
         potential = {
             exists = owner
             owner = {
-                OR = {
-                    has_authority = auth_machine_intelligence
-                    has_authority = auth_hive_mind
-                }
+                has_ethic = ethic_gestalt_consciousness
             }
         }
         job_hive_hilbert_hotel_manager_add = 1
@@ -143,7 +133,6 @@ building_hilbert_hotel = {
 building_mass_energy_conversion_center = {
     empire_limit = 1
     base_buildtime = 60
-	icon = building_production_center
 	category = manufacturing
     resources = {
         category = planet_buildings
@@ -158,8 +147,7 @@ building_mass_energy_conversion_center = {
             exists = owner
             owner = {
                 NOT = {
-                    has_authority = auth_hive_mind
-                    has_authority = auth_machine_intelligence
+                    has_ethic = ethic_gestalt_consciousness
                 }
             }
         }
@@ -169,16 +157,16 @@ building_mass_energy_conversion_center = {
         job_volatile_motes_mass_energy_conversion_add = 1
         job_exotic_gases_mass_energy_conversion_add = 1
         job_rare_crystals_mass_energy_conversion_add = 1
-        job_rare_resources_mass_energy_conversion_add = 1
+        job_dark_matter_mass_energy_conversion_add = 1
+        job_living_metal_mass_energy_conversion_add = 1
+        job_zro_mass_energy_conversion_add = 1
+        job_nanites_mass_energy_conversion_add = 1
     }
     triggered_planet_modifier = {
         potential = {
             exists = owner
             owner = {
-                OR = {
-                    has_authority = auth_machine_intelligence
-                    has_authority = auth_hive_mind
-                }
+                has_ethic = ethic_gestalt_consciousness
             }
         }
         job_hive_minerals_mass_energy_conversion_add = 1
@@ -188,6 +176,10 @@ building_mass_energy_conversion_center = {
         job_hive_exotic_gases_mass_energy_conversion_add = 1
         job_hive_rare_crystals_mass_energy_conversion_add = 1
         job_hive_rare_resources_mass_energy_conversion_add = 1
+        job_hive_dark_matter_mass_energy_conversion_add = 1
+        job_hive_living_metal_mass_energy_conversion_add = 1
+        job_hive_zro_mass_energy_conversion_add = 1
+        job_hive_nanites_mass_energy_conversion_add = 1
     }
     prerequisites = {
         tech_reality_distortion_system_buildings
@@ -197,7 +189,6 @@ building_mass_energy_conversion_center = {
 building_laplace_research_facility = {
     empire_limit = 1
     base_buildtime = 60
-	icon = building_research_lab_3
 	category = research
     resources = {
         category = planet_buildings
@@ -215,8 +206,7 @@ building_laplace_research_facility = {
             exists = owner
             owner = {
                 NOT = {
-                    has_authority = auth_hive_mind
-                    has_authority = auth_machine_intelligence
+                    has_ethic = ethic_gestalt_consciousness
                 }
             }
         }
@@ -226,10 +216,7 @@ building_laplace_research_facility = {
         potential = {
             exists = owner
             owner = {
-                OR = {
-                    has_authority = auth_machine_intelligence
-                    has_authority = auth_hive_mind
-                }
+                has_ethic = ethic_gestalt_consciousness
             }
         }
         job_hive_laplace_demon_operator_add = 1
@@ -269,7 +256,6 @@ building_rds_stronghold = {
     base_cap_amount = 1
     position_priority = 100
     base_buildtime = 60
-	icon = building_stronghold
 	category = army
     planetary_ftl_inhibitor = yes
     resources = {
@@ -290,13 +276,11 @@ building_rds_stronghold = {
 building_multiverse_trade_center = {
     empire_limit = 1
     base_buildtime = 60
-	icon = building_galactic_stock_exchange
     potential = {
         exists = owner
             owner = {
                 NOT = {
-                    has_authority = auth_hive_mind
-                    has_authority = auth_machine_intelligence
+                    has_ethic = ethic_gestalt_consciousness
                 }
             }
     }

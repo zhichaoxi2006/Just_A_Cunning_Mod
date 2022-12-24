@@ -92,3 +92,13 @@ dynmic_amenities = {
 	subtract = trigger:free_amenities
 	add = 10
 }
+
+dynmic_resource_expenses_compare = {
+	complex_trigger_modifier = {
+		trigger = resource_expenses_compare
+		parameters = {
+			resource = $resource$
+		}
+		mode = add
+	}
+}

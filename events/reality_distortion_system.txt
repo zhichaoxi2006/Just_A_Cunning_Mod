@@ -486,6 +486,33 @@ ship_event = {
 									add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = @modifier_time	multiplier = ship_armor_reduction_number	}
 								}
 							}
+							#SOMEBODY_ELSE_PROBLEM_AURA
+							if = {
+								limit = {
+									event_target:reality_distortion_system_ship = {
+										has_rds_flag = { FLAG = somebody_else_problem_aura }
+									}
+								}
+								export_modifier_to_variable = {
+									modifier = ship_engagement_range_mult
+									variable = ship_engagement_range_mult_number
+								}
+								multiply_variable = {
+									which = ship_engagement_range_mult_number
+									value = -1
+								}
+								change_variable = {
+									which = ship_engagement_range_mult_number
+									value = -10
+								}
+								if = {
+									limit = {
+										check_modifier_value = {	modifier = ship_engagement_range_mult value > -10.00	}
+									}
+									remove_modifier = swn_mod_ship_engagement_range_mult
+									add_modifier = {	modifier = swn_mod_ship_engagement_range_mult	months = @modifier_time	multiplier = ship_engagement_range_mult_number	}
+								}
+							}
 							#INSTANT_KILL
 							if = {
 								limit = {
