@@ -38,7 +38,6 @@ ship_event = {
 						has_rds_flag = { FLAG = unbreakable_ship }
 					}
 				}
-				set_ship_flag = invincible
 				set_disable_at_health = 0.0001
 				repair_ship = yes
 				set_disabled = no
@@ -52,7 +51,6 @@ ship_event = {
 						EQUIPPED_WITH_RDS = no
 					}
 				}
-				remove_ship_flag = invincible
 				set_disable_at_health = -1
 				set_disabled = no
 			}
@@ -321,7 +319,7 @@ ship_event = {
 					limit = {
 						NOT = {
 							fleet = {
-								has_fleet_flag = reality_distortion_system_cooldown #确保每个舰队只执行一次，减少卡顿
+								has_fleet_flag = reality_distortion_system_cooldown #确保每个舰队只执行一次，减少卡顿。
 							}
 						}
 					}

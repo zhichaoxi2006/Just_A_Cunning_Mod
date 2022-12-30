@@ -30,7 +30,7 @@ weapon_component_template = {
 	armor_penetration = 42
 	tags = {
 		weapon_type_point_defense
-		weapon_type_kinetic
+		weapon_type_energy
 	}
 	valid_for_country = {
 		NOT = {

@@ -1,0 +1,35 @@
+utility_component_template = {
+	key = "REALITY_DISTORTION_SYSTEM"
+	size = aux
+	icon = "GFX_ship_parts_reality_distortion_system"
+	icon_frame = 1
+	prerequisites = {
+		tech_deduction_theory
+	}
+	component_set = "REALITY_DISTORTION_SYSTEM"
+	power = -100
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_u_components
+		}
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 70
+		}
+		upkeep = {
+			energy = 0.4
+			alloys = 0.2
+		}
+	}
+	triggered_ship_modifier = {
+		potential = {
+		}
+		ship_fire_rate_mult = 1
+		multiplier = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}

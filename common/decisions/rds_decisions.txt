@@ -5,6 +5,9 @@ decision_resource_replication_protocol_on = {
 
 	resources = {
 		category = decisions
+		cost = {
+			energy = 100
+		}
 	}
 
 	potential = {
@@ -36,6 +39,9 @@ decision_resource_replication_protocol_off = {
 
 	resources = {
 		category = decisions
+		cost = {
+			energy = 100
+		}
 	}
 
 	potential = {

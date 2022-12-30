@@ -30,7 +30,7 @@ hive_laplace_demon_operator = {
 }
 
 hive_deduction_engineer = {
-	category = simple_drone
+	category = complex_drone
 	building_icon = building_wheeler_performing_reactors
 	clothes_texture_index = 3
 	icon = technician
@@ -54,7 +54,7 @@ hive_deduction_engineer = {
 }
 
 hive_minerals_mass_energy_conversion = {
-	category = simple_drone
+	category = complex_drone
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = miner

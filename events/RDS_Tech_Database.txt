@@ -1,0 +1,194 @@
+namespace = rds_tech_database
+
+country_event = {
+	id = rds_tech_database.0
+	hide_window = yes
+	trigger = {
+		is_ai = no
+	}
+	is_triggered_only = yes
+	immediate = {
+		capital_scope = {
+			solar_system = {
+				if = {
+					limit = {
+						any_system_planet = {
+							has_moon = yes
+						}
+					}
+					random_system_planet = {
+						limit = {
+							has_moon = yes
+						}
+						random_moon = {
+							limit = {
+								is_colony = no
+							}
+							create_archaeological_site = site_rds_tech_database
+						}
+					}
+				}
+				else = {
+					random_system_planet = {
+						limit = {
+							is_colony = no
+						}
+						create_archaeological_site = site_rds_tech_database
+					}
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = rds_tech_database.1
+	title = rds_tech_database.1.name
+	desc = rds_tech_database.1.desc
+	location = from 
+	is_triggered_only = yes 
+	archaeology = yes
+	trigger = {
+		
+	}
+	immediate = {
+		archaeological_site = {
+			set_site_progress_locked = yes
+		}
+	}
+	option = {
+		name = rds_tech_database.1.option
+	}
+	after = {
+		archaeological_site = {
+			set_site_progress_locked = no
+		}
+	}
+}
+
+fleet_event = {
+	id = rds_tech_database.2
+	title = rds_tech_database.2.name
+	desc = rds_tech_database.2.desc
+	location = from 
+	is_triggered_only = yes 
+	archaeology = yes
+	trigger = {
+		
+	}
+	immediate = {
+		archaeological_site = {
+			set_site_progress_locked = yes
+		}
+	}
+	option = {
+		name = rds_tech_database.2.option
+	}
+	after = {
+		archaeological_site = {
+			set_site_progress_locked = no
+		}
+	}
+}
+
+fleet_event = {
+	id = rds_tech_database.3
+	title = rds_tech_database.3.name
+	desc = rds_tech_database.3.desc
+	location = from 
+	is_triggered_only = yes
+	archaeology = yes
+	trigger = {
+		
+	}
+	immediate = {
+		archaeological_site = {
+			set_site_progress_locked = yes
+		}
+	}
+	option = {
+		name = rds_tech_database.3.option
+		owner = {
+			country_event = {
+				id = rds_tech_database.4
+			}
+		}
+	}
+	after = {
+		archaeological_site = {
+			set_site_progress_locked = no
+		}
+	}
+}
+
+country_event = {
+	id = rds_tech_database.4
+	title = rds_tech_database.4.name
+	desc = rds_tech_database.4.desc
+	force_open = yes
+	picture_event_data = {
+		portrait = this.ruler
+		room = "crisis_room"
+	}
+	diplomatic = yes
+	is_triggered_only = yes 
+	trigger = {
+		
+	}
+	immediate = {
+
+	}
+	option = {
+		name = rds_tech_database.4.option.1
+		response_text = rds_tech_database.4.response_text.1
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.4.option.2
+		response_text = rds_tech_database.4.response_text.2
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.4.option.3
+		response_text = rds_tech_database.4.response_text.3
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.4.option.4
+		response_text = rds_tech_database.4.response_text.4
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.4.option.5
+		response_text = rds_tech_database.4.response_text.5
+	}
+}
+
+fleet_event = {
+	id = rds_tech_database.5
+	title = rds_tech_database.5.name
+	desc = rds_tech_database.5.desc
+	location = from 
+	is_triggered_only = yes
+	archaeology = yes
+	trigger = {
+		
+	}
+	immediate = {
+		archaeological_site = {
+			set_site_progress_locked = yes
+		}
+	}
+	option = {
+		name = rds_tech_database.5.option
+		owner = {
+			give_all_rds_tech = yes
+			add_relic = r_project_longinus
+		}
+	}
+	after = {
+		archaeological_site = {
+			set_site_progress_locked = no
+		}
+	}
+}

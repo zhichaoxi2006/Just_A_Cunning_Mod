@@ -133,3 +133,15 @@ swn_mod_ascension_perks_add = {
 swn_mod_ship_engagement_range_mult = {
 	ship_engagement_range_mult = 1
 }
+
+swn_mod_army_collateral_damage_mult = {
+	army_collateral_damage_mult = 1
+}
+
+swn_mod_intel_decryption_add = {
+	intel_decryption_add = 1
+}
+
+swn_mod_intel_encryption_add = {
+	intel_encryption_add = 1
+}

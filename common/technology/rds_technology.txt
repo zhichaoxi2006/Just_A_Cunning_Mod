@@ -1,7 +1,7 @@
 tech_reality_distortion_system = {
-	cost = 114514
+	cost = 0
 	area = physics
-	tier = 5
+	tier = 0
 	category = { field_manipulation }
 	weight = 0
 	is_dangerous = yes
@@ -10,9 +10,9 @@ tech_reality_distortion_system = {
 }
 
 tech_reality_distortion_system_armies = {
-	cost = 132456
+	cost = 0
 	area = society
-	tier = 5
+	tier = 0
 	category = { military_theory }
 	weight = 0
 	is_dangerous = yes
@@ -24,9 +24,9 @@ tech_reality_distortion_system_armies = {
 }
 
 tech_reality_distortion_system_megastructures = {
-	cost = 243145
+	cost = 0
 	area = engineering
-	tier = 5
+	tier = 0
 	category = { voidcraft }
 	weight = 0
 	is_dangerous = yes
@@ -38,9 +38,9 @@ tech_reality_distortion_system_megastructures = {
 }
 
 tech_reality_distortion_system_buildings = {
-	cost = 286145
+	cost = 0
 	area = engineering
-	tier = 5
+	tier = 0
 	category = { new_worlds }
 	weight = 0
 	is_dangerous = yes
@@ -52,9 +52,9 @@ tech_reality_distortion_system_buildings = {
 }
 
 tech_hilbert_space_theory = {
-	cost = 286145
+	cost = 0
 	area = physics
-	tier = 5
+	tier = 0
 	category = { field_manipulation }
 	weight = 0
 	is_dangerous = yes
@@ -66,10 +66,10 @@ tech_hilbert_space_theory = {
 }
 
 tech_laplace_demon_manufacturing = {
-	cost = 286145
+	cost = 0
 	area = physics
-	tier = 5
-	category = { field_manipulation }
+	tier = 0
+	category = { computing }
 	weight = 0
 	is_dangerous = yes
 	prerequisites = {
@@ -80,9 +80,9 @@ tech_laplace_demon_manufacturing = {
 }
 
 tech_deduction_theory = {
-	cost = 286145
+	cost = 0
 	area = society
-	tier = 5
+	tier = 0
 	category = { psionics }
 	weight = 0
 	is_dangerous = yes
@@ -94,9 +94,9 @@ tech_deduction_theory = {
 }
 
 tech_reaper_weapons_strategy = {
-	cost = 286145
+	cost = 0
 	area = physics
-	tier = 5
+	tier = 0
 	category = { particles }
 	weight = 0
 	is_dangerous = yes

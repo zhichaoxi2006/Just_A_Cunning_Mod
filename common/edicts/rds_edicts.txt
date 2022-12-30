@@ -28,25 +28,6 @@ hyper_relay_windup_delete = {
 	}
 }
 
-site_project_longinus = {
-	icon = GFX_button_automate
-	length = 0
-	potential = {
-		is_ai = no
-		NOT = {
-			has_global_flag = project_longinus_exist
-		}
-	}
-	resources = {
-		category = campaigns
-	}
-	effect = {
-		country_event = {
-			id = project_longinus.6
-		}
-	}
-}
-
 aryan_superman_assimilation_order = {
 	icon = GFX_button_automate
 	length = 0

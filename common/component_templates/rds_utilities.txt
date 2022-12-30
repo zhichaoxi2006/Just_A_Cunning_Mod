@@ -7,14 +7,12 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 4
-			multiplier = -2
-		}
-		upkeep = {
-			multiplier =  -2
+			alloys = 55
 		}
 	}
-	prerequisites = { tech_deduction_theory }
+	prerequisites = {
+		tech_deduction_theory
+	}
 	component_set = "power_core"
 	valid_for_country = {
 		NOT = {
@@ -45,19 +43,15 @@ utility_component_template = {
 		cost = {
 			alloys = 40
 		}
-		upkeep = {
-			energy = 0.4
-			alloys = 0.2
-		}
 	}
 	sensor_range = 20
 	hyperlane_range = 25
-	
 	ship_modifier = {
 		ship_tracking_add = 50
 	}
-	
-	prerequisites = { tech_deduction_theory }
+	prerequisites = {
+		tech_deduction_theory
+	}
 	component_set = "sensor_components"
 	valid_for_country = {
 		NOT = {
@@ -83,7 +77,8 @@ utility_component_template = {
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
 	ship_behavior = "pataphysics_strike_ship"
-	size_restriction = {  }
+	size_restriction = {
+	}
 	component_set = "combat_computers"
 	ai_weight = {
 		weight = 0
@@ -96,15 +91,14 @@ utility_component_template = {
 	icon = "GFX_ship_part_aura_minefield_paradox"
 	icon_frame = 1
 	power = -20
-
-	size_restriction = {  }
+	size_restriction = {
+	}
 	component_set = "ship_aura_components"
 	ftl_inhibitor = yes
-
 	friendly_aura = {
 		name = aura_weapon_range
 		system_wide = yes
-		stack_info = { 
+		stack_info = {
 			id = aura_weapon_range
 			priority = 250
 		}
@@ -139,69 +133,19 @@ utility_component_template = {
 	hostile_aura = {
 		name = "aura_killer_aura"
 		system_wide = no
-
 		stack_info = {
 			id = aura_killer_aura
 			priority = 250
 		}
 		damage_per_day = {
-			damage = { min = 100000 max = 200000 }
+			damage = {
+				min = 10000
+				max = 20000
+			}
 			accuracy = 1
 			shield_penetration = 1
 			armor_penetration = 1
 		}
-	}
-}
-
-utility_component_template = {
-	key = "REALITY_DISTORTION_SYSTEM"
-	size = aux
-	icon = "GFX_ship_parts_reality_distortion_system"
-	icon_frame = 1
-	prerequisites = { tech_deduction_theory }
-	component_set = "REALITY_DISTORTION_SYSTEM"
-	power = -100
-	valid_for_country = {
-		NOT = {
-			has_country_flag = disable_rds_ship_u_components
-		}
-	}
-	modifier = {
-	}
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 10
-		}
-		upkeep = {
-			energy = 0.4
-			alloys = 0.2
-		}
-	}
-	hostile_aura = {
-		name = "aura_enemy_marker"
-		system_wide = no
-
-		stack_info = {
-			id = hostile_enemy_marker
-			priority = 250
-		}
-		modifier = {
-			mod_enemy_marker = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
-	ai_weight = {
-		weight = 0
 	}
 }
 
@@ -214,7 +158,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 5
+			alloys = 65
 		}
 	}
 	ftl = yes
@@ -234,7 +178,9 @@ utility_component_template = {
 		shipclass_military_special
 		shipclass_starbase
 	}
-	prerequisites = { tech_deduction_theory }
+	prerequisites = {
+		tech_deduction_theory
+	}
 	component_set = "ftl_components"
 	valid_for_country = {
 		NOT = {
@@ -263,9 +209,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 5
-		}
-		upkeep = {
+			alloys = 45
 		}
 	}
 	ship_modifier = {
@@ -273,7 +217,9 @@ utility_component_template = {
 		ship_speed_mult = 4
 		ship_evasion_add = 400
 	}
-	prerequisites = { tech_deduction_theory }
+	prerequisites = {
+		tech_deduction_theory
+	}
 	component_set = "thruster_components"
 	valid_for_country = {
 		NOT = {
@@ -308,11 +254,13 @@ utility_component_template = {
 	}
 	modifier = {
 		ship_shield_add = 5000
-		ship_shield_regen_add_perc = 1
+		ship_shield_hardening_add = 0.2
+		ship_shield_regen_add_perc = 0.4
 		ship_armor_add = 5000
-		ship_armor_regen_add_perc = 1
+		ship_armor_regen_add_perc = 0.4
+		ship_armor_hardening_add = 0.2
 		ship_hull_add = 5000
-		ship_hull_regen_add_perc = 1
+		ship_hull_regen_add_perc = 0.4
 	}
 	valid_for_country = {
 		NOT = {
@@ -320,7 +268,7 @@ utility_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
+		weight = 1
 		modifier = {
 			factor = 0
 			is_ai = yes
@@ -330,7 +278,9 @@ utility_component_template = {
 			has_country_flag = disable_rds_ship_u_components
 		}
 	}
-	prerequisites = { tech_reaper_weapons_strategy }
+	prerequisites = {
+		tech_reaper_weapons_strategy
+	}
 }
 
 utility_component_template = {
@@ -348,11 +298,13 @@ utility_component_template = {
 	}
 	modifier = {
 		ship_shield_add = 11250
-		ship_shield_regen_add_perc = 1
+		ship_shield_regen_add_perc = 0.4
+		ship_shield_hardening_add = 0.2
 		ship_armor_add = 11250
-		ship_armor_regen_add_perc = 1
+		ship_armor_regen_add_perc = 0.4
+		ship_armor_hardening_add = 0.2
 		ship_hull_add = 11250
-		ship_hull_regen_add_perc = 1
+		ship_hull_regen_add_perc = 0.4
 	}
 	valid_for_country = {
 		NOT = {
@@ -360,7 +312,7 @@ utility_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
+		weight = 1
 		modifier = {
 			factor = 0
 			is_ai = yes
@@ -370,7 +322,9 @@ utility_component_template = {
 			has_country_flag = disable_rds_ship_u_components
 		}
 	}
-	prerequisites = { tech_reaper_weapons_strategy }
+	prerequisites = {
+		tech_reaper_weapons_strategy
+	}
 }
 
 utility_component_template = {
@@ -388,11 +342,13 @@ utility_component_template = {
 	}
 	modifier = {
 		ship_shield_add = 28125
-		ship_shield_regen_add_perc = 1
+		ship_shield_regen_add_perc = 0.4
+		ship_shield_hardening_add = 0.2
 		ship_armor_add = 28125
-		ship_armor_regen_add_perc = 1
+		ship_armor_regen_add_perc = 0.4
+		ship_armor_hardening_add = 0.2
 		ship_hull_add = 28125
-		ship_hull_regen_add_perc = 1
+		ship_hull_regen_add_perc = 0.4
 	}
 	valid_for_country = {
 		NOT = {
@@ -400,7 +356,7 @@ utility_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
+		weight = 1
 		modifier = {
 			factor = 0
 			is_ai = yes
@@ -410,5 +366,7 @@ utility_component_template = {
 			has_country_flag = disable_rds_ship_u_components
 		}
 	}
-	prerequisites = { tech_reaper_weapons_strategy }
+	prerequisites = {
+		tech_reaper_weapons_strategy
+	}
 }

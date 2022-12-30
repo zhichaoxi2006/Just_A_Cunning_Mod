@@ -84,7 +84,7 @@ dynamic_ship_hull_mult = {
 
 dynamic_ship_hull_add = {
 	base = 0
-	subtract = trigger:has_hp
+	subtract = modifier:ship_hull_add
 }
 
 dynmic_amenities = {

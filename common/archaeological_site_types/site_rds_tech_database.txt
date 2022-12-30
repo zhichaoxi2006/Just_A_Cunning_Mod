@@ -1,5 +1,5 @@
-project_longinus = {
-	desc = project_longinus_desc
+site_rds_tech_database = {
+	desc = site_rds_tech_database_desc
 	picture = GFX_evt_ancient_databank
 	stages = 4
 	max_instances = 1
@@ -11,24 +11,30 @@ project_longinus = {
 		default_site_visible_trigger = yes
 	}
 	stage = {
-		difficulty = -42
+		difficulty = 0
 		icon = GFX_archaeology_runes_F1
-		event = project_longinus.2
+		event = rds_tech_database.1
 	}
 	stage = {
-		difficulty = -42
+		difficulty = 0
 		icon = GFX_archaeology_runes_F2
-		event = project_longinus.3
+		event = rds_tech_database.2
 	}
 	stage = {
-		difficulty = -42
+		difficulty = 0
 		icon = GFX_archaeology_runes_F3
-		event = project_longinus.4
+		event = rds_tech_database.3
 	}
 	stage = {
-		difficulty = -42
+		difficulty = 0
 		icon = GFX_archaeology_runes_F4
-		event = project_longinus.5
+		event = rds_tech_database.5
+	}
+	on_create = {
+		planet = {
+			change_pc = { class = pc_black_hole inherit_entity = no }
+			set_planet_size = 1
+		}
 	}
 	on_roll_failed = {
 		from = {

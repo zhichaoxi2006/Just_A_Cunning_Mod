@@ -18,7 +18,7 @@ event = {
 			while = {
 				count = 2
 				create_army = {
-					name = random
+					name = Name_Reborn_RDS_Army
 					owner = event_target:death_army.owner
 					type = reality_distortion_system_army
 				}
@@ -307,7 +307,6 @@ event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		
 	}
 }
 
@@ -345,5 +344,35 @@ fleet_event = {
 			}
 			create_rds_wormhole_link = yes
 		}
+	}
+}
+
+#No_Relic_Cooldown
+event = {
+	id = rds_misc.15
+	hide_window = yes
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	immediate = {
+		This = {
+			remove_modifier = relic_activation_cooldown
+		}
+	}
+}
+
+#Instant_Colony
+planet_event = {
+	id = rds_misc.16
+	hide_window = yes
+	trigger = {
+		any_owned_pop = {
+			has_trait = trait_rds_mystical_power
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		add_colony_progress = 100
 	}
 }

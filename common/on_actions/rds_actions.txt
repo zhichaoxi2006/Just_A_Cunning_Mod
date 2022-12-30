@@ -4,6 +4,12 @@ on_game_start = {
 	}
 }
 
+on_game_start_country = {
+	events = {
+		rds_tech_database.0
+	}
+}
+
 on_single_player_save_game_load = {
 	events = {
 		rds_setting.0		# New Dynamic Mod Menu support.
@@ -24,8 +30,6 @@ dmm_mod_selected = {
 on_entering_system = {
 	events = {
 		rds.3
-	}
-	random_events = {
 	}
 }
 
@@ -179,5 +183,20 @@ on_district_unqueued = {
 on_planet_zero_pops_ground_combat = {
 	events = {
 		rds_misc.901
+	}
+}
+
+# This = Country
+on_relic_activated = {
+	events = {
+		rds_misc.15
+	}
+}
+
+# A planet has begun the colonization process.
+# Scope = Planet
+on_colonization_started = {
+	events = {
+		rds_misc.16
 	}
 }

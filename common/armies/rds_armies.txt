@@ -12,14 +12,13 @@ reality_distortion_system_army = {
 	resources = {
 		category = armies
 		cost = {
-			minerals = 20
+			minerals = 1200
 		}
 
 		upkeep = {
 			energy = 1
 		}
 	}
-
 	potential = {
 	}
 }
