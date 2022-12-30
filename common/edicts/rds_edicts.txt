@@ -48,3 +48,19 @@ aryan_superman_assimilation_order = {
 		}
 	}
 }
+
+rds_colony_progress_add = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		is_ai = no
+		has_technology = tech_hilbert_space_theory
+		has_technology = tech_deduction_theory
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		set_country_flag = rds_colony_progress_add
+	}
+}

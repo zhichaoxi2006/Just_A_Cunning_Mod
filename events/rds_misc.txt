@@ -352,7 +352,7 @@ event = {
 	id = rds_misc.15
 	hide_window = yes
 	trigger = {
-		
+		always = no
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -367,8 +367,8 @@ planet_event = {
 	id = rds_misc.16
 	hide_window = yes
 	trigger = {
-		any_owned_pop = {
-			has_trait = trait_rds_mystical_power
+		owner = {
+			has_country_flag = rds_colony_progress_add
 		}
 	}
 	is_triggered_only = yes

@@ -244,6 +244,8 @@
  edict_aryan_superman_assimilation_order_desc: "将所有的非雅利安的种族同化为雅利安人。"
  edict_hyper_relay_windup_delete: "超空间中继器充能时间移除"
  edict_hyper_relay_windup_delete_desc: "移除掉超空间中继器10天的充能时间。"
+ edict_rds_colony_progress_add: "殖民地演绎"
+ edict_rds_colony_progress_add_desc: "可以让殖民地的开发速度受到极大的提升。"
 
 #Origin
  origin_transdimensional: "超越叙事之力"
