@@ -1,0 +1,22 @@
+building_resource_replicator = {
+	base_buildtime = 60
+	base_cap_amount = 1
+	icon = building_class_4_singularity
+	category = government
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1453
+		}
+    }
+    inline_script = "buildings/rare_reasource_produce"
+	on_built = {
+		set_variable = {
+			which = resource_replicator_mult
+			value = 1
+		}
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
+}

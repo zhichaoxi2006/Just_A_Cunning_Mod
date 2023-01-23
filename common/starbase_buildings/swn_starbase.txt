@@ -1,0 +1,20 @@
+deduction_framework = {
+	icon = GFX_sb_deduction_framework
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 320
+		}
+	}
+	construction_days = 120
+	potential = {
+	}
+	triggered_station_modifier = {
+		starbase_upgrade_time_mult = -10
+		starbase_upgrade_cost_mult = -10
+		starbase_module_build_time_mult = -10
+		starbase_building_build_time_mult = -10
+	}
+	triggered_system_modifier = {
+	}
+}

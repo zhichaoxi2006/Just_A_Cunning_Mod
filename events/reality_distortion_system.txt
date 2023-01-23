@@ -38,7 +38,13 @@ ship_event = {
 						has_rds_flag = { FLAG = unbreakable_ship }
 					}
 				}
-				set_disable_at_health = 0.0001
+				if = {
+					limit = {
+						has_ship_flag = reality_distortion_system_equipped_tag
+					}
+					set_ship_flag = reality_distortion_system_equipped_tag
+				}
+				set_disable_at_health = 0.001
 				repair_ship = yes
 				set_disabled = no
 			}
@@ -48,11 +54,15 @@ ship_event = {
 						NOT = {
 							has_rds_flag = { FLAG = unbreakable_ship }
 						}
-						EQUIPPED_WITH_RDS = no
+						AND = {
+							EQUIPPED_WITH_RDS = no
+							has_ship_flag = reality_distortion_system_equipped_tag
+						}
 					}
 				}
 				set_disable_at_health = -1
 				set_disabled = no
+				remove_ship_flag = reality_distortion_system_equipped_tag
 			}
 			set_timed_ship_flag = {
 				flag = reality_distortion_system_cooldown
@@ -659,6 +669,7 @@ event = {
 				has_rds_flag = { FLAG = unbreakable_ship }
 				OR = {
 					EQUIPPED_WITH_RDS = yes
+					has_component = SHIP_HULL_PROTECTION_MODULE
 				}
 			}
 			This = {
@@ -732,11 +743,49 @@ event = {
 	id = rds.7
 	hide_window = yes
 	trigger = {
-		always = no
+		OR = {
+			has_component = SHIP_HULL_PROTECTION_MODULE
+			has_ship_flag = Ship_Equipped_With_SHPM
+		}
 	}
 	is_triggered_only = yes
 	immediate = {
-		set_disable_at_health = 0.001
+		if = {
+			limit = {
+				has_component = SHIP_HULL_PROTECTION_MODULE
+			}
+			set_disable_at_health = 0.001
+			if = {
+				limit = {
+					NOT = {
+						fleet = {
+							has_fleet_flag = unbreakable_ship
+						}
+					}
+				}
+				fleet = {
+					set_fleet_flag = unbreakable_ship
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_ship_flag = Ship_Equipped_With_SHPM
+					}
+				}
+				set_ship_flag = Ship_Equipped_With_SHPM
+			}
+		}
+		else_if = {
+			limit = { 
+				NOT = {
+					has_component = SHIP_HULL_PROTECTION_MODULE
+				}
+				has_ship_flag = Ship_Equipped_With_SHPM
+			}
+			set_disable_at_health = -1
+			remove_ship_flag = Ship_Equipped_With_SHPM
+		}
 	}
 }
 
@@ -778,6 +827,66 @@ fleet_event = {
 				on_action = on_system_survey_ship
 				scopes = { from = root.solar_system }
 			} }
+		}
+	}
+}
+
+event = {
+	id = rds.9
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				fromfrom = {
+					any_controlled_ship = {
+						OR = {
+							has_component = RDS_EVENT_CANNON
+						}
+					}
+				}
+			}
+			fromfrom = {
+				random_owned_ship = {
+					limit = {
+						EQUIPPED_WITH_RDS = yes
+					}
+					fleet = {
+						remove_fleet_flag = reality_distortion_system_cooldown
+					}
+					remove_ship_flag = reality_distortion_system_cooldown
+					ship_event = {
+						id = rds.1
+					}
+				}
+			}
+			fromfromfrom = {
+				random_controlled_ship = {
+					limit = {
+						NOT = {
+							has_global_flag = debug_mode
+						}
+					}
+					set_ship_flag = ship_which_will_not_delete
+				}
+				every_controlled_ship = {
+					limit = {
+					}
+					if = {
+						limit = { 
+							NOT = {
+								has_ship_flag = ship_which_will_not_delete
+							}
+						}
+						destroy_ship = this
+					}
+					else = {
+						remove_ship_flag = ship_which_will_not_delete
+					}
+				}
+			}
 		}
 	}
 }

@@ -5,7 +5,7 @@ reality_distortion_system_army = {
 	has_morale = no
 	damage = 10.00
 	health = 20.00
-	morale_damage = 10.00
+	morale_damage = 1.00
 	collateral_damage = 1.00
 	war_exhaustion = 100.00
 	prerequisites = { tech_reality_distortion_system_armies }
@@ -20,5 +20,19 @@ reality_distortion_system_army = {
 		}
 	}
 	potential = {
+	}
+}
+
+rds_dummy_army = {
+	icon = GFX_army_type_assault
+	has_species = no
+	has_morale = no
+	damage = 0
+	health = 0
+	morale_damage = 0
+	collateral_damage = 0
+	war_exhaustion = 0
+	potential = {
+		always = no
 	}
 }

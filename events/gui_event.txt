@@ -7,8 +7,8 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		dmm_register_mod = {
-			DMM_NAME = cmwdm_menu_name
-			DMM_FLAG = cmwdm_cheat_mode_with_dynamic_modding_menu_name_flag
+			DMM_NAME = jacm_menu_name
+			DMM_FLAG = jacm_with_dynamic_modding_menu_name_flag
 		}
 	}
 }
@@ -19,7 +19,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		from = {
-			has_leader_flag = cmwdm_cheat_mode_with_dynamic_modding_menu_name_flag
+			has_leader_flag = jacm_with_dynamic_modding_menu_name_flag
 		}
 	}
 	immediate = {
@@ -668,26 +668,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			give_technology = {
-				tech = tech_reality_distortion_system
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_armies
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_ship_components
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_megastructures
-				message = no
-			}
-			give_technology = {
-				tech = tech_reality_distortion_system_buildings
-				message = no
-			}
+			give_all_rds_tech = yes
 			set_country_flag = has_rds_tech
 			country_event = {
 				id = rds_setting.5
@@ -943,6 +924,31 @@ event = {
 			dynamic_event = { EVENT = rds_setting.7 }
 		}
 	}
+	#ARCHAEOLOGICAL_SITE_BUFF
+	option = {
+		name = rds_setting.archaeological_site_buff.on
+		trigger = {
+			NOT = {
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = archaeological_site_buff }
+			}
+		}
+		custom_tooltip = rds_setting.archaeological_site_buff.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = archaeological_site_buff }
+			dynamic_event = { EVENT = rds_setting.7 }
+		}
+	}
+	option = {
+		name = rds_setting.archaeological_site_buff.off
+		trigger = {
+			dynamic_rds_flag_check = { DYNAMIC_FLAG = archaeological_site_buff }
+		}
+		custom_tooltip = rds_setting.archaeological_site_buff.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = archaeological_site_buff }
+			dynamic_event = { EVENT = rds_setting.7 }
+		}
+	}
 	option = {
 		name = rds_setting.gui_close
 		trigger = {
@@ -973,15 +979,59 @@ event = {
 	option = {
 		name = rds_setting.equipped_with_rds
 		trigger = {
-			NOT = {
-			}
 		}
 		hidden_effect = {
 			every_owned_ship = {
 				limit = {
-					is_designable = no
+					EQUIPPED_WITH_RDS = no
 				}
 				set_ship_flag = Ship_Equipped_With_RDS
+			}
+		}
+	}
+	option = {
+		name = rds_setting.unequipped_with_rds
+		trigger = {
+		}
+		hidden_effect = {
+			every_owned_ship = {
+				limit = {
+					has_ship_flag = Ship_Equipped_With_RDS
+				}
+				remove_ship_flag = Ship_Equipped_With_RDS
+			}
+		}
+	}
+	#UNBREAKABLE_SHIP
+	option = {
+		name = rds_setting.unbreakable_ship.on
+		trigger = {
+			NOT = {
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = unbreakable_ship }
+			}
+		}
+		custom_tooltip = rds_setting.unbreakable_ship.on.tooltip
+		hidden_effect = {
+			dynamic_flag_set = { DYNAMIC_FLAG = unbreakable_ship }
+			dynamic_event = { EVENT = rds_setting.8 }
+			every_controlled_ship = {
+				set_disable_at_health = 0.001
+			}
+		}
+	}
+	option = {
+		name = rds_setting.unbreakable_ship.off
+		trigger = {
+			ROOT = {
+				dynamic_rds_flag_check = { DYNAMIC_FLAG = unbreakable_ship }
+			}
+		}
+		custom_tooltip = rds_setting.unbreakable_ship.off.tooltip
+		hidden_effect = {
+			dynamic_flag_remove = { DYNAMIC_FLAG = unbreakable_ship }
+			dynamic_event = { EVENT = rds_setting.8 }
+			every_controlled_ship = {
+				set_disable_at_health = -1
 			}
 		}
 	}
@@ -999,5 +1049,116 @@ event = {
 		}
 		hidden_effect = {
 		}
+	}
+}
+
+planet_event = {
+	id = rds_setting.9
+	title = rds_setting.9.name
+	desc = rds_setting.9.desc
+	picture_event_data = {
+		room = "crisis_room"
+	}
+	diplomatic = yes
+	force_open  = yes
+	auto_opens = yes
+	is_triggered_only = yes 
+	trigger = {
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = rds_setting.resource_replicator.x1000
+		multiply_variable = {
+			which = resource_replicator_mult
+			value = 1000
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.x100
+		multiply_variable = {
+			which = resource_replicator_mult
+			value = 100
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.x10
+		multiply_variable = {
+			which = resource_replicator_mult
+			value = 10
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.a1
+		change_variable = {
+			which = resource_replicator_mult
+			value = 1
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.to0
+		set_variable = {
+			which = resource_replicator_mult
+			value = 0
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.s1
+		subtract_variable = {
+			which = resource_replicator_mult
+			value = 1
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.d10
+		divide_variable = {
+			which = resource_replicator_mult
+			value = 10
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.d100
+		divide_variable = {
+			which = resource_replicator_mult
+			value = 100
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.resource_replicator.d1000
+		divide_variable = {
+			which = resource_replicator_mult
+			value = 1000
+		}
+		planet_event = {
+			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.gui_close
 	}
 }

@@ -15,12 +15,21 @@ event = {
 			save_event_target_as = death_army
 		}
 		FromFromFrom = {
-			while = {
-				count = 2
-				create_army = {
-					name = Name_Reborn_RDS_Army
-					owner = event_target:death_army.owner
-					type = reality_distortion_system_army
+			create_army = {
+				name = "Name_Reborn_RDS_Army"
+				owner = event_target:death_army.owner
+				type = reality_distortion_system_army
+			}
+			every_planet_army = {
+				limit = {
+					NOT = {
+						is_owned_by = event_target:death_army.owner
+					}
+				}
+				modify_army = {
+					type = rds_dummy_army
+					owner = this.owner
+					name = "Dummy"
 				}
 			}
 		}
@@ -247,7 +256,7 @@ event = {
 	}
 }
 
-#INFINTE_DISTRICTS_SLOTS
+#INFINTE_DISTRICTS_AND_BUILDING_SLOTS
 planet_event = {
 	id = rds_misc.10
 	hide_window = yes
@@ -269,6 +278,70 @@ planet_event = {
 	is_triggered_only = yes
 	immediate = {
 		subtract_variable = { which = hilbert_disticts value = 1 }
+	}
+}
+
+planet_event = {
+	id = rds_misc.1002
+	hide_window = yes
+	trigger = {
+		has_active_building = building_hilbert_space_create_machine
+	}
+	is_triggered_only = yes
+	immediate = {
+		subtract_variable = { which = hilbert_disticts value = 1 }
+	}
+}
+
+planet_event = {
+	id = rds_misc.1010
+	hide_window = yes
+	trigger = {
+		has_active_building = building_hilbert_space_create_machine
+	}
+	is_triggered_only = yes
+	immediate = {
+		change_variable = { which = hilbert_building value = 1 }
+	}
+}
+
+planet_event = {
+	id = rds_misc.1011
+	hide_window = yes
+	trigger = {
+		has_active_building = building_hilbert_space_create_machine
+	}
+	is_triggered_only = yes
+	immediate = {
+		subtract_variable = { which = hilbert_building value = 1 }
+	}
+}
+
+planet_event = {
+	id = rds_misc.1012
+	hide_window = yes
+	trigger = {
+		has_active_building = building_hilbert_space_create_machine
+	}
+	is_triggered_only = yes
+	immediate = {
+		subtract_variable = { which = hilbert_building value = 1 }
+	}
+}
+
+planet_event = {
+	id = rds_misc.1020
+	hide_window = yes
+	trigger = {
+		from = {
+			has_active_building = building_hilbert_space_create_machine
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			change_variable = { which = hilbert_housing value = 1 }
+		}
 	}
 }
 
@@ -374,5 +447,132 @@ planet_event = {
 	is_triggered_only = yes
 	immediate = {
 		add_colony_progress = 100
+	}
+}
+
+#Auto_Build_Starbase
+country_event = {
+	id = rds_misc.17
+	hide_window = yes
+	trigger = {
+		has_country_flag = rds_auto_build_starbase
+		From = {
+			has_owner = no
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		From = {
+			create_starbase = {
+				size = starbase_outpost
+				owner = root
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+				}
+				create_mining_station = { owner = root }
+			}
+			every_system_planet = {
+				limit = {
+					has_deposit_for = shipclass_research_station
+				}
+				create_research_station = { owner = root }
+			}
+		}
+	}
+}
+
+#Waiting For Write
+country_event = {
+	id = rds_misc.18
+	hide_window = yes
+	trigger = {
+	}
+	is_triggered_only = yes
+	immediate = {
+	}
+}
+
+#Ship_Reborn_Beta(有Bug,可以使用，但不会修。（双关）)
+country_event = {
+	id = rds_misc.19
+	hide_window = yes
+	trigger = {
+		OR = {
+			From = {
+				has_country_flag = debug_mode
+			}
+			FromFromFrom = {
+				OR = {
+					has_component = SHIP_HULL_PROTECTION_MODULE
+					OR = {
+						EQUIPPED_WITH_RDS = yes
+						has_rds_flag = { FLAG = unbreakable_ship }
+					}
+				}
+			}
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		FromFromFrom = {
+			delete_ship = this
+			fleet = {
+				create_ship = {
+					name = PREV
+					design = PREV
+				}
+			}
+		}
+		last_created_ship = {
+			if = {
+				limit = {
+					EQUIPPED_WITH_RDS = yes
+				}
+				ship_event = {
+					id = rds_setting.4
+				}
+				ship_event = {
+					id = rds.4
+				}
+			}
+			if = {
+				limit = {
+					has_component = SHIP_HULL_PROTECTION_MODULE
+				}
+				ship_event = {
+					id = rds.7
+				}
+			}
+		}
+	}
+}
+
+#SPECIES_CHANGE
+country_event = {
+	id = rds_misc.20
+	hide_window = yes
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	immediate = {
+		random_owned_pop = {
+			limit = {
+				has_trait = trait_rds_mystical_power
+			}
+			owner = {
+				every_owned_pop = {
+					limit = {
+						NOT = {
+							is_same_species = prevprev
+						}
+						is_same_species_class = prevprev
+					}
+					change_species = prevprev
+				}
+			}
+		}
 	}
 }

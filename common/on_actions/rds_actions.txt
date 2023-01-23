@@ -58,8 +58,8 @@ on_army_killed_in_combat = {
 # From = Planet
 on_ship_built = {
 	events = {
-		rds.4
-		rds_setting.4
+		rds_setting.4 #写入默认设定
+		rds.4 #启动RDS
 		rds.7
 	}
 }
@@ -141,6 +141,7 @@ on_pop_bombed_to_death = {
 # FromFromFrom = fleet 2
 on_entering_battle = {
 	events = {
+		rds.9
 	}
 }
 
@@ -158,22 +159,6 @@ on_entering_system_fleet = {
 empire_init_add_technologies = {
 	events = {
 		rds_origin.1
-	}
-}
-
-# A district construction has been queued.
-# This = Planet
-on_district_queued = {
-	events = {
-		rds_misc.10
-	}
-}
-
-# A district construction has been unqueued.
-# This = Planet
-on_district_unqueued = {
-	events = {
-		rds_misc.1001
 	}
 }
 
@@ -198,5 +183,27 @@ on_relic_activated = {
 on_colonization_started = {
 	events = {
 		rds_misc.16
+	}
+}
+
+# A country has gained a surveyed status on a planet. Happens after "on_survey" if a science ship surveyed a planet.
+# Root = Country
+# From = system
+# FromFrom = Fleet of the science ship that surveyed it, if any
+on_system_survey = {
+	events = {
+		rds_misc.17
+	}
+}
+
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_perp = {
+	events = {
+		#rds_misc.19
+	}
+	random_events = {
 	}
 }

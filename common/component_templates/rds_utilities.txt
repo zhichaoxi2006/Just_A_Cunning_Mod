@@ -46,8 +46,10 @@ utility_component_template = {
 	}
 	sensor_range = 20
 	hyperlane_range = 25
-	ship_modifier = {
-		ship_tracking_add = 50
+	triggered_ship_modifier = {
+		ship_accuracy_add = 2
+		ship_tracking_add = 3
+		multiplier = fleet.trigger:num_ships
 	}
 	prerequisites = {
 		tech_deduction_theory
@@ -133,6 +135,7 @@ utility_component_template = {
 	hostile_aura = {
 		name = "aura_killer_aura"
 		system_wide = no
+		radius = 10000
 		stack_info = {
 			id = aura_killer_aura
 			priority = 250
@@ -164,10 +167,12 @@ utility_component_template = {
 	ftl = yes
 	jumpdrive = yes
 	ship_modifier = {
-		ship_windup_mult = -1
+		ship_windup_mult = -10
 		ship_interstellar_speed_mult = 6.66
-		ship_jumpdrive_cooldown_mult = -4.2
-		ship_ftl_jumpdrive_range_mult = 42
+		ship_jumpdrive_cooldown_mult = -6.4
+		ship_ftl_jumpdrive_range_mult = 132.58
+		ship_emergency_ftl_min_days_mult = -4
+		ship_emergency_ftl_mult = -4
 	}
 	class_restriction = {
 		shipclass_military
@@ -213,9 +218,9 @@ utility_component_template = {
 		}
 	}
 	ship_modifier = {
-		ship_base_speed_mult = 3
-		ship_speed_mult = 4
-		ship_evasion_add = 400
+		ship_base_speed_mult = 4.2
+		ship_speed_mult = 6.4
+		ship_evasion_add = 100
 	}
 	prerequisites = {
 		tech_deduction_theory

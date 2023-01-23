@@ -1,4 +1,20 @@
 @Residual_hull_value = 1
 @flag_time = 1
 @modifier_time = 1
-@rds_script_ship_hull_mult = -0.999
+@rds_script_ship_hull_mult = 0.999999999
+
+@ldo_physics_research = 3
+@ldo_society_research = 3
+@ldo_engineering_research = 3
+@ldo_unity = 1
+@de_energy = 2
+@mmec_produce = 1
+@armec_produce = 1
+@cgrmec_produce = 1
+@vmmec_produce = 1
+@egmec_produce = 1
+@rcmec_produce = 1
+@dmmec_produce = 1
+@lmmec_produce = 1
+@zmec_produce = 1
+@nmec_produce = 1

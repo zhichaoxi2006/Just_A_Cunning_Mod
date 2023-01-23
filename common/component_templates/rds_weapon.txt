@@ -4,6 +4,7 @@ weapon_component_template = {
 	type = point_defence
 	icon = "GFX_ship_part_pd_ship_reaper"
 	icon_frame = 1
+	projectile_gfx = "flak_pd_3"
 	prerequisites = {
 		"tech_reaper_weapons_strategy"
 	}
@@ -38,15 +39,7 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -57,6 +50,7 @@ weapon_component_template = {
 	entity = "small_laser_gun_entity"
 	icon = "GFX_ship_part_ship_reaper"
 	icon_frame = 1
+	projectile_gfx = "space_whale_weapon"
 	prerequisites = {
 		"tech_reaper_weapons_strategy"
 	}
@@ -90,15 +84,7 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -107,7 +93,7 @@ weapon_component_template = {
 	size = medium
 	type = instant
 	icon = "GFX_ship_part_ship_reaper"
-	entity = "medium_laser_gun_entity"
+	projectile_gfx = "space_whale_weapon"
 	icon_frame = 1
 	prerequisites = {
 		tech_reaper_weapons_strategy
@@ -142,15 +128,7 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -159,6 +137,7 @@ weapon_component_template = {
 	size = large
 	type = instant
 	icon = "GFX_ship_part_ship_reaper"
+	projectile_gfx = "space_whale_weapon"
 	icon_frame = 1
 	prerequisites = {
 		"tech_reaper_weapons_strategy"
@@ -193,15 +172,7 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -211,6 +182,7 @@ weapon_component_template = {
 	type = instant
 	icon = "GFX_ship_part_extra_large_ship_reaper"
 	icon_frame = 1
+	projectile_gfx = "focused_arc_emitter"
 	prerequisites = {
 		"tech_reaper_weapons_strategy"
 	}
@@ -241,15 +213,7 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -259,6 +223,7 @@ weapon_component_template = {
 	type = instant
 	icon = "GFX_ship_part_titanic_ship_reaper"
 	icon_frame = 1
+	projectile_gfx = "ion_cannon"
 	prerequisites = {
 		"tech_reaper_weapons_strategy"
 	}
@@ -289,15 +254,7 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -355,15 +312,7 @@ strike_craft_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
-		}
+		weight = 0
 	}
 }
 
@@ -418,14 +367,40 @@ weapon_component_template = {
 		}
 	}
 	ai_weight = {
-		weight = 114514
-		modifier = {
-			factor = 0
-			is_ai = yes
+		weight = 0
+	}
+}
+
+weapon_component_template = {
+	key = "RDS_EVENT_CANNON"
+	size = titanic
+	type = instant
+	icon = GFX_ship_part_rds_event_cannon
+	icon_frame = 1
+	prerequisites = {
+		"tech_reaper_weapons_strategy"
+	}
+	component_set = "RDS_EVENT_CANNON"
+	projectile_gfx = "ion_cannon"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 120
 		}
-		modifier = {
-			multiply = 0
-			has_country_flag = disable_rds_ship_w_components
+		upkeep = {
+			energy = 0
+			alloys = 0
 		}
 	}
+	damage = {
+		min = 4
+		max = 4
+	}
+	total_fire_time = 1
+	range = 2899
+	accuracy = 19.21
+	tracking = 19.49
+	shield_penetration = 5
+	armor_penetration = 5
+	should_ai_use = no
 }

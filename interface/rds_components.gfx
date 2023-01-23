@@ -55,4 +55,16 @@ spriteTypes = {
 		name = "GFX_ship_part_360totalsecurity"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_360totalsecurity.dds"
 	}
+	spriteType = {
+		name = "GFX_ship_part_rds_event_cannon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_rds_event_cannon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_ship_hull_protection_module"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ship_hull_protection_module.dds"
+	}
+	spriteType = {
+		name = "GFX_sb_deduction_framework"
+		texturefile = "gfx/interface/icons/modules/sb_deduction_framework.dds"
+	}
 }

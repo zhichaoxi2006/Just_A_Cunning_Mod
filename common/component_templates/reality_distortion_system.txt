@@ -25,9 +25,45 @@ utility_component_template = {
 	}
 	triggered_ship_modifier = {
 		potential = {
+			fleet = {
+				has_fleet_flag = archaeological_site_buff
+			}
 		}
-		ship_fire_rate_mult = 1
-		multiplier = 1
+		ship_archaeological_site_clues_add = 42
+		ship_archaeological_site_excavation_speed_mult = 89
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_HULL_PROTECTION_MODULE"
+	size = aux
+	icon = GFX_ship_part_ship_hull_protection_module
+	icon_frame = 1
+	prerequisites = {
+		tech_deduction_theory
+	}
+	component_set = SHIP_HULL_PROTECTION_MODULE
+	power = -100
+	valid_for_country = {
+		NOT = {
+			has_country_flag = disable_rds_ship_u_components
+		}
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 70
+		}
+		upkeep = {
+			energy = 0.4
+			alloys = 0.2
+		}
+	}
+	triggered_ship_modifier = {
+		
 	}
 	ai_weight = {
 		weight = 0

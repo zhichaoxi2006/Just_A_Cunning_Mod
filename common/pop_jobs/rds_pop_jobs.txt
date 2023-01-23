@@ -3,56 +3,45 @@ laplace_demon_operator = {
 	building_icon = building_laplace_research_facility
 	clothes_texture_index = 3
 	icon = researcher
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_researchers
 		upkeep = {
             energy = 1
             multiplier = value:dynmic_laplace_demon_operator_upkeep
         }
 		produces = {
-            physics_research = 1
-            society_research = 1
-            engineering_research = 1
-            unity = 1
+            physics_research = @ldo_physics_research
+            society_research = @ldo_society_research
+            engineering_research = @ldo_engineering_research
+            unity = @ldo_unity
             multiplier = value:dynmic_laplace_demon_operator_produce
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = laplace_demon_operator value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
 deduction_engineer = {
 	category = specialist
-	building_icon = building_wheeler_performing_reactors
+	building_icon = building_buttercat_energy_generator
 	clothes_texture_index = 3
 	icon = technician
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
-		upkeep = {
-			consumer_goods = 2
-		}
+		category = planet_technician
 		produces = {
-            energy = 2
+            energy = @de_energy
             multiplier = value:dynmic_deduction_engineer
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = deduction_engineer value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -61,26 +50,22 @@ minerals_mass_energy_conversion = {
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = miner
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_miners
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
         }
         produces = {
-            minerals = 1
+            minerals = @mmec_produce
             multiplier = value:dynmic_minerals_mass_energy_conversion_produce
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = minerals_mass_energy_conversion value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -89,26 +74,22 @@ alloys_resources_mass_energy_conversion = {
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = foundry
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_metallurgists
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
         }
 		produces = {
-			alloys = 1
+			alloys = @armec_produce
             multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = alloys_resources_mass_energy_conversion value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -117,26 +98,22 @@ consumer_goods_resources_mass_energy_conversion = {
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = artisan
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_artisans
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
         }
 		produces = {
-			consumer_goods = 1
+			consumer_goods = @cgrmec_produce
             multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = consumer_goods_resources_mass_energy_conversion value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -145,26 +122,22 @@ volatile_motes_mass_energy_conversion = {
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = chemist
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_chemists
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
         }
 		produces = {
-			volatile_motes = 1
+			volatile_motes = @vmmec_produce
             multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = volatile_motes_mass_energy_conversion value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -173,26 +146,22 @@ exotic_gases_mass_energy_conversion = {
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = gas_refiner
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_refiners
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
         }
 		produces = {
-			exotic_gases = 1
+			exotic_gases = @egmec_produce
             multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = exotic_gases_mass_energy_conversion value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -201,134 +170,22 @@ rare_crystals_mass_energy_conversion = {
 	building_icon = building_mass_energy_conversion_center
 	clothes_texture_index = 3
 	icon = translucer
+	possible_precalc = can_fill_specialist_job
 	resources = {
-		category = planet_jobs
+		category = planet_translucers
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
         }
 		produces = {
-			rare_crystals = 1
+			rare_crystals = @rcmec_produce
             multiplier = value:dynamic_energy_income
         }
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = rare_crystals_mass_energy_conversion value > 1 }
-			}
-		}
 	}
 	weight = {
-		factor = 10
-	}
-}
-
-dark_matter_mass_energy_conversion = {
-	category = specialist
-	building_icon = building_mass_energy_conversion_center
-	clothes_texture_index = 3
-	resources = {
-		category = planet_jobs
-		upkeep = {
-            energy = 1
-            multiplier = value:dynamic_energy_income
-        }
-		produces = {
-			sr_dark_matter = 1
-            multiplier = value:dynamic_energy_income
-        }
-	}
-	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = dark_matter_mass_energy_conversion value > 1 }
-			}
-		}
-	}
-	weight = {
-		factor = 10
-	}
-}
-
-living_metal_mass_energy_conversion = {
-	category = specialist
-	building_icon = building_mass_energy_conversion_center
-	clothes_texture_index = 3
-	resources = {
-		category = planet_jobs
-		upkeep = {
-            energy = 1
-            multiplier = value:dynamic_energy_income
-        }
-		produces = {
-			sr_living_metal = 1
-            multiplier = value:dynamic_energy_income
-        }
-	}
-	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = living_metal_mass_energy_conversion value > 1 }
-			}
-		}
-	}
-	weight = {
-		factor = 10
-	}
-}
-
-zro_mass_energy_conversion = {
-	category = specialist
-	building_icon = building_mass_energy_conversion_center
-	clothes_texture_index = 3
-	resources = {
-		category = planet_jobs
-		upkeep = {
-            energy = 1
-            multiplier = value:dynamic_energy_income
-        }
-		produces = {
-			sr_zro = 1
-            multiplier = value:dynamic_energy_income
-        }
-	}
-	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = zro_mass_energy_conversion value > 1 }
-			}
-		}
-	}
-	weight = {
-		factor = 10
-	}
-}
-
-nanites_mass_energy_conversion = {
-	category = specialist
-	building_icon = building_mass_energy_conversion_center
-	clothes_texture_index = 3
-	resources = {
-		category = planet_jobs
-		upkeep = {
-            energy = 1
-            multiplier = value:dynamic_energy_income
-        }
-		produces = {
-			nanites = 1
-            multiplier = value:dynamic_energy_income
-        }
-	}
-	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = nanites_mass_energy_conversion value > 1 }
-			}
-		}
-	}
-	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -336,9 +193,10 @@ multiverse_trader = {
 	category = ruler
 	building_icon = building_multiverse_trade_center
 	clothes_texture_index = 3
+	possible_precalc = can_fill_ruler_job
 	icon = merchant
 	resources = {
-		category = planet_jobs
+		category = planet_merchants
 		upkeep = {
             energy = 1
             multiplier = value:dynamic_energy_income
@@ -349,14 +207,9 @@ multiverse_trader = {
 		multiplier = value:dynamic_energy_income
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 	possible = {
-		owner = {
-			NOT = {
-				num_assigned_jobs = { job = multiverse_trader value > 1 }
-			}
-		}
 	}
 }
 
@@ -365,6 +218,7 @@ hilbert_hotel_manager = {
 	building_icon = building_hilbert_hotel
 	clothes_texture_index = 3
 	icon = manager
+	possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_jobs
 		upkeep = {
@@ -373,11 +227,11 @@ hilbert_hotel_manager = {
         }
 	}
 	triggered_planet_modifier = {
-		job_hilbert_hotel_clerk_add = 1
+		job_hilbert_hotel_clerk_add = 0.125
 		multiplier = planet.trigger:num_pops
 	}
 	weight = {
-		factor = 10
+		weight = 10
 	}
 }
 
@@ -386,6 +240,7 @@ hilbert_hotel_clerk = {
 	building_icon = building_hilbert_hotel
 	clothes_texture_index = 3
 	icon = clerk
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_jobs
 		upkeep = {
@@ -393,26 +248,15 @@ hilbert_hotel_clerk = {
         }
 	}
 	planet_modifier = {
-		planet_amenities_add = 2
-		planet_housing_add = 4
-	}
-	triggered_planet_modifier = {
-		potential = {
-			planet = {
-				has_planet_flag = Resource_Replication_Beam
-			}
-		}
-		planet_jobs_produces_mult = 1
+		planet_amenities_add = 10
+		planet_housing_add = 20
 	}
 	weight = {
-		factor = 10
+		weight = 10
 		modifier = {
 			factor = 0
 			planet = {
-				OR = {
-					free_amenities > 10
-					free_housing > 10
-				}
+				free_jobs > trigger:num_pops
 			}
 		}
 	}

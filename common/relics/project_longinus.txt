@@ -19,8 +19,8 @@ r_project_longinus = {
 		}
 	}
 	active_effect = {
+		custom_tooltip = effect_project_longinus
 		hidden_effect = {
-			custom_tooltip = effect_project_longinus
 			set_global_flag = project_longinus_on
 			country_event = {
 				id = project_longinus.9

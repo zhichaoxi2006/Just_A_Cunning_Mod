@@ -1,0 +1,29 @@
+clear_reilc_cooldown = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = 5
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	potential = {
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_has_relic_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+
+	effect = {
+		custom_tooltip = clear_reilc_cooldown_effect
+		hidden_effect = {
+			remove_modifier = relic_activation_cooldown
+		}
+	}
+}

@@ -14,15 +14,5 @@ origin_transdimensional = {
 		base = 5
 	}
 	flags = {
-		speed_reduction
-		anti_hull_repair
-		armor_erasing_system
-		shield_erasing_system
-		ship_hp_amount_reduce_system
-		no_disengage
-		unbreakable_ship
-		accuracy_buff
-		accuracy_debuff
-		planet_destroyer
 	}
 }

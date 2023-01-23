@@ -1,4 +1,10 @@
+category = {
+    name = "jacm"
+    soundeffects = {
+        jacm_dies_irae
+    }
+}
 sound_effect = {
-    name = dies_irae
-    file = "Requiem Dies irae.wav"
+    name = jacm_dies_irae
+    file = "music/RequiemDiesirae.wav"
 }

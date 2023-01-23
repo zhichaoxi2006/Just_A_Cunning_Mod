@@ -11,6 +11,60 @@ event = {
 	}
 }
 
+country_event = {
+	id = project_longinus.2
+	title = project_longinus.2.name
+	desc = project_longinus.2.desc
+	diplomatic = yes 
+	picture_event_data = {
+		room = "Avant_Garde_France"
+	}
+	is_triggered_only = yes 
+	trigger = {
+		
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = yes
+			}
+			destroy_country = yes
+		}
+		every_megastructure = {
+			limit = {
+			}
+			delete_megastructure = this
+		}
+		every_galaxy_pop = {
+			limit = {
+				NOT = {
+					is_same_species = root.owner_main_species
+				}
+			}
+			kill_pop = yes
+		}
+		every_galaxy_planet = {
+			limit = {
+				NOT = {
+					is_planet = root.capital_star
+				}
+			}
+			remove_planet = yes
+		}
+		every_ambient_object = {
+			limit = {
+			}
+			destroy_ambient_object = this
+		}
+	}
+	option = {
+		name = project_longinus.2.option
+		country_event = {
+			id = project_longinus.1
+		}
+	}
+}
+
 event = {
 	id = project_longinus.7
 	hide_window = yes
@@ -38,7 +92,7 @@ country_event = {
 	title =  project_longinus.8.name
 	desc =  project_longinus.8.desc
 	auto_opens = yes 
-	picture = GFX_evt_vortex #a name of a picture to display
+	picture = GFX_evt_vortex
 	is_triggered_only = yes 
 	trigger = {
 	}
@@ -63,7 +117,7 @@ country_event = {
 				is_ai = no
 			}
 			country_event = {
-				id = project_longinus.1
+				id = project_longinus.2
 				days = 360
 			}
 			set_saved_date = {

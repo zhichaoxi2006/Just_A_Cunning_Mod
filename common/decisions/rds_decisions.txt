@@ -1,7 +1,7 @@
-decision_resource_replication_protocol_on = {
+decision_resource_replication_setting = {
 	owned_planets_only = yes
 	sound = event_administrative_work
-	icon = decision_resources
+	icon = decision_activate_dimensional_manipulation_device
 
 	resources = {
 		category = decisions
@@ -9,33 +9,27 @@ decision_resource_replication_protocol_on = {
 			energy = 100
 		}
 	}
-
 	potential = {
-		NOT = {
-			has_planet_flag = Resource_Replication_Beam
-		}
 	}
-
 	allow = {
 	}
-
 	effect = {
-		set_planet_flag = Resource_Replication_Beam
+		custom_tooltip = decision_resource_replication_setting_tooltip
+		hidden_effect = {
+			planet_event = {
+				id = rds_setting.9
+			}
+		}
 	}
 
 	ai_weight = {
-		weight = 0
-		modifier = {
-			has_building = building_hilbert_hotel
-			add = 1000
-		}
 	}
 }
 
-decision_resource_replication_protocol_off = {
+decision_pc_reality_distortion_city = {
 	owned_planets_only = yes
 	sound = event_administrative_work
-	icon = decision_resources
+	icon = decision_machine_oracle
 
 	resources = {
 		category = decisions
@@ -43,18 +37,16 @@ decision_resource_replication_protocol_off = {
 			energy = 100
 		}
 	}
-
 	potential = {
-		has_planet_flag = Resource_Replication_Beam
+		always = no
+		NOT = {
+			is_planet_class = pc_reality_distortion_city
+		}
 	}
-
-	allow = {
-	}
-
 	effect = {
-		remove_planet_flag = Resource_Replication_Beam
+		change_pc = pc_reality_distortion_city
+		set_planet_flag = pc_reality_distortion_city
 	}
-
 	ai_weight = {
 	}
 }

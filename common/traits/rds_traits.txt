@@ -15,8 +15,8 @@ trait_rds_mystical_power = {
 	potential_crossbreeding_chance = 0
 	modifier = {
 		pop_environment_tolerance = 2
-		planet_jobs_produces_mult = 5
-		pop_demotion_time_mult = -10
+		planet_jobs_produces_mult = 3
+		pop_demotion_time_mult = -1
 		empire_size_pops_mult = -1 
 	}
 	slave_cost = {

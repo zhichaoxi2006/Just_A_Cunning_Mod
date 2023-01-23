@@ -1,325 +1,395 @@
-building_reality_distortion_system = { 
-    base_buildtime = 60
+building_reality_distortion_system = {
+	base_buildtime = 60
 	base_cap_amount = 1
 	icon = building_akx_worm_3
 	category = government
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 100
-            energy = 100
-        }
-        upkeep = {
-            energy = 2
-        }
-    }
-    convert_to = {
-        building_reality_distortion_system
-    }
-    destroy_trigger = {
-        NOT = {
-            has_planet_flag = building_reality_distortion_system_cooldown
-        }
-    }
-    on_destroy = {
-        set_timed_planet_flag = { flag = building_reality_distortion_system_cooldown months = 1 }
-    }
-    country_modifier = {
-        country_subject_integration_speed_add = 100
-    }
-    prerequisites = {
-        tech_reality_distortion_system_buildings
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+			energy = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	convert_to = {
+		building_reality_distortion_system
+	}
+	destroy_trigger = {
+		NOT = {
+			has_planet_flag = building_reality_distortion_system_cooldown
+		}
+	}
+	on_destroy = {
+		set_timed_planet_flag = {
+			flag = building_reality_distortion_system_cooldown
+			months = 1
+		}
+	}
+	planet_modifier = {
+		planet_clear_blocker_speed_mult = 10
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
 }
 
-building_rds_pop_creater = {
-    base_buildtime = 60
+building_robotic_batch_assembly_center = {
+	base_buildtime = 60
 	base_cap_amount = 1
 	icon = building_robot_assembly_plant
 	category = pop_assembly
-    resources = {
-        category = planet_buildings
-        cost = {
-            influence = 1001
-        }
-        upkeep = {
-            energy = 2
-        }
-    }
-    planet_modifier = {
-        pop_growth_speed = 100
-    }
-    prerequisites = {
-        tech_reality_distortion_system_buildings
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 1200
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		job_roboticist_per_pop = 0.125
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
 }
 
-building_wheeler_performing_reactors = {
-    base_cap_amount = 1 
-    base_buildtime = 60
+building_buttercat_energy_generator = {
+	base_cap_amount = 1
+	base_buildtime = 60
 	category = resource
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 200
-        }
-    }
-    allow = {
-
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                NOT = {
-                    has_ethic = ethic_gestalt_consciousness
-                }
-            }
-        }
-        job_deduction_engineer_add = 1
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_ethic = ethic_gestalt_consciousness
-            }
-        }
-        job_hive_deduction_engineer_add = 1
-    }
-    prerequisites = {
-        tech_deduction_theory
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+	}
+	allow = {
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		job_deduction_engineer_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		job_hive_deduction_engineer_add = 1
+	}
+	prerequisites = {
+		tech_deduction_theory
+	}
 }
 
 building_hilbert_hotel = {
-    base_cap_amount = 1
-    base_buildtime = 60
+	base_cap_amount = 1
+	base_buildtime = 60
 	category = amenity
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 200
-        }
-    }
-    allow = {
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                NOT = {
-                    has_ethic = ethic_gestalt_consciousness
-                }
-            }
-        }
-        job_hilbert_hotel_manager_add = 1
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_ethic = ethic_gestalt_consciousness
-            }
-        }
-        job_hive_hilbert_hotel_manager_add = 1
-    }
-    prerequisites = {
-        tech_hilbert_space_theory
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+	}
+	allow = {
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		job_hilbert_hotel_manager_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		job_hive_hilbert_hotel_manager_add = 1
+	}
+	prerequisites = {
+		tech_hilbert_space_theory
+	}
 }
 
 building_mass_energy_conversion_center = {
-    empire_limit = 1
-    base_buildtime = 60
+	empire_limit = 1
+	base_buildtime = 60
 	category = manufacturing
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 200
-        }
-    }
-    allow = {
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                NOT = {
-                    has_ethic = ethic_gestalt_consciousness
-                }
-            }
-        }
-        job_minerals_mass_energy_conversion_add = 1
-        job_alloys_resources_mass_energy_conversion_add = 1
-        job_consumer_goods_resources_mass_energy_conversion_add = 1
-        job_volatile_motes_mass_energy_conversion_add = 1
-        job_exotic_gases_mass_energy_conversion_add = 1
-        job_rare_crystals_mass_energy_conversion_add = 1
-        job_dark_matter_mass_energy_conversion_add = 1
-        job_living_metal_mass_energy_conversion_add = 1
-        job_zro_mass_energy_conversion_add = 1
-        job_nanites_mass_energy_conversion_add = 1
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_ethic = ethic_gestalt_consciousness
-            }
-        }
-        job_hive_minerals_mass_energy_conversion_add = 1
-        job_hive_alloys_resources_mass_energy_conversion_add = 1
-        job_hive_consumer_goods_resources_mass_energy_conversion_add = 1
-        job_hive_volatile_motes_mass_energy_conversion_add = 1
-        job_hive_exotic_gases_mass_energy_conversion_add = 1
-        job_hive_rare_crystals_mass_energy_conversion_add = 1
-        job_hive_dark_matter_mass_energy_conversion_add = 1
-        job_hive_living_metal_mass_energy_conversion_add = 1
-        job_hive_zro_mass_energy_conversion_add = 1
-        job_hive_nanites_mass_energy_conversion_add = 1
-    }
-    prerequisites = {
-        tech_reality_distortion_system_buildings
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+	}
+	allow = {
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		job_minerals_mass_energy_conversion_add = 1
+		job_alloys_resources_mass_energy_conversion_add = 1
+		job_consumer_goods_resources_mass_energy_conversion_add = 1
+		job_volatile_motes_mass_energy_conversion_add = 1
+		job_exotic_gases_mass_energy_conversion_add = 1
+		job_rare_crystals_mass_energy_conversion_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		job_hive_minerals_mass_energy_conversion_add = 1
+		job_hive_alloys_resources_mass_energy_conversion_add = 1
+		job_hive_consumer_goods_resources_mass_energy_conversion_add = 1
+		job_hive_volatile_motes_mass_energy_conversion_add = 1
+		job_hive_exotic_gases_mass_energy_conversion_add = 1
+		job_hive_rare_crystals_mass_energy_conversion_add = 1
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
 }
 
 building_laplace_research_facility = {
-    empire_limit = 1
-    base_buildtime = 60
+	empire_limit = 1
+	base_buildtime = 60
 	category = research
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 200
-        }
-        upkeep = {
-            alloys = 1
-        }
-    }
-    allow = {
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                NOT = {
-                    has_ethic = ethic_gestalt_consciousness
-                }
-            }
-        }
-        job_laplace_demon_operator_add = 1
-    }
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_ethic = ethic_gestalt_consciousness
-            }
-        }
-        job_hive_laplace_demon_operator_add = 1
-    }
-    prerequisites = {
-        tech_laplace_demon_manufacturing
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+		upkeep = {
+			alloys = 1
+		}
+	}
+	allow = {
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		job_laplace_demon_operator_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		job_hive_laplace_demon_operator_add = 1
+	}
+	prerequisites = {
+		tech_laplace_demon_manufacturing
+	}
 }
 
 building_rds_resource_cage = {
-    base_cap_amount = 1
-    base_buildtime = 60
+	base_cap_amount = 1
+	base_buildtime = 60
 	icon = building_resource_silo
 	category = resource
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 100  
-        }
-    }
-    allow = {
-    }
-    triggered_country_modifier = {
-        country_resource_max_add = 50000000
-    }
-    on_built = {
-        planet_event = {
-            id = rds_misc.11
-        }
-    }
-    prerequisites = {
-        tech_hilbert_space_theory
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+		}
+	}
+	allow = {
+	}
+	triggered_country_modifier = {
+		country_resource_max_add = 50000000
+	}
+	on_built = {
+		planet_event = {
+			id = rds_misc.11
+		}
+	}
+	prerequisites = {
+		tech_hilbert_space_theory
+	}
 }
 
 building_rds_stronghold = {
-    base_cap_amount = 1
-    position_priority = 100
-    base_buildtime = 60
+	base_cap_amount = 1
+	position_priority = 100
+	base_buildtime = 60
 	category = army
-    planetary_ftl_inhibitor = yes
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 100
-        }
-    }
-    army_modifier = {
-        army_collateral_damage_mult = -10
-    }
-    planet_modifier = {
-        planet_orbital_bombardment_damage = -10
-        pop_defense_armies_add = 50
-    }
-    prerequisites = {
-        tech_reality_distortion_system_buildings
-    }
+	planetary_ftl_inhibitor = yes
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+		}
+	}
+	army_modifier = {
+		army_collateral_damage_mult = -10
+	}
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -1
+		job_soldier_per_pop = 0.25
+	}
+	triggered_country_modifier = {
+		starbase_shipyard_build_speed_mult = 1
+		multiplier = trigger:num_pops
+	}
+	triggered_planet_modifier = {
+		planet_army_build_speed_mult = 1
+		multiplier = trigger:num_pops
+	}
+	triggered_planet_modifier = {
+		army_defense_damage_mult = 1
+		multiplier = trigger:num_armies
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
 }
 
 building_multiverse_trade_center = {
-    empire_limit = 1
-    base_buildtime = 60
-    potential = {
-        exists = owner
-            owner = {
-                NOT = {
-                    has_ethic = ethic_gestalt_consciousness
-                }
-            }
-    }
+	empire_limit = 1
+	base_buildtime = 60
+	potential = {
+		exists = owner
+		owner = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
 	category = trade
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 100
-        }
-    }
-    planet_modifier = {
-        job_multiverse_trader_add = 1
-    }
-    allow = {
-    }
-    prerequisites = {
-        tech_reality_distortion_system_buildings
-    }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+		}
+	}
+	planet_modifier = {
+		job_multiverse_trader_add = 1
+	}
+	allow = {
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
 }
 
 building_hilbert_space_create_machine = {
-    base_cap_amount = 1
-    base_buildtime = 60
+	base_cap_amount = 1
+	base_buildtime = 60
 	category = government
-    resources = {
-        category = planet_buildings
-        cost = {
-            minerals = 100
-        }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+		}
+	}
+	triggered_planet_modifier = {
+		planet_max_districts_add = 1
+		multiplier = hilbert_disticts
+	}
+	triggered_planet_modifier = {
+		planet_max_buildings_add = 1
+		multiplier = hilbert_building
+	}
+	triggered_planet_modifier = {
+		planet_housing_add = 10
+		multiplier = hilbert_housing
+	}
+	on_built = {
+		set_variable = {
+			which = hilbert_disticts
+			value = 0
+		}
+		set_variable = {
+			which = hilbert_building
+			value = 0
+		}
+		set_variable = {
+			which = hilbert_housing
+			value = 0
+		}
+	}
+	prerequisites = {
+		tech_hilbert_space_theory
+	}
+}
+
+building_famine_maker = {
+	base_buildtime = 60
+	empire_limit = 1
+	icon = building_clone_vats
+	category = pop_assembly
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+		}
+		upkeep = {
+			food = 1
+			multiplier = owner.value:building_famine_maker_dynmic_values
+		}
+	}
+	prerequisites = {
+		tech_reality_distortion_system_buildings
+	}
+}
+
+building_consciousness_integration_device = {
+	base_buildtime = 60
+	empire_limit = 1
+	icon = building_commercial_megaplex
+	category = unity
+	resources = {
+		category = planet_jobs_productive
+		cost = {
+			minerals = 1200
+		}
+		produces = {
+			unity = 1
+			multiplier = value:dynamic_energy_income
+		}
     }
-    triggered_planet_modifier = {
-        planet_max_districts_add = 1
-        multiplier = hilbert_disticts
-    }
-    on_built = {
-        set_variable = { which = hilbert_disticts value = 0 }
-    }
-    prerequisites = {
-        tech_hilbert_space_theory
-    }
+	potential = {
+		always = no
+	}
+	triggered_country_modifier = {
+		pop_amenities_usage_mult = -1
+		pop_amenities_usage_no_happiness_mult = -1
+		multiplier = owner.trigger:num_pops
+	}
 }

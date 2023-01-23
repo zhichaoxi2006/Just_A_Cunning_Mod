@@ -1,0 +1,70 @@
+rds_event_cannon = {
+	#SHIP_HP_AMOUNT_REDUCE_SYSTEM
+	export_trigger_value_to_variable = {
+		trigger = has_hp
+		variable = ship_hp_amount
+	}
+	subtract_variable = {
+		which = ship_hp_amount
+		value = @Residual_hull_value
+	}
+	reduce_hp = ship_hp_amount
+	if = {
+		limit = {
+			check_modifier_value = { modifier = ship_hull_mult value > @rds_script_ship_hull_mult }
+		}
+		remove_modifier = swn_mod_ship_hull_mult
+		add_modifier = { modifier = swn_mod_ship_hull_mult months = @modifier_time multiplier = value:dynamic_ship_hull_mult }
+	}
+	if = {
+		limit = {
+			check_modifier_value = { modifier = ship_hull_mult value > 0 }
+		}
+		remove_modifier = swn_mod_ship_hull_add
+		add_modifier = { modifier = swn_mod_ship_hull_add months = @modifier_time multiplier = value:dynamic_ship_hull_add }
+	}
+	set_timed_ship_flag = {
+		flag = ship_hp_amount_reduce_system_target
+		days = @flag_time
+	}
+	#SHIELD_ERASING_SYSTEM
+	export_modifier_to_variable = {
+		modifier = ship_shield_reduction
+		variable = ship_shield_reduction_number
+	}
+	multiply_variable = {
+		which = ship_shield_reduction_number
+		value = -1
+	}
+		change_variable = {
+		which = ship_shield_reduction_number
+		value = 1
+	}
+	if = {
+		limit = {
+				check_modifier_value = {	modifier = ship_shield_reduction value < 1.00	}
+		}
+		remove_modifier = swn_mod_ship_shield_reduction
+		add_modifier = {	modifier = swn_mod_ship_shield_reduction	months = @modifier_time	multiplier = ship_shield_reduction_number	}
+	}
+	#ARMOR_ERASING_SYSTEM
+	export_modifier_to_variable = {
+		modifier = ship_armor_reduction
+		variable = ship_armor_reduction_number
+	}
+	multiply_variable = {
+		which = ship_armor_reduction_number
+		value = -1
+	}
+		change_variable = {
+		which = ship_armor_reduction_number
+		value = 1
+	}
+	if = {
+		limit = {
+			check_modifier_value = {	modifier = ship_armor_reduction value < 1.00	}
+		}
+		remove_modifier = swn_mod_ship_armor_reduction
+		add_modifier = {	modifier = swn_mod_ship_armor_reduction	months = @modifier_time	multiplier = ship_armor_reduction_number	}
+	}
+}

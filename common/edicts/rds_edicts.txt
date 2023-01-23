@@ -49,10 +49,13 @@ aryan_superman_assimilation_order = {
 	}
 }
 
-rds_colony_progress_add = {
+rds_colony_progress_add_on = {
 	icon = GFX_button_automate
 	length = 0
 	potential = {
+		NOT = {
+			has_country_flag = rds_colony_progress_add
+		}
 		is_ai = no
 		has_technology = tech_hilbert_space_theory
 		has_technology = tech_deduction_theory
@@ -62,5 +65,85 @@ rds_colony_progress_add = {
 	}
 	effect = {
 		set_country_flag = rds_colony_progress_add
+	}
+}
+
+rds_colony_progress_add_off = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		has_country_flag = rds_colony_progress_add
+		is_ai = no
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		remove_country_flag = rds_colony_progress_add
+	}
+}
+
+rds_auto_build_starbase_on = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		NOT = {
+			has_country_flag = rds_auto_build_starbase
+		}
+		is_ai = no
+		has_technology = tech_deduction_theory
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		set_country_flag = rds_auto_build_starbase
+	}
+}
+
+rds_auto_build_starbase_off = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		has_country_flag = rds_auto_build_starbase
+		is_ai = no
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		remove_country_flag = rds_auto_build_starbase
+	}
+}
+
+debug_mode_on = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		NOT = {
+			has_country_flag = debug_mode
+		}
+		is_ai = no
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		set_global_flag = debug_mode
+	}
+}
+
+debug_mode_off = {
+	icon = GFX_button_automate
+	length = 0
+	potential = {
+		has_country_flag = debug_mode
+		is_ai = no
+	}
+	resources = {
+		category = campaigns
+	}
+	effect = {
+		remove_global_flag = debug_mode
 	}
 }

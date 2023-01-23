@@ -28,3 +28,65 @@ terraform_link = {
 		}
 	}
 }
+
+terraform_link = {
+	from = "pc_shattered"
+	to = "pc_barren"
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 12500
+			minerals = 7500
+		}
+	}
+
+	duration = 360
+
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			should_terraform_trigger = {
+				CLASS_FROM = pc_broken
+				CLASS_TO = pc_barren
+			}
+		}
+	}
+}
+
+terraform_link = {
+	from = "pc_shattered_2"
+	to = "pc_barren"
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 12500
+			minerals = 7500
+		}
+	}
+
+	duration = 360
+
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			should_terraform_trigger = {
+				CLASS_FROM = pc_broken
+				CLASS_TO = pc_barren
+			}
+		}
+	}
+}

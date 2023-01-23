@@ -1,0 +1,191 @@
+#HIVE
+
+hive_dark_matter_mass_energy_conversion = {
+	category = complex_drone
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = dark_matter_mass_energy_conversion
+	possible_precalc = can_fill_drone_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			sr_dark_matter = @dmmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+hive_living_metal_mass_energy_conversion = {
+	category = complex_drone
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = living_metal_mass_energy_conversion
+	possible_precalc = can_fill_drone_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			sr_living_metal = @lmmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+hive_zro_mass_energy_conversion = {
+	category = complex_drone
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = zro_mass_energy_conversion
+	possible_precalc = can_fill_drone_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			sr_zro = @zmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+hive_nanites_mass_energy_conversion = {
+	category = complex_drone
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	icon = nanites_mass_energy_conversion
+	possible_precalc = can_fill_drone_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			nanites = @nmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+#Common
+
+dark_matter_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	possible_precalc = can_fill_specialist_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			sr_dark_matter = @dmmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+living_metal_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	possible_precalc = can_fill_specialist_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			sr_living_metal = @lmmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+zro_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	possible_precalc = can_fill_specialist_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			sr_zro = @zmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}
+
+nanites_mass_energy_conversion = {
+	category = specialist
+	building_icon = building_mass_energy_conversion_center
+	clothes_texture_index = 3
+	possible_precalc = can_fill_specialist_job
+	resources = {
+		category = planet_sr_miners
+		upkeep = {
+            energy = 1
+            multiplier = value:dynamic_energy_income
+        }
+		produces = {
+			nanites = @nmec_produce
+            multiplier = value:dynamic_energy_income
+        }
+	}
+	possible = {
+	}
+	weight = {
+		weight = 10
+	}
+}

@@ -31,10 +31,6 @@ site_rds_tech_database = {
 		event = rds_tech_database.5
 	}
 	on_create = {
-		planet = {
-			change_pc = { class = pc_black_hole inherit_entity = no }
-			set_planet_size = 1
-		}
 	}
 	on_roll_failed = {
 		from = {
