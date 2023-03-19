@@ -81,6 +81,15 @@ utility_component_template = {
 	ship_behavior = "pataphysics_strike_ship"
 	size_restriction = {
 	}
+	triggered_ship_modifier = {
+		ship_fire_rate_mult = 1
+		ship_weapon_damage = 1
+		ship_armor_penetration_mult = 1
+		ship_shield_damage_mult = 1
+		ship_armor_penetration_mult = 1
+		ship_shield_penetration_mult = 1
+		multiplier = fleet.trigger:fleet_size
+	}
 	component_set = "combat_computers"
 	ai_weight = {
 		weight = 0
@@ -97,6 +106,17 @@ utility_component_template = {
 	}
 	component_set = "ship_aura_components"
 	ftl_inhibitor = yes
+	friendly_aura = {
+		name = aura_naval_cap
+		system_wide = yes
+		stack_info = {
+			id = aura_cnaval_cap
+			priority = 250
+		}
+		modifier = {
+			mod_ship_naval_cap_usage_mult = -1
+		}
+	}
 	friendly_aura = {
 		name = aura_weapon_range
 		system_wide = yes
@@ -142,8 +162,8 @@ utility_component_template = {
 		}
 		damage_per_day = {
 			damage = {
-				min = 10000
-				max = 20000
+				min = 100
+				max = 200
 			}
 			accuracy = 1
 			shield_penetration = 1
@@ -220,7 +240,7 @@ utility_component_template = {
 	ship_modifier = {
 		ship_base_speed_mult = 4.2
 		ship_speed_mult = 6.4
-		ship_evasion_add = 100
+		ship_evasion_add = 90
 	}
 	prerequisites = {
 		tech_deduction_theory

@@ -102,3 +102,10 @@ dynmic_resource_expenses_compare = {
 		mode = add
 	}
 }
+
+robotic_batch_assembly_center_value = {
+	add = trigger:num_pops
+	divide = 8
+	round = yes
+	max = 9
+}

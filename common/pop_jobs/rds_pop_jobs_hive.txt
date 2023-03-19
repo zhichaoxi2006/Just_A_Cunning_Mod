@@ -7,7 +7,7 @@ hive_laplace_demon_operator = {
 	resources = {
 		category = planet_researchers
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynmic_laplace_demon_operator_upkeep
         }
 		produces = {
@@ -15,13 +15,13 @@ hive_laplace_demon_operator = {
             society_research = @ldo_society_research
             engineering_research = @ldo_engineering_research
             unity = @ldo_unity
-            multiplier = value:dynmic_laplace_demon_operator_produce
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -35,13 +35,13 @@ hive_deduction_engineer = {
 		category = planet_technician
 		produces = {
             energy = @de_energy
-            multiplier = value:dynmic_deduction_engineer
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -54,18 +54,18 @@ hive_minerals_mass_energy_conversion = {
 	resources = {
 		category = planet_miners
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
         produces = {
             minerals = @mmec_produce
-            multiplier = value:dynmic_minerals_mass_energy_conversion_produce
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -78,18 +78,18 @@ hive_alloys_resources_mass_energy_conversion = {
 	resources = {
 		category = planet_metallurgists
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			alloys = @armec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -102,18 +102,18 @@ hive_consumer_goods_resources_mass_energy_conversion = {
 	resources = {
 		category = planet_artisans
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			consumer_goods = @cgrmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -126,18 +126,18 @@ hive_volatile_motes_mass_energy_conversion = {
 	resources = {
 		category = planet_chemists
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			volatile_motes = @vmmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -150,18 +150,18 @@ hive_exotic_gases_mass_energy_conversion = {
 	resources = {
 		category = planet_refiners
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			exotic_gases = @egmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -174,18 +174,18 @@ hive_rare_crystals_mass_energy_conversion = {
 	resources = {
 		category = planet_translucers
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			rare_crystals = @rcmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -207,7 +207,7 @@ hive_hilbert_hotel_manager = {
 		multiplier = planet.trigger:num_pops
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -225,14 +225,11 @@ hive_hilbert_hotel_clerk = {
 		planet_housing_add = 20
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 		modifier = {
 			factor = 0
 			planet = {
-				OR = {
-					free_amenities > 10
-					free_housing > 10
-				}
+				free_jobs > trigger:num_pops
 			}
 		}
 	}

@@ -1,0 +1,26 @@
+site_impossible_task = {
+	desc = site_impossible_task_desc
+	picture = GFX_evt_ancient_databank
+	stages = 1
+	max_instances = 1
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+	}
+	visible = { 
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 114514
+		icon = GFX_archaeology_runes_F1
+		event = rds_misc.21
+	}
+	on_create = {
+	}
+	on_roll_failed = {
+		from = {
+			reset_current_stage = yes
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

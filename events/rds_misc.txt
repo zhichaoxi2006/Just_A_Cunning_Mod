@@ -329,22 +329,6 @@ planet_event = {
 	}
 }
 
-planet_event = {
-	id = rds_misc.1020
-	hide_window = yes
-	trigger = {
-		from = {
-			has_active_building = building_hilbert_space_create_machine
-		}
-	}
-	is_triggered_only = yes
-	immediate = {
-		from = {
-			change_variable = { which = hilbert_housing value = 1 }
-		}
-	}
-}
-
 #RDS_BUILDING
 event = {
 	id = rds_misc.11
@@ -483,14 +467,21 @@ country_event = {
 	}
 }
 
-#Waiting For Write
-country_event = {
+#ROBOTIC_BATCH_ASSEMBLY_CENTER
+planet_event = {
 	id = rds_misc.18
 	hide_window = yes
 	trigger = {
+		has_active_building = building_robotic_batch_assembly_center
 	}
 	is_triggered_only = yes
 	immediate = {
+		while = {
+			count = value:robotic_batch_assembly_center_value
+			create_pop = {
+				species = root.assembling_species
+			}
+		}
 	}
 }
 
@@ -549,30 +540,65 @@ country_event = {
 	}
 }
 
-#SPECIES_CHANGE
+#ARYAN_POP_ASSIMILATION
 country_event = {
 	id = rds_misc.20
+	hide_window = yes
+	trigger = {
+		has_country_flag = aryan_pop_assimilation
+	}
+	is_triggered_only = yes
+	immediate = {
+		while = {
+			count = 5
+			random_owned_pop = {
+				limit = {
+					NOT = {
+						is_same_species = root.owner_species
+					}
+				}
+				change_species = root.owner_species
+			}
+		}
+	}
+}
+
+#IMPOSSIBLE_TASK
+fleet_event = {
+	id = rds_misc.21
+	title = rds_misc.21.name
+	desc = rds_misc.21.desc
+	location = from 
+	is_triggered_only = yes
+	archaeology = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = rds_misc.21.option
+	}
+	after = {
+		from = {
+			archaeological_site = {
+				destroy_archaeological_site = this
+			}
+			create_archaeological_site = site_impossible_task
+		}
+	}
+}
+
+planet_event = {
+	id = rds_misc.2101
 	hide_window = yes
 	trigger = {
 		
 	}
 	is_triggered_only = yes
 	immediate = {
-		random_owned_pop = {
-			limit = {
-				has_trait = trait_rds_mystical_power
-			}
-			owner = {
-				every_owned_pop = {
-					limit = {
-						NOT = {
-							is_same_species = prevprev
-						}
-						is_same_species_class = prevprev
-					}
-					change_species = prevprev
-				}
-			}
+		archaeological_site = {
+			destroy_archaeological_site = this
 		}
+		create_archaeological_site = site_impossible_task
 	}
 }

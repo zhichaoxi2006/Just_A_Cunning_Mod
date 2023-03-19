@@ -34,6 +34,7 @@ site_rds_tech_database = {
 	}
 	on_roll_failed = {
 		from = {
+			finish_current_stage = yes
 			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
 		}
 	}

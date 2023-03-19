@@ -2,7 +2,7 @@ building_resource_replicator = {
 	base_buildtime = 60
 	base_cap_amount = 1
 	icon = building_class_4_singularity
-	category = government
+	category = resource
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -11,9 +11,16 @@ building_resource_replicator = {
     }
     inline_script = "buildings/rare_reasource_produce"
 	on_built = {
-		set_variable = {
-			which = resource_replicator_mult
-			value = 1
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = resource_replicator_mult
+				}
+			}
+			set_variable = {
+				which = resource_replicator_mult
+				value = 1
+			}
 		}
 	}
 	prerequisites = {

@@ -57,43 +57,6 @@ building_robotic_batch_assembly_center = {
 	}
 }
 
-building_buttercat_energy_generator = {
-	base_cap_amount = 1
-	base_buildtime = 60
-	category = resource
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
-	}
-	allow = {
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOT = {
-					has_ethic = ethic_gestalt_consciousness
-				}
-			}
-		}
-		job_deduction_engineer_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_ethic = ethic_gestalt_consciousness
-			}
-		}
-		job_hive_deduction_engineer_add = 1
-	}
-	prerequisites = {
-		tech_deduction_theory
-	}
-}
-
 building_hilbert_hotel = {
 	base_cap_amount = 1
 	base_buildtime = 60
@@ -107,119 +70,17 @@ building_hilbert_hotel = {
 	allow = {
 	}
 	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOT = {
-					has_ethic = ethic_gestalt_consciousness
-				}
-			}
-		}
-		job_hilbert_hotel_manager_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_ethic = ethic_gestalt_consciousness
-			}
-		}
-		job_hive_hilbert_hotel_manager_add = 1
+		planet_housing_add = 10
+		planet_amenities_add = 20
+		planet_carry_cap_add = 10
+		multiplier = trigger:num_pops
 	}
 	prerequisites = {
 		tech_hilbert_space_theory
 	}
 }
 
-building_mass_energy_conversion_center = {
-	empire_limit = 1
-	base_buildtime = 60
-	category = manufacturing
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
-	}
-	allow = {
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOT = {
-					has_ethic = ethic_gestalt_consciousness
-				}
-			}
-		}
-		job_minerals_mass_energy_conversion_add = 1
-		job_alloys_resources_mass_energy_conversion_add = 1
-		job_consumer_goods_resources_mass_energy_conversion_add = 1
-		job_volatile_motes_mass_energy_conversion_add = 1
-		job_exotic_gases_mass_energy_conversion_add = 1
-		job_rare_crystals_mass_energy_conversion_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_ethic = ethic_gestalt_consciousness
-			}
-		}
-		job_hive_minerals_mass_energy_conversion_add = 1
-		job_hive_alloys_resources_mass_energy_conversion_add = 1
-		job_hive_consumer_goods_resources_mass_energy_conversion_add = 1
-		job_hive_volatile_motes_mass_energy_conversion_add = 1
-		job_hive_exotic_gases_mass_energy_conversion_add = 1
-		job_hive_rare_crystals_mass_energy_conversion_add = 1
-	}
-	prerequisites = {
-		tech_reality_distortion_system_buildings
-	}
-}
-
-building_laplace_research_facility = {
-	empire_limit = 1
-	base_buildtime = 60
-	category = research
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
-		upkeep = {
-			alloys = 1
-		}
-	}
-	allow = {
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				NOT = {
-					has_ethic = ethic_gestalt_consciousness
-				}
-			}
-		}
-		job_laplace_demon_operator_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_ethic = ethic_gestalt_consciousness
-			}
-		}
-		job_hive_laplace_demon_operator_add = 1
-	}
-	prerequisites = {
-		tech_laplace_demon_manufacturing
-	}
-}
-
 building_rds_resource_cage = {
-	base_cap_amount = 1
 	base_buildtime = 60
 	icon = building_resource_silo
 	category = resource
@@ -256,23 +117,17 @@ building_rds_stronghold = {
 			minerals = 100
 		}
 	}
-	army_modifier = {
-		army_collateral_damage_mult = -10
-	}
 	planet_modifier = {
 		planet_orbital_bombardment_damage = -1
 		job_soldier_per_pop = 0.25
 	}
-	triggered_country_modifier = {
-		starbase_shipyard_build_speed_mult = 1
+	triggered_planet_modifier = {
+		pop_defense_armies_add = 1
 		multiplier = trigger:num_pops
 	}
 	triggered_planet_modifier = {
-		planet_army_build_speed_mult = 1
-		multiplier = trigger:num_pops
-	}
-	triggered_planet_modifier = {
-		army_defense_damage_mult = 1
+		planet_stability_add = 1
+		planet_crime_add = -10
 		multiplier = trigger:num_armies
 	}
 	prerequisites = {
@@ -375,13 +230,9 @@ building_consciousness_integration_device = {
 	icon = building_commercial_megaplex
 	category = unity
 	resources = {
-		category = planet_jobs_productive
+		category = planet_buildings
 		cost = {
 			minerals = 1200
-		}
-		produces = {
-			unity = 1
-			multiplier = value:dynamic_energy_income
 		}
     }
 	potential = {
@@ -390,6 +241,57 @@ building_consciousness_integration_device = {
 	triggered_country_modifier = {
 		pop_amenities_usage_mult = -1
 		pop_amenities_usage_no_happiness_mult = -1
+		multiplier = owner.trigger:num_pops
+	}
+}
+
+national_military_command_center = {
+	base_buildtime = 60
+	empire_limit = 1
+	icon = building_military_academy
+	category = army
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1200
+		}
+    }
+	country_modifier = {
+		country_command_limit_add = 800
+	}
+	triggered_country_modifier = {
+		country_naval_cap_add = 1
+		multiplier = owner.trigger:used_naval_capacity_integer
+	}
+	triggered_country_modifier = {
+		country_starbase_capacity_add = 1
+		multiplier = owner.trigger:used_starbase_capacity_integer
+	}
+}
+
+process_accelerator = {
+	base_buildtime = 60
+	empire_limit = 1
+	icon = building_psi_corps
+	category = government
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1200
+		}
+    }
+	triggered_country_modifier = {
+		megastructure_build_speed_mult = 1
+		starbase_shipyard_build_speed_mult = 1
+		planet_clear_blocker_speed_mult = 1
+		pop_purge_speed = 1
+		terraform_speed_mult = 1
+		first_contact_speed_mult = 1
+		planet_colony_development_speed_mult = 1
+		ship_anomaly_research_speed_mult = 1
+		ship_archaeological_site_excavation_speed_mult = 1
+		planet_decision_enact_speed_mult = 1
+		science_ship_survey_speed = 1
 		multiplier = owner.trigger:num_pops
 	}
 }

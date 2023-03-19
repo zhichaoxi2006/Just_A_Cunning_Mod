@@ -192,3 +192,46 @@ fleet_event = {
 		}
 	}
 }
+
+country_event = {
+	id = rds_tech_database.6
+	title = rds_tech_database.6.name
+	desc = rds_tech_database.6.desc
+	force_open = yes
+	picture_event_data = {
+		portrait = this.ruler
+		room = "crisis_room"
+	}
+	diplomatic = yes
+	is_triggered_only = yes 
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+	}
+	option = {
+		name = rds_tech_database.6.option.1
+		response_text = rds_tech_database.6.response_text.1
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.6.option.2
+		response_text = rds_tech_database.6.response_text.2
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.6.option.3
+		response_text = rds_tech_database.6.response_text.3
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.6.option.4
+		response_text = rds_tech_database.6.response_text.4
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_tech_database.6.option.5
+		response_text = rds_tech_database.6.response_text.5
+		give_all_rds_tech = yes
+	}
+}

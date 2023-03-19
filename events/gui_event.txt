@@ -568,18 +568,6 @@ event = {
 		}
 	}
 	option = {
-		name = rds_setting.default_settings
-		trigger = {
-			is_scope_type = fleet
-		}
-		hidden_effect = {
-			fleet_event = {
-				id = rds_setting.3
-			}
-			dynamic_event = { EVENT = rds_setting.2 }
-		}
-	}
-	option = {
 		name = rds_setting.gui_close
 		trigger = {
 		}
@@ -670,6 +658,32 @@ country_event = {
 		hidden_effect = {
 			give_all_rds_tech = yes
 			set_country_flag = has_rds_tech
+			country_event = {
+				id = rds_setting.5
+			}
+		}
+	}
+	option = {
+		name = rds_setting.aryan_pop_assimilation.on
+		trigger = {
+			NOT = {
+				has_country_flag = aryan_pop_assimilation
+			}
+		}
+		hidden_effect = {
+			set_country_flag = aryan_pop_assimilation
+			country_event = {
+				id = rds_setting.5
+			} 
+		}
+	}
+	option = {
+		name = rds_setting.aryan_pop_assimilation.off
+		trigger = {
+			has_country_flag = aryan_pop_assimilation
+		}
+		hidden_effect = {
+			remove_country_flag = aryan_pop_assimilation
 			country_event = {
 				id = rds_setting.5
 			}
@@ -1044,6 +1058,18 @@ event = {
 		}
 	}
 	option = {
+		name = rds_setting.default_settings
+		trigger = {
+			is_scope_type = fleet
+		}
+		hidden_effect = {
+			fleet_event = {
+				id = rds_setting.3
+			}
+			dynamic_event = { EVENT = rds_setting.8 }
+		}
+	}
+	option = {
 		name = rds_setting.gui_close
 		trigger = {
 		}
@@ -1069,7 +1095,7 @@ planet_event = {
 		
 	}
 	option = {
-		name = rds_setting.resource_replicator.x1000
+		name = rds_setting.number.x1000
 		multiply_variable = {
 			which = resource_replicator_mult
 			value = 1000
@@ -1079,7 +1105,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.x100
+		name = rds_setting.number.x100
 		multiply_variable = {
 			which = resource_replicator_mult
 			value = 100
@@ -1089,7 +1115,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.x10
+		name = rds_setting.number.x10
 		multiply_variable = {
 			which = resource_replicator_mult
 			value = 10
@@ -1099,7 +1125,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.a1
+		name = rds_setting.number.a1
 		change_variable = {
 			which = resource_replicator_mult
 			value = 1
@@ -1109,7 +1135,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.to0
+		name = rds_setting.number.to0
 		set_variable = {
 			which = resource_replicator_mult
 			value = 0
@@ -1119,7 +1145,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.s1
+		name = rds_setting.number.s1
 		subtract_variable = {
 			which = resource_replicator_mult
 			value = 1
@@ -1129,7 +1155,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.d10
+		name = rds_setting.number.d10
 		divide_variable = {
 			which = resource_replicator_mult
 			value = 10
@@ -1139,7 +1165,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.d100
+		name = rds_setting.number.d100
 		divide_variable = {
 			which = resource_replicator_mult
 			value = 100
@@ -1149,13 +1175,167 @@ planet_event = {
 		}
 	}
 	option = {
-		name = rds_setting.resource_replicator.d1000
+		name = rds_setting.number.d1000
 		divide_variable = {
 			which = resource_replicator_mult
 			value = 1000
 		}
 		planet_event = {
 			id = rds_setting.9
+		}
+	}
+	option = {
+		name = rds_setting.gui_close
+	}
+}
+
+country_event = {
+	id = rds_setting.10
+	title = rds_setting.10.name
+	desc = rds_setting.10.desc
+	force_open = yes
+	picture_event_data = {
+		portrait = this.ruler
+		room = "crisis_room"
+	}
+	diplomatic = yes
+	is_triggered_only = yes 
+	trigger = {
+		
+	}
+	immediate = {
+
+	}
+	option = {
+		name = rds_setting.10.option.1
+		response_text = rds_setting.10.response_text.1
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_setting.10.option.2
+		response_text = rds_setting.10.response_text.2
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_setting.10.option.3
+		response_text = rds_setting.10.response_text.3
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_setting.10.option.4
+		response_text = rds_setting.10.response_text.4
+		is_dialog_only = yes
+	}
+	option = {
+		name = rds_setting.10.option.5
+		response_text = rds_setting.10.response_text.5
+	}
+}
+
+planet_event = {
+	id = rds_setting.11
+	title = rds_setting.11.name
+	desc = rds_setting.11.desc
+	picture_event_data = {
+		room = "crisis_room"
+	}
+	diplomatic = yes
+	force_open  = yes
+	auto_opens = yes
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+
+	}
+	option = {
+		name = rds_setting.number.x1000
+		multiply_variable = {
+			which = laplace_research
+			value = 1000
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.x100
+		multiply_variable = {
+			which = laplace_research
+			value = 100
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.x10
+		multiply_variable = {
+			which = laplace_research
+			value = 10
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.a1
+		change_variable = {
+			which = laplace_research
+			value = 1
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.to0
+		set_variable = {
+			which = laplace_research
+			value = 0
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.s1
+		subtract_variable = {
+			which = laplace_research
+			value = 1
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.d10
+		divide_variable = {
+			which = laplace_research
+			value = 10
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.d100
+		divide_variable = {
+			which = laplace_research
+			value = 100
+		}
+		planet_event = {
+			id = rds_setting.11
+		}
+	}
+	option = {
+		name = rds_setting.number.d1000
+		divide_variable = {
+			which = laplace_research
+			value = 1000
+		}
+		planet_event = {
+			id = rds_setting.11
 		}
 	}
 	option = {

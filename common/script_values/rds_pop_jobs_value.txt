@@ -1,6 +1,7 @@
 dynmic_laplace_demon_operator_produce = {
 	base = 0
 	add = value:dynamic_energy_income
+	max = 1000000
 }
 
 dynmic_laplace_demon_operator_upkeep = {
@@ -20,7 +21,6 @@ dynmic_minerals_mass_energy_conversion_produce = {
 
 building_famine_maker_dynmic_values = {
 	add = trigger:days_passed
-	multiply = trigger:empire_size
 	multiply = trigger:max_naval_capacity
 	multiply = trigger:galaxy_percentage
 }

@@ -1,0 +1,22 @@
+building_laplace_demon_access_interface = {
+	icon = building_illicit_research_labs
+	base_buildtime = 60
+	owner_type = subject_holding
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1248
+		}
+	}
+	on_built = {
+		add_deposit = d_laplace_demon_access_interface
+	}
+	on_destroy = {
+		remove_deposit = d_laplace_demon_access_interface
+	}
+	allow = {
+	}
+	prerequisites = {
+		tech_laplace_demon_manufacturing
+	}
+}

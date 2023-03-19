@@ -26,35 +26,33 @@ country_event = {
 	immediate = {
 		every_country = {
 			limit = {
-				is_ai = yes
+				NOT = {
+					is_country = root
+				}
 			}
 			destroy_country = yes
 		}
-		every_megastructure = {
-			limit = {
-			}
-			delete_megastructure = this
-		}
-		every_galaxy_pop = {
+		every_system = {
 			limit = {
 				NOT = {
-					is_same_species = root.owner_main_species
+					is_owned_by = root
 				}
 			}
-			kill_pop = yes
-		}
-		every_galaxy_planet = {
-			limit = {
-				NOT = {
-					is_planet = root.capital_star
+			every_system_planet = {
+				limit = {
 				}
+				remove_planet = yes
 			}
-			remove_planet = yes
-		}
-		every_ambient_object = {
-			limit = {
+			every_system_megastructure = {
+				limit = {
+				}
+				delete_megastructure = this
 			}
-			destroy_ambient_object = this
+			every_system_ambient_object = {
+				limit = {
+				}
+				destroy_ambient_object = this
+			}
 		}
 	}
 	option = {

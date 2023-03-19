@@ -26,10 +26,10 @@ decision_resource_replication_setting = {
 	}
 }
 
-decision_pc_reality_distortion_city = {
+decision_laplace_research_setting = {
 	owned_planets_only = yes
 	sound = event_administrative_work
-	icon = decision_machine_oracle
+	icon = decision_activate_dimensional_manipulation_device
 
 	resources = {
 		category = decisions
@@ -38,14 +38,88 @@ decision_pc_reality_distortion_city = {
 		}
 	}
 	potential = {
-		always = no
-		NOT = {
-			is_planet_class = pc_reality_distortion_city
-		}
+	}
+	allow = {
 	}
 	effect = {
+		custom_tooltip = decision_laplace_research_setting_tooltip
+		hidden_effect = {
+			planet_event = {
+				id = rds_setting.11
+			}
+		}
+	}
+
+	ai_weight = {
+	}
+}
+
+decision_pc_reality_distortion_city = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_arcology_project
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 100
+		}
+	}
+	potential = {
+		NOR = {
+			is_planet_class = pc_reality_distortion_city
+		}
+		habitable_planet = yes
+	}
+	effect = {
+		reset_planet = yes
+		clear_blockers = yes
 		change_pc = pc_reality_distortion_city
-		set_planet_flag = pc_reality_distortion_city
+	}
+	ai_weight = {
+	}
+}
+
+decision_pc_reality_distortion_city_planet_size_change = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_machine_oracle
+	resources = {
+		category = decisions
+		cost = {
+			energy = 100
+		}
+	}
+	potential = {
+		is_planet_class = pc_reality_distortion_city
+	}
+	effect = {
+		set_planet_size = trigger:num_pops
+	}
+	ai_weight = {
+	}
+}
+
+decision_create_pop_by_ne = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_machine_oracle
+	resources = {
+		category = decisions
+		cost = {
+			energy = 100
+		}
+	}
+	potential = {
+		has_building = building_robotic_batch_assembly_center
+	}
+	effect = {
+		while = {
+			count = 10
+			create_pop = {
+				species = assembling_species
+			}
+		}
 	}
 	ai_weight = {
 	}

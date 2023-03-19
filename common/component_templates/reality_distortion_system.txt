@@ -63,7 +63,10 @@ utility_component_template = {
 		}
 	}
 	triggered_ship_modifier = {
-		
+		ship_hull_regen_add_perc = 1
+		ship_armor_regen_add_static = 1
+		ship_shield_regen_add_perc = 1
+		multiplier = fleet.trigger:num_ships
 	}
 	ai_weight = {
 		weight = 0

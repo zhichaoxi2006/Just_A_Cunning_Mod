@@ -12,7 +12,6 @@ guiTypes = {
 	@fleet_view_main_height = 298
 	@portrait_height = 238
 	@portrait_width = 170
-	@status_text_width_small = 70
 	containerWindowType = {
 		name = "fleet_view"
 		size = { width = @fleet_view_width height = 0 }
@@ -289,13 +288,6 @@ guiTypes = {
 				alwaysTransparent = yes
 			}
 			buttonType = {
-				name = "take_point"
-				quadTextureSprite = "GFX_fleet_order_button_follow_friendlies_off"
-				position = { x = -175 y = 10 }
-				orientation = upper_right
-				buttonFont = "font_text_14"
-			}
-			buttonType = {
 				name = "open_fleet_manager"
 				quadTextureSprite = "GFX_fleet_manager_button"
 				position = { x = -141 y = 10 }
@@ -491,9 +483,9 @@ guiTypes = {
 				clipping = yes
 				buttonType = {
 					name = "leader_type_bg"
-					quadTextureSprite = "GFX_leader_bg_admiral"
-					position = { x = -10 y = -23 }
-					scale = 0.662
+					quadTextureSprite = "GFX_ui_observation_post_bg"
+					position = { x = -16 y = 0 }
+					scale = 0.672
 					alwaysTransparent = yes
 				}
 			}
@@ -509,45 +501,27 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "civ_name"
-				font = "font_text_14"
-				position = { x = 10 y = 10 }
-				maxWidth = 150
-				maxHeight = 16
-				format = center
+				font = "font_text_16"
 				text = "Human Civilization (Steam Age)"
+				position = { x = 8 y = 68 }
+				maxWidth = 154
+				maxHeight = 70
+				fixedSize = yes
+				format = center
+				vertical_alignment = center
+				borderSize = { x = 2 y = 0 }
 				text_color_code = "H"
 			}
 			instantTextBoxType = {
-				name = "name"
-				font = "font_header_20"
-				position = { x = 10 y = 110 }
-				maxWidth = 150
-				maxHeight = 24
-				format = center
-				vertical_alignment = bottom
-				text_color_code = "E"
-			}
-			instantTextBoxType = {
-				name = "mods"
-				font = "font_text_14"
-				position = { x = 10 y = -58 }
+				name = "output"
+				font = "font_text_16"
+				position = { x = 8 y = -41 }
 				orientation = lower_left
-				maxWidth = 150
-				maxHeight = 16
+				maxWidth = 154
+				maxHeight = 34
+				fixedSize = yes
 				format = center
-				vertical_alignment = bottom
-				text_color_code = "E"
-			}
-			instantTextBoxType = {
-				name = "cost_and_gains"
-				font = "font_text_14"
-				position = { x = 10 y = -58 }
-				orientation = lower_left
-				maxWidth = 150
-				maxHeight = 16
-				format = center
-				vertical_alignment = bottom
-				text = "YES"
+				vertical_alignment = center
 				text_color_code = "E"
 			}
 			iconType = {
@@ -656,6 +630,52 @@ guiTypes = {
 			}
 		}
 		containerWindowType = {
+			name = "observation_orders"
+			size = { width = 108 height = 189 }
+			position = { x = -5 y = 55 }
+			orientation = upper_right
+			origo = upper_right
+			margin = { top = 2 bottom = 2 }
+			clipping = no
+			#verticalScrollbar = "right_vertical_slider_s_thick"
+			background = {
+				name = "observation_orders_background"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+			}
+			instantTextBoxType = {
+				name = "name"
+				font = "font_text_16"
+				position = { x = -474 y = 8 }
+				maxWidth = 154
+				maxHeight = 60
+				fixedSize = yes
+				format = center
+				vertical_alignment = center
+				text_color_code = "E"
+				#alwaysTransparent = yes
+			}
+			instantTextBoxType = {
+				name = "cost_and_gains"
+				font = "font_text_16"
+				text = "YES"
+				position = { x = -474 y = 160 }
+				maxWidth = 154
+				maxHeight = 34
+				fixedSize = yes
+				format = center
+				vertical_alignment = center
+				text_color_code = "E"
+			}
+			gridBoxType = {
+				name = "orders"
+				position = { x = 4 y = 2 }
+				size = { width = 144 height = -5 }
+				slotSize = { width = 48 height = 48 }
+				max_slots_horizontal = 2
+				format = "UPPER_LEFT"
+			}
+		}
+		containerWindowType = {
 			name = "home_base"
 			size = { width = 200 height = 40 }
 			position = { x = 185 y = 253 }
@@ -672,14 +692,14 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "home_base_header"
-				position = { x = 40 y = 3 }
+				position = { x = 40 y = 0 }
 				font = "font_text_14"
 				text = "HOME_BASE"
 				maxWidth = 160
-				maxHeight = 32
+				maxHeight = 20
 				fixedSize = yes
 				format = left
-				vertical_alignment = top
+				vertical_alignment = bottom
 				alwaysTransparent = yes
 			}
 			instantTextBoxType = {
@@ -688,7 +708,7 @@ guiTypes = {
 				font = "font_text_14"
 				text = "HOME_BASE_NAME"
 				maxWidth = 160
-				maxHeight = 32
+				maxHeight = 20
 				fixedSize = yes
 				format = left
 				vertical_alignment = top
@@ -717,9 +737,15 @@ guiTypes = {
 				pdx_tooltip = "FOCUS_ON_FLEET"
 				shortcut = "q"
 			}
+			buttonType = {
+				name = "go_to_planet_view"
+				orientation = upper_right
+				quadTextureSprite = "GFX_fleetview_open_planet"
+				position = { x = -141 y = 10 }
+			}
 			containerWindowType = {
 				name = "stats_background"
-				size = { width = 292 height = 66 }
+				size = { width = 292 height = 81 }
 				position = { x = 10 y = 55 }
 				background = {
 					name = "stats_background"
@@ -728,94 +754,112 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "hull_points"
-				position = { x = 25 y = 67 }
+				position = { x = 25 y = 65 }
 				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
+				maxWidth = 85
 				maxHeight = 19
 				fixedSize = yes
 				format = left
 			}
 			instantTextBoxType = {
 				name = "armor_points"
-				position = { x = 121 y = 67 }
+				position = { x = 116 y = 65 }
 				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
+				maxWidth = 85
 				maxHeight = 19
 				fixedSize = yes
-				format = center
+				format = left
 			}
 			instantTextBoxType = {
 				name = "shield_points"
-				position = { x = 217 y = 67 }
+				position = { x = 207 y = 65 }
 				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
+				maxWidth = 85
 				maxHeight = 19
 				fixedSize = yes
-				format = right
+				format = left
 			}
 			instantTextBoxType = {
 				name = "size_limit"
-				position = { x = 25 y = 93 }
-				font = "font_text_14"
+				position = { x = 25 y = 91 }
+				font = "font_text_16"
 				text = "10/10"
-				maxWidth = 180
-				maxHeight = 16
+				maxWidth = 85
+				maxHeight = 41
 				fixedSize = yes
 				format = left
 				text_color_code = "Y"
-			}
-			containerWindowType = {
-				name = "fleet_power_background"
-				size = { width = 90 height = 31 }
-				position = { x = 155 y = 5 }
-				background = {
-					name = "fleet_power_background"
-					spriteType = "GFX_tiles_dark_area_cut_8"
-				}
 			}
 			instantTextBoxType = {
 				name = "fleet_power"
-				position = { x = 160 y = 9 }
-				font = "font_text_18"
+				font = "font_text_16"
 				text = "10000"
-				maxWidth = 80
-				maxHeight = 24
+				position = { x = 116 y = 91 }
+				maxWidth = 85
+				maxHeight = 19
 				fixedSize = yes
-				format = center
-				text_color_code = "Y"
+				format = left
+				vertical_alignment = center
+				text_color_code = "R"
 			}
 			instantTextBoxType = {
 				name = "piracy_suppression"
-				position = { x = 217 y = 93 }
-				font = "font_text_14"
+				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
-				maxHeight = 16
+				position = { x = 207 y = 91 }
+				maxWidth = 85
+				maxHeight = 19
 				fixedSize = yes
-				format = right
+				format = left
+			}
+			containerWindowType = {
+				name = "cloaking_values"
+				size = { width = 85 height = 24 }
+				position = { x = 176 y = 5 }
+				background = {
+					name = "cloaking_values"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+				iconType = {
+					name = "cloaking_strength"
+					spriteType = "GFX_cloaking_strength_icon"
+					position = { x = 5 y = 2 }
+				}
+				iconType = {
+					name = "cloaking_detection"
+					spriteType = "GFX_cloaking_detection_icon"
+					position = { x = 5 y = 2 }
+				}
+				iconType = {
+					name = "cloaking_level"
+					spriteType = "GFX_cloaking_level_0"
+					position = { x = 25 y = 2 }
+				}
 			}
 			instantTextBoxType = {
 				name = "orders"
-				position = { x = 20 y = 131 }
 				font = "font_text_14"
 				text = "ORDERS"
-				maxWidth = 272
+				position = { x = 15 y = 146 }
+				maxWidth = 282
 				maxHeight = 48
-				vertical_alignment = bottom
+				fixedSize = yes
 				format = left
+				vertical_alignment = bottom
 			}
 			instantTextBoxType = {
 				name = "activity"
-				position = { x = 20 y = 180 }
 				font = "font_text_14"
 				text = "ACTIVITY"
-				maxWidth = 272
+				position = { x = 15 y = 194 }
+				maxWidth = 282
 				maxHeight = 48
-				vertical_alignment = top
+				fixedSize = yes
 				format = left
+				vertical_alignment = top
 			}
 			gridBoxType = {
 				name = "actions"
@@ -840,14 +884,45 @@ guiTypes = {
 				name = "image"
 				spriteType = "GFX_precom_fleet_xenophobe"
 				position = { x = 5 y = 5 }
-				#alwaysTransparent = yes
+				alwaysTransparent = yes
 			}
 			buttonType = {
-				name = "contact"
+				name = "investigate"
 				font = "font_text_14"
+				buttonText = "FLEET_VIEW_INVESTIGATE"
 				spriteType = "GFX_standard_button_142_34_button"
-				buttonText = "FLEET_VIEW_CONTACT"
 				position = { x = 296 y = 192 }
+			}
+		}
+		containerWindowType = {
+			name = "observation_actions"
+			size = { width = 426 height = 54 }
+			position = { x = 0 y = 0 }
+			orientation = lower_right
+			origo = lower_right
+			clipping = no
+			background = {
+				name = "background"
+				spriteType = "GFX_invisible"
+				alwaysTransparent = yes
+			}
+			buttonType = {
+				name = "open_diplomacy"
+				font = "font_text_14"
+				spriteType = "GFX_standard_button_180_34_button"
+				buttonText = "DIPLOMACY"
+				position = { x = -426 y = -4 }
+				orientation = upper_right
+				clicksound = interface
+			}
+			buttonType = {
+				name = "open_espionage"
+				font = "font_text_14"
+				spriteType = "GFX_standard_button_180_34_button"
+				buttonText = "ESPIONAGE"
+				position = { x = -202 y = -4 }
+				orientation = upper_right
+				clicksound = interface
 			}
 		}
 		# Selected Fleets
@@ -872,25 +947,16 @@ guiTypes = {
 	# Shipyard
 	containerWindowType = {
 		name = "fleet_view_shipyard_entry"
-		size = { width = @fleet_view_width height = 414 }
+		size = { width = @fleet_view_width height = 448 }
 		#Ship name and type section
 		containerWindowType = {
 			name = "top"
-			size = { width = 100%% height = 412 }
+			size = { width = 100%% height = 446 }
 			buttonType = {
 				name = "header_button"
 				quadTextureSprite = "GFX_fleet_view_main_transport_bg"
 				oversound = no_sound
 				clicksound = click
-			}
-			containerWindowType = {
-				name = "temp_bg_padding"
-				size = { width = 100%% height = 100%% }
-				position = { x = 0 y = 296 }
-				background = {
-					name = "padding_bg"
-					quadTextureSprite = "GFX_fleet_view_main_shipyard_padding_bg"
-				}
 			}
 			iconType = {
 				name = "header_line"
@@ -951,13 +1017,6 @@ guiTypes = {
 				format = left
 				text_color_code = "E"
 				alwaysTransparent = yes
-			}
-			buttonType = {
-				name = "take_point"
-				quadTextureSprite = "GFX_fleet_order_button_follow_friendlies_off"
-				position = { x = -175 y = 10 }
-				orientation = upper_right
-				buttonFont = "font_text_14"
 			}
 			buttonType = {
 				name = "open_fleet_manager"
@@ -1267,45 +1326,51 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "orders_small"
-			size = { width = 160 height = 108 }
-			position = { x = -7 y = 55 }
+			size = { width = 58 height = 150 }
+			position = { x = -5 y = 55 }
 			orientation = upper_right
 			origo = upper_right
-			margin = { top = 2 bottom = 2 }
-			verticalScrollbar = "right_vertical_slider_thick"
+			margin = { top = 1 bottom = 1 left = 1 }
+			verticalScrollbar = "right_vertical_slider_s_thick"
 			background = {
 				name = "orders_small_background"
 				spriteType = "GFX_tiles_dark_area_cut_8"
 			}
 			gridBoxType = {
 				name = "orders"
-				position = { x = 4 y = 2 }
-				size = { width = 144 height = 96 }
+				position = { x = 0 y = 0 }
+				size = { width = 62 height = -10 }
 				slotSize = { width = 48 height = 48 }
-				max_slots_horizontal = 3
+				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
 		}
 		containerWindowType = {
 			name = "orders_large"
-			size = { width = 160 height = 108 }
-			position = { x = -7 y = 55 }
+			size = { width = 58 height = 150 }
+			position = { x = -5 y = 55 }
 			orientation = upper_right
 			origo = upper_right
-			margin = { top = 2 bottom = 2 }
-			verticalScrollbar = "right_vertical_slider_thick"
+			margin = { top = 1 bottom = 1 left = 1 }
+			verticalScrollbar = "right_vertical_slider_s_thick"
 			background = {
 				name = "orders_large_background"
 				spriteType = "GFX_tiles_dark_area_cut_8"
 			}
 			gridBoxType = {
 				name = "orders"
-				position = { x = 4 y = 2 }
-				size = { width = 144 height = 96 }
+				position = { x = 0 y = 0 }
+				size = { width = 62 height = -10 }
 				slotSize = { width = 48 height = 48 }
-				max_slots_horizontal = 3
+				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
+		}
+		#This is for avoiding asserts in the juggernaut view
+		containerWindowType = {
+			name = "observation_orders"
+			size = { width = 202 height = 150 }
+			position = { x = 293 y = 55 }
 		}
 		containerWindowType = {
 			name = "home_base"
@@ -1350,6 +1415,29 @@ guiTypes = {
 				text_color_code = "E"
 			}
 		}
+		#For avoiding asserts in the juggernaut view
+		containerWindowType = {
+			name = "observation_actions"
+			position = { x = -3 y = 198 }
+			buttonType = {
+				name = "open_diplomacy"
+				font = "font_text_14"
+				spriteType = "GFX_standard_button_240_34_button"
+				buttonText = "DIPLOMACY"
+				position = { x = 0 y = 0 }
+				orientation = UPPER_CENTER
+				clicksound = interface
+			}
+			buttonType = {
+				name = "open_espionage"
+				font = "font_text_14"
+				spriteType = "GFX_standard_button_240_34_button"
+				buttonText = "ESPIONAGE"
+				position = { x = 245 y = 0 }
+				orientation = UPPER_CENTER
+				clicksound = interface
+			}
+		}
 		containerWindowType = {
 			name = "precommunications"
 			position = { x = 175 y = 0 }
@@ -1361,7 +1449,7 @@ guiTypes = {
 				scale = 0.839
 			}
 			buttonType = {
-				name = "contact"
+				name = "investigate"
 				font = "font_text_14"
 				spriteType = "GFX_button_150_24"
 				buttonText = "FLEET_VIEW_CONTACT"
@@ -1391,7 +1479,7 @@ guiTypes = {
 			}
 			containerWindowType = {
 				name = "stats_background"
-				size = { width = 132 height = 127 }
+				size = { width = 236 height = 127 }
 				position = { x = 5 y = 55 }
 				background = {
 					name = "stats_background"
@@ -1400,101 +1488,87 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "hull_points"
-				position = { x = 15 y = 65 }
-				font = "font_text_14"
+				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
-				maxHeight = 16
+				position = { x = 15 y = 65 }
+				maxWidth = 70
+				maxHeight = 19
 				fixedSize = yes
 				format = left
 			}
 			instantTextBoxType = {
 				name = "armor_points"
-				position = { x = 15 y = 87 }
-				font = "font_text_14"
+				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
-				maxHeight = 16
+				position = { x = 89 y = 65 }
+				maxWidth = 70
+				maxHeight = 19
 				fixedSize = yes
 				format = left
 			}
 			instantTextBoxType = {
 				name = "shield_points"
-				position = { x = 15 y = 109 }
-				font = "font_text_14"
+				font = "font_text_16"
 				text = "100%"
-				maxWidth = @status_text_width_small
-				maxHeight = 16
+				position = { x = 161 y = 65 }
+				maxWidth = 70
+				maxHeight = 19
 				fixedSize = yes
 				format = left
 			}
 			instantTextBoxType = {
 				name = "size_limit"
-				position = { x = 15 y = 134 }
-				font = "font_text_14"
+				font = "font_text_16"
 				text = "10/10"
-				maxWidth = 108
-				maxHeight = 16
+				position = { x = 15 y = 84 }
+				maxWidth = 140
+				maxHeight = 19
 				fixedSize = yes
 				format = left
 				text_color_code = "Y"
 			}
-			containerWindowType = {
-				name = "fleet_power_background"
-				size = { width = 90 height = 31 }
-				position = { x = 44 y = 5 }
-				background = {
-					name = "fleet_power_background"
-					spriteType = "GFX_tiles_dark_area_cut_8"
-				}
-			}
-			iconType = {
-				name = "fleet_power_icon"
-				spriteType = "GFX_fleet_offensive_power"
-				position = { x = 55 y = 12 }
-				scale = 1
-				#alwaysTransparent = yes
-			}
 			instantTextBoxType = {
 				name = "fleet_power"
-				position = { x = 73 y = 9 }
-				font = "font_text_18"
+				font = "font_text_16"
 				text = "10000"
-				maxWidth = 50
-				maxHeight = 24
+				position = { x = 15 y = 103 }
+				maxWidth = 140
+				maxHeight = 19
 				fixedSize = yes
 				format = left
 				text_color_code = "R"
 			}
 			instantTextBoxType = {
 				name = "piracy_suppression"
-				position = { x = 15 y = 178 }
-				font = "font_text_14"
+				font = "font_text_16"
 				text = "100%"
-				maxWidth = 108
-				maxHeight = 16
+				position = { x = 161 y = 103 }
+				maxWidth = 70
+				maxHeight = 19
 				fixedSize = yes
 				format = left
 			}
 			instantTextBoxType = {
 				name = "orders"
-				position = { x = 20 y = 192 }
 				font = "font_text_14"
 				text = "ORDERS"
-				maxWidth = 285
+				position = { x = 10 y = 192 }
+				maxWidth = 231
 				maxHeight = 32
-				vertical_alignment = bottom
+				fixedSize = yes
 				format = left
+				vertical_alignment = bottom
 			}
 			instantTextBoxType = {
 				name = "activity"
-				position = { x = 20 y = 225 }
 				font = "font_text_14"
 				text = "ACTIVITY"
-				maxWidth = 285
+				position = { x = 10 y = 225 }
+				maxWidth = 226
 				maxHeight = 32
-				vertical_alignment = top
+				fixedSize = yes
 				format = left
+				vertical_alignment = top
 			}
 			gridBoxType = {
 				name = "actions"
@@ -1503,11 +1577,27 @@ guiTypes = {
 				slotSize = { width = 34 height = 34 }
 				format = "UPPER_RIGHT"
 			}
+			#For avoiding asserts in the juggernaut view
+			containerWindowType = {
+				name = "cloaking_values"
+				iconType = {
+					name = "cloaking_strength"
+					spriteType = "GFX_cloaking_strength_icon"
+				}
+				iconType = {
+					name = "cloaking_detection"
+					spriteType = "GFX_cloaking_detection_icon"
+				}
+				iconType = {
+					name = "cloaking_level"
+					spriteType = "GFX_cloaking_level_0"
+				}
+			}
 		}
 		containerWindowType = {
 			name = "build_queue_info"
 			position = { x = 5 y = -49 }
-			size = { width = 276 height = 352 }
+			size = { width = 276 height = 386 }
 			orientation = lower_left
 			origo = lower_left
 			clipping = no
@@ -1518,12 +1608,12 @@ guiTypes = {
 			smoothListBoxType = {
 				name = "build_queue_list"
 				position = { x = 5 y = 5 }
-				size = { x = 258 y = 342 }
+				size = { x = 258 y = 376 }
+				scrollbarType = "standardlistbox_slider_thick"
 				borderSize = { x = 0 y = 0 }
-				scrollbarType = "standardlistbox_slider"
-				autohide_scrollbar = no
-				spacing = 3
 				offset = { x = -3 y = 0 }
+				spacing = 3
+				autohide_scrollbar = no
 			}
 			buttonType = {
 				name = "open_catalog"
@@ -1543,7 +1633,7 @@ guiTypes = {
 		# List of ships. space between enties
 		smoothListboxType = {
 			name = "ships"
-			position = { x = 0 y = 414 }
+			position = { x = 0 y = 448 }
 			size = { x = @fleet_view_width y = 0 }
 			borderSize = { x = 0 y = 0 }
 			spacing = 1
@@ -1605,17 +1695,18 @@ guiTypes = {
 		}
 	}
 	containerWindowType = {
-		name = "fleet_view_order_button2"
-		size = { width = 38 height = 38 }
-		position = { x = 23 y = 4 }
+		name = "fleet_view_order_button_custom_audio"
+		size = { width = 52 height = 52 }
 		buttonType = {
 			name = "button_animation"
 			spriteType = "GFX_fleet_order_button_ground_support_selective"
+			no_clicksound = yes
 			alwaysTransparent = yes
 		}
 		buttonType = {
 			name = "button"
 			spriteType = "GFX_fleet_order_button_ground_support_selective"
+			no_clicksound = yes
 		}
 	}
 	# New Fleet View
@@ -1632,7 +1723,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "fleet_view_shipyard_side_view"
 		position = { x = 603 y = 0 }
-		size = { width = 400 height = 498 }
+		size = { width = 400 height = 532 }
 		background = {
 			name = "planet_view_spaceport_construction_panel_background"
 			quadTextureSprite = "GFX_plain_bg_tile"
@@ -1674,7 +1765,7 @@ guiTypes = {
 		smoothListboxType = {
 			name = "entries_list"
 			position = { x = 10 y = 53 }
-			size = { x = 378 y = 433 }
+			size = { x = 378 y = 467 }
 			scrollbarType = "standardlistbox_slider_thick"
 			borderSize = { x = 0 y = 0 }
 			offset = { x = -3 y = 0 }

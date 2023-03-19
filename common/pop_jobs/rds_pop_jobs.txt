@@ -1,27 +1,32 @@
 laplace_demon_operator = {
-	category = specialist
+	category = laplace_demon
 	building_icon = building_laplace_research_facility
 	clothes_texture_index = 3
 	icon = researcher
-	possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_researchers
 		upkeep = {
-            energy = 1
-            multiplier = value:dynmic_laplace_demon_operator_upkeep
-        }
+			consumer_goods = 1
+		}
 		produces = {
-            physics_research = @ldo_physics_research
-            society_research = @ldo_society_research
-            engineering_research = @ldo_engineering_research
-            unity = @ldo_unity
-            multiplier = value:dynmic_laplace_demon_operator_produce
-        }
+			physics_research = @ldo_physics_research
+			society_research = @ldo_society_research
+			engineering_research = @ldo_engineering_research
+			unity = @ldo_unity
+			multiplier = planet.laplace_research
+		}
 	}
 	possible = {
+		pop_has_trait = trait_laplace_demon
 	}
 	weight = {
-		weight = 10
+		weight = 1000
+		modifier = {
+			NOT = {
+				HAS_JOB_CATEGORY = laplace_demon
+			}
+			multiply = 0
+		}
 	}
 }
 
@@ -35,13 +40,13 @@ deduction_engineer = {
 		category = planet_technician
 		produces = {
             energy = @de_energy
-            multiplier = value:dynmic_deduction_engineer
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -54,18 +59,18 @@ minerals_mass_energy_conversion = {
 	resources = {
 		category = planet_miners
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
         produces = {
             minerals = @mmec_produce
-            multiplier = value:dynmic_minerals_mass_energy_conversion_produce
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -78,18 +83,18 @@ alloys_resources_mass_energy_conversion = {
 	resources = {
 		category = planet_metallurgists
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			alloys = @armec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier =planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -102,18 +107,18 @@ consumer_goods_resources_mass_energy_conversion = {
 	resources = {
 		category = planet_artisans
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			consumer_goods = @cgrmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -126,18 +131,18 @@ volatile_motes_mass_energy_conversion = {
 	resources = {
 		category = planet_chemists
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			volatile_motes = @vmmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -150,18 +155,18 @@ exotic_gases_mass_energy_conversion = {
 	resources = {
 		category = planet_refiners
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			exotic_gases = @egmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -174,18 +179,18 @@ rare_crystals_mass_energy_conversion = {
 	resources = {
 		category = planet_translucers
 		upkeep = {
-            energy = 1
+            energy = 0
             multiplier = value:dynamic_energy_income
         }
 		produces = {
 			rare_crystals = @rcmec_produce
-            multiplier = value:dynamic_energy_income
+            multiplier = planet.resource_replicator_mult
         }
 	}
 	possible = {
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -207,7 +212,7 @@ multiverse_trader = {
 		multiplier = value:dynamic_energy_income
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 	possible = {
 	}
@@ -231,7 +236,7 @@ hilbert_hotel_manager = {
 		multiplier = planet.trigger:num_pops
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 	}
 }
 
@@ -252,7 +257,7 @@ hilbert_hotel_clerk = {
 		planet_housing_add = 20
 	}
 	weight = {
-		weight = 10
+		weight = 1000
 		modifier = {
 			factor = 0
 			planet = {

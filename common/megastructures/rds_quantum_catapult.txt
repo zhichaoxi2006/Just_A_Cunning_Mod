@@ -41,7 +41,7 @@ rds_wormhole_node_dummy = {
 	}
 }
 
-# Quantum Catapult Rds
+# Quantum Catapult RDS
 quantum_catapult_rds = {
 	#entity = "quantum_catapult_stage_3_entity"
 	#construction_entity = "quantum_catapult_stage_3_entity"
@@ -87,9 +87,6 @@ quantum_catapult_rds = {
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = {
-				id = over.10
-			}
 		}
 	}
 	bypass_type = quantum_catapult

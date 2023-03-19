@@ -35,3 +35,7 @@ EQUIPPED_WITH_RDS = {
 		}
 	}
 }
+
+dynamic_var_flag_check = {
+	has_country_flag = target_empire_@$variable$
+}

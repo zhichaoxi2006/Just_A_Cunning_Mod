@@ -1,4 +1,5 @@
 leader_trait_death = {
+	cost = 0
 	initial = no
 	randomized = no
 	icon = "gfx/interface/icons/traits/trait_death_tag.dds"
@@ -10,14 +11,36 @@ trait_rds_mystical_power = {
 	initial = yes
 	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT PRESAPIENT }
 	randomized = no
+	immortal_leaders = yes
 	sorting_priority = 114514
 	icon = "gfx/interface/icons/traits/species_trait_transdimensional.dds"
 	potential_crossbreeding_chance = 0
 	modifier = {
-		pop_environment_tolerance = 2
-		planet_jobs_produces_mult = 3
+		pop_environment_tolerance = 4.2
+		planet_jobs_produces_mult = 2.25
+		pop_job_amenities_mult = 2.5
+		leader_skill_levels = 100
 		pop_demotion_time_mult = -1
-		empire_size_pops_mult = -1 
+		army_damage_mult = 2.15
+	}
+	slave_cost = {
+		energy = 100
+	}
+}
+
+trait_laplace_demon = {
+	cost = 0
+	initial = no
+	allowed_archetypes = { BIOLOGICAL LITHOID MACHINE ROBOT PRESAPIENT }
+	randomized = no
+	immortal_leaders = yes
+	sorting_priority = 114514
+	icon = "gfx/interface/icons/traits/stellaris.dds"
+	potential_crossbreeding_chance = 0
+	modifier = {
+		pop_growth_speed = -100
+		planet_pop_assembly_mult = -100
+		planet_pop_assembly_organic_mult = -100
 	}
 	slave_cost = {
 		energy = 100

@@ -5,6 +5,6 @@ category = {
     }
 }
 sound_effect = {
-    name = jacm_dies_irae
+    name = "jacm_dies_irae"
     file = "music/RequiemDiesirae.wav"
 }
